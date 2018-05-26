@@ -1,0 +1,35 @@
+# SS : This is the configuration file for Stirring Turbulence 
+# with magnetic fields + scalars. 
+# Physical viscosity, scalar diffusivity and magnetic resistivity 
+# can be optionally turned on. The MHD solver for the magnetic field
+# is turned on when compiling the .setup script.
+# ./setup ...... +usm 
+# StirMain/StirScalar is the directory for using scalars. 
+
+REQUIRES Driver
+REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Gamma
+REQUIRES Grid
+#REQUIRES IO/IOMain    # liubin used this 
+REQUIRES physics/Diffuse/DiffuseMain/Unsplit
+REQUIRES physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ
+REQUIRES physics/sourceTerms/Cool/CoolMain/AtomicDust
+REQUIRES physics/Cosmology/CosmologyMain/ChevalierClegg
+
+# include IO routine only if IO unit included
+#LINKIF IO_writeIntegralQuantities.F90 IO/IOMain
+# SS : commented out using the parallel HDF5 - see Liubin's config file
+#LINKIF IO_writeUserArray.F90 IO/IOMain/hdf5/parallel
+#LINKIF IO_readUserArray.F90 IO/IOMain/hdf5/parallel
+# SS : added calls to the serial HDF5 - see Liubin's config file
+#LINKIF IO_writeUserArray.F90 IO/IOMain/hdf5/serial
+#LINKIF IO_readUserArray.F90 IO/IOMain/hdf5/serial
+#LINKIF IO_writeUserArray.F90.pnetcdf IO/IOMain/pnetcdf
+#LINKIF IO_readUserArray.F90.pnetcdf IO/IOMain/pnetcdf
+
+
+PARAMETER rho_ambient  			REAL    6.0e-23
+PARAMETER temp_ambient			REAL	2.0e7
+PARAMETER noise_amplitude 		REAL    0.05
+
+LIBRARY     Hypre

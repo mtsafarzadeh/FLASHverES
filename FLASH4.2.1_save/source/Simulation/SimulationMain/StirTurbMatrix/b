@@ -1,0 +1,146 @@
+  use Simulation_data, ONLY: tfive,tten,tXXX,tfourty,npdfstart, &
+                             nfive,nten,nXXX,nfourty,sim_rhoambient,sim_writematrix
+  real :: lpdfXXX(201),lpdffourty(201)
+  real :: gpdfXXX(201),gpdffourty(201)
+  real :: pdfXXXtot,pdfXXXtotS2,pdfXXXtotS4,pdfXXXtotS8
+  real :: lsXXX(201),lsfourty(201)
+  real :: gsXXX(201),gsfourty(201)
+  real :: lsMXXX(201),lsMfourty(201)
+  real :: gsMXXX(201),gsMfourty(201)
+  real :: ls2XXX(201),ls2fourty(201)
+  real :: gs2XXX(201),gs2fourty(201)
+  real :: ls2MXXX(201),ls2Mfourty(201)
+  real :: gs2MXXX(201),gs2Mfourty(201)
+  real :: lpdfXXXS(603),lpdffourtyS(603)
+  real :: gpdfXXXS(603),gpdffourtyS(603)
+  real :: lsXXXS(603),lsfourtyS(603)
+  real :: gsXXXS(603),gsfourtyS(603)
+  real :: lsMXXXS(603),lsMfourtyS(603)
+  real :: gsMXXXS(603),gsMfourtyS(603)
+  real :: ls2XXXS(603),ls2fourtyS(603)
+  real :: gs2XXXS(603),gs2fourtyS(603)
+  real :: ls2MXXXS(603),ls2MfourtyS(603)
+  real :: gs2MXXXS(603),gs2MfourtyS(603)
+  real :: lTMXXX(80601),    lTMfourty(80601)
+  real :: gTMXXX(80601),    gTMfourty(80601)
+  real :: lMTMXXX(80601),   lMTMfourty(80601)
+  real :: gMTMXXX(80601),   gMTMfourty(80601)
+  real :: TMfivetot, TMtentot, TMXXXtot, TMfourtytot
+  real :: MTMXXXtot,MTMXXXtotS2,MTMXXXtotS4,MTMXXXtotS8
+  real :: lMTMXXXS(241803),lMTMfourtyS(241803)
+  real :: gMTMXXXS(241803),gMTMfourtyS(241803)
+  real :: MTMfivetotS,MTMtentotS,MTMXXXtotS,MTMfourtytotS
+  real :: pdffivetotS,pdftentotS,pdfXXXtotS,pdffourtytotS
+  if((dr_nstep .ge. 4*nXXX).and.(dr_nstep .ge. npdfstart)) then
+    lpdfXXX  = 0.
+    lsXXX    = 0.
+    ls2XXX   = 0.
+    lsMXXX   = 0.
+    ls2MXXX  = 0.
+    lTMXXX   = 0.
+    lMTMXXX  = 0.
+                 lpdfXXX(indnew) = lpdfXXX(indnew)+1.
+                 lsXXX(indnew)   = lsXXX(indnew)+(snew-sold)
+                 ls2XXX(indnew)  = ls2XXX(indnew)+(snew-sold)*(snew-sold)
+                 lsMXXX(indnew)  = lsMXXX(indnew)+(snew-soldm)
+                 ls2MXXX(indnew) = ls2MXXX(indnew)+(snew-soldm)*(snew-soldm)
+                 lTMXXX((inddif-1)*201+indnew)   = lTMXXX((inddif-1)*201+indnew)+1.
+                 lMTMXXX((inddifm-1)*201+indnew)  = lMTMXXX((inddifm-1)*201+indnew)+1.
+                   lpdfXXXS(offset1+indnew)       = lpdfXXXS(offset1+indnew)+1.
+                   lsXXXS(offset1+indnew)         = lsXXXS(offset1+indnew)+(snew-sold)
+                   ls2XXXS(offset1+indnew)        = ls2XXXS(offset1+indnew)+(snew-sold)*(snew-sold)
+                   lsMXXXS(offset1+indnew)        = lsMXXXS(offset1+indnew)+(snew-soldm)
+                   ls2MXXXS(offset1+indnew)       = ls2MXXXS(offset1+indnew)+(snew-soldm)*(snew-soldm)
+                   lMTMXXXS(offset2+(inddifm-1)*201+indnew)  = lMTMXXXS(offset2+(inddifm-1)*201+indnew)+1.
+    call MPI_Reduce (lpdfXXX,  gpdfXXX, 201, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lpdfXXXS, gpdfXXXS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsXXX,   gsXXX, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMXXX,  gsMXXX, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsXXXS, gsXXXS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMXXXS, gsMXXXS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2XXX,  gs2XXX, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2MXXX, gs2MXXX, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2XXXS, gs2XXXS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2MXXXS, gs2MXXXS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lTMXXX,  gTMXXX,  80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMXXX, gMTMXXX, 80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMXXXS, gMTMXXXS, 241803, MPI_Double_Precision, MPI_Sum, &  
+      pdfXXXtot    = 0.
+      pdfXXXtotS2  = 0.
+      pdfXXXtotS4  = 0.
+      pdfXXXtotS8  = 0.
+        TMXXXtot     = 0.
+        MTMXXXtot    = 0.
+        MTMXXXtotS2  = 0.
+        MTMXXXtotS4  = 0.
+        MTMXXXtotS8  = 0.
+         TMXXXtot  = TMXXXtot +gTMXXX((inddif-1)*201+indnew)
+         MTMXXXtot = MTMXXXtot+gMTMXXX((inddif-1)*201+indnew)
+         MTMXXXtotS2 = MTMXXXtotS2+gMTMXXXS((inddif-1)*201+indnew)
+         MTMXXXtotS4 = MTMXXXtotS4+gMTMXXXS(80601+(inddif-1)*201+indnew)
+         MTMXXXtotS8 = MTMXXXtotS8+gMTMXXXS(161202+(inddif-1)*201+indnew)
+        if(TMXXXtot    .eq. 0.) TMXXXtot  = 1.
+        if(MTMXXXtot   .eq. 0.) MTMXXXtot = 1.
+        if(MTMXXXtotS2 .eq. 0.) MTMXXXtotS2 = 1.
+        if(MTMXXXtotS4 .eq. 0.) MTMXXXtotS4 = 1.
+        if(MTMXXXtotS8 .eq. 0.) MTMXXXtotS8 = 1.
+         gTMXXX((inddif-1)*201+indnew)= & 
+           gTMXXX((inddif-1)*201+indnew)/TMXXXtot
+         gMTMXXX((inddif-1)*201+indnew)= & 
+           gMTMXXX((inddif-1)*201+indnew)/MTMXXXtot
+         gMTMXXXS((inddif-1)*201+indnew)= & 
+           gMTMXXXS((inddif-1)*201+indnew)/MTMXXXtotS2
+         gMTMXXXS(80601+(inddif-1)*201+indnew)= & 
+           gMTMXXXS(80601+(inddif-1)*201+indnew)/MTMXXXtotS4
+         gMTMXXXS(161202+(inddif-1)*201+indnew)= & 
+           gMTMXXXS(161202+(inddif-1)*201+indnew)/MTMXXXtotS8
+       pdfXXXtot = pdfXXXtot+gpdfXXX(indnew)
+       pdfXXXtotS2 = pdfXXXtotS2+gpdfXXXS(indnew)
+       pdfXXXtotS4 = pdfXXXtotS4+gpdfXXXS(201+indnew)
+       pdfXXXtotS8 = pdfXXXtotS8+gpdfXXXS(402+indnew)
+      print *,'asdf',pdfXXXtotS2,pdfXXXtotS4,pdfXXXtotS8
+        write (fnumStr, '(i4.4)') (nXXX-npdfstart/4)
+        write(funit,20) simTime-tXXX
+         write(funit,20) gpdfXXX(indnew)/pdfXXXtot
+         gpdfXXX(indnew) = gpdfXXX(indnew) + 1E-10
+         write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS2
+         gpdfXXXS(indnew) = gpdfXXXS(indnew) + 1E-10
+         write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS4
+         gpdfXXXS(indnew) = gpdfXXXS(indnew) + 1E-10
+         write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS8
+         gpdfXXXS(indnew) = gpdfXXXS(indnew) + 1E-10
+            write(funit,20) gMTMXXX((inddif-1)*201+indnew)
+            write(funit,20) gMTMXXXS((inddif-1)*201+indnew)
+            write(funit,20) gTMXXX((inddif-1)*201+indnew)
+      write (fnumStr, '(i4.4)') (nXXX-npdfstart/4)
+      write(funit,20) simTime-tXXX
+       write(funit,20) gpdfXXX(indnew)/pdfXXXtot
+       write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS2
+       write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS4
+       write(funit,20) gpdfXXXS(indnew)/pdfXXXtotS8
+       write(funit,20) gsXXX(indnew)/pdfXXXtot
+       write(funit,20) gsXXXS(indnew)/pdfXXXtotS2
+       write(funit,20) gsXXXS(indnew)/pdfXXXtotS4
+       write(funit,20) gsXXXS(indnew)/pdfXXXtotS8
+       write(funit,20) gsMXXX(indnew)/pdfXXXtot
+       write(funit,20) gsMXXXS(indnew)/pdfXXXtotS2
+       write(funit,20) gsMXXXS(indnew)/pdfXXXtotS4
+       write(funit,20) gsMXXXS(indnew)/pdfXXXtotS8
+       write(funit,20) (gs2XXX(indnew)-gsXXX(indnew)**2/gpdfXXX(indnew))/pdfXXXtot
+       write(funit,20) (gs2XXXS(indnew)-gsXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS2
+       write(funit,20) (gs2XXXS(indnew)-gsXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS4
+       write(funit,20) (gs2XXXS(indnew)-gsXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS8
+       write(funit,20) (gs2MXXX(indnew)-gsMXXX(indnew)**2/gpdfXXX(indnew))/pdfXXXtot
+       write(funit,20) (gs2MXXXS(indnew)-gsMXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS2
+       write(funit,20) (gs2MXXXS(indnew)-gsMXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS4
+       write(funit,20) (gs2MXXXS(indnew)-gsMXXXS(indnew)**2/gpdfXXXS(indnew))/pdfXXXtotS8
+       write(funit,20) gs2XXX(indnew)/pdfXXXtot
+       write(funit,20) gs2XXXS(indnew)/pdfXXXtotS2
+       write(funit,20) gs2XXXS(indnew)/pdfXXXtotS4
+       write(funit,20) gs2XXXS(indnew)/pdfXXXtotS8
+       write(funit,20) gs2MXXX(indnew)/pdfXXXtot
+       write(funit,20) gs2MXXXS(indnew)/pdfXXXtotS2
+       write(funit,20) gs2MXXXS(indnew)/pdfXXXtotS4
+       write(funit,20) gs2MXXXS(indnew)/pdfXXXtotS8
+    nXXX = nXXX+1
+    tXXX = simTime

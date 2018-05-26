@@ -1,0 +1,23 @@
+# Config file for the Deleptonize unit
+
+DEFAULT DeleptonizeMain
+
+D useHeat   runtime control for turning the deleptonization on or off
+PARAMETER useDeleptonize    BOOLEAN FALSE
+
+#localAPI
+CHILDORDER localAPI
+
+
+USESETUPVARS threadBlockList, threadWithinBlock
+IF threadBlockList
+   PARAMETER threadDelepBlockList BOOLEAN TRUE
+ELSE
+   PARAMETER threadDelepBlockList BOOLEAN FALSE
+ENDIF
+
+IF threadWithinBlock
+   PARAMETER threadDelepWithinBlock BOOLEAN TRUE
+ELSE
+   PARAMETER threadDelepWithinBlock BOOLEAN FALSE
+ENDIF

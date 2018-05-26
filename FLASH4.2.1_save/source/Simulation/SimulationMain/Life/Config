@@ -1,0 +1,93 @@
+# Coniguration file for the 1D Radiative Shock
+REQUIRES Driver
+REQUESTS physics/sourceTerms/Heatexchange/HeatexchangeMain/Spitzer
+REQUESTS physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ
+REQUESTS physics/Diffuse/DiffuseMain/Unsplit
+REQUESTS physics/Eos/EosMain/multiTemp/Multigamma
+
+DATAFILES xe-imx-026.cn4
+DATAFILES xe-gray.cn4
+
+##########################
+#                        #
+#   RUNTIME PARAMETERS   #
+#                        #
+##########################
+
+D sim_driverType The type of driver used for this simulation
+D                - laser: The Laser package will be used to drive the 
+D                         simulation
+D                - uniform: The target will be uniformly heated using an amount
+D                           of energy specified in sim_laserEnergy 
+D                - unispec: The target will be uniformly heated, but 
+D                           sim_laserEnergy specifies the total energy per 
+D                           unit mass to deposit in the target
+PARAMETER sim_driverType STRING "uniform" ["uniform", "unispec"]
+
+D sim_targetRadius The radius to use for the target
+PARAMETER sim_targetRadius REAL 0.025
+
+D sim_targetHeight For 2D simulations, half the length of the target
+PARAMETER sim_targetHeight REAL 0.025
+
+D sim_targetOffset For 2D simulations, target offset along r-direction
+PARAMETER sim_targetOffset REAL 0.0
+
+D sim_targetZOffset For 2D simulations, target offset along z-direction
+PARAMETER sim_targetZOffset REAL 0.0
+
+D sim_targetGeom Specify shape of target
+PARAMETER sim_targetGeom STRING "cylinder" ["cylinder", "sphere"]
+
+D sim_ndiv Number of subdivisions for each cell for feathering
+PARAMETER sim_ndiv INTEGER 1
+
+# "Laser" parameters:
+#   These parameters are not related to the actual laser package in
+#   FLASH. Rather, they control a simplified drive which attempts to
+#   uniformly deposit a total of sim_laserEnergy energy throughout the
+#   target over a time period given by sim_pulseLength.
+D sim_pulseLength The pulse length of the laser
+PARAMETER sim_pulseLength REAL 1.5e-09
+
+D sim_laserEnergy The amount of laser energy absorbed by the target
+PARAMETER sim_inputEnergy REAL 0.0e+07
+
+# Target material defaults set for graphite at room temperature:
+D sim_rhoTarg Initial target density
+PARAMETER sim_rhoTarg   REAL 2.16
+
+D sim_teleTarg Initial target electron temperature
+PARAMETER sim_teleTarg  REAL 290.11375
+
+D sim_tionTarg Initial target ion temperature
+PARAMETER sim_tionTarg  REAL 290.11375
+
+D sim_tradTarg Initial target radiation temperature
+PARAMETER sim_tradTarg  REAL 290.11375
+
+# Chamber material defaults set for Helium at pressure 1.6 mbar:
+D sim_rhoCham Initial chamber density
+PARAMETER sim_rhoCham   REAL 2.655e-07
+
+D sim_teleCham Initial chamber electron temperature
+PARAMETER sim_teleCham  REAL 290.11375
+
+D sim_tionCham Initial chamber ion temperature
+PARAMETER sim_tionCham  REAL 290.11375
+
+D sim_tradCham Initial chamber radiation temperature
+PARAMETER sim_tradCham  REAL 290.11375
+
+
+# Chamber veloctiy:
+D sim_velxCham Chamber fluid velocity - x direction
+PARAMETER sim_velxCham  REAL 0.0
+
+D sim_velyCham Chamber fluid velocity - y direction
+PARAMETER sim_velyCham  REAL 0.0
+
+
+# When this flag is on, everything proceeds as normal, but every cell
+# is set such that it is essentially 100% target species...
+PARAMETER sim_oneSpec BOOLEAN FALSE

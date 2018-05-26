@@ -1,0 +1,3781 @@
+---------------------
+Skipped Complex Files
+---------------------
+
+   Files too complex and hence not checked/fixed.
+   Complex: Contains generic interface definitions
+
+
+   source/RuntimeParameters/RuntimeParameters_interface.F90
+   source/PhysicalConstants/PhysicalConstants_interface.F90
+   source/monitors/Logfile/Logfile_interface.F90
+   source/monitors/Timers/Timers_interface.F90
+   source/monitors/Timers/TimersMain/Tau/tmr_interface.F90
+   source/monitors/Profiler/Profiler_interface.F90
+   source/physics/sourceTerms/Stir/Stir_interface.F90
+   source/physics/sourceTerms/Deleptonize/Deleptonize_interface.F90
+   source/physics/sourceTerms/Burn/Burn_interface.F90
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_overrideBeamsData.F90
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_extractBeamsData.F90
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_extractRaysData.F90
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_networkInterface.F90
+   source/physics/sourceTerms/Heat/Heat_interface.F90
+   source/physics/sourceTerms/Polytrope/Polytrope_interface.F90
+   source/physics/sourceTerms/Turb/Turb_interface.F90
+   source/physics/sourceTerms/Flame/Flame_interface.F90
+   source/physics/sourceTerms/Flame/FlameSpeed/fl_fsInterface.F90
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsAtwoodInterface.F90
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/fl_fsLaminarInterface.F90
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsLaminarInterface.F90
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIInterface.F90
+   source/physics/sourceTerms/Flame/FlameMain/RDSplit5point/fl_interface.F90
+   source/physics/sourceTerms/Flame/FlameEffects/fl_effInterface.F90
+   source/physics/TreeCol/TreeCol_interface.F90
+   source/physics/Hydro/Hydro_interface.F90
+   source/physics/Hydro/HydroMain/utilities/limiters.F90
+   source/physics/Gravity/Gravity_interface.F90
+   source/physics/Gravity/localAPI/grv_bhInterface.F90
+   source/physics/materialProperties/Conductivity/Conductivity_interface.F90
+   source/physics/materialProperties/MagneticResistivity/MagneticResistivity_interface.F90
+   source/physics/Eos/Eos_interface.F90
+   source/physics/Diffuse/Diffuse_interface.F90
+   source/flashUtilities/nameValueLL/nameValueLL_data.F90
+   source/flashUtilities/sorting/quicksort/ut_qsortInterface.F90
+   source/Multispecies/Multispecies_interface.F90
+   source/Grid/Grid_interface.F90
+   source/Grid/GridMain/UG/unitTest/gr_interfacesUT.F90
+   source/Grid/localAPI/gr_bhInterface.F90
+   source/Grid/localAPI/gr_pfftInterface.F90
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-jeans/sim_interface.F90
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-layer/sim_interface.F90
+   source/Simulation/SimulationMain/RTFlame/Grid_bcApplyToRegionSpecialized.F90
+   source/IO/IO_interface.F90
+
+   Files too complex and hence skipped for some checks/fixes.
+   Complex: check- or fix-specific criteria
+
+   source/PhysicalConstants/PhysicalConstantsMain/pc_interface.F90 (skip implicitNone check)
+   source/Driver/Driver_interface.F90 (skip implicitNone check)
+   source/monitors/Debugger/Debugger_interface.F90 (skip implicitNone check)
+   source/monitors/Profiler/ProfilerMain/pr_interface.F90 (skip implicitNone check)
+   source/physics/RadTrans/RadTrans_interface.F90 (skip implicitNone check)
+   source/physics/RadTrans/localAPI/rt_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Burn/BurnIntegrate/bnIntegrate_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/bnNetwork_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/bn_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/EnergyDeposition/EnergyDeposition_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserComm/ed_commInterface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/EnergyDeposition/localAPI/ed_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_integrateInterface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Heatexchange/Heatexchange_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Ionize/Ionize_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Ionize/IonizeMain/ion_interface.F90 (skip implicitNone check)
+   source/physics/sourceTerms/Cool/Cool_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/split/PPM/hy_ppm_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hy_ppm_kernelInterface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/split/PPM/chomboCompatible/hy_ppm_chombo_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/split/MHD_8Wave/hy_8wv_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/split/RHD/hy_rhd_interface.F90 (skip implicitNone check)
+   source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90 (skip implicitNone check)
+   source/physics/materialProperties/MassDiffusivity/MassDiffusivity_interface.F90 (skip implicitNone check)
+   source/physics/materialProperties/Viscosity/Viscosity_interface.F90 (skip implicitNone check)
+   source/physics/materialProperties/Opacity/Opacity_interface.F90 (skip implicitNone check)
+   source/physics/materialProperties/Opacity/localAPI/op_interface.F90 (skip implicitNone check)
+   source/physics/materialProperties/NSE/NSE_interface.F90 (skip implicitNone check)
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_c_interface.F90 (skip implicitNone check)
+   source/physics/Eos/EosMain/Helmholtz/eos_helmInterface.F90 (skip implicitNone check)
+   source/physics/Eos/localAPI/eos_localInterface.F90 (skip implicitNone check)
+   source/physics/Eos/localAPI/eos_mtInterface.F90 (skip implicitNone check)
+   source/physics/Eos/localAPI/eos_tabInterface.F90 (skip implicitNone check)
+   source/physics/Diffuse/localAPI/diff_interface.F90 (skip implicitNone check)
+   source/physics/SolidMechanics/SolidMechanics_interface.F90 (skip implicitNone check)
+   source/physics/Cosmology/Cosmology_interface.F90 (skip implicitNone check)
+   source/flashUtilities/contourSurface/ut_contourSurfaceInterface.F90 (skip implicitNone check)
+   source/flashUtilities/contiguousConversion/ut_conversionInterface.F90 (skip implicitNone check)
+   source/flashUtilities/system/memoryUsage/ut_sysMemInterface.F90 (skip implicitNone check)
+   source/flashUtilities/system/memoryUsage/f2003/ut_sysMemCInterface.F90 (skip implicitNone check)
+   source/flashUtilities/UTPipeline/UTPipeline.F90 (skip implicitNone check)
+   source/flashUtilities/rng/ut_randomInterface.F90 (skip implicitNone check)
+   source/flashUtilities/Pipeline/UTPipeline.F90 (skip implicitNone check)
+   source/flashUtilities/interpolation/cubic/ut_cubicInterpolationInterface.F90 (skip implicitNone check)
+   source/flashUtilities/interpolation/oneDim/ut_interpolationInterface.F90 (skip implicitNone check)
+   source/flashUtilities/sorting/ut_sortInterface.F90 (skip implicitNone check)
+   source/Particles/Particles_interface.F90 (skip implicitNone check)
+   source/Particles/ParticlesMain/active/charged/HybridPIC/pt_picInterface.F90 (skip implicitNone check)
+   source/Particles/ParticlesMain/active/Sink/pt_sinkInterface.F90 (skip implicitNone check)
+   source/Particles/localAPI/pt_interface.F90 (skip implicitNone check)
+   source/Grid/GridMain/Chombo/wrapper/chombo_f_c_interface.F90 (skip implicitNone check)
+   source/Grid/GridMain/paramesh/paramesh4/gr_flashHook_interfaces.F90 (skip implicitNone check)
+   source/Grid/GridParticles/GridParticlesMove/Sieve/gr_ptSieveInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_interface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_bcInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_hgInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_mpoleInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_ptInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_bicgInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_isoInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_sbInterface.F90 (skip implicitNone check)
+   source/Grid/localAPI/gr_mgInterface.F90 (skip implicitNone check)
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhLocalInterface.F90 (skip implicitNone check)
+   source/Grid/GridSolvers/HYPRE/gr_hypreLocalInterface.F90 (skip implicitNone check)
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftNodeFnPrototypes.F90 (skip implicitNone check)
+   source/Simulation/Simulation_interface.F90 (skip implicitNone check)
+   source/Simulation/SimulationMain/unitTest/ParticlesAdvance/HomologousPassive/sim_interface.F90 (skip implicitNone check)
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-cylinder/sim_interface.F90 (skip implicitNone check)
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/sim_interface.F90 (skip implicitNone check)
+   source/Simulation/SimulationMain/RTFlame/hse_interface.F90 (skip implicitNone check)
+   source/IO/IOMain/io_c_interface.F90 (skip implicitNone check)
+   source/IO/IOTypes/io_c_type_interface.F90 (skip implicitNone check)
+   source/IO/localAPI/io_typeInterface.F90 (skip implicitNone check)
+   source/IO/localAPI/io_ptInterface.F90 (skip implicitNone check)
+
+
+--------------------
+Errors in interfaces
+--------------------
+
+The following API-Level directories are missing interface.F90 files:
+--------------------------------------------------------------------
+source/flashUtilities/contourSurface/UnitTest
+source/flashUtilities/Pipeline
+source/flashUtilities/datastructures/linkedlist/UnitTest
+source/flashUtilities/datastructures/linkedlist/UnitTestListOfList
+source/flashUtilities/system/memoryUsage/UnitTest2
+source/flashUtilities/system/memoryUsage/UnitTest1
+source/flashUtilities/contiguousConversion/UnitTest
+source/flashUtilities/UTPipeline
+source/flashUtilities/UTCounter
+
+The following subroutine interfaces from "source/physics/RadTrans/RadTrans_interface.F90"
+do not correspond to any API-level stub-file:
+-----------------------------------------------------------------------------------------
+RadTrans_getDbgContextPtr
+
+The following API-Level stub-files
+are not represented in "source/RuntimeParameters/RuntimeParameters_interface.F90":
+----------------------------------------------------------------------------------
+RuntimeParameters_getNum
+
+The following subroutine interfaces from "source/RuntimeParameters/RuntimeParameters_interface.F90"
+do not correspond to any API-level stub-file:
+---------------------------------------------------------------------------------------------------
+RuntimeParameters_getNumInt
+RuntimeParameters_getNumStr
+RuntimeParameters_getNumLog
+RuntimeParameters_getNumReal
+
+The following API-Level stub-files
+are not represented in "source/physics/SolidMechanics/SolidMechanics_interface.F90":
+------------------------------------------------------------------------------------
+SolidMechanics
+SolidMechanics_finalize
+SolidMechanics_init
+
+The capitalization patterns of the following interfaces from "source/physics/sourceTerms/Flame/Flame_interface.F90"
+are not in agreement with that of the correspoding API-level stub-files:
+---------------------------------------------------------------------------------
+Flame_rhjump
+
+The following API-Level stub-files
+are not represented in "source/Driver/Driver_interface.F90":
+------------------------------------------------------------
+Driver_driftSetSrcLoc
+
+The following subroutine interfaces from "source/Driver/Driver_interface.F90"
+do not correspond to any API-level stub-file:
+-----------------------------------------------------------------------------
+Driver_dbgBreak
+
+The following subroutine interfaces from "source/physics/sourceTerms/Turb/Turb_interface.F90"
+do not correspond to any API-level stub-file:
+---------------------------------------------------------------------------------------------
+Turb_laplacian
+
+The following API-Level stub-files
+are not represented in "source/Simulation/Simulation_interface.F90":
+--------------------------------------------------------------------
+Simulation_guardCellMaskHook
+
+The following API-Level stub-files
+are not represented in "source/physics/ImBound/ImBound_interface.F90":
+----------------------------------------------------------------------
+ImBound
+ImBound_finalize
+ImBound_init
+
+The following API-Level stub-files
+are not represented in "source/physics/TreeCol/TreeCol_interface.F90":
+----------------------------------------------------------------------
+TreeCol_bhMAC
+
+The following subroutine interfaces from "source/physics/TreeCol/TreeCol_interface.F90"
+do not correspond to any API-level stub-file:
+---------------------------------------------------------------------------------------
+TreeCol_unitTest
+TreeCol_potentialListOfBlocks
+
+The following API-Level stub-files
+are not represented in "source/physics/Gravity/Gravity_interface.F90":
+----------------------------------------------------------------------
+Gravity_bhMAC
+Gravity_bhEwald
+
+The following API-Level stub-files
+are not represented in "source/physics/IncompNS/IncompNS_interface.F90":
+------------------------------------------------------------------------
+IncompNS_computeDt
+IncompNS_sendOutputData
+IncompNS_init
+IncompNS
+IncompNS_finalize
+
+------------
+DEV Comments
+------------
+
+Description: flag developer comments in source code
+
+
+Violations:
+   source/RuntimeParameters/RuntimeParametersMain/RuntimeParameters_init.F90
+      Line  73 : ! DEV: Implemention in process: -chk_file checkpointFile on the command line
+
+   source/Driver/DriverMain/Driver_computeDt.F90
+      Line 391 : ! DEV: we disabled temperature timestep limiter for now.  
+
+   source/Driver/DriverMain/Split/Driver_evolveFlash.F90
+      Line 228 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Driver/DriverMain/multithreaded/Driver_computeDt.F90
+      Line 381 : !DEV CD: At the moment Dongwook just uses extraHydroInfo to return
+      Line 390 : ! DEV: we disabled temperature timestep limiter for now.  
+
+   source/Driver/DriverMain/Unsplit/Driver_evolveFlash.F90
+      Line 242 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/monitors/Logfile/Logfile_stamp.F90
+      Line  34 : !DEV! optional argument, not currently implemented.
+
+   source/monitors/Logfile/LogfileMain/Logfile_data.F90
+      Line  36 : !DEV: may want this eventually for restart with only flash.par
+
+   source/monitors/Logfile/LogfileMain/Logfile_stamp.F90
+      Line  35 : !DEV! optional argument, not currently implemented.
+
+   source/physics/RadTrans/RadTransMain/MGD/RadTrans_mgdSetBound.F90
+      Line  15 : !      DEV : What does this mean?
+
+   source/physics/sourceTerms/Heatexchange/HeatexchangeMain/ConstCoulomb/Heatexchange.F90.Heun
+      Line 178 : !DEV: not right for MKS units!
+      Line 292 : !DEV: not right for MKS units!
+      Line 392 : !DEV: not right for MKS units!
+
+   source/physics/sourceTerms/Heatexchange/HeatexchangeMain/ConstCoulomb/Heatexchange.F90
+      Line 153 : !DEV: not right for MKS units!
+
+   source/physics/sourceTerms/Heatexchange/HeatexchangeMain/ConstCoulomb/Heatexchange_computeDt.F90
+      Line 163 : !DEV: not right for MKS units!
+
+   source/physics/sourceTerms/Ionize/IonizeMain/Ionize.F90
+      Line  74 : !DEV: CD - I think den is intended as a local variable, so have reinserted den variable.
+
+   source/physics/sourceTerms/Ionize/IonizeMain/ion_readTable.F90
+      Line  78 : !DEV:  When we perform an interpolation in intcoeff we touch 
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/Flame_laminarSpeed.F90
+      Line  20 : !DEV: no meaningful output provided
+      Line  32 : !DEV: no meaningful output provided
+
+   source/physics/Hydro/HydroMain/unsplit/Hydro_init.F90
+      Line  56 : !DEV: not yet systematically honored
+
+   source/physics/Hydro/HydroMain/unsplit/multiTemp/hy_uhd_MultiTempData.F90
+      Line  30 : ! DEV: The following should be in Hydro_data instead !? - KW
+
+   source/physics/Hydro/HydroMain/unsplit/multiTemp/hy_uhd_MultiTempInit.F90
+      Line  31 : !DEV:no    ppmEnerFluxConstructionMeth [INTEGER]
+      Line  32 : !DEV:no    ppmEintFluxConstructionMeth [INTEGER]
+      Line  33 : !DEV:no    ppmEnerCompFluxConstructionMeth [INTEGER]
+      Line  34 : !DEV:no    ppmEnerCompFluxConstructionMeth [INTEGER]
+      Line  35 : ! DEV: List of PARAMETERS is out of date / incomplete.
+
+   source/physics/Hydro/HydroMain/split/PPM/hy_ppm_force.F90
+      Line 106 : ! DEV: note, this should really be numIntCells + 2*nguard, but we'll save
+
+   source/physics/Hydro/HydroMain/split/PPM/multiTemp/hy_ppm_updateSoln.F90
+      Line 769 : !DEV: for now
+      Line 772 : !DEV: should not matter - to be removed? - KW
+      Line 774 : !DEV: for now
+      Line 864 : !DEV: for now
+      Line 867 : !DEV: should not matter - to be removed? - KW
+      Line 869 : !DEV: for now
+      Line 1474 : !DEV: for now
+      Line 1477 : !DEV: should not matter - to be removed? - KW
+      Line 1479 : !DEV: for now
+      Line 1549 : !DEV: for now
+      Line 1552 : !DEV: should not matter - to be removed? - KW
+      Line 1554 : !DEV: for now
+      Line 2151 : !DEV: for now
+      Line 2154 : !DEV: should not matter - to be removed? - KW
+      Line 2156 : !DEV: for now
+      Line 2226 : !DEV: for now
+      Line 2229 : !DEV: should not matter - to be removed? - KW
+      Line 2231 : !DEV: for now
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hydro_1d.F90
+      Line 414 : !DEV: The modes using this (ppmEnerCompFlux..>=11) to go away anyway. - KW
+      Line 416 : !DEV: for now
+      Line 721 : !DEV: The modes using eflx(:,1:2) in hy_ppm_updateSoln to go away anyway. - KW
+      Line 723 : !DEV: for now
+      Line 729 : !DEV: The modes using eflx(:,1:2) in hy_ppm_updateSoln to go away anyway. - KW
+      Line 731 : !DEV: for now
+
+   source/physics/Hydro/HydroMain/split/PPM/chomboCompatible/hy_ppm_sweep.F90
+      Line 730 : !DEV CD: We think that there should be an explicit call to restrict
+
+   source/physics/Hydro/HydroMain/split/RHD/hy_rhd_hlle.F90
+      Line 109 : !DEV: Is this correct??? - KW
+
+   source/physics/Hydro/HydroMain/split/RHD/Hydro_init.F90
+      Line  55 : ! DEV Need to check that cylindrical coordinates can only be in 2D.
+      Line  56 : ! DEV  and spherical is only in 1D.  Maybe already checked in geoemtry init...
+      Line  69 : ! DEV doesn't appear to be ever used
+
+   source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_unsplitUpdate.F90
+      Line 541 : ! DEV: hy_uhd_getCurrent sets Jp and Jm for many cells, should therefore not be called inside an i,j,k loop!
+
+   source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_getRiemannState.F90
+      Line 224 : ! DEV-dongwook: This call now is moved to the begining of hydro,
+      Line 310 : ! DEV-Dongwook: I don't know how it ever worked with this zeroing out of
+
+   source/physics/Hydro/HydroMain/unsplit_old/multiTemp/hy_uhd_MultiTempData.F90
+      Line  30 : ! DEV: The following should be in Hydro_data instead !? - KW
+
+   source/physics/Hydro/HydroMain/unsplit_old/multiTemp/hy_uhd_MultiTempInit.F90
+      Line  31 : !DEV:no    ppmEnerFluxConstructionMeth [INTEGER]
+      Line  32 : !DEV:no    ppmEintFluxConstructionMeth [INTEGER]
+      Line  33 : !DEV:no    ppmEnerCompFluxConstructionMeth [INTEGER]
+      Line  34 : !DEV:no    ppmEnerCompFluxConstructionMeth [INTEGER]
+      Line  35 : ! DEV: List of PARAMETERS is out of date / incomplete.
+
+   source/physics/Hydro/HydroMain/unsplit_old/Hydro_Unsplit/Hydro_init.F90
+      Line  52 : !DEV: not yet systematically honored
+
+   source/physics/Hydro/HydroMain/unsplit_old/Hydro_Unsplit/hy_uhd_dataReconstOneStep.F90
+      Line 176 : ! DEV: Gravity with HEDP does not work.
+
+   source/physics/Hydro/HydroMain/unsplit_old/MHD_StaggeredMesh/hy_uhd_unsplit.F90
+      Line 547 : ! DEV-Dongwok: we need to put gravity for potential update in 1D
+
+   source/physics/Hydro/HydroMain/unsplit_old/MHD_StaggeredMesh/threadBlockList/hy_uhd_unsplit.F90
+      Line 570 : ! DEV-Dongwok: we need to put gravity for potential update in 1D
+
+   source/physics/Hydro/HydroMain/unsplit_old/threadWithinBlock/hy_uhd_unsplitUpdate.F90
+      Line 591 : ! DEV: hy_uhd_getCurrent sets Jp and Jm for many cells, should therefore not be called inside an i,j,k loop!
+
+   source/physics/Hydro/HydroMain/unsplit_old/threadWithinBlock/hy_uhd_getRiemannState.F90
+      Line 249 : ! DEV-dongwook: This call now is moved to the begining of hydro,
+      Line 351 : ! DEV-Dongwook: I don't know how it ever worked with this zeroing out of
+
+   source/physics/Gravity/GravityMain/Poisson/Multipole/Gravity_init.F90
+      Line  52 : ! DEV testing for invalid gravity geometries?  Perhaps it is done in Grid
+
+   source/physics/materialProperties/Conductivity/ConductivityMain/Constant/Conductivity.F90
+      Line  63 : !DEV: ???
+      Line  64 : !DEV: ???
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabData.F90
+      Line 127 : !DEV: maybe redundant - KW
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmix4Tables.F90
+      Line  17 : ! DEV: removed !
+      Line  30 : !DEV: outdated! - KW
+      Line  38 : !DEV: removed !
+
+   source/physics/Eos/EosMain/Tabulated/eos_initTabulated.F90
+      Line 180 : !DEV: Some of that initialization should be moved to the Eos unit -
+      Line 362 : !DEV: ??
+      Line 363 : !DEV: ??
+      Line 573 : !    DEV: ?? ...Print out the EOS data constants to see what has been stored.
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmixTables.F90
+      Line  17 : !DEV: removed !
+      Line  30 : !DEV: outdated! - KW
+      Line  38 : !DEV: removed !
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabIonmix4.F90
+      Line 358 : !DEV: combTable probably obsolete.
+      Line 494 : ! DEV: THIS dens?? - KW
+      Line 503 : ! DEV: THIS dens?? - KW
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabBrowseTables.F90
+      Line  82 : !DEV: UNUSED
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabIonmix.F90
+      Line 357 : !DEV: combTable probably obsolete in this file
+      Line 477 : ! DEV: THIS dens?? - KW
+      Line 486 : ! DEV: THIS dens?? - KW
+
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_tabReadOpacplotTables.F90
+      Line  18 : ! DEV: removed !
+      Line  31 : !DEV: outdated! - KW
+      Line  39 : !DEV: removed !
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/eos_mgammaData.F90
+      Line  16 : !  DEV: Gamma is assumed to be the same for all species !?
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/eos_byTempMG.F90
+      Line 315 : !DEV: Is this valid in MKS units, too? - KW
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/Eos_getParameters.F90
+      Line  74 : ! DEV: check this... - KW
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/eos_initPhysData.F90
+      Line  58 : ! DEV:  NOTE -- We should verify that unitsystem is "cgs" !!
+      Line  66 : !DEV: only valid in "cgs", not "MKS" units!
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/eos_byTemp.F90
+      Line 303 : !DEV: Is this valid in MKS units, too? - KW
+
+   source/physics/Eos/EosMain/multiTemp/Multitype/eos_mgammaData.F90
+      Line  16 : !  DEV: Gamma is assumed to be the same for all species !?
+
+   source/physics/Eos/EosMain/multiTemp/Multitype/eos_multiTypeByTemp.F90
+      Line 195 : !DEV: or... several others?
+      Line 343 : !DEV: for now
+      Line 365 : !DEV: for now
+
+   source/physics/Eos/EosMain/multiTemp/Multitype/eos_multiTypeByTemp.F90.temp
+      Line 195 : !DEV: or... several others?
+      Line 344 : !DEV: for now
+      Line 366 : !DEV: for now
+
+   source/physics/Eos/EosMain/multiTemp/Multitype/Eos.F90
+      Line 624 : !DEV: inappropriately ideal.
+      Line 659 : !DEV: inappropriately ideal.
+      Line 804 : !DEV: inappropriately ideal for components.
+      Line 1251 : ! DEV: eos_gammam1Ele -> gamIon(ilo:ihi), considerations?
+      Line 1355 : !DEV: needed?
+      Line 1489 : ! DEV: not sure why commented out in r14167 - KW
+
+   source/physics/Eos/EosMain/multiTemp/Multitype/Eos_getParameters.F90
+      Line  74 : ! DEV: check this... - KW
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/eos_byTempMG.F90
+      Line 315 : !DEV: Is this valid in MKS units, too? - KW
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/Eos_getParameters.F90
+      Line  74 : ! DEV: I want that.. - KW
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/eos_initPhysData.F90
+      Line  59 : ! DEV:  NOTE -- We should verify that unitsystem is "cgs" !!
+      Line  67 : !DEV: only valid in "cgs", not "MKS" units!
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/eos_byTemp.F90
+      Line 303 : !DEV: Is this valid in MKS units, too? - KW
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/Ye/eos_idealGamma3T.F90
+      Line 597 : ! DEV: If NOT using Ye, use eos_singleSpecies? RPs in place of next 2 lines - KW
+
+   source/physics/Eos/EosMain/Helmholtz/SpeciesBased/Eos_vectorBased.F90
+      Line 346 : ! DEV should we even be filling in this data instead of pulling it out of the eosData array?
+      Line 347 : ! DEV in Eos.F90, we assume the user knows what he's doing.  Eos_wrapped does not.
+
+   source/physics/Diffuse/DiffuseMain/Diffuse.F90
+      Line  29 : !      DEV: Actually, boundary condition support depends on the solver implementation.
+      Line  78 : ! DEV: Add more calls here as standalone implementations for viscosity, etc. become available. - KW
+
+   source/physics/Diffuse/DiffuseMain/Split/Diffuse_advance1D.F90
+      Line 664 : !DEV: Even more untested than other parts! - KW         
+
+   source/Particles/Particles_getLocalNum.F90
+      Line  19 : !DEV: IGNORED!
+
+   source/Particles/ParticlesMain/Particles_getLocalNum.F90
+      Line  19 : !DEV: IGNORED!
+
+   source/Particles/ParticlesMapping/meshWeighting/MapToMesh/Particles_mapToMeshOneBlk.F90
+      Line  95 : ! DEVNOTE : May be if the block is on fine coarse boundary, and this is the 
+      Line 120 : ! DEV : AD -- if we ever need to use this interface, we will
+
+   source/Particles/localAPI/pt_initPositions.F90
+      Line  71 : ! DEV: returns true because this stub creates no particles,
+
+   source/Grid/Grid_restrictByLevels.F90
+      Line  28 : !  DEV: Face variables not tested / not expected to work.
+
+   source/Grid/Grid_solvePoisson.F90
+      Line  81 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW
+
+   source/Grid/Grid_bcApplyToRegionMixedGds.F90
+      Line 101 : !DEV: This dummy arg is quite pointless and should go away. - KW
+
+   source/Grid/GridMain/gr_initGeometry.F90
+      Line 147 : ! DEV: The following was taken from init_mesh.F90 FLASH2, but
+
+   source/Grid/GridMain/Chombo/Grid_fillGuardCells.F90
+      Line 166 : !DEV CD.  I am accepting CENTER_FACES for the time being because it
+
+   source/Grid/GridMain/Chombo/Grid_getBlkCornerID.F90
+      Line  70 : ! DEV there is no implementation to provide value into optional arguement cornerIDHigh
+
+   source/Grid/GridMain/Chombo/AMR/gr_updateRefinement.F90
+      Line 105 : !DEV CD: Add a grid_changed argument to ch_regrid.
+
+   source/Grid/GridMain/Chombo/AMR/Grid_init.F90
+      Line 406 : !DEV CD: Code needs to be re-evaluated so that Grid_setFluxHandling is not called
+
+   source/Grid/GridMain/Chombo/AMR/gr_primitiveToConserve.F90
+      Line 130 : !DEV CD: Understand why 1E+300 is not overwritten with valid
+
+   source/Grid/GridMain/Chombo/AMR/Grid_updateRefinement.F90
+      Line  69 : !DEV CD: This restrict may not be necessary.  Investigate removing this
+
+   source/Grid/GridMain/UG/Grid_computeVarNorm.F90
+      Line 115 : ! DEV: Issue warning?
+
+   source/Grid/GridMain/UG/Grid_computeVarDiff.F90
+      Line  75 : ! DEV: Issue warning?
+
+   source/Grid/GridMain/UG/Grid_fillGuardCells.F90
+      Line 154 : !DEV: unused - KW 2010-09-22
+      Line 245 : !DEV: disabled since unused and undefined - KW 2010-09-22
+
+   source/Grid/GridMain/paramesh/paramesh4/amr_1blk_bcset.F90
+      Line  44 : !DEV: except in the case of prolongation?
+
+   source/Grid/GridParticles/Grid_sortParticles.F90
+      Line  79 : ! DEV: This seems only correctly implemented for attrib1=BLK_PART_PROP, attrib2=TYPE_PART_PROP(or not present)
+      Line 148 : !DEV: Should protect against attrib > elementTypes here! - KW
+      Line 189 : !DEV: Should protect against attrib > elementTypes here! - KW
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/MoveSieve/gr_ptStoreOffBlockCells.F90
+      Line 157 : !DEV: Type is known to be different.  I need to convert it
+
+   source/Grid/localAPI/gr_hypreCreateMatrix.F90
+      Line  41 : !DEV: ??) on boundary (currently used for DIRICHLET and GIVENGRAD BCs).                        
+
+   source/Grid/GridBoundaryConditions/Grid_bcApplyToRegionMixedGds.F90.forUSM
+      Line 101 : !DEV: This dummy arg is quite pointless and should go away. - KW
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhData.F90
+      Line  44 : !DEV : The next two variables do not appear to be used or initialized anywhere. - KW
+
+   source/Grid/GridSolvers/Multigrid/gr_hg_amr_1blk_bcset_work.F90
+      Line 154 : !DEV -- no upper face here for the non-cartesian case.  Seems wrong; now only Cartesian is legal
+      Line 622 : ! DEV could nest these if statements within the previous one, minor savings in execution
+
+   source/Grid/GridSolvers/Multigrid/Grid_solvePoisson.F90
+      Line  49 : !  DEV: But not checked! - KW
+      Line  87 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW
+
+   source/Grid/GridSolvers/Multigrid/gr_hgPoissonSolveBlock.F90
+      Line  72 : ! DEV more importantly, how do you deallocate?
+
+   source/Grid/GridSolvers/Multigrid/gr_hgSetZeroBoundary.F90
+      Line  53 : ! DEV What routine DOES?
+
+   source/Grid/GridSolvers/Multigrid/gr_hgSetExtBoundary.F90
+      Line  97 : !DEV -- The upper 1D face doesn't distinguish between Cartesian and non-Cartesian.  Seems wrong. Now only Cartesian is OK in initialization.
+      Line 579 : ! DEV could nest these if statements within the previous one, minor savings in execution
+
+   source/Grid/GridSolvers/Multigrid/PfftTopLevelSolve/gr_hgSolve.F90
+      Line 175 : !DEV: CD.  I think we are passing a factor of 1.0 because we are multiplying
+
+   source/Grid/GridSolvers/HYPRE/Grid_solvePoisson.F90
+      Line  32 : !DEV: requested bcTypes ignored, always uses GRID_PDE_BND_NEUMANN
+      Line 107 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW  
+
+   source/Grid/GridSolvers/HYPRE/gr_hypreUpdateSoln.F90
+      Line 121 : ! DEV: + ...
+
+   source/Grid/GridSolvers/HYPRE/UG/gr_hypreCreateMatrix.F90
+      Line  41 : !DEV: ??) on boundary (currently used for DIRICHLET and GIVENGRAD BCs).                        
+
+   source/Grid/GridSolvers/HYPRE/paramesh/gr_hypreCreateMatrix.F90
+      Line  41 : !DEV: ??) on boundary (currently used for DIRICHLET and GIVENGRAD BCs).                        
+
+   source/Grid/GridSolvers/Pfft/gr_pfftInitMetaData.F90
+      Line  34 : ! DEV: My current understanding of how these things should be used: - KW   
+
+   source/Grid/GridSolvers/Pfft/gr_pfftDcftForward.F90
+      Line  47 : !  DEV: Currently, only PFFT_REAL2C, PFFT_REAL, and PFFT_COMPLEX are somewhat tested
+
+   source/Grid/GridSolvers/Pfft/gr_pfftSetupDim.F90
+      Line  80 : !DEV: ?
+      Line  85 : !DEV: ?
+
+   source/Grid/GridSolvers/Pfft/gr_pfftWave.F90
+      Line  63 : !DEV: ??
+      Line  69 : !DEV: ??
+      Line 160 : !DEV: ??
+      Line 167 : !DEV: ??
+
+   source/Grid/GridSolvers/Pfft/fftpack.f90
+      Line  21 : ! Developer
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/Grid_solvePoisson.F90
+      Line  72 : !DEV: Why not intent(IN)? - KW
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/Generic_Direct/Grid_solvePoisson.F90
+      Line  69 : !DEV: Why not intent(IN)? - KW
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/SecondOrder_FD3p/Grid_solvePoisson.F90
+      Line  70 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW
+
+   source/Grid/GridSolvers/Pfft/ImplicitDiffusionSolver/Grid_advanceDiffusion.F90
+      Line  49 : !  DEV: But not checked! - KW
+
+   source/Grid/GridSolvers/Pfft/HomBcTrigSolver/Grid_solvePoisson.F90
+      Line  77 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW
+
+   source/Grid/GridSolvers/Pfft/SimplePeriodicSolver/Grid_solvePoisson.F90
+      Line  67 : !DEV: NOT intent(IN) because some implementation actually changes it? - KW
+
+   source/Simulation/SimulationMain/Jeans/IO_writeIntegralQuantities.F90
+      Line 229 : !DEV: commented out to prevent flooding test-suite with 65-meg ttext files --PR 
+      Line 232 : !DEV: See above --PR
+
+   source/Simulation/SimulationMain/magnetoHD/unitTest/NohCylindricalRagelike/Driver_evolveFlash.F90
+      Line 222 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/ReinickeMeyer/Driver_evolveFlash.F90
+      Line 225 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/ReinickeMeyer/Driver_computeDt.F90
+      Line 364 : ! DEV: we disabled temperature timestep limiter for now.  
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-jeans/Driver_evolveFlash.F90
+      Line 268 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-cylinder/Driver_evolveFlash.F90
+      Line 268 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Simulation_init.F90
+      Line  87 : ! DEV: sim_vecLen and sim_mode are currently unused. - KW
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Driver_evolveFlash.F90
+      Line 268 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-layer/Driver_evolveFlash.F90
+      Line 268 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/unitTest/Gravity/Poisson3/timeMultipole/Gravity_potentialListOfBlocks.F90
+      Line 186 : !DEV CD: We want to ensure we are synchronized on entry to Grid_solvePoisson.
+      Line 190 : !DEV CD: The time in Grid_solvePoisson is the actual time to perform the
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_computeAnalytical.F90.constCoul
+      Line 220 : !DEV: not right for MKS units!
+      Line 280 : !DEV: not right for MKS units!
+      Line 320 : !DEV: needed?
+
+   source/Simulation/SimulationMain/ShafranovShock/Heatexchange.F90
+      Line 170 : !DEV: not right for MKS units!
+
+   source/Simulation/SimulationMain/ConductionDeltaSaDiff/Driver_evolveFlash.F90.unsplit
+      Line 245 : ! DEV - this dtOld needs to be checked for the very first iteration.
+
+   source/Simulation/SimulationMain/DustCollapse/Grid_markRefineDerefine.F90
+      Line  36 : !DEV: Should there be a REORDER(...) solnData here? - KW
+      Line  37 : !DEV: Yes, there should. - PR
+
+   source/Simulation/SimulationComposition/Ionize/Simulation_initSpecies.F90
+      Line  92 : ! DEV: Expect this call to return the number correponding 
+
+   source/Simulation/SimulationComposition/Ionize/Simulation_speciesData.F90
+      Line  42 : !DEV : The appropriate type is commented out.  This is because our only 
+      Line  51 : !DEV : The Neitest config file in FLASH2 is hardcoded to use the single 
+
+   source/IO/IOMain/hdf5/parallel/PM/io_writeData.F90
+      Line 333 : !DEV: The above works for permanent guardcells, though it leaves the 
+
+   source/IO/IOMain/hdf5/parallel/NoFbs/io_writeData.F90
+      Line 399 : !DEV: Face-centered variables are not sent to plot files.
+
+   source/IO/IOParticles/io_getParticleOffset.F90
+      Line  30 : !DEV: Old comment said: currently only implemented with the uniform grid!
+
+   source/IO/IOParticles/hdf5/serial/io_ptReadParticleData.F90
+      Line 236 : !DEV: Hold onto this for time being if reads need to be sped up --PR         
+
+   source/IO/IOParticles/hdf5/parallel/io_ptReadParticleData.F90
+      Line 210 : !DEV: Changes begin here.  --PR
+      Line 374 : !DEV: MAKE SURE THIS IS RIGHT! vvvv -PR
+
+
+-------------
+IMPLICIT NONE
+-------------
+
+Description: Ensure that all subroutines have an IMPLICIT NONE statement
+
+
+Violations:
+   source/physics/Eos/EosMain/multiTemp/Multitype/Eos.F90
+       Subroutine setEleEntropy
+       Subroutine setRadEntropy
+       Subroutine setCombinedGamc
+       Subroutine setCombinedTemp
+       Subroutine averageScalByPressureFraction
+       Subroutine averageVectByPressureFraction
+       Subroutine averageVectRByPressureFraction
+       Subroutine averageV1Sc2ByPressureFraction
+
+   source/physics/Eos/EosMain/Nuclear/eos_initNuclear.F90
+       Subroutine eos_initNuclear
+
+   source/flashUtilities/contourSurface/UnitTest/fakef.F90
+       Subroutine Grid_getDeltas
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_findAllNeghID.F90
+       Subroutine print_info
+
+
+----------------------------------------
+explicit declaration of parameter INTENT
+----------------------------------------
+
+Description: The INTENT (IN,OUT,INOUT) must be explicity declared
+
+
+Violations:
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/rt_init.F90
+       Subroutine: series2 
+       Variables: nzones, xmin, xmax, mindx, dxfac
+
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/rt_calcLeak.F90
+       Subroutine: linterp2Dn 
+       Variables: xin, yin, fin, n, x, y, fout
+       Subroutine: linterp3Dn 
+       Variables: xin, yin, zin, fin, n, x, y, z, fout
+       Subroutine: linterp 
+       Variables: x1, x2, y1, y2, n, x, y
+       Subroutine: linterp3 
+       Variables: x1, x2, y1, y2, x, y
+       Subroutine: calc_leak 
+       Variables: ldt
+
+   source/physics/sourceTerms/Burn/BurnIntegrate/bn_netIntegrate.F90
+       Subroutine: bn_netIntegrate 
+       Variables: start, stptry, stpmin, stopp, bc, eps, dxsav, kmax, xrk, yrk, xphys, yphys, xlogi, ylogi, nok, nbad, kount, odescal, iprint, derivs, jakob, bjakob, steper
+
+   source/physics/sourceTerms/Burn/BurnIntegrate/bn_rosenMa28.F90
+       Subroutine: bn_rosenMa28 
+       Variables: y, dydx, n, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+
+   source/physics/sourceTerms/Burn/BurnIntegrate/bn_baderMa28.F90
+       Subroutine: bn_baderMa28 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: bn_baderGift 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+
+   source/physics/sourceTerms/Burn/BurnIntegrate/bnIntegrate_interface.F90
+       Subroutine: bn_netIntegrate 
+       Variables: start, stptry, stpmin, stopp, bc, eps, dxsav, kmax, xrk, yrk, xphys, yphys, xlogi, ylogi, nok, nbad, kount, odescal, iprint, derivs, jakob, bjakob, steper
+       Subroutine: steper 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: bn_baderStepMa28 
+       Variables: dydx, dfdy, nmax, n, xs, htot, nnstep, yout, nzo, a, naij, ivect, jvect, jloc, ikeep, iw, w, flag, derivs
+       Subroutine: bn_baderStepGift 
+       Variables: dydx, dfdy, nmax, n, xs, htot, nnstep, yout, derivs
+       Subroutine: bn_baderMa28 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: bn_baderGift 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: bn_rosenMa28 
+       Variables: dydx, n, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: bn_rosenGift 
+       Variables: dydx, n, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+       Subroutine: steper 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntegrate.F90
+       Subroutine: pchem_netIntegrate 
+       Variables: start, stptry, stpmin, stopp, bc, eps, dxsav, kmax, xrk, yrk, xphys, yphys, xlogi, ylogi, nok, nbad, kount, odescal, iprint, derivs, jakob, bjakob, steper, jcounts
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntBader.F90
+       Subroutine: pchem_baderGift 
+       Variables: dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_integrateInterface.F90
+       Subroutine: pchem_netIntegrate 
+       Variables: start, stptry, stpmin, stopp, bc, eps, dxsav, kmax, xrk, yrk, xphys, yphys, xlogi, ylogi, nok, nbad, kount, odescal, iprint, derivs, jakob, bjakob, steper, jcounts
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_burner.F90
+       Subroutine: pchem_burner 
+       Variables: counts, jcounts, mfrac
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_mapNetworkToSpecies.F90
+       Subroutine: pchem_mapNetworkToSpecies 
+       Variables: networkIn
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_coolMole2.F90
+       Subroutine: pchem_coolMole2 
+       Variables: temp, rho, yIn, cool_out
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_coolFunction.F90
+       Subroutine: pchem_coolFunction 
+       Variables: tmp, rho, yin, ei, temp_out, ei_out, times, mfrac
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_interface.F90
+       Subroutine: ludcmp 
+       Variables: a, n, np, indx, d
+       Subroutine: lubksb 
+       Variables: a, n, np, indx, b
+       Subroutine: leqs 
+       Variables: a, b, n, np
+
+   source/physics/Eos/EosMain/Nuclear/kernel/readtable.F90
+       Subroutine: readtable 
+       Variables: eos_filename
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp.F90
+       Subroutine: intp3d 
+       Variables: x, y, z, f, kt, ft, nx, ny, nz, xt, yt, zt, d1, d2, d3
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findrho.F90
+       Subroutine: findrho_press 
+       Variables: lr0, lt, y, lpressin, keyerrr, tol
+
+   source/physics/Eos/EosMain/Nuclear/kernel/nuc_eos.F90
+       Subroutine: nuc_low_eos 
+       Variables: xrho, xenr, xprs, xcs2, xdpderho, xdpdrhoe, keytemp
+       Subroutine: findthis 
+       Variables: lr, lt, y, value, array, d1, d2, d3
+       Subroutine: findall 
+       Variables: lr, lt, y, ff
+       Subroutine: findall_short 
+       Variables: lr, lt, y, ff
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findtemp.F90
+       Subroutine: findtemp 
+       Variables: lr, lt0, y, epsin, keyerrt, rfeps
+       Subroutine: findtemp_entropy 
+       Variables: lr, lt0, y, sin, keyerrt, rfeps
+       Subroutine: findtemp_press 
+       Variables: lr, lt0, y, pin, keyerrt, rfeps
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp_many.F90
+       Subroutine: intp3d_many 
+       Variables: x, y, z, f, kt, ft, nx, ny, nz, nvars, xt, yt, zt
+
+   source/physics/Eos/EosMain/Nuclear/kernel/bisection.F90
+       Subroutine: bisection 
+       Variables: bivar, keyerrt, keybisect
+       Subroutine: bisection_rho 
+       Variables: lr0, lt, y, lpressin, lr, bivar, keyerrr, keybisect
+
+   source/flashUtilities/UTPipeline/UTPipeline.F90
+       Subroutine: UTPipeline_iterateItems 
+       Variables: readOnlyFn
+
+   source/flashUtilities/rng/mt_rng/ut_randomGeneral.F90
+       Subroutine: ut_randSeedArray 
+       Variables: init_key
+
+   source/flashUtilities/Pipeline/UTPipeline.F90
+       Subroutine: UTPipeline_iterateItems 
+       Variables: readOnlyFn
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_findAllNeghID.F90
+       Subroutine: gr_findAllNeghID 
+       Variables: blockID, surrBlksSummary
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/gr_ptGetChildData.F90
+       Subroutine: gr_ptGetChildData 
+       Variables: blkSize, parentCornerID, srcStride, neghBlkID, neghProcID, negh, neghCornerID, numNegh
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/gr_ptFindNegh.F90
+       Subroutine: gr_ptFindNegh 
+       Variables: srcBlkID, negh, neghCornerID, numNegh
+
+   source/Grid/localAPI/gr_bicgInterface.F90
+       Subroutine: BiPCGStab 
+       Variables: isrc, isoln, poisfact, bcro, bcri, bcvi, bcpi, bcsi, bczi, bcyi, bc_types, bc_values
+
+   source/Grid/GridSolvers/HYPRE/gr_hypreLocalInterface.F90
+       Subroutine: hypre_pcggetconverged 
+       Variables: solver
+       Subroutine: hypre_describeerror 
+       Variables: hypreErr
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/Collective/gr_pfftMapToInput.F90
+       Subroutine: gr_pfftMapToInput 
+       Variables: pfftInputArray
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/Collective/gr_pfftMapFromOutput.F90
+       Subroutine: gr_pfftMapFromOutput 
+       Variables: pfftOutputArray
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftMapToInput.F90
+       Subroutine: gr_pfftMapToInput 
+       Variables: pfftInputArray
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftMapFromOutput.F90
+       Subroutine: gr_pfftMapFromOutput 
+       Variables: pfftOutputArray
+
+   source/Simulation/SimulationMain/CCSN/Simulation_initBlock.F90
+       Subroutine: Simulation_initBlock 
+       Variables: blockId
+       Subroutine: parabolic_interp 
+       Variables: x, var, n, y_l, y_c, y_r, var_interp
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/sim_spharm.F90
+       Subroutine: sim_spharm 
+       Variables: l, m, theta, phi, Ylm, dYdt, dYdp
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/sim_interface.F90
+       Subroutine: sim_spharm 
+       Variables: l, m, theta, phi, Ylm, dYdt, dYdp
+
+   source/Simulation/SimulationMain/unitTest/PFFT_PoissonFD/outtotecplot.F90
+       Subroutine: centervals2corners 
+       Variables: ng, nxb, nyb, nzb, nxc, nyc, nzc
+       Subroutine: int2char 
+       Variables: i, strng
+
+   source/IO/IOMain/io_rescaleCellBoxes.F90
+       Subroutine: scaleJ 
+       Variables: y
+       Subroutine: scaleK 
+       Variables: z
+
+
+-----------
+Lonely SAVE
+-----------
+
+Description: Using save by itself without specifying variables to save
+
+
+Violations:
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntegrate.F90
+      Line 164
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_matrix.F90
+      Line 123
+
+
+-------
+No TABS
+-------
+
+Description: Using TABS in Fortran source makes code non-portable. Consider replacing with ACHAR(9) 
+
+
+Violations:
+
+----------------------------------------------------
+Source code which is 8bit clean and no control chars
+----------------------------------------------------
+
+Description: Allow only ascii chars between 32 and 126 (and \r\n)
+
+
+Violations:
+
+---------------------
+common Blocks are bad
+---------------------
+
+Description: Avoid using common Blocks. Exceptions must be hardcoded in script
+
+
+Violations:
+   source/physics/sourceTerms/Ionize/IonizeMain/Nei/nei.F90
+       Common Blocks: locnei, locnei
+
+
+------------------
+sensible filenames
+------------------
+
+Description: name of source file must be name of the "main" subroutine or module in it
+
+
+Violations:
+   source/PhysicalConstants/PhysicalConstantsMain/pc_utilities.F90
+       subroutine (or module or C function) starting with pc_utilities not found
+
+   source/monitors/Debugger/DebuggerMain/UnitTest/out_of_bounds.c
+       subroutine (or module or C function) starting with out_of_bounds not found
+
+   source/monitors/Timers/TimersMain/MPINative/tmr_stackLib.F90
+       subroutine (or module or C function) starting with tmr_stackLib not found
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntBader.F90
+       subroutine (or module or C function) starting with pchem_netIntBader not found
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntRosen.F90
+       subroutine (or module or C function) starting with pchem_netIntRosen not found
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_matrix.F90
+       subroutine (or module or C function) starting with pchem_matrix not found
+
+   source/physics/sourceTerms/Ionize/IonizeMain/Nei/ion_integrate.F90
+       subroutine (or module or C function) starting with ion_integrate not found
+
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_tabReadhdf5.c
+       subroutine (or module or C function) starting with eos_tabReadhdf5 not found
+
+   source/physics/Eos/EosMain/Helmholtz/eos_tools.c
+       subroutine (or module or C function) starting with eos_tools not found
+
+   source/physics/Eos/EosMain/Helmholtz/SpeciesBased/Eos_vectorBased.F90
+       subroutine (or module or C function) starting with Eos_vectorBased not found
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp.F90
+       subroutine (or module or C function) starting with linterp not found
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp_many.F90
+       subroutine (or module or C function) starting with linterp_many not found
+
+   source/flashUtilities/contourSurface/iso.c
+       subroutine (or module or C function) starting with iso not found
+
+   source/flashUtilities/contourSurface/UnitTest/fakec.c
+       subroutine (or module or C function) starting with fakec not found
+
+   source/flashUtilities/contourSurface/UnitTest/fakef.F90
+       subroutine (or module or C function) starting with fakef not found
+
+   source/flashUtilities/rng/mt_rng/ut_randomGeneral.F90
+       subroutine (or module or C function) starting with ut_randomGeneral not found
+
+   source/flashUtilities/rng/mt_rng/ut_randC.c
+       subroutine (or module or C function) starting with ut_randC not found
+
+   source/flashUtilities/rng/mt_rng/mt19937ar.c
+       subroutine (or module or C function) starting with mt19937ar not found
+
+   source/flashUtilities/interpolation/cubic/ut_biCubicMonotoneDervatives.F90
+       subroutine (or module or C function) starting with ut_biCubicMonotoneDervatives not found
+
+   source/flashUtilities/sorting/quicksort/ut_qsortC.c
+       subroutine (or module or C function) starting with ut_qsortC not found
+
+   source/Particles/ParticlesMain/active/massive/LeapfrogCosmo/pt_coeffMisc.F90
+       subroutine (or module or C function) starting with pt_coeffMisc not found
+
+   source/Grid/GridMain/Chombo/wrapper/chombo_f_c_api.C
+       subroutine (or module or C function) starting with chombo_f_c_api not found
+
+   source/Grid/GridSolvers/HYPRE/gr_hypreF90CAdapters.c
+       subroutine (or module or C function) starting with gr_hypreF90CAdapters not found
+
+   source/Grid/GridSolvers/Pfft/fftpack_origF77.f
+       subroutine (or module or C function) starting with fftpack_origF77 not found
+
+   source/Grid/GridSolvers/Pfft/fftpack.f90
+       subroutine (or module or C function) starting with fftpack not found
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/comfV5.f
+       subroutine (or module or C function) starting with comfV5 not found
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/fishV5.f
+       subroutine (or module or C function) starting with fishV5 not found
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/blktriV5.f
+       subroutine (or module or C function) starting with blktriV5 not found
+
+   source/Simulation/SimulationMain/Chemistry_Test/ngr_hgMapBcType.F90
+       subroutine (or module or C function) starting with ngr_hgMapBcType not found
+
+   source/Simulation/SimulationMain/Chemistry_Test/old_Driver_computeDt.F90
+       subroutine (or module or C function) starting with old_Driver_computeDt not found
+
+   source/Simulation/SimulationMain/ConductionDelta/toms291.F90
+       subroutine (or module or C function) starting with toms291 not found
+
+   source/Simulation/SimulationMain/StirFromFile/forcing_generator/forcing_generator.F90
+       subroutine (or module or C function) starting with forcing_generator not found
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/toms291.F90
+       subroutine (or module or C function) starting with toms291 not found
+
+   source/Simulation/SimulationMain/Cool_Test/ngr_hgMapBcType.F90
+       subroutine (or module or C function) starting with ngr_hgMapBcType not found
+
+   source/Simulation/SimulationMain/Cool_Test/old_Driver_computeDt.F90
+       subroutine (or module or C function) starting with old_Driver_computeDt not found
+
+   source/Simulation/SimulationMain/ConductionDeltaSaDiff/toms291.F90
+       subroutine (or module or C function) starting with toms291 not found
+
+   source/IO/IOMain/io_compressDecompress.c
+       subroutine (or module or C function) starting with io_compressDecompress not found
+
+   source/IO/IOMain/hdf5/io_comp_decomp.c
+       subroutine (or module or C function) starting with io_comp_decomp not found
+
+   source/IO/IOMain/hdf5/io_h5_type_matched_xfer.c
+       subroutine (or module or C function) starting with io_h5_type_matched_xfer not found
+
+   source/IO/IOMain/hdf5/serial/io_h5file_interface.c
+       subroutine (or module or C function) starting with io_h5file_interface not found
+
+   source/IO/IOMain/hdf5/parallel/io_h5file_interface.c
+       subroutine (or module or C function) starting with io_h5file_interface not found
+
+   source/IO/IOMain/hdf5/parallel/PM_argonne/UnitTest/TestSerialWriteFortran/set_hdf5_c.c
+       subroutine (or module or C function) starting with set_hdf5_c not found
+
+   source/IO/IOMain/hdf5/parallel/PM_argonne/UnitTest/TestParallelWriteC/Test_parallel_write.c
+       subroutine (or module or C function) starting with Test_parallel_write not found
+
+   source/IO/IOMain/pnetcdf/io_ncmpi_interface.c
+       subroutine (or module or C function) starting with io_ncmpi_interface not found
+
+   source/IO/IOMain/pnetcdf/typeSelection/UnitTest/TestParallelWriteC/Test_parallel_write.c
+       subroutine (or module or C function) starting with Test_parallel_write not found
+
+   source/IO/IOTypes/io_set_grid_mpi_types.c
+       subroutine (or module or C function) starting with io_set_grid_mpi_types not found
+
+   source/IO/IOTypes/io_use_grid_mpi_types.c
+       subroutine (or module or C function) starting with io_use_grid_mpi_types not found
+
+   source/IO/IOParticles/direct/UG/io_readParticleData.F90
+       subroutine (or module or C function) starting with io_readParticleData not found
+
+   source/IO/IOParticles/direct/UG/io_writeParticleData.F90
+       subroutine (or module or C function) starting with io_writeParticleData not found
+
+
+----------------------------------------------------------------------------------------
+use USE always with ONLY (exceptions: use of some interface modules, use in _init files)
+----------------------------------------------------------------------------------------
+
+Description: Use of USE (for data) without ONLY qualifier makes things harder to debug
+
+
+Violations:
+   source/RuntimeParameters/RuntimeParametersMain/RuntimeParameters_data.F90
+      Line  31
+
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/RadTrans_finalize.F90
+      Line  33
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_networkSparsePointers.F90
+      Line  35
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_networkScreen.F90
+      Line  31
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_network.F90
+      Line  32
+      Line  33
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_networkRates.F90
+      Line  63
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_networkSparseJakob.F90
+      Line  38
+      Line  42
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_networkTable.F90
+      Line  26
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox13/bn_initNetwork.F90
+      Line  28
+      Line  29
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkSparsePointers.F90
+      Line  40
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkWeak.F90
+      Line  51
+      Line  52
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkDenseJakob.F90
+      Line  38
+      Line  39
+      Line  40
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkScreen.F90
+      Line  39
+      Line  40
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_network.F90
+      Line  36
+      Line  37
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkRates.F90
+      Line  53
+      Line  54
+      Line  55
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkSparseJakob.F90
+      Line  41
+      Line  43
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_networkTable.F90
+      Line  27
+      Line  28
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Aprox19/bn_initNetwork.F90
+      Line  27
+      Line  28
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkSparsePointers.F90
+      Line  35
+      Line  36
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkDenseJakob.F90
+      Line  36
+      Line  37
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkScreen.F90
+      Line  32
+      Line  33
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_network.F90
+      Line  35
+      Line  36
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkRates.F90
+      Line  28
+      Line  29
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkSparseJakob.F90
+      Line  39
+      Line  40
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_networkTable.F90
+      Line  25
+      Line  26
+
+   source/physics/sourceTerms/Burn/BurnMain/nuclearBurn/Iso7/bn_initNetwork.F90
+      Line  28
+      Line  29
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntBader.F90
+      Line  70
+      Line  75
+      Line 338
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntRosen.F90
+      Line 138
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_burner.F90
+      Line  72
+      Line  73
+      Line  74
+      Line  75
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_azbar.F90
+      Line  27
+      Line  28
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_networkDenseJakob.F90
+      Line  34
+      Line  35
+      Line  36
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_initNetwork.F90
+      Line  28
+      Line  29
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_coolMole2.F90
+      Line  26
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_coolFunction.F90
+      Line  27
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_networkRates.F90
+      Line  25
+      Line  26
+      Line  27
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/PrimordialChemistry.F90
+      Line  40
+      Line  42
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_networkScreen.F90
+      Line  30
+      Line  31
+      Line  32
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_network.F90
+      Line  30
+      Line  31
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/PrimordialChemistry_computeDt.F90
+      Line  34
+      Line  35
+      Line  36
+
+   source/physics/sourceTerms/Polytrope/PolytropeMain/Polytrope.F90
+      Line  28
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_fsInit.F90
+      Line   6
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/Flame_laminarSpeed.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/fl_fsInit.F90
+      Line   6
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/TFI/fl_fsInit.F90
+      Line   6
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsInit.F90
+      Line   8
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/kolmogorov/fl_fsTFIInit.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/pocheau/fl_fsTFIInit.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/fl_fsTFIInit.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIInit.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/damkohler/fl_fsTFIInit.F90
+      Line   7
+
+   source/physics/sourceTerms/Flame/FlameMain/RDSplit5point/Flame_step.F90
+      Line  53
+
+   source/physics/sourceTerms/Flame/FlameEffects/EIP/fl_effInit.F90
+      Line   3
+
+   source/physics/Hydro/HydroMain/unsplit/Hydro_computeVars.F90
+      Line  28
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_unsplitUpdate.F90
+      Line  61
+
+   source/physics/Hydro/HydroMain/unsplit/Hydro_computeDt.F90
+      Line  75
+
+   source/physics/Hydro/HydroMain/unsplit/threadWithinBlock/hy_uhd_unsplitUpdate.F90
+      Line  61
+
+   source/physics/Gravity/GravityMain/Poisson/BHTree/grv_intCoef1P2I.F90
+      Line  38
+      Line  76
+
+   source/physics/Eos/EosMain/Helmholtz/ExternalAbarZbar/eos_initHelmholtz.F90
+      Line  51
+
+   source/physics/Eos/EosMain/Helmholtz/Ye/eos_initHelmholtz.F90
+      Line  48
+
+   source/physics/Eos/EosMain/Helmholtz/SpeciesBased/eos_initHelmholtz.F90
+      Line  51
+
+   source/physics/Eos/EosMain/Nuclear/eos_initNuclear.F90
+      Line  38
+
+   source/physics/Eos/EosMain/Nuclear/kernel/readtable.F90
+      Line   5
+      Line   6
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findrho.F90
+      Line   4
+
+   source/physics/Eos/EosMain/Nuclear/kernel/nuc_eos.F90
+      Line  25
+      Line 193
+      Line 332
+      Line 352
+      Line 371
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findtemp.F90
+      Line   3
+      Line 149
+      Line 242
+
+   source/physics/Eos/EosMain/Nuclear/kernel/bisection.F90
+      Line   4
+      Line  87
+
+   source/flashUtilities/contourSurface/UnitTest/UnitTest_contourSurface.F90
+      Line  15
+
+   source/flashUtilities/UTPipeline/UTPipeline.F90
+      Line   9
+
+   source/flashUtilities/UTPipeline/UnitTest/test_pipeline.F90
+      Line   7
+      Line   8
+
+   source/flashUtilities/UTCounter/MasterSlave/UTCounter_sharedCounter.F90
+      Line  51
+
+   source/flashUtilities/UTCounter/Distributed/UTCounter_sharedCounter.F90
+      Line  51
+
+   source/flashUtilities/UTCounter/UnitTest/test_shared_counter.F90
+      Line   7
+      Line   8
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/GroupList.F90
+      Line   2
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/PersonList.F90
+      Line   2
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest.F90
+      Line   3
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest_ListObject.F90
+      Line   2
+      Line  16
+
+   source/flashUtilities/nameValueLL/nameValueLL_getNum.F90
+      Line  26
+      Line  39
+      Line  53
+      Line  67
+      Line  81
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkAccelGasOnSinks.F90
+      Line  33
+      Line  34
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkFindList.F90
+      Line  55
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkMarkRefineDerefine.F90
+      Line  65
+      Line  66
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkCreateParticle.F90
+      Line  47
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkAccelSinksOnGas.F90
+      Line  39
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkAdvanceParticles.F90
+      Line  39
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkMergingAfterCreation.F90
+      Line  36
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkInit.F90
+      Line  34
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkParticleMerging.F90
+      Line  37
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkDumpParticles.F90
+      Line  36
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkAccelSinksOnSinks.F90
+      Line  38
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkCreateAccrete.F90
+      Line  33
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkGetSubCycleTimeStep.F90
+      Line  42
+
+   source/Particles/ParticlesMain/active/DPD/pt_dpdNonBondedForces.F90
+      Line  41
+
+   source/Grid/GridMain/gr_GCReleaseScratch.F90
+      Line  44
+
+   source/Grid/GridMain/gr_GCAllocScratch.F90
+      Line  72
+
+   source/Grid/GridMain/Grid_GCPutScratch.F90
+      Line  80
+
+   source/Grid/GridMain/Grid_GCTransferOneBlk.F90
+      Line  59
+
+   source/Grid/GridMain/Chombo/UG/gr_createDomain.F90
+      Line  45
+
+   source/Grid/GridMain/Chombo/AMR/gr_createDomain.F90
+      Line  26
+
+   source/Grid/GridMain/Chombo/wrapper/chombo_f_c_interface.F90
+      Line  26
+      Line  35
+      Line  48
+
+   source/Grid/GridMain/paramesh/Grid_initDomain.F90
+      Line  60
+
+   source/Grid/GridMain/paramesh/paramesh4/flash_convert_cc_hook.F90
+      Line  68
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_checkGridState.F90
+      Line  30
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_amr_dump_runtime_parameters.F90
+      Line  52
+      Line  53
+      Line  54
+      Line  55
+      Line  56
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_markRefineDerefine.F90
+      Line  49
+      Line  51
+
+   source/Grid/GridMain/paramesh/paramesh4/flash_unconvert_cc_hook.F90
+      Line  72
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_initParameshArrays.F90
+      Line  44
+      Line  45
+      Line  46
+      Line  47
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/UNIT_TEST.F90
+      Line 184
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/MoveSieve/gr_ptStoreOffBlockCells.F90
+      Line  54
+
+   source/Grid/GridSolvers/IsoBndMultipole/gr_isoMpoleInit.F90
+      Line  28
+
+   source/Grid/GridSolvers/Multipole/gr_mpoleInit.F90
+      Line  31
+
+   source/Grid/GridSolvers/HYPRE/gr_hypreData.F90
+      Line  21
+
+   source/Grid/GridSolvers/HYPRE/paramesh/gr_hypreSetupGrid.F90
+      Line  69
+
+   source/Grid/GridSolvers/HYPRE/paramesh/gr_hypreAddGraph.F90
+      Line  56
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/gr_pfftPoissonDirect.F90
+      Line  70
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/Generic_Direct/gr_pfftPoissonDirect.F90
+      Line  70
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/PlaneSolver_blktri/gr_pfftPoissonDirect.F90
+      Line  74
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftListObject.F90
+      Line  14
+
+   source/Grid/GridSolvers/Multipole_new/gr_mpoleInit.F90
+      Line  20
+
+   source/Simulation/SimulationMain/FlatPlate/Simulation_initBlock.F90
+      Line  30
+
+   source/Simulation/SimulationMain/MGDInfinite/Simulation_initSpecies.F90.custom
+      Line  20
+
+   source/Simulation/SimulationMain/MGDInfinite/Simulation_initBlock.F90
+      Line  29
+
+   source/Simulation/SimulationMain/SBlast/Simulation_initBlock.F90
+      Line  57
+
+   source/Simulation/SimulationMain/Chemistry_Test/pchem_burner.F90
+      Line  72
+      Line  73
+      Line  74
+      Line  75
+      Line  76
+
+   source/Simulation/SimulationMain/Chemistry_Test/Simulation_initBlock.F90
+      Line  39
+
+   source/Simulation/SimulationMain/CCSN/Simulation_initBlock.F90
+      Line  31
+
+   source/Simulation/SimulationMain/HeatedFoil/Simulation_initBlock.F90
+      Line  29
+
+   source/Simulation/SimulationMain/GrayDiffRadShock/Simulation_initBlock.F90
+      Line  31
+
+   source/Simulation/SimulationMain/magnetoHD/unitTest/NohCylindricalRagelike/Simulation_initBlock.F90
+      Line  35
+
+   source/Simulation/SimulationMain/magnetoHD/Rotor/Simulation_initBlock.F90
+      Line  37
+
+   source/Simulation/SimulationMain/magnetoHD/NohCylindrical_02/Simulation_initBlock.F90
+      Line  65
+
+   source/Simulation/SimulationMain/magnetoHD/NohCylindrical_02/NRLSETUP/Simulation_initBlock.F90
+      Line  65
+
+   source/Simulation/SimulationMain/magnetoHD/NohCylindrical_02/MYSETUP/Simulation_initBlock.F90
+      Line  65
+
+   source/Simulation/SimulationMain/magnetoHD/Noh/Simulation_initBlock.F90
+      Line  35
+
+   source/Simulation/SimulationMain/magnetoHD/BlastBS/Simulation_initBlock.F90
+      Line  37
+
+   source/Simulation/SimulationMain/magnetoHD/Torus/Simulation_initBlock.F90
+      Line  34
+
+   source/Simulation/SimulationMain/magnetoHD/FieldLoop/Simulation_initBlock.F90
+      Line  35
+
+   source/Simulation/SimulationMain/DoubleMachReflection/Simulation_initBlock.F90
+      Line  45
+
+   source/Simulation/SimulationMain/Life/Simulation_initSpecies.F90
+      Line  19
+
+   source/Simulation/SimulationMain/Life/Simulation_initBlock.F90
+      Line  29
+
+   source/Simulation/SimulationMain/MGDStep/Simulation_initBlock.F90
+      Line  29
+
+   source/Simulation/SimulationMain/unitTest/PFFT_XYperZneuFD/Simulation_initBlock.F90
+      Line  34
+
+   source/Simulation/SimulationMain/unitTest/PFFT_BlktriFD/Simulation_initBlock.F90
+      Line  34
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-jeans/Simulation_initBlock.F90
+      Line  31
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-cylinder/Simulation_initSpecies.F90
+      Line  20
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-cylinder/Simulation_initBlock.F90
+      Line  32
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Simulation_initSpecies.F90
+      Line  20
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Simulation_initBlock.F90
+      Line  31
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-layer/Simulation_initBlock.F90
+      Line  31
+
+   source/Simulation/SimulationMain/unitTest/PFFT_PoissonFD/Grid_unitTest.F90
+      Line  41
+
+   source/Simulation/SimulationMain/ConductionDelta/Simulation_computeAnalytical.F90.notused
+      Line  44
+
+   source/Simulation/SimulationMain/ConductionDelta/Simulation_initBlock.F90
+      Line  43
+
+   source/Simulation/SimulationMain/LaserSlab/Simulation_initBlock.F90
+      Line  29
+
+   source/Simulation/SimulationMain/StirFromFile/forcing_generator/forcing_generator.F90
+      Line 452
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_init.F90.conductiveIC
+      Line  30
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_initBlock.F90.conductiveIC
+      Line  42
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_computeAnalytical.F90.conductiveIC
+      Line  44
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_initBlock.F90
+      Line  30
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/Simulation_computeAnalytical.F90.constCoul
+      Line  77
+
+   source/Simulation/SimulationMain/Cool_Test/Simulation_initBlock.F90
+      Line  39
+
+   source/Simulation/SimulationMain/ShafranovShock/Simulation_finalize.F90
+      Line  23
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_initBlock.F90
+      Line  11
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_initRestart.F90
+      Line  20
+
+   source/Simulation/SimulationMain/RTFlame/sim_hse_step.F90
+      Line   6
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_initBlock.F90
+      Line   7
+
+   source/Simulation/SimulationMain/ShuOsher/Simulation_initBlock.F90
+      Line  44
+
+   source/Simulation/SimulationMain/ConductionDeltaSaDiff/Simulation_initBlock.F90
+      Line  43
+
+   source/Simulation/SimulationMain/Flame1StageNoise/Simulation_initBlock.F90
+      Line  10
+
+   source/IO/IOMain/IO_data.F90
+      Line  26
+      Line  29
+
+   source/IO/IOMain/direct/PM/io_writeData.F90
+      Line  74
+
+   source/IO/IOMain/direct/PM/io_readData.F90
+      Line  42
+
+   source/IO/IOMain/chombo/IO_writeCheckpoint.F90
+      Line  64
+      Line  67
+
+   source/IO/IOMain/chombo/IO_readCheckpoint.F90
+      Line  27
+      Line  28
+      Line  29
+
+   source/IO/IOTypes/io_typeInit.F90
+      Line  39
+
+   source/IO/IOParticles/io_ptInit.F90
+      Line  32
+
+
+------------------------------------------
+Check all decl of functions are consistent
+------------------------------------------
+
+Description: Ensure that all declarations of a function have same arguments (same names and order)
+
+
+Violations:
+
+   Function gr_bcPutRegionsMixedGds has multiple declarations
+      source/Grid/localAPI/gr_bcInterface.F90
+         griddatastruct, axis, seconddir, thirddir, endpoints, regionsize, regiondatac, regiondatafn, regiondataft1, regiondataft2, blockid, idest
+      source/Grid/GridBoundaryConditions/gr_bcPutRegion.F90
+         griddatastruct, axis, seconddir, thirddir, endpoints, regionsize, regionc, regionfn, regionft1, regionft2, blockid, idest
+
+   Function Eos_nucOneZone has multiple declarations
+      source/physics/Eos/Eos_nucOneZone.F90
+         xdens, xtemp, xye, xener, xpres, xentr, xmunu, mode
+      source/physics/Eos/EosMain/Nuclear/Eos_nucOneZone.F90
+         xdens, xtemp, xye, xener, xpres, xentr, xdedt, xcs2, xxp, xxn, xxa, xxh, xvar, varid, mode
+
+   Function hy_uhd_eigenValue has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_eigenValue.F90
+         eigvalue, u_normal, c_fast, c_alfn, c_slow, c_hyp
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_eigenValue.F90
+         eigvalue, u_normal, c_fast, c_alfn, c_slow
+
+   Function Grid_bcApplyToRegionSpecialized has multiple declarations
+      source/Grid/Grid_bcApplyToRegionSpecialized.F90
+         bctype, griddatastruct, guard, axis, face, regiondata, regionsize, mask, applied, blockhandle, seconddir, thirddir, endpoints, blklimitsgc, idest
+      source/Simulation/SimulationMain/RTFlame/Grid_bcApplyToRegionSpecialized.F90.simplify
+         bctype, griddatastruct, guard, axis, face, region, regionsize, mask, applied, blockhandle, seconddir, thirddir, endpoints, blklimitsgc, idest
+
+   Function ed_computeBeamPower has multiple declarations
+      source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserBeams/ed_computeBeamPower.F90
+         timestep, timesimulation, pulsenumber, beampower
+      source/physics/sourceTerms/EnergyDeposition/localAPI/ed_computeBeamPower.F90
+         timestep, timesimulation, pulseid, beampower
+
+   Function gr_ptMoveOffBlk has multiple declarations
+      source/Grid/GridParticles/GridParticlesMove/UG/Directional/gr_ptMoveOffBlk.F90
+         databuf, propcount, localcount, bufferdim2, destbuf, numdest
+      source/Grid/GridParticles/GridParticlesMove/paramesh/VirtualParticles/gr_ptMoveOffBlk.F90
+         databuf, propcount, localcount, globalcount, destbuf, numdest
+      source/Grid/localAPI/gr_ptMoveOffBlk.F90
+         particles, part_props, localcount, maxlocalnumparticlesonproc, destbuf, numdest
+      source/Grid/localAPI/gr_ptInterface.F90
+         particles, part_props, localnumparticles, bufferdim2, destbuf, numdest
+
+   Function eos_newtonRaphson has multiple declarations
+      source/physics/Eos/EosMain/multiTemp/Multigamma/eos_mgamma.F90
+         veclen, mode, enerwanted, eosmask, cmask
+      source/physics/Eos/EosMain/multiTemp/Multitype/Eos.F90
+         veclen, eosdata, ilo, ihi, mode, whatwanted, massfrac, eosmaskplus, cmask, forceconstantinput
+
+   Function Driver_computeDt has multiple declarations
+      source/Driver/Driver_computeDt.F90
+         nbegin, nstep, simtime, dtold, dtnew
+      source/Simulation/SimulationMain/Chemistry_Test/old_Driver_computeDt.F90
+         mype, numprocs, nbegin, nstep, simtime, dtold, dtnew
+
+   Function gr_ptApplyBC has multiple declarations
+      source/Grid/GridParticles/GridParticlesMove/gr_ptApplyBC.F90
+         dataelement, propcount, blockid, lostelements, moved, negh, bndbox
+      source/Grid/localAPI/gr_ptInterface.F90
+         particle, propcount, blockid, lostparticles, moved, negh, bndbox
+
+   Function cond_logLambda has multiple declarations
+      source/physics/materialProperties/Conductivity/ConductivityMain/LeeMore/cond_logLambda.F90
+         tele, nele, tion, zbar, ll
+      source/physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ/cond_logLambda.F90
+         tele, nele, zbar, ll
+
+   Function updateConservedVariable has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_unsplitUpdate.F90
+         ul, fl, fr, gl, gr, hl, hr, gravx, gravy, gravz, dx, dy, dz, dt, sgeo
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_unsplitUpdate.F90
+         ul, xfluxl, yfluxl, zfluxl, xfluxr, yfluxr, zfluxr, gravx, gravy, gravz, dx, dy, dz, dt, sgeo
+
+   Function hy_uhd_eigenParameters has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_eigenParameters.F90
+         v, dir, u_normal, c_fast, c_alfn, c_slow, a_f, a_s, b_beta, c_hyp
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_eigenParameters.F90
+         v, dir, cons, u_normal, c_fast, c_alfn, c_slow, a_f, a_s, b_beta
+
+   Function hy_uhd_getRiemannState has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_getRiemannState.F90
+         blockid, blklimits, blklimitsgc, dt, del, ogravx, ogravy, ogravz, scrch_ctr, hy_spcr, hy_spcl, hy_spcsig, normalfieldupdate
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_getRiemannState.F90
+         blockid, blklimits, blklimitsgc, dt, del, ogravx, ogravy, ogravz, hgravx, hgravy, hgravz, normalfieldupdate
+
+   Function sim_find has multiple declarations
+      source/Simulation/SimulationMain/SedovSolidWall/Simulation_initBlock.F90
+         x, n, x0, i
+      source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Simulation_initBlock.F90
+         x, narr, x0, i
+
+   Function hydro_1d has multiple declarations
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/hydro_1d.F90
+         blockid, numintcells, numcells, guard, bcs, xyzswp, hy_meshme, dt, dt_old, jcell, kcell, igeom, usegravity, xbot, xtop, ybot, ytop, ylft, yrgt, zlft, zrgt, ugrid, primarycoord, primaryleftcoord, primaryrghtcoord, primarydx, secondcoord, thirdcoord, radialcoord, u, ut, utt, rho, p, e, tmp, game, gamc, xn, utbt, uttp, utlt, utrt, shock_multid, dtdx, arealeft, area, cvol, grav, ngrav, fict, rhoflx, uflx, pav, utflx, uttflx, eflx, eintflx, xnflx
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hy_ppm_kernelInterface.F90
+         blockid, numintcells, numcells, guard, bcs, xyzswp, hy_meshme, dt, dt_old, jcell, kcell, igeom, usegravity, xbot, xtop, ybot, ytop, ylft, yrgt, zlft, zrgt, ugrid, primarycoord, primaryleftcoord, primaryrghtcoord, primarydx, secondcoord, thirdcoord, radialcoord, u, ut, utt, rho, p, e, eintin, tmp, game, gamc, xn, utbt, uttp, utlt, utrt, shock_multid, dtdx, arealeft, area, cvol, grav, ngrav, fict, rhoflx, uflx, pav, utflx, uttflx, eflx, eintflx, eiaflx, oneflx, voflx, xnflx
+
+   Function ed_updatePlasma has multiple declarations
+      source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_updatePlasma.F90
+         blockcount, blocklist, scalefact
+      source/Simulation/SimulationMain/unitTest/Laser_quadraticTube/RingCubicPath/ed_updatePlasma.F90
+         blockcount, blocklist
+
+   Function hy_uhd_Marquina has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_Marquina.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_Marquina.F90
+         dir, vm, vp, fstar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function hypre_pcggetconverged has multiple declarations
+      source/Grid/GridSolvers/HYPRE/gr_hypreLocalInterface.F90
+         solver, converged
+      source/Grid/GridSolvers/HYPRE/gr_hypreLocalInterface.F90
+         solver, converged, ierr
+
+   Function hy_uhd_Roe has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_Roe.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_Roe.F90
+         dir, vm, vp, fstar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function fl_fsAtwood has multiple declarations
+      source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsAtwood.F90
+         solndata, atwood, dens_u, cl
+      source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwood.F90
+         solndata, atwood, dens_u, calclimits
+
+   Function hy_uhd_MarquinaModified has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_MarquinaModified.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/Hydro_Unsplit/hy_uhd_MarquinaModified.F90
+         dir, vm, vp, fstar
+
+   Function hy_uhd_HLL has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_HLL.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_HLL.F90
+         dir, vm, vp, fstar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function gr_createBlock has multiple declarations
+      source/Grid/GridMain/paramesh/gr_createBlock.F90
+         xblkmin, xblkmax, yblkmin, yblkmax, zblkmin, zblkmax, blockid
+      source/Grid/localAPI/gr_interface.F90
+         blockimin, blockimax, blockjmin, blockjmax, blockkmin, blockkmax, blockid
+
+   Function PrimordialChemistry_computeDt has multiple declarations
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_interface.F90
+         blockid, blklimits, blklimitsgc, solndata, dt_check, dt_minloc
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_computeDt.F90
+         blockid, blklimits, blklimitsgc, solndata, dt_chem, dt_minloc
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/PrimordialChemistry_computeDt.F90
+         blockid, mype, blklimits, blklimitsgc, solndata, dt_chem, dt_minloc
+
+   Function hy_uhd_HLLD has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_interface.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function hy_uhd_dataReconstOneStep has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_dataReconstOneStep.F90
+         blockid, blklimitsgc, order, ix, iy, iz, dt, del, ogravx, ogravy, ogravz, divu, flatcoeff, transx_updateonly, transy_updateonly, transz_updateonly, wp, wn, sig, lambda, lefteig, rghteig, hy_spcr, hy_spcl, hy_spcsig
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_dataReconstOneStep.F90
+         blockid, blklimitsgc, ix, iy, iz, dt, del, ogravx, ogravy, ogravz, v0, vxp, vxn, vyp, vyn, vzp, vzn, vxpp, vxnn, vypp, vynn, vzpp, vznn, vxppp, vxnnn, vyppp, vynnn, vzppp, vznnn, flatcoeff, transx_updateonly, transy_updateonly, transz_updateonly, wxp, wxn, wyp, wyn, wzp, wzn, sig, lambda, leig, reig
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         blockid, blklimitsgc, ix, iy, iz, dt, del, ogravx, ogravy, ogravz, divu, soundspeed, v0, vxp, vxn, vyp, vyn, vzp, vzn, vxpp, vxnn, vypp, vynn, vzpp, vznn, vxppp, vxnnn, vyppp, vynnn, vzppp, vznnn, flatcoeff, transx_updateonly, transy_updateonly, transz_updateonly, wxp, wxn, wyp, wyn, wzp, wzn, sig, lambda, leig, reig
+
+   Function Eos has multiple declarations
+      source/physics/Eos/Eos.F90
+         mode, veclen, eosdata, massfrac, mask, vecbegin, vecend, diagflag
+      source/physics/Eos/EosMain/Helmholtz/SpeciesBased/Eos_vectorBased.F90
+         mode, veclen, eosdata, massfrac, mask, vecbegin, vecend
+
+   Function Particles_initPositions has multiple declarations
+      source/Particles/Particles_interface.F90
+         partposinitialized, updaterefine
+      source/Simulation/SimulationMain/unitTest/ParticlesRefine/Particles_initPositions.F90
+         success, updaterefine
+
+   Function Conductivity has multiple declarations
+      source/physics/materialProperties/Conductivity/Conductivity.F90
+         xtemp, xden, massfrac, isochoriccond, diff_coeff, component
+      source/physics/materialProperties/Conductivity/ConductivityMain/LeeMore/Conductivity.F90
+         xtemp, xden, massfrac, cond, diff_coeff, component
+
+   Function hy_uhd_energyFix has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_energyFix.F90
+         blockid, blklimits, dt, dtold, del, eosmode
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_energyFix.F90
+         blockid, blklimits, dt, del, eosmode
+
+   Function states has multiple declarations
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/states.F90
+         numintcells, numcells, j, igeom, rho, u, rhol, rhor, ul, ur, utl, utr, uttl, uttr, p, pl, pr, gamcl, gamcr, ugrid, ce, game, gamer, gamc, gamel, eintl, eintr, xnl, xnr, dtdx, dt, x, xl, radial_coord, grav, fict
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hy_ppm_kernelInterface.F90
+         numintcells, numcells, j, igeom, rho, u, rhol, rhor, ul, ur, utl, utr, uttl, uttr, p, pl, pr, gamcl, gamcr, ugrid, ce, game, gamer, gamc, gamel, eintl, eintr, etotl, etotr, pfracl, pfracr, xnl, xnr, dtdx, dt, x, xl, radial_coord, grav, fict
+
+   Function hy_uhd_HLLC has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_HLLC.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_HLLC.F90
+         dir, vm, vp, fstar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function Driver_sourceTerms has multiple declarations
+      source/Driver/Driver_sourceTerms.F90
+         blockcount, blocklist, dt, pass
+      source/Simulation/SimulationMain/Chemistry_Test/Driver_sourceTerms.F90
+         blockcount, blocklist, dt
+
+   Function gr_hgMapBcType has multiple declarations
+      source/Grid/localAPI/gr_hgInterface.F90
+         bctypetoapply, bctypefromgrid, varindex, griddatastruct, axis, face, idest
+      source/Simulation/SimulationMain/Chemistry_Test/ngr_hgMapBcType.F90
+         bctypetoapply, bctypefromgrid, varindex, griddatastruct, idest
+
+   Function st_ounoiseupdate has multiple declarations
+      source/physics/sourceTerms/Stir/StirMain/Generate/st_ounoiseupdate.F90
+         vectorlength, vector, variance, dt, ts
+      source/Simulation/SimulationMain/StirFromFile/forcing_generator/forcing_generator.F90
+         vector, vectorlength, variance, dt, ts
+
+   Function Driver_abortFlash has multiple declarations
+      source/Driver/Driver_abortFlash.F90
+         errormessage
+      source/flashUtilities/UTPipeline/UTPipeline.F90
+         msg
+
+   Function hy_uhd_TVDslope has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_TVDslope.F90
+         dir, vl, v0, vr, lambda, leig, delbar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_TVDslope.F90
+         dir, vll, vl, v0, vr, vrr, lambdal, lambda, lambdar, leig, delbar
+
+   Function intrfc has multiple declarations
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/intrfc.F90
+         sweepdir, numintcells, numcells, guard, rho, u, ut, utt, p, rhol, rhor, ul, ur, utl, utr, uttl, uttr, pl, pr, vl, vr, gamcl, gamcr, game, gamel, gamer, gamc, grav, eint, eintl, eintr, xn, xnl, xnr, v, dx, x, tmp
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hy_ppm_kernelInterface.F90
+         sweepdir, numintcells, numcells, guard, rho, u, ut, utt, p, rhol, rhor, ul, ur, utl, utr, uttl, uttr, pl, pr, vl, vr, gamcl, gamcr, game, gamel, gamer, gamc, grav, eint, eintl, eintr, etot, etotl, etotr, pfrac, pfracl, pfracr, xn, xnl, xnr, v, dx, x, tmp
+
+   Function fl_fsTFIGamma has multiple declarations
+      source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/fl_fsTFIGamma.F90
+         g, up_over_s, de_over_dl
+      source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIGamma.F90
+         gammafit, up_over_s, de_over_dl
+
+   Function rieman has multiple declarations
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/rieman.F90
+         numintcells, numcells, rhoav, uav, utav, uttav, pav, urell, ugrdl, game, gameav, eintav, xnav, x
+      source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/rieman.F90
+         numintcells, numcells, rhoav, uav, utav, uttav, pav, urell, ugrdl, kappa, game, gameav, pfracav, eintav, etotav, xnav, x
+
+   Function hy_uhd_LLF has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_LLF.F90
+         dir, vm, vp, fstar, speed, ierr
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_LLF.F90
+         dir, vm, vp, fstar
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_interface.F90
+         dir, vm, vp, fstar, ierr
+
+   Function Hydro_computeDt has multiple declarations
+      source/physics/Hydro/Hydro_computeDt.F90
+         blockid, x, dx, uxgrid, y, dy, uygrid, z, dz, uzgrid, blklimits, blklimitsgc, solndata, dtcheck, dtminloc, extrainfo
+      source/physics/Hydro/HydroMain/unsplit/Hydro_computeDt.F90
+         blockid, x, dx, uxgrid, y, dy, uygrid, z, dz, uzgrid, blklimits, blklimitsgc, u, dtcheck, dtminloc, extrainfo
+
+   Function hy_uhd_unsplitUpdate has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_unsplitUpdate.F90
+         blockid, range_switch, dt, del, datasize, blklimits, blklimitsgc, xflux, yflux, zflux, gravx, gravy, gravz
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_unsplitUpdate.F90
+         blockid, range_switch, dt, dtold, del, datasize, blklimits, blklimitsgc, xflux, yflux, zflux, gravx, gravy, gravz
+
+   Function hy_uhd_checkRHjumpCond has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_checkRHjumpCond.F90
+         dir, dens, velocity, pres, gamc, wp, wn, swp, swn
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_checkRHjumpCond.F90
+         dir, idx, idy, idz, v0, vxr, vxl, vyr, vyl, vzr, vzl, wr, wl, swr, swl
+
+   Function gr_ptLocalMatch has multiple declarations
+      source/Grid/GridParticles/GridParticlesMove/gr_ptLocalMatch.F90
+         databuf, localcount, propcount, maxcount, sourcebuf, numsource, destbuf, numdest
+      source/Grid/localAPI/gr_ptInterface.F90
+         particles, localnumparticles, part_props, maxparticlesperproc, sourcebuf, numsource, destbuf, numdest
+
+   Function io_xfer_tree_data has multiple declarations
+      source/IO/IOMain/io_xfer_tree_data.F90
+         tree_data, fileid, libtype, xfertype, localnumblocks, localoffset, presentdims
+      source/IO/localAPI/io_typeInterface.F90
+         tree_data, fileid, libtype, xfertype, localnumblocksin, localoffsetin, presentdims
+
+   Function hy_uhd_getFaceFlux has multiple declarations
+      source/physics/Hydro/HydroMain/unsplit/hy_uhd_getFaceFlux.F90
+         blockid, blklimits, blklimitsgc, datasize, del, xflux, yflux, zflux, scrch_ctr, hy_spcr, hy_spcl, hy_spcsig, lastcall
+      source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_getFaceFlux.F90
+         blockid, blklimits, blklimitsgc, datasize, del, xflux, yflux, zflux, lastcall
+
+   Function neimn has multiple declarations
+      source/physics/sourceTerms/Ionize/IonizeMain/Eqi/nei.F90
+         tstep, tt, dd, xin, xout, sdot, idx, selnel
+      source/physics/sourceTerms/Ionize/IonizeMain/Nei/nei.F90
+         tstep, tt, dd, xin, xout, sdot, idx, xfrac
+
+   Function pchem_baderGift has multiple declarations
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntBader.F90
+         y, dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_integrateInterface.F90
+         y, dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob, jcounts
+
+   Function st_ounoiseinit has multiple declarations
+      source/physics/sourceTerms/Stir/StirMain/Generate/st_ounoiseinit.F90
+         vectorlength, iseed, variance, vector
+      source/Simulation/SimulationMain/StirFromFile/forcing_generator/forcing_generator.F90
+         vector, vectorlength, variance
+
+   Function steper has multiple declarations
+      source/physics/sourceTerms/Burn/BurnIntegrate/bn_netIntegrate.F90
+         y, dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob
+      source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntegrate.F90
+         y, dydx, nv, x, htry, eps, yscal, hdid, hnext, derivs, jakob, bjakob, jcounts
+
+   Function Grid_solvePoisson has multiple declarations
+      source/Grid/Grid_solvePoisson.F90
+         isoln, isrc, bctypes, bcvalues, poisfact
+      source/Grid/GridSolvers/BHTree/Wunsch/Grid_solvePoisson.F90
+         ipotvar, idensvar, bctypes, bcvalues, poisfact
+
+   Function Cool_computeDt has multiple declarations
+      source/physics/sourceTerms/Cool/Cool_computeDt.F90
+         blockid, blklimits, blklimitsgc, solndata, dt_check, dt_minloc
+      source/physics/sourceTerms/Cool/Cool_interface.F90
+         block_no, blklimits, blklimitsgc, solndata, dt_check, dt_minloc
+
+   Function gr_bcGetRegionsMixedGds has multiple declarations
+      source/Grid/localAPI/gr_bcInterface.F90
+         griddatastruct, axis, seconddir, thirddir, endpoints, regionsize, regiondatac, regiondatafn, regiondataft1, regiondataft2, blockid, idest
+      source/Grid/GridBoundaryConditions/gr_bcGetRegion.F90
+         griddatastruct, axis, seconddir, thirddir, endpoints, regionsize, regionc, regionfn, regionft1, regionft2, blockid, idest
+
+   Function UTCounter_startCounter has multiple declarations
+      source/flashUtilities/UTCounter/MasterSlave/UTCounter_sharedCounter.F90
+         countertarget
+      source/flashUtilities/UTCounter/Distributed/UTCounter_sharedCounter.F90
+         targetcount
+
+   Function io_writeData has multiple declarations
+      source/IO/IOMain/hdf5/serial/PM/io_writeData.F90
+         fileid
+      source/IO/IOMain/direct/PM/io_writeData.F90
+         iolun
+
+   Function setCombinedGamc has multiple declarations
+      source/physics/Eos/EosMain/Tabulated/eos_tabIonmix4.F90
+         gamccombined, coupled
+      source/physics/Eos/EosMain/multiTemp/Multigamma/eos_mgamma.F90
+         gamccombined
+
+   Function Grid_GCPutScratch has multiple declarations
+      source/Grid/Grid_GCPutScratch.F90
+         griddatastruct, needsetup, releasesetup, blkcount, blklist, indcount, indlist, gccnt, putdata
+      source/Grid/GridMain/Grid_GCPutScratch.F90
+         griddatastruct, needsetup, releasesetup, blkcnt, blklist, indcnt, indlist, gccnt, putdata
+
+   Function Grid_getMaxCommonRefinement has multiple declarations
+      source/Grid/Grid_getMaxCommonRefinement.F90
+         inputcomm, maxrefinement
+      source/Grid/GridMain/Grid_getMaxCommonRefinement.F90
+         inputcomm, maxcommonrefinement
+
+   Function ut_randomNumber has multiple declarations
+      source/flashUtilities/rng/ut_randomInterface.F90
+         x
+      source/flashUtilities/rng/ut_randomNumber.F90
+         r1
+
+   Function gr_ptMoveSieve has multiple declarations
+      source/Grid/GridParticles/GridParticlesMove/Sieve/gr_ptMoveSieve.F90
+         databuf, localcount, propcount, maxcount, numdest, matchprop
+      source/Grid/localAPI/gr_ptInterface.F90
+         particles, localnumparticles, part_props, maxparticlesperproc, numdest, matchprop
+
+   Function loglambda has multiple declarations
+      source/physics/sourceTerms/Heatexchange/HeatexchangeMain/LeeMore/hx_ieEquilTime.F90
+         tele, nele, tion, zbar, ll
+      source/physics/sourceTerms/Heatexchange/HeatexchangeMain/Spitzer/hx_ieEquilTime.F90
+         tele, nele, zbar, ll
+
+-------------
+RoboDoc check
+-------------
+
+Description: Checks for inconsistent robodoc header
+
+
+Violations:
+   source/PhysicalConstants/PhysicalConstantsMain/pc_utilities.F90
+       Synopsis name is 'pc_makeLowercase', filename is 'pc_utilities'
+
+   source/Driver/Driver_verifyInitDt.F90
+       Arguments found only in ARGUMENTS: myPE
+
+   source/Driver/Driver_driftSetSrcLoc.F90
+       Synopsis name is '', filename is 'Driver_driftSetSrcLoc'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: line, filename
+
+   source/Driver/Driver_driftUnk.F90
+       Synopsis name is '', filename is 'Driver_driftUnk'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: src_line, flags, src_file
+
+   source/Driver/Driver_driftBlock.F90
+       Synopsis name is '', filename is 'Driver_driftBlock'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: gds, src_line, ptr, blk, src_file
+
+   source/Driver/DriverMain/Driver_initParallel.F90
+       Synopsis name is '', filename is 'Driver_initParallel'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: numProcs, myPE
+
+   source/Driver/DriverMain/Driver_driftSetSrcLoc.F90
+       Synopsis name is '', filename is 'Driver_driftSetSrcLoc'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: line, filename
+
+   source/Driver/DriverMain/Driver_initSourceTerms.F90
+       Arguments found only in ARGUMENTS: myPE
+
+   source/Driver/DriverMain/Driver_driftUnk.F90
+       Synopsis name is '', filename is 'Driver_driftUnk'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: src_line, flags, src_file
+
+   source/Driver/DriverMain/Driver_driftBlock.F90
+       Synopsis name is '', filename is 'Driver_driftBlock'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: gds, src_line, ptr, blk, src_file
+
+   source/Driver/DriverMain/dr_limitDt.F90.save
+       Synopsis name is 'Driver_computeDt', filename is 'dr_limitDt'
+
+   source/Driver/DriverMain/Split/Driver_computeDtTemp.F90
+       Arguments found only in ARGUMENTS: myPE
+
+   source/monitors/Debugger/Debugger_interface.F90
+       Synopsis name is '', filename is 'Debugger_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/monitors/Timers/TimersMain/Tau/TauMetadata_interface.F90
+       Synopsis name is 'write_tau_metadata_str', filename is 'TauMetadata_interface'
+
+   source/physics/RadTrans/RadTrans_getDbgContext.F90
+       No ROBODOC header
+
+   source/physics/RadTrans/RadTransMain/RadTrans_getDbgContext.F90
+       No ROBODOC header
+
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/rt_calcTau.F90
+       Synopsis name is '', filename is 'rt_calcTau'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/rt_remapRays.F90
+       Synopsis name is 'rt_sampleRays', filename is 'rt_remapRays'
+
+   source/physics/sourceTerms/Stir/StirMain/FromFile/st_calcAccel.F90
+       Arguments found only in SYNOPSIS: blockid
+       Arguments found only in ARGUMENTS: blockID
+
+   source/physics/sourceTerms/Stir/StirMain/FromFile/st_readStirringDataFromFile.F90
+       Arguments found only in ARGUMENTS: AUTHOR, infile, timeinfile, time
+
+   source/physics/sourceTerms/Deleptonize/Deleptonize_getBounce.F90
+       Arguments found only in SYNOPSIS: bouncTime
+
+   source/physics/sourceTerms/Burn/Burn_computeAbarZbar.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Burn/Burn_guardCellMaskHook.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_checkReuseDepo.F90
+       Arguments found only in SYNOPSIS: reuseDepo
+       Arguments found only in ARGUMENTS: passSplitDriver
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserComm/Sync/ed_commIsTransportDone.F90
+       Arguments found only in SYNOPSIS: isTransportDone
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserComm/Async/ed_commProgressPipeline.F90
+       Arguments found only in SYNOPSIS: doFlush
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserComm/Async/ed_commIsTransportDone.F90
+       Arguments found only in SYNOPSIS: isTransportDone
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_interface.F90
+       Synopsis name is '', filename is 'PrimordialChemistry_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_init.F90
+       Synopsis name is '', filename is 'PrimordialChemistry_init'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistry_computeDt.F90
+       Found argument section with no arguments
+       Arguments found only in SYNOPSIS: dt_minloc, blockID, solnData, dt_check, myPE
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntBader.F90
+       Synopsis name is 'pchem_baderMa28', filename is 'pchem_netIntBader'
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryIntegrate/pchem_netIntRosen.F90
+       Synopsis name is 'pchem_rosenMa28', filename is 'pchem_netIntRosen'
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_dataNetworkSize.F90
+       Synopsis name is '', filename is 'pchem_dataNetworkSize'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_burner.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_networkDenseJakob.F90
+       Synopsis name is 'pchem_networkDenseJakok', filename is 'pchem_networkDenseJakob'
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_mapNetworkToSpecies.F90
+       Arguments found only in SYNOPSIS: networkIN
+       Arguments found only in ARGUMENTS: networkIn
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_initNetwork.F90
+       Synopsis name is '', filename is 'pchem_initNetwork'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/pchem_matrix.F90
+       Synopsis name is '', filename is 'pchem_matrix'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/PrimordialChemistry/PrimordialChemistryMain/GA08/PrimordialChemistry_computeDt.F90
+       Found argument section with no arguments
+       Arguments found only in SYNOPSIS: dt_minloc, blockID, solnData, dt_check, myPE
+
+   source/physics/sourceTerms/Heat/Heat_finalize.F90
+       Synopsis name is '', filename is 'Heat_finalize'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/Polytrope/PolytropeMain/Polytrope.F90
+       Found RoboDoc line not starting with !!
+
+   source/physics/sourceTerms/Turb/Turb_calc.F90
+       Synopsis name is 'Turb_init', filename is 'Turb_calc'
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_init.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_data.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_calcCompLimits.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_getFilterScale.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_calc.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_curlMag.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Turb/TurbMain/Turb_laplacian.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Ionize/Ionize_interface.F90
+       Synopsis name is '', filename is 'Ionize_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/Ionize/IonizeMain/ion_intCoeff.F90
+       Arguments found only in ARGUMENTS: NOTES
+
+   source/physics/sourceTerms/Ionize/IonizeMain/Eqi/nei.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Ionize/IonizeMain/Nei/nei.F90
+       Synopsis name is '', filename is 'nei'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/Ionize/IonizeMain/Nei/ion_integrate.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/Flame_rhJumpReactive.F90
+       Arguments found only in SYNOPSIS: qbar_b
+
+   source/physics/sourceTerms/Flame/Flame_laminarSpeed.F90
+       Arguments found only in SYNOPSIS: info
+
+   source/physics/sourceTerms/Flame/Flame_computeAbarZbar.F90
+       Arguments found only in ARGUMENTS: zbarData
+
+   source/physics/sourceTerms/Flame/FlameSpeed/fl_fsFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_fsGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_fsFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_flameSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_fsInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/LaminarOnly/fl_fsData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/Flame_laminarSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/fl_fsGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/fl_flameSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/fl_fsInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/fl_fsData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/TFI/fl_fsGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/TFI/fl_flameSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/TFI/fl_fsInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/Constant/TFI/fl_fsData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_flameSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/fl_fsAtwood.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwoodEndTable.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwoodData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwoodInitTable.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwood.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/fl_fsLaminarInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/Flame_laminarSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/fl_fsLaminarFlameSpeedBlock.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CO/fl_fsLaminarFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsLaminarInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/Flame_laminarSpeed.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsConeInterp.F90
+       Synopsis name is '', filename is 'fl_fsConeInterp'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsLaminarFlameSpeedBlock.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsUnburnDens.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsUnburnDensBlock.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsLaminarFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsConeData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIFlameSpeedBlock.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/fl_fsTFIFunc.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/fl_fsTFIGcMask.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/fl_fsTFIEnhance.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/fl_fsTFIFlameSpeedBlock.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/fl_fsTFIGamma.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/kolmogorov/fl_fsTFIData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/kolmogorov/fl_fsTFIAlpha.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/kolmogorov/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/pocheau/fl_fsTFIData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/pocheau/fl_fsTFIEnhance.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/pocheau/fl_fsTFIAlpha.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/pocheau/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/fl_fsTFIData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/fl_fsTFIEnhance.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIFunc.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaInt/fl_fsTFIGamma.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/charlette/gammaFit/fl_fsTFIGamma.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/damkohler/fl_fsTFIData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/damkohler/fl_fsTFIAlpha.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameSpeed/turbulent/tfi/damkohler/fl_fsTFIInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/Flame_getProfile.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/Flame_finalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/Flame_data.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/Flame_init.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/Flame_getWidth.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/RDSplit5point/fl_laplacian.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameMain/RDSplit5point/Flame_step.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/physics/sourceTerms/Flame/FlameEffects/Flame_rhJump.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/fl_effData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/EIP/Flame_computeAbarZbar.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/EIP/fl_effData.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/EIP/fl_effInit.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/EIP/fl_effects.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/BurnParametric/Flame_rhJumpReactive.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/FlameEffects/BurnParametric/fl_effects.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/localAPI/fl_fsAtwoodEndTable.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/localAPI/fl_fsAtwoodInitTable.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/localAPI/fl_effFinalize.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Flame/localAPI/fl_effects.F90
+       No ROBODOC header
+
+   source/physics/sourceTerms/Cool/Cool_interface.F90
+       Synopsis name is '', filename is 'Cool_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhBotNodeContrib.F90
+       Synopsis name is '', filename is 'TreeCol_bhBotNodeContrib'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhFillBotNode.F90
+       Synopsis name is '', filename is 'TreeCol_bhFillBotNode'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhAccNode.F90
+       Synopsis name is '', filename is 'TreeCol_bhAccNode'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhMAC.F90
+       Synopsis name is '', filename is 'TreeCol_bhMAC'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhPostprocNode.F90
+       Synopsis name is '', filename is 'TreeCol_bhPostprocNode'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhSelfContrib.F90
+       Synopsis name is '', filename is 'TreeCol_bhSelfContrib'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhAccBotNode.F90
+       Synopsis name is '', filename is 'TreeCol_bhAccBotNode'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhNormalizeNode.F90
+       Synopsis name is '', filename is 'TreeCol_bhNormalizeNode'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhNodeContrib.F90
+       Synopsis name is '', filename is 'TreeCol_bhNodeContrib'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhInitFieldVar.F90
+       Synopsis name is '', filename is 'TreeCol_bhInitFieldVar'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhStartBlock.F90
+       Synopsis name is '', filename is 'TreeCol_bhStartBlock'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhFinalizeBlock.F90
+       Synopsis name is '', filename is 'TreeCol_bhFinalizeBlock'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/TreeCol/TreeCol_bhPartErr.F90
+       Found argument section with no arguments
+       Arguments found only in SYNOPSIS: node, perr, dr, ndSize
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_DataReconstructNormalDir_MH.F90
+       Arguments found only in SYNOPSIS: reig0, leig0, lambda0
+       Arguments found only in ARGUMENTS: reig, leig, lambda
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_checkRHjumpCond.F90
+       Arguments found only in ARGUMENTS: SWn
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_DataReconstructNormalDir_WENO5.F90
+       Arguments found only in SYNOPSIS: reig0, leig0, lambda0
+       Arguments found only in ARGUMENTS: reig, leig, lambda
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_getFaceFlux.F90
+       Arguments found only in ARGUMENTS: hy_SpcSig, hy_SpcL
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_setMinTimeStep.F90
+       Arguments found only in SYNOPSIS: delta
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_getRiemannState.F90
+       Arguments found only in ARGUMENTS: hy_SpcSig, hy_SpcL
+
+   source/physics/Hydro/HydroMain/unsplit/hy_uhd_DataReconstructNormalDir_PPM.F90
+       Arguments found only in SYNOPSIS: reig0, leig0, lambda0
+       Arguments found only in ARGUMENTS: reig, leig, lambda
+
+   source/physics/Hydro/HydroMain/unsplit/multiTemp/hy_uhd_getCurrents.F90
+       Arguments found only in ARGUMENTS: iy, iz
+
+   source/physics/Hydro/HydroMain/unsplit/threadWithinBlock/hy_uhd_getFaceFlux.F90
+       Arguments found only in SYNOPSIS: scrch_Ctr
+       Arguments found only in ARGUMENTS: hy_SpcSig, hy_SpcL
+
+   source/physics/Hydro/HydroMain/unsplit/threadWithinBlock/hy_uhd_getRiemannState.F90
+       Arguments found only in SYNOPSIS: scrch_Ctr
+       Arguments found only in ARGUMENTS: hy_SpcSig, hy_SpcL
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/rieman.F90
+       Arguments found only in SYNOPSIS: eintAv
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hy_dbgWriteStates.F90
+       No ROBODOC header
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/hydro_1d.F90
+       Arguments found only in SYNOPSIS: eintIn
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/states.F90
+       Arguments found only in SYNOPSIS: eintl, eintr
+
+   source/physics/Hydro/HydroMain/split/PPM/PPMKernel/multiTemp/intrfc.F90
+       Arguments found only in SYNOPSIS: eint, eintl, eintr
+
+   source/physics/Hydro/HydroMain/split/PPM/chomboCompatible/hy_ppm_flux_conserve.F90
+       No ROBODOC header
+
+   source/physics/Hydro/HydroMain/unsplit_old/multiTemp/hy_uhd_getCurrents.F90
+       Arguments found only in ARGUMENTS: iy, iz
+
+   source/physics/Hydro/HydroMain/unsplit_old/MHD_StaggeredMesh/hy_uhd_HLL7.F90
+       Synopsis name is 'hy_uhd_HLLD', filename is 'hy_uhd_HLL7'
+
+   source/physics/Gravity/GravityMain/Poisson/BHTree/grv_elintF.F90
+       Synopsis name is '', filename is 'grv_elintF'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/Gravity/GravityMain/Poisson/BHTree/grv_intCoef1P2I.F90
+       Synopsis name is '', filename is 'grv_intCoef1P2I'
+       Did you forget to use `use' before module name in synopsis?
+       Arguments found only in ARGUMENTS: eta, l, dzeta
+
+   source/physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ/cond_logLambdaII.F90
+       No ROBODOC header
+
+   source/physics/materialProperties/Conductivity/ConductivityMain/PowerLaw-gray/Conductivity.F90
+       Arguments found only in SYNOPSIS: isochoricCond
+       Arguments found only in ARGUMENTS: cond
+
+   source/physics/materialProperties/Opacity/localAPI/op_getSpeciesConstantOpacities.F90
+       Arguments found only in ARGUMENTS: dens
+
+   source/physics/materialProperties/Opacity/localAPI/op_getSpeciesConstcm2gOpacities.F90
+       Arguments found only in SYNOPSIS: dens
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Constcm2g/op_getSpeciesConstcm2gOpacities.F90
+       Arguments found only in SYNOPSIS: dens
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Constant/op_getSpeciesConstantOpacities.F90
+       Arguments found only in ARGUMENTS: dens
+
+   source/physics/materialProperties/NSE/NSE_interface.F90
+       No ROBODOC header
+
+   source/physics/materialProperties/MagneticResistivity/MagneticResistivityMain/MagneticResistivity_fullState.F90
+       Arguments found only in SYNOPSIS: resPerp, solnVec, resPar
+
+   source/physics/Eos/Eos_logDiagnostics.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/physics/Eos/Eos_nucOneZone.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabWriteTables.F90
+       Found argument section with no arguments
+       Arguments found only in SYNOPSIS: fileUnit, header
+
+   source/physics/Eos/EosMain/Tabulated/Eos_logDiagnostics.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabUpdateOutsideCount.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmix4Tables.F90
+       Arguments found only in SYNOPSIS: needENTable, needZFTable, needHCTable
+       Arguments found only in ARGUMENTS: indexHC, indexEN, indexZF
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabGetSpeciesAnyTableData.F90
+       Arguments found only in SYNOPSIS: needDerivs
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmixTables.F90
+       Arguments found only in ARGUMENTS: indexZF, indexHC, indexEN
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadTables.F90
+       Arguments found only in SYNOPSIS: groupName, td, wanted
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabIonmix4.F90
+       Arguments found only in SYNOPSIS: subtype
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabBrowseTables.F90
+       Arguments found only in SYNOPSIS: groupName
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabIonmix.F90
+       Arguments found only in SYNOPSIS: subtype
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabZeroOutsideCounts.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabLogOutsideCounts.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabGetSpeciesTabulatedData.F90
+       Arguments found only in SYNOPSIS: needZFTable, maxComp
+       Arguments found only in ARGUMENTS: needZFDerivs
+
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_tabReadOpacplotTables.F90
+       Arguments found only in SYNOPSIS: needENTable, needZFTable, needHCTable
+       Arguments found only in ARGUMENTS: indexHC, indexEN, indexZF
+
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_c_interface.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Helmholtz/ExternalAbarZbar/eos_externalComputeAbarZbar.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Helmholtz/SpeciesBased/Eos_vectorBased.F90
+       Synopsis name is 'Eos', filename is 'Eos_vectorBased'
+
+   source/physics/Eos/EosMain/Nuclear/eos_lowdens.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/readtable.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findrho.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/nuc_eos.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/eosmodule.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/findtemp.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/linterp_many.F90
+       No ROBODOC header
+
+   source/physics/Eos/EosMain/Nuclear/kernel/bisection.F90
+       No ROBODOC header
+
+   source/physics/Eos/localAPI/eos_idealGamma.F90
+       Arguments found only in SYNOPSIS: vecEnd, vecBegin
+       Arguments found only in ARGUMENTS: eosType
+
+   source/physics/Eos/localAPI/eos_idealGamma3T.F90
+       Arguments found only in SYNOPSIS: vecEnd, componentMask, vecBegin
+
+   source/physics/Eos/localAPI/eos_tabIonmix.F90
+       Arguments found only in SYNOPSIS: material, subtype, vecEnd, vecBegin
+
+   source/physics/Eos/localAPI/eos_nuclear.F90
+       Arguments found only in ARGUMENTS: eosType
+
+   source/physics/Diffuse/Diffuse_setContextInfo.F90
+       No ROBODOC header
+
+   source/physics/Diffuse/DiffuseMain/Diffuse_setContextInfo.F90
+       No ROBODOC header
+
+   source/physics/Diffuse/DiffuseMain/Unsplit/diff_getFaceFluxes.F90
+       Synopsis name is 'diff_computeAX', filename is 'diff_getFaceFluxes'
+
+   source/physics/Diffuse/localAPI/diff_computeFluxes.F90
+       Arguments found only in SYNOPSIS: blockCount, iVar, iFactorB, blockList
+
+   source/physics/Diffuse/localAPI/diff_computeAX.F90
+       Arguments found only in SYNOPSIS: iFactorD
+       Arguments found only in ARGUMENTS: iFactorB, del
+
+   source/physics/SolidMechanics/SolidMechanics.F90
+       Synopsis name is '', filename is 'SolidMechanics'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/SolidMechanics/SolidMechanics_init.F90
+       Synopsis name is '', filename is 'SolidMechanics_init'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/SolidMechanics/SolidMechanics_computeDt.F90
+       Synopsis name is '', filename is 'SolidMechanics_computeDt'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/SolidMechanics/SolidMechanics_finalize.F90
+       Synopsis name is '', filename is 'SolidMechanics_finalize'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/physics/SolidMechanics/SolidMechanics_interface.F90
+       No ROBODOC header
+
+   source/flashUtilities/contourSurface/ut_contourSurfaceInterface.F90
+       No ROBODOC header
+
+   source/flashUtilities/contourSurface/UnitTest/fakef.F90
+       No ROBODOC header
+
+   source/flashUtilities/contourSurface/UnitTest/UnitTest_contourSurface.F90
+       No ROBODOC header
+
+   source/flashUtilities/contiguousConversion/ut_conversionInterface.F90
+       Synopsis name is '', filename is 'ut_conversionInterface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/flashUtilities/contiguousConversion/UnitTest/UnitTest_ContiguousConversion.F90
+       No ROBODOC header
+
+   source/flashUtilities/UTPipeline/UTPipeline.F90
+       No ROBODOC header
+
+   source/flashUtilities/UTPipeline/UnitTest/test_pipeline.F90
+       No ROBODOC header
+
+   source/flashUtilities/UTCounter/MasterSlave/UTCounter_sharedCounter.F90
+       Synopsis name is '', filename is 'UTCounter_sharedCounter'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/flashUtilities/UTCounter/Distributed/UTCounter_sharedCounter.F90
+       Synopsis name is '', filename is 'UTCounter_sharedCounter'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/flashUtilities/UTCounter/UnitTest/test_shared_counter.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/ut_randomInterface.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/ut_randomSeed.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/ut_randomNumber.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/mt_rng/ut_randomGeneral.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/mt_rng/ut_randomSeed.F90
+       No ROBODOC header
+
+   source/flashUtilities/rng/mt_rng/ut_randomNumber.F90
+       No ROBODOC header
+
+   source/flashUtilities/Pipeline/UTPipeline.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/GroupList.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/Driver.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/UnitTest.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/PersonList.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/GroupNode.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTestListOfList/PersonNode.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest_ListObject.F90
+       No ROBODOC header
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest_NodeObject.F90
+       No ROBODOC header
+
+   source/flashUtilities/interpolation/cubic/ut_biCubicMonotoneDervatives.F90
+       Synopsis name is 'ut_biCubicMonotoneDerivatives', filename is 'ut_biCubicMonotoneDervatives'
+
+   source/flashUtilities/sorting/ut_sortInterface.F90
+       No ROBODOC header
+
+   source/flashUtilities/sorting/quicksort/ut_qsort.F90
+       No ROBODOC header
+
+   source/Particles/Particles_manageLost.F90
+       Arguments found only in ARGUMENTS: performed, EXAMPLE
+
+   source/Particles/Particles_initData.F90
+       Arguments found only in SYNOPSIS: partPosInitialized
+
+   source/Particles/Particles_interface.F90
+       Synopsis name is '', filename is 'Particles_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Particles/ParticlesMain/Particles_clean.F90
+       Found argument section with no arguments
+       Arguments found only in SYNOPSIS: particles, part_num
+
+   source/Particles/ParticlesMain/Particles_manageLost.F90
+       Arguments found only in ARGUMENTS: performed, EXAMPLE
+
+   source/Particles/ParticlesMain/active/charged/HybridPIC/pt_picData.F90
+       Synopsis name is '', filename is 'pt_picData'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Particles/ParticlesMain/active/charged/HybridPIC/pt_advanceCharged.F90
+       Arguments found only in SYNOPSIS: dtold, dtnew
+       Arguments found only in ARGUMENTS: dtOld, dtNew
+
+   source/Particles/ParticlesMain/active/charged/HybridPIC/pt_picApplyBoundary.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/Particles/ParticlesMain/active/charged/HybridPIC/pt_picInterface.F90
+       Synopsis name is '', filename is 'pt_picInterface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Particles/ParticlesMain/active/massive/LeapfrogCosmo/pt_coeffMisc.F90
+       Synopsis name is 'BNCOEFF', filename is 'pt_coeffMisc'
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkSort.F90
+       Synopsis name is 'NewQsort_IN', filename is 'pt_sinkSort'
+       Arguments found only in ARGUMENTS: QSindex, id_sorted
+
+   source/Particles/ParticlesMain/active/Sink/pt_sinkInterface.F90
+       Synopsis name is '', filename is 'pt_sinkInterface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Particles/ParticlesMain/active/DPD/pt_dpdData.F90
+       No ROBODOC header
+
+   source/Particles/ParticlesMain/active/DPD/pt_dpdSetIndices.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/Particles/ParticlesMain/active/DPD/pt_dpdNonBondedForces.F90
+       Arguments found only in SYNOPSIS: btypes, parent, pos, parentType, p_count, v, fvec
+       Arguments found only in ARGUMENTS: particles, updateRefine
+
+   source/Particles/ParticlesInitialization/pt_setMask.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/Particles/ParticlesInitialization/pt_setDataStructures.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/Particles/ParticlesInitialization/pt_findTagOffset.F90
+       Arguments found only in SYNOPSIS: tagOffset, newCount
+
+   source/Particles/localAPI/pt_advanceCustom.F90
+       Synopsis name is 'pt_advanceCharged', filename is 'pt_advanceCustom'
+       Arguments found only in SYNOPSIS: dtold, dtnew
+       Arguments found only in ARGUMENTS: dtOld, dtNew
+
+   source/Particles/localAPI/pt_advanceCharged.F90
+       Arguments found only in SYNOPSIS: dtold, dtnew
+       Arguments found only in ARGUMENTS: dtOld, dtNew
+
+   source/Particles/localAPI/pt_interface.F90
+       Synopsis name is '', filename is 'pt_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Particles/localAPI/pt_dpdSetIndices.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/Particles/localAPI/pt_dpdNonBondedForces.F90
+       Arguments found only in SYNOPSIS: btypes, parent, pos, parentType, p_count, v, fvec
+       Arguments found only in ARGUMENTS: particles, updateRefine
+
+   source/Multispecies/MultispeciesMain/Multispecies_getPropertyVector.F90
+       Arguments found only in SYNOPSIS: values
+       Arguments found only in ARGUMENTS: name, value
+
+   source/Grid/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/Grid_setSolverDbgContextInfo.F90
+       No ROBODOC header
+
+   source/Grid/Grid_getMaxRefinement.F90
+       Arguments found only in ARGUMENTS: Default
+
+   source/Grid/Grid_bcApplyToRegionMixedGds.F90
+       Arguments found only in ARGUMENTS: mask, coarse
+
+   source/Grid/Grid_guardCellMaskHook.F90
+       No ROBODOC header
+
+   source/Grid/Grid_bcApplyToRegion.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridMain/Grid_getMaxRefinement.F90
+       Arguments found only in ARGUMENTS: Default
+
+   source/Grid/GridMain/paramesh/gr_xyzToBlockLevel.F90
+       Arguments found only in ARGUMENTS: xyz, ijk, lev
+
+   source/Grid/GridMain/paramesh/gr_setGcFillNLayers.F90
+       Arguments found only in SYNOPSIS: returnlayers
+
+   source/Grid/GridMain/paramesh/Grid_getBlkCornerID.F90
+       Arguments found only in ARGUMENTS: inRegion
+
+   source/Grid/GridMain/paramesh/paramesh4/gr_sanitizeDataAfterInterp.F90
+       Arguments found only in SYNOPSIS: info
+
+   source/Grid/GridMain/paramesh/paramesh4/Grid_guardCellMaskHook.F90
+       No ROBODOC header
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/UNIT_TEST.F90
+       Synopsis name is 'global_Data_and_stubs', filename is 'UNIT_TEST'
+
+   source/Grid/GridParticles/GridParticlesMove/paramesh/VirtualParticles/gr_ptMoveOffBlk.F90
+       Arguments found only in ARGUMENTS: globalCount
+
+   source/Grid/localAPI/gr_xyzToBlockLevel.F90
+       Arguments found only in ARGUMENTS: xyz, ijk, lev
+
+   source/Grid/localAPI/gr_sbGetProcBlock.F90
+       Synopsis name is 'gr_sbCreateParticles', filename is 'gr_sbGetProcBlock'
+
+   source/Grid/localAPI/gr_sbSendPosn.F90
+       Synopsis name is 'gr_sbCreateParticles', filename is 'gr_sbSendPosn'
+
+   source/Grid/GridBoundaryConditions/Grid_bcApplyToRegionMixedGds.F90.forUSM
+       Arguments found only in ARGUMENTS: mask, coarse
+
+   source/Grid/GridBoundaryConditions/Grid_bcApplyToRegion.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridBoundaryConditions/OneRow/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridBoundaryConditions/Flash2HSE/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridBoundaryConditions/Flash3HSE/gr_hseStep.F90
+       Arguments found only in ARGUMENTS: Dec
+
+   source/Grid/GridBoundaryConditions/Flash3HSE/Grid_bcApplyToRegion.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridBoundaryConditions/Flash3HSE/Grid_bcApplyToRegionSpecialized.F90.forOneRow
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Grid/GridSolvers/Grid_setSolverDbgContextInfo.F90
+       No ROBODOC header
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhLeafContrib.F90
+       Arguments found only in ARGUMENTS: temp, tr, nodecnt, cpu
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhLocalInterface.F90
+       Synopsis name is '', filename is 'gr_bhLocalInterface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhTreeWalkBlockPQ.F90
+       Synopsis name is 'gr_bhTreeWalkBlock', filename is 'gr_bhTreeWalkBlockPQ'
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhParentContrib.F90
+       Arguments found only in SYNOPSIS: solnData
+       Arguments found only in ARGUMENTS: Phi
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhTreeWalk.F90
+       Arguments found only in ARGUMENTS: idensvar, ipotvar
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhTreeWalkBlockUnified.F90
+       Synopsis name is 'gr_bhTreeWalkBlock', filename is 'gr_bhTreeWalkBlockUnified'
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhPQPull.F90
+       Synopsis name is 'gr_bhMAC', filename is 'gr_bhPQPull'
+
+   source/Grid/GridSolvers/Multigrid/gr_hgLevelAddScalar.F90
+       Arguments found only in ARGUMENTS: use
+
+   source/Grid/GridSolvers/HYPRE/gr_hypreLocalInterface.F90
+       Synopsis name is '', filename is 'gr_hypreLocalInterface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Grid/GridSolvers/Pfft/fftpack.f90
+       Synopsis name is '', filename is 'fftpack'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Grid/GridSolvers/Pfft/ProcessGrid/unitTest/test_process_grid.F90
+       No ROBODOC header
+
+   source/Simulation/Flash.F90
+       Synopsis name is '', filename is 'Flash'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Simulation/Simulation_guardCellMaskHook.F90
+       No ROBODOC header
+
+   source/Simulation/Simulation_interface.F90
+       Synopsis name is '', filename is 'Simulation_interface'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Simulation/Simulation_adjustEvolution.F90
+       Arguments found only in SYNOPSIS: blklst
+       Arguments found only in ARGUMENTS: blklist
+
+   source/Simulation/SimulationMain/MGDInfinite/Simulation_adjustEvolution.F90
+       Arguments found only in SYNOPSIS: blklst
+       Arguments found only in ARGUMENTS: blklist
+
+   source/Simulation/SimulationMain/Jeans/JeansAnalytical.F90
+       Synopsis name is '', filename is 'JeansAnalytical'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Simulation/SimulationMain/Chemistry_Test/ngr_hgMapBcType.F90
+       Synopsis name is 'gr_hgMapBcType', filename is 'ngr_hgMapBcType'
+
+   source/Simulation/SimulationMain/Chemistry_Test/old_Driver_computeDt.F90
+       Synopsis name is 'Driver_computeDt', filename is 'old_Driver_computeDt'
+
+   source/Simulation/SimulationMain/Sedov/WriteParticleSubset/io_ptCreateSubset.F90
+       Arguments found only in ARGUMENTS: user
+
+   source/Simulation/SimulationMain/magnetoHD/Torus/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in SYNOPSIS: endPoints, blkLimitsGC, thirdDir, secondDir
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/DoubleMachReflection/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in SYNOPSIS: endPoints, blkLimitsGC, thirdDir, secondDir
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/unitTest/ParticlesAdvance/HomologousPassive/sim_ptAnaGetVelComponent.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/SinkMomTest/Simulation_data.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/SinkMomTest/Simulation_init.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/SinkMomTest/Simulation_initBlock.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/PFFT_Poisson/Grid_solvePoisson.F90
+       Arguments found only in ARGUMENTS: PERIODIC
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-cylinder/sim_interface.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/sim_spharm.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/sim_interface.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/ConductionDelta/sim_xToXi.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/ConductionDelta/toms291.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/StirFromFile/IO_writeIntegralQuantities.F90
+       Arguments found only in ARGUMENTS: AUTHOR
+
+   source/Simulation/SimulationMain/StirFromFile/forcing_generator/forcing_generator.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/sim_xToXi.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/HeatexchangeIonEle/toms291.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/SedovChamber/WriteParticleSubset/io_ptCreateSubset.F90
+       Arguments found only in ARGUMENTS: user
+
+   source/Simulation/SimulationMain/Blast2/Simulation_init.F90
+       Synopsis name is '', filename is 'Simulation_init'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Simulation/SimulationMain/Cool_Test/Simulation_init.F90
+       Synopsis name is '', filename is 'Simulation_init'
+       Did you forget to use `use' before module name in synopsis?
+
+   source/Simulation/SimulationMain/Cool_Test/ngr_hgMapBcType.F90
+       Synopsis name is 'gr_hgMapBcType', filename is 'ngr_hgMapBcType'
+
+   source/Simulation/SimulationMain/Cool_Test/old_Driver_computeDt.F90
+       Synopsis name is 'Driver_computeDt', filename is 'old_Driver_computeDt'
+
+   source/Simulation/SimulationMain/SinkRotatingCloudCore/Simulation_data.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/SinkRotatingCloudCore/Simulation_init.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/SinkRotatingCloudCore/Simulation_initBlock.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_data.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_init.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/FlameChannel/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/FlameChannel/IO_writeIntegralQuantities.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_initBlock.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/HydroStatic/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/RTFlame/gr_makeMaskConsistent.F90.obsolete
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_data.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/hse_interface.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_init.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/Grid_bcApplyToRegionSpecialized.F90.simplify
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/RTFlame/Grid_markRefineDerefine.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/IO_writeIntegralQuantities.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/flame_hse.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/sim_hse_step.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_guardCellMaskHook.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_initBlock.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/ShuOsher/Grid_bcApplyToRegionSpecialized.F90
+       Arguments found only in ARGUMENTS: coarse
+
+   source/Simulation/SimulationMain/ConductionDeltaSaDiff/sim_xToXi.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/ConductionDeltaSaDiff/toms291.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/Flame1StageNoise/Simulation_data.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/Flame1StageNoise/Simulation_initBlock.F90
+       No ROBODOC header
+
+   source/Simulation/SimulationMain/Plasma/pt_initPositions.F90
+       Arguments found only in SYNOPSIS: success
+
+   source/IO/IO_checkForPlot.F90
+       Arguments found only in ARGUMENTS: wrotePlot
+
+   source/IO/IO_writeRays.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/IO/IOMain/IO_checkForPlot.F90
+       Arguments found only in ARGUMENTS: wrotePlot
+
+   source/IO/IOMain/hdf5/IO_writeRays.F90
+       fix robodoc header descriptions and remove the AUTOGENROBODOC field
+
+   source/IO/IOTypes/io_do_xfer.F90
+       Arguments found only in ARGUMENTS: IO_WRITE_XFER
+
+   source/IO/IOParticles/direct/UG/io_readParticleData.F90
+       Synopsis name is 'io_ptReadParticleData', filename is 'io_readParticleData'
+
+   source/IO/IOParticles/direct/UG/io_writeParticleData.F90
+       Synopsis name is 'io_ptWRiteParticleData', filename is 'io_writeParticleData'
+
+
+----------------------------------
+balanced allocation / deallocation
+----------------------------------
+
+Description: Checks that anything for which memory is explicitly allocated is also deallocated.
+
+
+Violations:
+   source/monitors/Logfile/LogfileMain/log_allocateStrArr.F90
+      [33]
+
+   source/physics/RadTrans/RadTransMain/MGD/rt_init.F90
+      [85, 134, 135]
+
+   source/physics/RadTrans/RadTransMain/NeutrinoLeakage/rt_init.F90
+      [115, 116, 117, 118, 119, 120, 121, 131, 143, 144, 229, 230, 246, 247]
+
+   source/physics/sourceTerms/Stir/StirMain/Generate/Stir_init.F90
+      [122]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/EnergyDeposition_init.F90
+      [146]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserRaysCreate/ed_setupRays.F90
+      [43, 46]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserUtilities/ed_raysBlockIDInfo.F90
+      [86, 87]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserIO/ed_laserIOInit.F90
+      [87, 88, 89, 90]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserPulses/ed_setupPulses.F90
+      [71, 72]
+
+   source/physics/sourceTerms/EnergyDeposition/EnergyDepositionMain/Laser/LaserBeams/ed_setupBeams.F90
+      [140]
+
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwoodInitTable.F90
+      [69]
+
+   source/physics/sourceTerms/Flame/FlameSpeed/laminar/CONe/fl_fsLaminarInit.F90
+      [53, 55, 57, 59, 61]
+
+   source/physics/Hydro/HydroMain/split/PPM/hy_ppm_sweep.F90
+      [282]
+
+   source/physics/Hydro/HydroMain/split/PPM/threadBlockList/hy_ppm_sweep.F90
+      [297]
+
+   source/physics/Hydro/HydroMain/split/PPM/multiTemp/hy_ppm_sweep.F90
+      [300]
+
+   source/physics/Hydro/HydroMain/split/PPM/chomboCompatible/hy_ppm_sweep.F90
+      [306]
+
+   source/physics/Hydro/HydroMain/unsplit_old/hy_uhd_getFaceFlux.F90
+      [1110, 1111, 1112]
+
+   source/physics/Hydro/HydroMain/unsplit_old/multiTemp/hy_uhd_multiTempAfter.F90
+      [135, 139, 174, 178, 182]
+
+   source/physics/Hydro/HydroMain/unsplit_old/threadWithinBlock/hy_uhd_getFaceFlux.F90
+      [1218, 1219, 1220]
+
+   source/physics/Gravity/GravityMain/Poisson/BHTree/Gravity_bhGenEwaldField.F90
+      [140]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/op_setSpeciesElementsData.F90
+      [129, 130, 131, 132, 133, 135, 136, 137]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/Opacity_init.F90
+      [107, 108, 109, 110, 111, 112, 113, 114, 116]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Integrate/op_initIntegrate.F90
+      [65, 71, 77, 83, 96, 102, 108, 123, 129, 135, 153, 159]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/LowTemp/op_initLowTemp.F90
+      [138, 144, 150, 197, 203, 209, 215, 221, 231, 237, 243]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Constcm2g/op_initConstcm2g.F90
+      [70, 76, 82]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Tabulated/op_initTabulated.F90
+      [126, 136, 142, 148, 154, 160, 166, 172, 178, 184, 190, 196, 337, 343, 349, 355, 361, 385, 391, 397, 403, 409, 432, 438, 444, 450, 456]
+
+   source/physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Constant/op_initConstant.F90
+      [70, 76, 82]
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmix4Tables.F90
+      [224, 227, 240, 273, 276, 299, 340, 343, 366, 398, 401, 424, 467, 470, 493]
+
+   source/physics/Eos/EosMain/Tabulated/eos_initTabulated.F90
+      [119, 120, 121, 122, 123, 124, 137, 318, 334, 337, 353, 371, 374, 393, 620]
+
+   source/physics/Eos/EosMain/Tabulated/eos_tabReadIonmixTables.F90
+      [183, 186, 203, 232, 235, 250, 281, 284, 300]
+
+   source/physics/Eos/EosMain/Tabulated/Hdf5TableRead/eos_tabReadOpacplotTables.F90
+      [166, 167, 168, 169, 170, 171, 172, 173, 222, 225, 256, 259, 300, 303, 344, 347, 388, 391]
+
+   source/physics/Eos/EosMain/multiTemp/Multigamma/eos_vecAlloc.F90
+      [42, 43, 44, 45, 48, 49, 50, 53, 54, 55, 56, 57, 60, 61, 62, 81, 82, 83, 91, 92, 93, 95, 96, 97, 98, 99]
+
+   source/physics/Eos/EosMain/multiTemp/Gamma/eos_vecAlloc.F90
+      [44, 45, 46, 47, 50, 51, 52, 55, 56, 57, 58, 59, 62, 63, 64, 83, 84, 85, 93, 94, 95, 97, 98, 99, 100, 101]
+
+   source/physics/Eos/EosMain/Helmholtz/eos_vecAlloc.F90
+      [38, 39, 40, 41, 44, 45, 46, 49, 50, 51, 52, 53, 56, 57, 58, 77, 78, 79, 87, 88, 89]
+
+   source/physics/Eos/EosMain/Nuclear/kernel/readtable.F90
+      [66, 73, 81, 95, 99]
+
+   source/flashUtilities/Pipeline/PipelineMain/Pipeline_init.F90
+      [83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]
+
+   source/flashUtilities/datastructures/linkedlist/UnitTest/UnitTest_NodeObject.F90
+      [30]
+
+   source/flashUtilities/nameValueLL/nameValueLL_bcast.F90
+      [78, 120, 161, 201]
+
+   source/flashUtilities/nameValueLL/nameValueLL_rules.F90
+      [52, 56, 115, 119, 176]
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkInit.F90
+      [54, 102, 109]
+
+   source/Particles/ParticlesMain/active/Sink/Particles_sinkSyncWithParticles.F90
+      [82, 85]
+
+   source/Particles/ParticlesMain/active/DPD/pt_dpdInit.F90
+      [32]
+
+   source/Particles/ParticlesInitialization/Particles_init.F90
+      [180]
+
+   source/Grid/GridMain/gr_GCAllocScratch.F90
+      [107, 108, 109, 110, 116, 117, 118, 119, 125, 126, 127, 128, 134, 135, 136, 137]
+
+   source/Grid/GridMain/Chombo/gr_getCellFaceArea.F90
+      [91, 92, 93]
+
+   source/Grid/GridMain/Chombo/gr_getInteriorBlkPtr.F90
+      [72]
+
+   source/Grid/GridMain/UG/Grid_initDomain.F90
+      [70]
+
+   source/Grid/GridMain/UG/gr_createDomain.F90
+      [124, 125, 126, 130, 137, 141, 145, 150, 151, 152, 155, 159, 163, 167, 171, 175, 179, 183, 187, 191]
+
+   source/Grid/GridMain/UG/UGReordered/gr_createDomain.F90
+      [122, 123, 124, 127, 130, 133, 136, 139, 140, 141, 145, 149, 156, 160, 164, 167, 171, 174, 181]
+
+   source/Grid/GridMain/paramesh/Grid_init.F90
+      [370, 511, 512, 514]
+
+   source/Grid/GridMain/paramesh/paramesh4/Grid_getNeighProcList.F90
+      [108]
+
+   source/Grid/GridParticles/gr_ptInit.F90
+      [72, 73]
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/UNIT_TEST.F90
+      [203, 236, 337]
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/PttoPt/gr_ptMoveMappedData.F90
+      [100]
+
+   source/Grid/GridParticles/GridParticlesMapToMesh/Paramesh/PttoPt/gr_ptMapInit.F90
+      [38]
+
+   source/Grid/GridBoundaryConditions/gr_bcGetRegion.F90
+      [500, 508, 509, 510, 530, 548, 549, 550, 585, 593, 594, 595]
+
+   source/Grid/GridSolvers/IsoBndMultipole/gr_isoMpoleInit.F90
+      [168, 171, 174, 177, 180, 183, 186, 189, 192]
+
+   source/Grid/GridSolvers/Multipole/gr_mpoleInit.F90
+      [269, 274, 285, 290, 293, 296, 299, 302, 305, 308, 334, 337, 340, 343, 346, 349]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhComBlkProperties.F90
+      [184]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhInit.F90
+      [139, 150, 152, 172, 175, 177, 180, 182, 185, 187, 190, 192, 194, 196, 200, 221, 225]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhExchangeTrees.F90
+      [291]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhCalcBlockTreePos.F90
+      [50, 54]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhDestroyTree.F90
+      [45]
+
+   source/Grid/GridSolvers/BHTree/Wunsch/gr_bhBuildTreeBlock.F90
+      [55]
+
+   source/Grid/GridSolvers/Multigrid/gr_hgPoissonSolveBlock.F90
+      [74, 75, 77, 78, 79, 80, 82, 84, 107, 108, 109]
+
+   source/Grid/GridSolvers/Multigrid/gr_hgInit.F90
+      [75, 76, 208, 209, 210, 220, 222, 223, 231, 233, 235]
+
+   source/Grid/GridSolvers/Multigrid/PfftTopLevelSolve/gr_hgPfftInitGrid.F90
+      [103]
+
+   source/Grid/GridSolvers/HYPRE/UG/gr_hypreSetupGrid.F90
+      [80, 81]
+
+   source/Grid/GridSolvers/HYPRE/paramesh/gr_hypreSetupGrid.F90
+      [124, 125, 128, 130]
+
+   source/Grid/GridSolvers/Pfft/gr_pfftInitMetaData.F90
+      [257, 258, 286]
+
+   source/Grid/GridSolvers/Pfft/gr_pfftSetupDim.F90
+      [72, 77, 82, 87, 92, 98, 104, 114]
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/gr_pfftPoissonDirect.F90
+      [164, 165, 194, 196, 201, 225, 226, 251]
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/Generic_Direct/gr_pfftPoissonDirect.F90
+      [148]
+
+   source/Grid/GridSolvers/Pfft/DirectSolver/PlaneSolver_blktri/gr_pfftPoissonDirect.F90
+      [168, 172, 173, 201, 202, 206]
+
+   source/Grid/GridSolvers/Pfft/ImplicitDiffusionSolver/Grid_advanceDiffusion.F90
+      [202, 209]
+
+   source/Grid/GridSolvers/Pfft/HomBcTrigSolver/Grid_solvePoisson.F90
+      [212, 255]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/gr_pfftGridPointTable.F90
+      [43]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/Collective/gr_pfftGenMap.F90
+      [156, 161, 218, 272]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/Collective/gr_pfftFreeMap.F90
+      [45]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/Collective/gr_pfftHandleKaxisFragments.F90
+      [96]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftCommunicateNodeMetaData.F90
+      [218]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftFreeMap.F90
+      [45]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftCreateSendNode.F90
+      [92]
+
+   source/Grid/GridSolvers/Pfft/MeshReconfiguration/PtToPt/gr_pfftInitMapData.F90
+      [49]
+
+   source/Grid/GridSolvers/Pfft/SimplePeriodicSolver/Grid_solvePoisson.F90
+      [198, 241]
+
+   source/Grid/GridSolvers/Multipole_new/gr_mpoleInit.F90
+      [337, 349, 361, 367, 373, 379, 385, 391, 397, 403, 409, 415]
+
+   source/Grid/GridSolvers/Multipole_new/gr_mpoleAllocateRadialArrays.F90
+      [44, 50, 56, 66, 76, 82, 92]
+
+   source/Grid/GridSolvers/Multipole_new/gr_mpoleSetInnerZoneGrid.F90
+      [207, 255, 270, 271]
+
+   source/Simulation/SimulationMain/FlatPlate/Simulation_initBlock.F90
+      [61, 62, 63]
+
+   source/Simulation/SimulationMain/Jeans/Simulation_initBlock.F90
+      [75]
+
+   source/Simulation/SimulationMain/SBlast/Simulation_initBlock.F90
+      [123, 124, 125, 127, 128, 129, 131, 132, 133]
+
+   source/Simulation/SimulationMain/MacLaurin/Simulation_initBlock.F90
+      [60, 62, 64, 85]
+
+   source/Simulation/SimulationMain/unitTest/ParticlesAdvance/HomologousPassive/Simulation_initBlock.F90
+      [95, 96, 97]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/Poisson3_active/IO_writeIntegralQuantities.F90
+      [102, 103, 104]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/Poisson3_active/Simulation_initBlock.F90
+      [83]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree/Simulation_init.F90
+      [100, 102, 104, 106, 108, 110]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/BHTree-layer/Simulation_init.F90
+      [82, 84, 86, 88, 90, 92]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/Poisson3/IO_writeIntegralQuantities.F90
+      [102, 103, 104]
+
+   source/Simulation/SimulationMain/unitTest/Gravity/Poisson3/Simulation_initBlock.F90
+      [83]
+
+   source/Simulation/SimulationMain/unitTest/Laser_quadraticTube/RingCubicPath/Simulation_init.F90
+      [93, 94, 95, 96]
+
+   source/Simulation/SimulationMain/unitTest/Laser_quadraticTube/RingExpPotential/Simulation_init.F90
+      [125, 126, 127, 128, 129, 130]
+
+   source/Simulation/SimulationMain/unitTest/PFFT_PoissonFD/PresDp3P.F90
+      [70, 71, 119, 120, 121]
+
+   source/Simulation/SimulationMain/StirTurb/IO_readUserArray.F90.pnetcdf
+      [82]
+
+   source/Simulation/SimulationMain/StirTurb/IO_readUserArray.F90
+      [83]
+
+   source/Simulation/SimulationMain/ShafranovShock/Simulation_init.F90
+      [62, 63, 64, 65, 66, 67, 68, 69]
+
+   source/Simulation/SimulationMain/SodSpherical/Simulation_initBlock.F90
+      [123, 124, 125, 126, 127, 128, 129]
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_init.F90
+      [80, 81, 82, 83, 84]
+
+   source/Simulation/SimulationMain/RTFlame/Grid_markRefineDerefine.F90
+      [124]
+
+   source/IO/IOMain/io_prepareListsRead.F90
+      [51, 52, 54, 56, 58, 59, 61, 62, 63, 67, 68, 70, 71, 73, 74, 76, 77, 78]
+
+   source/IO/IOMain/IO_init.F90
+      [171]
+
+   source/IO/IOMain/io_prepareListsWrite.F90
+      [76, 77, 79, 80, 82, 83, 85, 86, 87, 171, 172, 176, 177, 185, 186, 190, 191, 199, 200, 204, 205, 213, 214, 215, 227, 228, 229]
+
+   source/IO/IOParticles/hdf5/serial/io_ptReadParticleData.F90
+      [103]
+
+   source/IO/IOParticles/hdf5/parallel/io_ptWriteParticleData.F90
+      [252]
+
+   source/IO/IOParticles/hdf5/parallel/io_ptReadParticleData.F90
+      [131]
+
+   source/IO/IOParticles/pnetcdf/io_ptReadParticleData.F90
+      [89]
+
+   source/IO/IOParticles/direct/UG/io_readParticleData.F90
+      [63]
+
+
+-------------------------------------------------------------------------
+consistency of API-level function calls / listings in API-level interface
+-------------------------------------------------------------------------
+
+Description: Calls to API-level subroutines must be present in appropriate interface
+
+
+Violations:
+   source/physics/sourceTerms/Flame/FlameSpeed/BuoyancyCompensation/CONe/fl_fsAtwoodInitTable.F90
+line 93: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_init.F90
+line 127: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+   source/Simulation/SimulationMain/FlameChannel/Simulation_initBlock.F90
+line 220: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+   source/Simulation/SimulationMain/RTFlame/Simulation_init.F90
+line 63: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+   source/Simulation/SimulationMain/Flame1StageNoise/Simulation_init.F90
+line 78: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+   source/Simulation/SimulationMain/Flame1StageNoise/Simulation_initBlock.F90
+line 105: The capitalization pattern of called subroutine "Flame_rhJump"
+does not match the corresponding subroutine in the interface file "source/physics/sourceTerms/Flame/Flame_interface.F90",
+where it appears as "Flame_rhjump".
+
+
+

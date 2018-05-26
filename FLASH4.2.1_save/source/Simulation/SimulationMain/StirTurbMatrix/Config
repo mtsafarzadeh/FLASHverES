@@ -1,0 +1,131 @@
+# SS : Configuration File for setting up the Hydro Stirring 
+# Turbulence problem. 
+
+REQUIRES Driver
+REQUIRES physics/sourceTerms/Stir/StirMain/StirOrig
+REQUIRES physics/Eos
+REQUIRES physics/Hydro
+REQUIRES Grid
+# SS : Below modules only for non-ideal (M)HD
+#REQUIRES physics/materialProperties/Viscosity/ViscosityMain
+#REQUIRES physics/materialProperties/MagneticResistivity/MagneticResistivityMain
+#REQUIRES physics/Diffuse/DiffuseMain/Split
+
+
+USESETUPVARS withParticles
+
+IF withParticles
+   PARTICLETYPE passive INITMETHOD lattice MAPMETHOD quadratic ADVMETHOD rungekutta
+
+   REQUIRES Particles/ParticlesMain
+   REQUESTS IO/IOMain
+   REQUESTS IO/IOParticles
+   REQUESTS Particles/ParticlesMapping/Quadratic
+   REQUESTS Particles/ParticlesInitialization/Lattice
+ENDIF
+
+# include IO routine only if IO unit included
+LINKIF IO_writeIntegralQuantities.F90 IO/IOMain
+# SS : commented these out
+# #LINKIF IO_writeUserArray.F90 IO/IOMain/hdf5/parallel
+# #LINKIF IO_readUserArray.F90 IO/IOMain/hdf5/parallel
+# ## SS : added these
+LINKIF IO_writeUserArray.F90 IO/IOMain/hdf5/serial
+LINKIF IO_readUserArray.F90 IO/IOMain/hdf5/serial
+
+LINKIF IO_writeUserArray.F90.pnetcdf IO/IOMain/pnetcdf
+LINKIF IO_readUserArray.F90.pnetcdf IO/IOMain/pnetcdf
+
+
+D      c_ambient       reference sound speed
+D      rho_ambient     reference density
+D      mach            reference mach number
+D      useViscosity                                     logical operator to set viscosity
+D      diff_visc_nu                                     reference kinematic viscosity
+D      visc_whichCoefficientIsConst                     can take values 1 or 2 for dynamic/constant kinematic viscosity
+D      useDiffuse                                       logical operator for the diffuse solver
+D      useDiffuseVisc                                   logical opeartor for computing viscous diffusive fluxes
+
+PARAMETER c_ambient      REAL    1.e0
+PARAMETER rho_ambient    REAL    1.e0
+PARAMETER mach           REAL    0.3
+PARAMETER writematrix    BOOLEAN   FALSE
+
+#  These are are the LOG densities at the same point in space 
+#  one two four and eight time steps into the past
+VARIABLE    DONE
+VARIABLE    DTWO
+VARIABLE    DFOR
+VARIABLE    DEIT
+
+#  These are are the LOG densities at the same point in space 
+#  one two four and eight time steps into the past
+#  smoothed over a sphere of radius 2 cells
+VARIABLE TWON
+VARIABLE TWTW
+VARIABLE TWFR
+VARIABLE TWEI
+
+#  These are are the LOG densities at the same point in space 
+#  one two four and eight time steps into the past
+#  smoothed over a sphere of radius 3 cells
+VARIABLE THON
+VARIABLE THTW
+VARIABLE THFR
+VARIABLE THEI
+
+#  These are are the LOG densities at the same point in space 
+#  one two four and eight time steps into the past
+#  smoothed over a sphere of radius 4 cells
+VARIABLE FRON
+VARIABLE FRTW
+VARIABLE FRFR
+VARIABLE FREI
+
+#  These are are the LOG densities which move along with the material 
+#  Divided by rho
+#  #  one two four and eight time steps into the past
+MASS_SCALAR MDON
+MASS_SCALAR MDTW
+MASS_SCALAR MDFR
+MASS_SCALAR MDEI
+
+# These are values of 1/rho whic move along with the material 
+MASS_SCALAR RDON
+MASS_SCALAR RDTW
+MASS_SCALAR RDFR
+MASS_SCALAR RDEI
+
+#  These are are the LOG densities which move along with the material 
+#   smoothed over a sphere of radius 2 cells
+MASS_SCALAR MTWO
+MASS_SCALAR MTWT
+MASS_SCALAR MTWF
+MASS_SCALAR MTWE
+
+#  These are are the LOG densities which move along with the material 
+#   smoothed over a sphere of radius 3 cells
+MASS_SCALAR MTHO
+MASS_SCALAR MTHT
+MASS_SCALAR MTHF
+MASS_SCALAR MTHE
+
+#  These are are the LOG densities which move along with the material 
+#   smoothed over a sphere of radius 4 cells
+MASS_SCALAR MFRO
+MASS_SCALAR MFRT
+MASS_SCALAR MFRF
+MASS_SCALAR MFRE
+
+PARAMETER   npdfstart   INTEGER    100
+
+
+SCRATCHCENTERVAR mvrt
+
+USESETUPVARS nDim
+IF nDim <> 3
+  SETUPERROR At present Stir turb works correctly only in 3D.  Use ./setup StirTurb -3d blah blah
+ENDIF
+# Don't use the passive scalars causes it's trashing things
+#NUMMASSSCALARS 1
+

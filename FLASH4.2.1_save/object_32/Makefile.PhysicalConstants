@@ -1,0 +1,9 @@
+PhysicalConstants += PhysicalConstants_get.o PhysicalConstants_init.o \
+	PhysicalConstants_list.o PhysicalConstants_listUnits.o \
+	PhysicalConstants_interface.o
+
+
+
+
+
+PhysicalConstants += PhysicalConstants_data.o pc_interface.o pc_utilities.o

@@ -1,0 +1,638 @@
+!!****if* source/physics/Hydro/HydroMain/unsplit_old/MHD_StaggeredMesh/hy_uhd_HLL7
+!!
+!! NAME
+!!
+!!  hy_uhd_HLLD
+!!
+!! SYNOPSIS
+!!
+!!  hy_uhd_HLLD( integer(IN) :: dir,
+!!               real(IN)    :: Vm(HY_VARINUM+4),
+!!               real(IN)    :: Vp(HY_VARINUM+4),
+!!               real(OUT)   :: Fstar(HY_VARINUM),
+!!               real(OUT)   :: vint  )
+!!
+!! ARGUMENTS
+!!
+!!  dir    - a spatial direction for which the flux is being considered and computed
+!!  Vm     - primitive variable for left state
+!!            (DENS,VELX,VELY,VELZ,MAGX,MAGY,MAGZ,PRES + GAMC,GAME,EINT,TEMP)
+!!  Vp     - primitive variable for right state
+!!            (DENS,VELX,VELY,VELZ,MAGX,MAGY,MAGZ,PRES + GAMC,GAME,EINT,TEMP)
+!!  Fstar  - computed flux data
+!!  vint   - interface velocity
+!!
+!! DESCRIPTION
+!! 
+!!   This computes Godunov high-order fluxes based on the left and right Riemann states.
+!!
+!!   The HLLD Riemann fan:
+!!
+!!            SL*       SM       SR*
+!!   SL        \        |        /        SR      
+!!     *        \       |       /        *
+!!       *   UL* \ UL** | UR** / UR*   *
+!!         *      \     |     /      *
+!!           *     \    |    /     *
+!!             *    \   |   /    *
+!!           UL  *   \  |  /   *   UR
+!!                 *  \ | /  *
+!!                   * \|/ *
+!!   --------------------------------------
+!!
+!! REFERENCE
+!!
+!!  * Miyoshi & Kusano, JCP, 208:315-344, 2005
+!!
+!!***
+!#define hll7A
+!#define hll7B
+#define hll7C
+!#define hlld
+
+!!! NOTE: THIS VERSION IS STILL EXPERIMENTAL!
+Subroutine hy_uhd_HLL7(dir,Vm,Vp,Fstar,ix,iy,iz,blkLimitsGC,LambdaFix)
+  
+  use hy_uhd_interface,     ONLY : hy_uhd_prim2con,hy_uhd_prim2flx,hy_uhd_HLLC,hy_uhd_con2prim
+  use Hydro_data,           ONLY : hy_shockInstabilityFix
+
+  implicit none
+
+#include "constants.h"
+#include "Flash.h"
+#include "UHD.h"
+
+  !! Arguments type declaration -----------
+  integer, intent(IN) :: dir
+  real, dimension(HY_VARINUMMAX), intent(IN) :: Vm, Vp
+  real, dimension(HY_VARINUM), intent(OUT):: Fstar
+  integer, intent(IN) :: ix,iy,iz
+  integer, dimension(LOW:HIGH,MDIM),intent(IN) :: blkLimitsGC
+#ifdef FIXEDBLOCKSIZE
+  real, dimension(NDIM,2, &
+                  GRID_ILO_GC:GRID_IHI_GC, &
+                  GRID_JLO_GC:GRID_JHI_GC, &
+                  GRID_KLO_GC:GRID_KHI_GC),&
+                  intent(IN) :: LambdaFix
+#else
+  real, dimension(NDIM,2,&
+                  blkLimitsGC(LOW,IAXIS):blkLimitsGC(HIGH,IAXIS), &
+                  blkLimitsGC(LOW,JAXIS):blkLimitsGC(HIGH,JAXIS), &
+                  blkLimitsGC(LOW,KAXIS):blkLimitsGC(HIGH,KAXIS)),&
+                  intent(IN) :: LambdaFix
+#endif
+  !! --------------------------------------
+
+  logical :: StarLeft,StarRight
+  real, parameter :: epsilon = 1.e-6
+  real :: densL,presL,velxL,velyL,velzL,magxL,magyL,magzL
+  real :: densR,presR,velxR,velyR,velzR,magxR,magyR,magzR
+  real :: cfL,cfR,aL2,aR2,gamcL,gamcR,magBL2,magBR2
+  real :: magnL,magnR,magtL,magtR,velnL,velnR
+  real :: SM,SL,SR,SL2,SR2
+  real :: dStarL,dStarR,prestL,prestR,pres,Bn_hll
+  real :: scrch1L,scrch1R,scrch2L,scrch2R
+  real :: scrch3L,scrch3R,scrch4L,scrch4R,scrch5L,scrch5R
+  real :: velxStarL,velyStarL,velzStarL,velxStarR,velyStarR,velzStarR
+  real :: magxStarL,magyStarL,magzStarL,magxStarR,magyStarR,magzStarR
+  real :: velxStar2,velyStar2,velzStar2,magxStar2,magyStar2,magzStar2
+  real :: signumBn
+  real, dimension(HY_VARINUM) :: UL,UR,FL,FR,Uhll,UCstarL,UCstarR,UCstar2L,UCstar2R
+  real :: SL3,SR3,csL,csR
+  real, dimension(HY_VARINUMMAX+1) :: VL3,VR3
+  real, dimension(HY_VARINUM)   :: Fstar3
+
+
+  ! Begin HLLD
+  densL = Vm(HY_DENS)
+  velxL = Vm(HY_VELX)
+  velyL = Vm(HY_VELY)
+  velzL = Vm(HY_VELZ)
+  magxL = Vm(HY_MAGX)
+  magyL = Vm(HY_MAGY)
+  magzL = Vm(HY_MAGZ)
+  presL = Vm(HY_PRES)
+  gamcL = Vm(HY_GAMC)
+
+  densR = Vp(HY_DENS)
+  velxR = Vp(HY_VELX)
+  velyR = Vp(HY_VELY)
+  velzR = Vp(HY_VELZ)
+  magxR = Vp(HY_MAGX)
+  magyR = Vp(HY_MAGY)
+  magzR = Vp(HY_MAGZ)
+  presR = Vp(HY_PRES)
+  gamcR = Vp(HY_GAMC)
+
+
+  ! Get normal velocity component
+  select case (dir)
+  case (DIR_X)
+     magnL = magxL
+     magnR = magxR
+     magtL = magyL*magyL+magzL*magzL
+     magtR = magyR*magyR+magzR*magzR
+     velnL = velxL
+     velnR = velxR
+  case (DIR_Y)
+     magnL = magyL
+     magnR = magyR
+     magtL = magxL*magxL+magzL*magzL
+     magtR = magxR*magxR+magzR*magzR
+     velnL = velyL
+     velnR = velyR
+  case (DIR_Z)
+     magnL = magzL
+     magnR = magzR
+     magtL = magxL*magxL+magyL*magyL
+     magtR = magxR*magxR+magyR*magyR
+     velnL = velzL
+     velnR = velzR
+  end select
+
+  ! Some parameters
+  magBL2= dot_product(Vm(HY_MAGX:HY_MAGZ),Vm(HY_MAGX:HY_MAGZ))/densL
+  aL2   = gamcL*presL/densL
+  cfL   = 0.5*(aL2+magBL2+sqrt((aL2+magBL2)**2-4.*aL2*magnL*magnL/densL))
+  cfL   = sqrt(cfL)
+  csL   = 0.5*(aL2+magBL2-sqrt((aL2+magBL2)**2-4.*aL2*magnL*magnL/densL))
+  csL   = sqrt(csL)
+
+  magBR2= dot_product(Vp(HY_MAGX:HY_MAGZ),Vp(HY_MAGX:HY_MAGZ))/densR
+  aR2   = gamcR*presR/densR
+  cfR   = 0.5*(aR2+magBR2+sqrt((aR2+magBR2)**2-4.*aR2*magnR*magnR/densR))
+  cfR   = sqrt(cfR)
+  csR   = 0.5*(aR2+magBR2-sqrt((aR2+magBR2)**2-4.*aR2*magnR*magnR/densR))
+  csR   = sqrt(csR)
+
+  ! Get left/right going fastest wave speeds SL & SR for the left and right states
+  ! by S. F. Davis, SIAM J. Sci. Stat, Comput., 9(1988) 445.
+  ! Also see Miyoshi, Kusano, JCP, 208 (2005)
+  SL = min(velnL - cfL, velnR - cfR)
+  SR = max(velnL + cfL, velnR + cfR)
+
+
+  ! Total pressure
+  prestL = presL + 0.5*dot_product(Vm(HY_MAGX:HY_MAGZ),Vm(HY_MAGX:HY_MAGZ))
+  prestR = presR + 0.5*dot_product(Vp(HY_MAGX:HY_MAGZ),Vp(HY_MAGX:HY_MAGZ))
+
+  ! Convert primitive variables to conservative variables
+  call hy_uhd_prim2con(Vm(HY_DENS:HY_GAME),UL(HY_DENS:HY_MAGZ))
+  call hy_uhd_prim2con(Vp(HY_DENS:HY_GAME),UR(HY_DENS:HY_MAGZ))
+  call hy_uhd_prim2flx(dir,Vm(HY_DENS:HY_GAME),FL(F01DENS_FLUX:F08MAGZ_FLUX))
+  call hy_uhd_prim2flx(dir,Vp(HY_DENS:HY_GAME),FR(F01DENS_FLUX:F08MAGZ_FLUX))
+
+
+  ! Get HLL states for later use
+  if (SL > 0.) then
+     Uhll(HY_DENS:HY_MAGZ) = UL(HY_DENS:HY_MAGZ)
+  elseif ((SL <= 0.) .and. (SR >= 0.)) then
+     Uhll(HY_DENS:HY_MAGZ) = (SR*UR(HY_DENS:HY_MAGZ) &
+                            - SL*UL(HY_DENS:HY_MAGZ) &
+                            - FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+                            + FL(F01DENS_FLUX:F08MAGZ_FLUX))/(SR - SL)
+  else
+     Uhll(HY_DENS:HY_MAGZ) = UR(HY_DENS:HY_MAGZ)
+  endif
+
+
+  ! Calculate intermediate states ---------------------------------------------
+  Bn_hll = Uhll(HY_PRES+dir) !=(SR*magnR-SL*magnL)/(SR-SL)
+
+  ! Initialize flags for degeneracy
+  StarLeft = .true.
+  StarRight= .true.
+
+
+  !!***************************************
+  !! (I)    UL* and UR* regions           *
+  !!***************************************
+  ! Normal velocity component and the middle wave SM
+  ! SM = u*L = u**L = u*R = u**R
+  SM =(densR*velnR*(SR-velnR)-densL*velnL*(SL-velnL)&
+       -prestR+prestL-magnL*magnL+magnR*magnR)/&
+      (densR*(SR-velnR)-densL*(SL-velnL))
+
+  ! Perform H-corrections for Carbuncle instability fix
+  if (NDIM > 1 .and. hy_shockInstabilityFix .and. LambdaFix(dir,2,ix,iy,iz) > 0. ) then
+        SM = ((SL+SR)*SM-2.*SL*SR)/(SR-SL)
+  endif
+
+
+  ! Convenient parameters
+  scrch1L = SL-velnL
+  scrch2L = SL-SM
+  scrch3L = SM-velnL
+
+  scrch1R = SR-velnR
+  scrch2R = SR-SM
+  scrch3R = SM-velnR
+
+  ! Total pressure in the whole Riemann fan
+  ! pres*L = pres*R = pres**L = pres**R = pres
+  pres = densL*scrch1L*(SM-velnL)+prestL-magnL*magnL+Bn_hll*Bn_hll
+
+  ! Densities in UL* and UR*
+  dStarL = UL(HY_DENS)*scrch1L/scrch2L
+  dStarR = UR(HY_DENS)*scrch1R/scrch2R
+
+  if ((abs(SM-velnL) .le. epsilon)     .and. &
+      (abs(SL-velnL+cfL) .le. epsilon) .and. &
+      (magtL .le. epsilon)     .and. &
+      (magnL*magnL .ge. gamcL*presL)) then
+     ! If this happens cf=ca >= a=cs and degeneracy occurs.
+     ! Note that since both transeversal fields are zeros
+     ! and normal field is nonzero, which means across
+     ! this wave, no jumps occur. In general, this is
+     ! a Alfven discontinuity (or rotational discontinuity)
+     ! where transeverse components might have jumps.
+     ! See also Miyoshi & Kusano.
+
+     UCstarL(HY_DENS:HY_MAGZ) = UL(HY_DENS:HY_MAGZ)
+     velxStarL = Vm(HY_VELX)
+     velyStarL = Vm(HY_VELY)
+     velzStarL = Vm(HY_VELZ)
+     magxStarL = Vm(HY_MAGX)
+     magyStarL = Vm(HY_MAGY)
+     magzStarL = Vm(HY_MAGZ)
+     StarLeft = .false.
+  endif
+
+  if ((abs(SM-velnR) .le. epsilon)     .and. &
+      (abs(SR-velnR-cfR) .le. epsilon) .and. &
+      (magtR .le. epsilon)     .and. &
+      (magnR*magnR .ge. gamcR*presR)) then
+     ! If this happens cf=ca >= a=cs and degeneracy occurs.
+     ! Note that since both transeversal fields are zeros
+     ! and normal field is nonzero, which means across
+     ! this wave, no jumps occur. In general, this is
+     ! a Alfven discontinuity (or rotational discontinuity)
+     ! where transeverse components might have jumps.
+     ! See also Miyoshi & Kusano.
+
+     UCstarR(HY_DENS:HY_MAGZ) = UR(HY_DENS:HY_MAGZ)
+     velxStarR = Vp(HY_VELX)
+     velyStarR = Vp(HY_VELY)
+     velzStarR = Vp(HY_VELZ)
+     magxStarR = Vp(HY_MAGX)
+     magyStarR = Vp(HY_MAGY)
+     magzStarR = Vp(HY_MAGZ)
+     StarRight = .false.
+  endif
+
+  ! Proceed calculating left star regions if there is no degeneracy
+  if (StarLeft) then
+     scrch4L = scrch3L/(densL*scrch1L*scrch2L-magnL*magnL)
+     scrch5L = (densL*scrch1L*scrch1L-magnL*magnL)/(densL*scrch1L*scrch2L-magnL*magnL)
+
+     select case (dir)
+     case (DIR_X)
+        ! Left primitive variables
+        velxStarL = SM
+        velyStarL = velyL - magxL*magyL*scrch4L
+        velzStarL = velzL - magxL*magzL*scrch4L
+
+        magxStarL = Bn_hll
+        magyStarL = magyL*scrch5L
+        magzStarL = magzL*scrch5L
+     case (DIR_Y)
+        ! Left
+        velxStarL = velxL - magyL*magxL*scrch4L
+        velyStarL = SM
+        velzStarL = velzL - magyL*magzL*scrch4L
+
+        magxStarL = magxL*scrch5L
+        magyStarL = Bn_hll
+        magzStarL = magzL*scrch5L
+     case (DIR_Z)
+        ! Left
+        velxStarL = velxL - magzL*magxL*scrch4L
+        velyStarL = velyL - magzL*magyL*scrch4L
+        velzStarL = SM
+
+        magxStarL = magxL*scrch5L
+        magyStarL = magyL*scrch5L
+        magzStarL = Bn_hll
+     end select
+
+     ! Left conserved variables
+     UCstarL(HY_DENS)= dStarL
+     UCstarL(HY_XMOM)= UCstarL(HY_DENS)*velxStarL
+     UCstarL(HY_YMOM)= UCstarL(HY_DENS)*velyStarL
+     UCstarL(HY_ZMOM)= UCstarL(HY_DENS)*velzStarL
+
+     UCstarL(HY_MAGX)= magxStarL
+     UCstarL(HY_MAGY)= magyStarL
+     UCstarL(HY_MAGZ)= magzStarL
+     UCstarL(HY_ENER)= (scrch1L*UL(HY_ENER)-prestL*velnL+pres*SM+&
+                   magnL*(Vm(HY_VELX)*Vm(HY_MAGX)+Vm(HY_VELY)*Vm(HY_MAGY)+Vm(HY_VELZ)*Vm(HY_MAGZ))-&
+                   magnL*( UCstarL(HY_XMOM)*UCstarL(HY_MAGX)&
+                          +UCstarL(HY_YMOM)*UCstarL(HY_MAGY)&
+                          +UCstarL(HY_ZMOM)*UCstarL(HY_MAGZ))/UCstarL(HY_DENS))/scrch2L
+  endif
+
+  ! Proceed calculating right star regions if there is no degeneracy
+  if (StarRight) then
+     scrch4R = scrch3R/(densR*scrch1R*scrch2R-magnR*magnR)
+     scrch5R = (densR*scrch1R*scrch1R-magnR*magnR)/&
+          (densR*scrch1R*scrch2R-magnR*magnR)
+
+     select case (dir)
+     case (DIR_X)
+        ! Right primitive variables
+        velxStarR = SM
+        velyStarR = velyR - magxR*magyR*scrch4R
+        velzStarR = velzR - magxR*magzR*scrch4R
+
+        magxStarR = Bn_hll
+        magyStarR = magyR*scrch5R
+        magzStarR = magzR*scrch5R
+     case (DIR_Y)
+        ! Right
+        velxStarR = velxR - magyR*magxR*scrch4R
+        velyStarR = SM
+        velzStarR = velzR - magyR*magzR*scrch4R
+
+        magxStarR = magxR*scrch5R
+        magyStarR = Bn_hll
+        magzStarR = magzR*scrch5R
+     case (DIR_Z)
+        ! Right
+        velxStarR = velxR - magzR*magxR*scrch4R
+        velyStarR = velyR - magzR*magyR*scrch4R
+        velzStarR = SM
+
+        magxStarR = magxR*scrch5R
+        magyStarR = magyR*scrch5R
+        magzStarR = Bn_hll
+     end select
+
+     ! Right conserved variables
+     UCstarR(HY_DENS)= dStarR
+     UCstarR(HY_XMOM)= UCstarR(HY_DENS)*velxStarR
+     UCstarR(HY_YMOM)= UCstarR(HY_DENS)*velyStarR
+     UCstarR(HY_ZMOM)= UCstarR(HY_DENS)*velzStarR
+
+     UCstarR(HY_MAGX)= magxStarR
+     UCstarR(HY_MAGY)= magyStarR
+     UCstarR(HY_MAGZ)= magzStarR
+     UCstarR(HY_ENER)= (scrch1R*UR(HY_ENER)-prestR*velnR+pres*SM+&
+                   magnR*(Vp(HY_VELX)*Vp(HY_MAGX)+Vp(HY_VELY)*Vp(HY_MAGY)+Vp(HY_VELZ)*Vp(HY_MAGZ))-&
+                   magnR*( UCstarR(HY_XMOM)*UCstarR(HY_MAGX)&
+                          +UCstarR(HY_YMOM)*UCstarR(HY_MAGY)&
+                          +UCstarR(HY_ZMOM)*UCstarR(HY_MAGZ))/UCstarR(HY_DENS))/scrch2R
+  endif
+  !! Done with calculating UL* and UR* regions !!
+
+  !!***************************************
+  !! (II)    UL** and UR** regions        *
+  !!***************************************
+  ! First calculate SL* and SR*
+  SL2 = SM - abs(magnL)/sqrt(UCstarL(HY_DENS)) ! = SL*
+  SR2 = SM + abs(magnR)/sqrt(UCstarR(HY_DENS)) ! = SR*
+
+  SL3= min(velnL - csL, velnR - csR)
+  SR3= max(velnL + csL, velnR + csR)
+
+  ! Densities
+  UCstar2L(HY_DENS) = UCstarL(HY_DENS)
+  UCstar2R(HY_DENS) = UCstarR(HY_DENS)
+
+  scrch1L = sqrt(UCstarL(HY_DENS))
+  scrch1R = sqrt(UCstarR(HY_DENS))
+  scrch2L = 1./(scrch1L + scrch1R)
+  scrch2R = scrch2L
+
+  signumBn = sign(1.,Bn_hll)
+
+  select case (dir)
+  case (DIR_X)
+     ! Left primitive variables
+     velxStar2 = SM
+     velyStar2 = (scrch1L*velyStarL+scrch1R*velyStarR&
+                 +(UCstarR(HY_MAGY)-UCstarL(HY_MAGY))*signumBn)*scrch2L
+     velzStar2 = (scrch1L*velzStarL+scrch1R*velzStarR&
+                 +(UCstarR(HY_MAGZ)-UCstarL(HY_MAGZ))*signumBn)*scrch2L
+
+     magxStar2 = Bn_hll
+     magyStar2 = (scrch1L*magyStarR+scrch1R*magyStarL&
+                 +scrch1L*scrch1R*(velyStarR-velyStarL)*signumBn)&
+                 *scrch2L
+     magzStar2 = (scrch1L*magzStarR+scrch1R*magzStarL&
+                 +scrch1L*scrch1R*(velzStarR-velzStarL)*signumBn)&
+                 *scrch2L
+
+  case (DIR_Y)
+     ! Left primitive variables
+     velxStar2 = (scrch1L*velxStarL+scrch1R*velxStarR&
+                 +(UCstarR(HY_MAGX)-UCstarL(HY_MAGX))*signumBn)*scrch2L
+     velyStar2 = SM
+     velzStar2 = (scrch1L*velzStarL+scrch1R*velzStarR&
+                 +(UCstarR(HY_MAGZ)-UCstarL(HY_MAGZ))*signumBn)*scrch2L
+
+     magxStar2 = (scrch1L*magxStarR+scrch1R*magxStarL&
+                 +scrch1L*scrch1R*(velxStarR-velxStarL)*signumBn)&
+                 *scrch2L
+     magyStar2 = Bn_hll
+     magzStar2 = (scrch1L*magzStarR+scrch1R*magzStarL&
+                 +scrch1L*scrch1R*(velzStarR-velzStarL)*signumBn)&
+                 *scrch2L
+
+  case (DIR_Z)
+     ! Left primitive variables
+     velxStar2 = (scrch1L*velxStarL+scrch1R*velxStarR&
+                 +(UCstarR(HY_MAGX)-UCstarL(HY_MAGX))*signumBn)*scrch2L
+     velyStar2 = (scrch1L*velyStarL+scrch1R*velyStarR&
+                 +(UCstarR(HY_MAGY)-UCstarL(HY_MAGY))*signumBn)*scrch2L
+     velzStar2 = SM
+
+     magxStar2 = (scrch1L*magxStarR+scrch1R*magxStarL&
+                 +scrch1L*scrch1R*(velxStarR-velxStarL)*signumBn)&
+                 *scrch2L
+     magyStar2 = (scrch1L*magyStarR+scrch1R*magyStarL&
+                 +scrch1L*scrch1R*(velyStarR-velyStarL)*signumBn)&
+                 *scrch2L
+     magzStar2 = Bn_hll
+
+  end select
+
+  ! Left conservative variables
+  UCstar2L(HY_XMOM) = UCstar2L(HY_DENS)*velxStar2
+  UCstar2L(HY_YMOM) = UCstar2L(HY_DENS)*velyStar2
+  UCstar2L(HY_ZMOM) = UCstar2L(HY_DENS)*velzStar2
+
+  UCstar2L(HY_MAGX) = magxStar2
+  UCstar2L(HY_MAGY) = magyStar2
+  UCstar2L(HY_MAGZ) = magzStar2
+  UCstar2L(HY_ENER) = UCstarL(HY_ENER)-sqrt(UCstarL(HY_DENS))*signumBn*&
+                (( UCstarL(HY_XMOM)*UCstarL(HY_MAGX)&
+                  +UCstarL(HY_YMOM)*UCstarL(HY_MAGY)&
+                  +UCstarL(HY_ZMOM)*UCstarL(HY_MAGZ))/UCstarL(HY_DENS)&
+                -( UCstar2L(HY_XMOM)*UCstar2L(HY_MAGX)&
+                  +UCstar2L(HY_YMOM)*UCstar2L(HY_MAGY)&
+                  +UCstar2L(HY_ZMOM)*UCstar2L(HY_MAGZ))/UCstar2L(HY_DENS))
+
+  ! Right conservative variables
+  UCstar2R(HY_XMOM) = UCstar2R(HY_DENS)*velxStar2
+  UCstar2R(HY_YMOM) = UCstar2R(HY_DENS)*velyStar2
+  UCstar2R(HY_ZMOM) = UCstar2R(HY_DENS)*velzStar2
+
+  UCstar2R(HY_MAGX) = magxStar2
+  UCstar2R(HY_MAGY) = magyStar2
+  UCstar2R(HY_MAGZ) = magzStar2
+  UCstar2R(HY_ENER) = UCstarR(HY_ENER)+sqrt(UCstarR(HY_DENS))*signumBn*&
+                (( UCstarR(HY_XMOM)*UCstarR(HY_MAGX)&
+                  +UCstarR(HY_YMOM)*UCstarR(HY_MAGY)&
+                  +UCstarR(HY_ZMOM)*UCstarR(HY_MAGZ))/UCstarR(HY_DENS)&
+                -( UCstar2R(HY_XMOM)*UCstar2R(HY_MAGX)&
+                  +UCstar2R(HY_YMOM)*UCstar2R(HY_MAGY)&
+                  +UCstar2R(HY_ZMOM)*UCstar2R(HY_MAGZ))/UCstar2R(HY_DENS))
+
+  !! END of calculating all HLLD states !!
+
+  !!***************************************
+  !! (III) HLL7 fluxes                    *
+  !!***************************************
+  if (SL >= 0.) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX)
+
+  elseif ((SL < 0.) .and. (SL2 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SL*(UCstarL(HY_DENS:HY_MAGZ) - UL(HY_DENS:HY_MAGZ))
+!------------------------------------------------------------------------
+#ifdef hlld
+  elseif ((SL2 < 0.) .and. (SM >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SL2*(UCstar2L(HY_DENS:HY_MAGZ) - UCstarL(HY_DENS:HY_MAGZ))&
+          +  SL*(UCstarL(HY_DENS:HY_MAGZ) - UL(HY_DENS:HY_MAGZ))
+
+  elseif ((SM < 0.) .and. (SR2 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SR2*(UCstar2R(HY_DENS:HY_MAGZ) - UCstarR(HY_DENS:HY_MAGZ))&
+          +  SR*(UCstarR(HY_DENS:HY_MAGZ) - UR(HY_DENS:HY_MAGZ))
+
+#endif
+!------------------------------------------------------------------------
+#ifdef hll7A
+  elseif ((SL2 < 0.) .and. (SL3 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SL2*(UCstar2L(HY_DENS:HY_MAGZ) - UCstarL(HY_DENS:HY_MAGZ))&
+          +  SL*(UCstarL(HY_DENS:HY_MAGZ) - UL(HY_DENS:HY_MAGZ))
+
+  elseif ((SL3 < 0.) .and. (SR3 >= 0.)) then
+
+     call hy_uhd_con2prim(UCstar2L(HY_DENS:HY_MAGZ),Vm(HY_GAME),VL3(HY_DENS:HY_MAGZ))
+     VL3(HY_GAMC:HY_GAME) = Vm(HY_GAMC)
+     VL3(HY_EINT) = Vm(HY_EINT)
+     VL3(HY_TEMP) = Vm(HY_TEMP)
+
+     call hy_uhd_con2prim(UCstar2R(HY_DENS:HY_MAGZ),Vp(HY_GAME),VR3(HY_DENS:HY_MAGZ))
+     VR3(HY_GAMC:HY_GAME) = Vp(HY_GAMC)
+     VR3(HY_EINT) = Vp(HY_EINT)
+     VR3(HY_TEMP) = Vp(HY_TEMP)
+
+     call hy_uhd_HLLC(dir,VL3,VR3,Fstar3)!,ix,iy,iz,blkLimitsGC,LambdaFix)
+     Fstar = Fstar3
+
+  elseif ((SR3 < 0.) .and. (SR2 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SR2*(UCstar2R(HY_DENS:HY_MAGZ) - UCstarR(HY_DENS:HY_MAGZ))&
+          +  SR*(UCstarR(HY_DENS:HY_MAGZ) - UR(HY_DENS:HY_MAGZ))
+#endif
+!------------------------------------------------------------------------
+#ifdef hll7B
+  elseif ((SL2 < 0.) .and. (SM >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SL2*(UCstar2L(HY_DENS:HY_MAGZ) - UCstarL(HY_DENS:HY_MAGZ))&
+          +  SL*(UCstarL(HY_DENS:HY_MAGZ) - UL(HY_DENS:HY_MAGZ))
+
+     if (SL3 > SL2) then
+        call hy_uhd_con2prim(UCstar2L(HY_DENS:HY_MAGZ),Vm(HY_GAME),VL3(HY_DENS:HY_MAGZ))
+        VL3(HY_GAMC:HY_GAME) = Vm(HY_GAMC)
+        VL3(HY_EINT) = 0.
+        VL3(HY_TEMP) = 0.
+
+        call hy_uhd_con2prim(UCstar2R(HY_DENS:HY_MAGZ),Vp(HY_GAME),VR3(HY_DENS:HY_MAGZ))
+        VR3(HY_GAMC:HY_GAME) = Vp(HY_GAMC)
+        VR3(HY_EINT) = 0.
+        VR3(HY_TEMP) = 0.
+
+        call hy_uhd_HLLC(dir,VL3,VR3,Fstar3)!,ix,iy,iz,blkLimitsGC,LambdaFix)
+        Fstar = Fstar3
+     endif
+
+  elseif ((SM < 0.) .and. (SR2 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SR2*(UCstar2R(HY_DENS:HY_MAGZ) - UCstarR(HY_DENS:HY_MAGZ))&
+          +  SR*(UCstarR(HY_DENS:HY_MAGZ) - UR(HY_DENS:HY_MAGZ))
+
+     if (SR3 < SR2) then
+        call hy_uhd_con2prim(UCstar2L(HY_DENS:HY_MAGZ),Vm(HY_GAME),VL3(HY_DENS:HY_MAGZ))
+        VL3(HY_GAMC:HY_GAME) = Vm(HY_GAMC)
+        VL3(HY_EINT) = 0.
+        VL3(HY_TEMP) = 0.
+
+        call hy_uhd_con2prim(UCstar2R(HY_DENS:HY_MAGZ),Vp(HY_GAME),VR3(HY_DENS:HY_MAGZ))
+        VR3(HY_GAMC:HY_GAME) = Vp(HY_GAMC)
+        VR3(HY_EINT) = 0.
+        VR3(HY_TEMP) = 0.
+
+        call hy_uhd_HLLC(dir,VL3,VR3,Fstar3)!,ix,iy,iz,blkLimitsGC,LambdaFix)
+        Fstar = Fstar3
+     endif
+#endif
+!------------------------------------------------------------------------
+#ifdef hll7C
+  elseif ((SL2 < 0.) .and. (SM >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FL(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SL2*(UCstar2L(HY_DENS:HY_MAGZ) - UCstarL(HY_DENS:HY_MAGZ))&
+          +  SL*(UCstarL(HY_DENS:HY_MAGZ) - UL(HY_DENS:HY_MAGZ))
+
+!!$     if (SL3 > SL2) then
+     if (SL3 < 0.) then
+        call hy_uhd_con2prim(UCstar2L(HY_DENS:HY_MAGZ),Vm(HY_GAME),VL3(HY_DENS:HY_MAGZ))
+        VL3(HY_GAMC:HY_GAME) = Vm(HY_GAMC)
+        VL3(HY_EINT) = 0.
+        VL3(HY_TEMP) = 0.
+
+        call hy_uhd_con2prim(UCstar2R(HY_DENS:HY_MAGZ),Vp(HY_GAME),VR3(HY_DENS:HY_MAGZ))
+        VR3(HY_GAMC:HY_GAME) = Vp(HY_GAMC)
+        VR3(HY_EINT) = 0.
+        VR3(HY_TEMP) = 0.
+
+        call hy_uhd_HLLC(dir,VL3,VR3,Fstar3)!,ix,iy,iz,blkLimitsGC,LambdaFix)
+        Fstar = Fstar3
+     endif
+
+  elseif ((SM < 0.) .and. (SR2 >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SR2*(UCstar2R(HY_DENS:HY_MAGZ) - UCstarR(HY_DENS:HY_MAGZ))&
+          +  SR*(UCstarR(HY_DENS:HY_MAGZ) - UR(HY_DENS:HY_MAGZ))
+
+!!$     if (SR3 < SR2) then
+     if (SR3 > 0.) then
+        call hy_uhd_con2prim(UCstar2L(HY_DENS:HY_MAGZ),Vm(HY_GAME),VL3(HY_DENS:HY_MAGZ))
+        VL3(HY_GAMC:HY_GAME) = Vm(HY_GAMC)
+        VL3(HY_EINT) = 0.
+        VL3(HY_TEMP) = 0.
+
+        call hy_uhd_con2prim(UCstar2R(HY_DENS:HY_MAGZ),Vp(HY_GAME),VR3(HY_DENS:HY_MAGZ))
+        VR3(HY_GAMC:HY_GAME) = Vp(HY_GAMC)
+        VR3(HY_EINT) = 0.
+        VR3(HY_TEMP) = 0.
+
+        call hy_uhd_HLLC(dir,VL3,VR3,Fstar3)!,ix,iy,iz,blkLimitsGC,LambdaFix)
+        Fstar = Fstar3
+     endif
+#endif
+!------------------------------------------------------------------------
+  elseif ((SR2 < 0.) .and. (SR >= 0.)) then
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX) &
+          + SR*(UCstarR(HY_DENS:HY_MAGZ) - UR(HY_DENS:HY_MAGZ))
+
+  else
+     Fstar(F01DENS_FLUX:F08MAGZ_FLUX) = FR(F01DENS_FLUX:F08MAGZ_FLUX)
+
+  endif
+
+End Subroutine hy_uhd_HLL7

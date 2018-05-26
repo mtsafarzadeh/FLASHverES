@@ -1,0 +1,54 @@
+REQUIRES Grid/GridSolvers/BHTree
+REQUIRES physics/Gravity/localAPI
+
+PPDEFINE GRAVITY
+
+# Note: Use "useFortran2008=1" on the setup command line to avoid building and
+# using a library of SPECFUN routines. If such library is not used, the compiler
+# should supoprt erf(), erfc(), erfc_scaled(), and bessel_j0() as intrinsic
+# functions.
+USESETUPVARS useFortran2008
+IF useFortran2008
+ELSE
+   LIBRARY   specfun
+   PPDEFINE  FLASH_USE_SPECFUN
+ENDIF
+
+
+D grv_bhNewton Value for Newton's constant. Specify -1.0 to use the value
+D & from the PhysicalConstants code unit.
+PARAMETER grv_bhNewton            REAL        -1.0 [ ... ]
+PARAMETER grv_bhMAC               STRING      "ApproxPartialErr"  [ "ApproxPartialErr", "MaxPartialErr", "SumSquare" ]
+PARAMETER grv_bhMPDegree          INTEGER     2	[ 2, 3, 4 ]
+PARAMETER grv_bhUseRelAccErr      BOOLEAN     FALSE
+PARAMETER grv_bhAccErr            REAL        0.1  [ 0 ... ]
+
+# for compatibility with other Poisson solvers
+# available options are: isolated, periodic and mixed
+PARAMETER   grav_boundary_type      STRING      "mixed" ["isolated","periodic","mixed"]
+
+# if grav_boundary_type == "mixed", boundaries can be set
+# independently for each direction; available options are:
+# isolated and periodic
+D   grav_boundary_type_x Gravity boundary type for the X direction, used if grav_boundary_type == "mixed"
+D   grav_boundary_type_y Gravity boundary type for the Y direction, used if grav_boundary_type == "mixed"
+D   grav_boundary_type_z Gravity boundary type for the Z direction, used if grav_boundary_type == "mixed"
+PARAMETER   grav_boundary_type_x    STRING      "isolated" ["isolated","periodic"]
+PARAMETER   grav_boundary_type_y    STRING      "isolated" ["isolated","periodic"]
+PARAMETER   grav_boundary_type_z    STRING      "isolated" ["isolated","periodic"]
+
+PARAMETER   grv_bhEwaldFieldNx        INTEGER     32	[ 1 ... ]
+PARAMETER   grv_bhEwaldFieldNy        INTEGER     32	[ 1 ... ]
+PARAMETER   grv_bhEwaldFieldNz        INTEGER     32	[ 1 ... ]
+PARAMETER   grv_bhEwaldSeriesN        INTEGER     10
+PARAMETER   grv_bhEwaldAlwaysGenerate BOOLEAN     TRUE
+PARAMETER   grv_bhEwaldFName          STRING      "ewald_field"
+PARAMETER   grv_bhEwaldNRef           INTEGER     -1
+PARAMETER   grv_bhLinearInterpolOnly  BOOLEAN    TRUE
+
+# acceleration error inverted; used by some multipole acceptance criteria to determine the maximum
+# allowed error of the node contribution
+D acei_variable	acceleration error inverted; used by some MACs to determine the maximum
+D & allowed error of the node contribution
+VARIABLE acei
+

@@ -1,0 +1,7 @@
+# Module requirements for active particles, long range time integration forces
+# [/source/Particles/timeIntegration/active/longRange/Gravity]
+
+DEFAULT ParticleMesh
+
+
+PARTICLEPROP gpot     REAL       # particle gravitational potential

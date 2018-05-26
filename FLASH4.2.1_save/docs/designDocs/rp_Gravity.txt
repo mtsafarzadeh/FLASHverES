@@ -1,0 +1,136 @@
+
+physics/Gravity
+    grav_boundary_type [STRING] ["isolated"]
+        Valid Values: Unconstrained
+        Type of gravitational boundary condition if a Poisson solve is used for
+        Gravity; string-valued version of grav_boundary. Accepts: "isolated",
+        "periodic", "dirichlet", and maybe others, depending on the Poisson
+        solver used. This is declared in the stub level of the Gravity unit to
+        allow the Grid unit to refer to this runtime parameter even when no
+        Gravity implementation is included.
+    useGravity [BOOLEAN] [FALSE]
+        Whether gravity calculations should be performed.
+
+physics/Gravity/GravityMain
+    useGravity [BOOLEAN] [TRUE]
+        Should the gravity calculations be performed?
+
+physics/Gravity/GravityMain/Constant
+    gconst [REAL] [-981.]
+        Valid Values: Unconstrained
+        Gravitational acceleration constant
+    gdirec [STRING] ["x"]
+        Valid Values: Unconstrained
+        Direction of acceleration ("x", "y", "z")
+
+physics/Gravity/GravityMain/PlanePar
+    gravsoft [REAL] [.0001]
+        Valid Values: Unconstrained
+        softening length
+    ptdirn [INTEGER] [1]
+        Valid Values: Unconstrained
+        x = 1, y = 2, z = 3
+    ptmass [REAL] [10000.]
+        Valid Values: Unconstrained
+        mass of the point
+    ptxpos [REAL] [1.]
+        Valid Values: Unconstrained
+        location of the point mass, in the ptdirn direction
+
+physics/Gravity/GravityMain/PointMass
+    gravsoft [REAL] [0.001]
+        Valid Values: Unconstrained
+
+    ptmass [REAL] [10000.]
+        Valid Values: Unconstrained
+
+    ptxpos [REAL] [1.]
+        Valid Values: Unconstrained
+
+    ptypos [REAL] [-10.]
+        Valid Values: Unconstrained
+
+    ptzpos [REAL] [0.]
+        Valid Values: Unconstrained
+
+
+physics/Gravity/GravityMain/Poisson
+    grav_temporal_extrp [BOOLEAN] [FALSE]
+        extrapolate or otherwise rescale
+    grav_unjunkPden [BOOLEAN] [TRUE]
+        controls whether Gravity_potentialListOfBlocks attempts to restore the
+        part of the "pden" ("particle density") UNK variable that is due to
+        particles, or leaves "pden" as it is, after a Poisson equation solve.
+        This only applies meaningfully when a "pden" variable is declared and
+        the gravitational potential is calculated by solving a Poisson equation
+        whose right-hand side includes a mass distribution to which both
+        hydrodynamic fluid density and massive particles contribute. The "pden"
+        variable will have been set to the sum of the fluid density ("dens"
+        variable) and the density resulting from mapping massive particles to
+        the mesh, so that is what remains in "pden" when grav_unjunkPden is set
+        to FALSE. Otherwise, "dens" will be subtraced from "pden" before
+        Gravity_potentialListOfBlocks returns, and "pden" will be left
+        containing only the mass density that is due to particles.
+    point_mass [REAL] [0.e0]
+        Valid Values: Unconstrained
+        mass of the central point-like object
+    point_mass_rsoft [REAL] [0.e0]
+        Valid Values: Unconstrained
+        softening radius for the point-like mass (in units of number of the
+        finest level cells)
+    updateGravity [BOOLEAN] [TRUE]
+        allow gravity value to be updated
+
+physics/Gravity/GravityMain/Poisson/BHTree
+    grav_boundary_type [STRING] ["mixed"]
+        Valid Values: "isolated", "periodic", "mixed"
+
+    grav_boundary_type_x [STRING] ["isolated"]
+        Valid Values: "isolated", "periodic"
+        Gravity boundary type for the X direction, used if grav_boundary_type ==
+        "mixed"
+    grav_boundary_type_y [STRING] ["isolated"]
+        Valid Values: "isolated", "periodic"
+        Gravity boundary type for the Y direction, used if grav_boundary_type ==
+        "mixed"
+    grav_boundary_type_z [STRING] ["isolated"]
+        Valid Values: "isolated", "periodic"
+        Gravity boundary type for the Z direction, used if grav_boundary_type ==
+        "mixed"
+    grv_bhAccErr [REAL] [0.1]
+        Valid Values: 0 to INFTY
+
+    grv_bhEwaldAlwaysGenerate [BOOLEAN] [TRUE]
+
+    grv_bhEwaldFName [STRING] ["ewald_field"]
+        Valid Values: Unconstrained
+
+    grv_bhEwaldFieldNx [INTEGER] [32]
+        Valid Values: 1 to INFTY
+
+    grv_bhEwaldFieldNy [INTEGER] [32]
+        Valid Values: 1 to INFTY
+
+    grv_bhEwaldFieldNz [INTEGER] [32]
+        Valid Values: 1 to INFTY
+
+    grv_bhEwaldNRef [INTEGER] [-1]
+        Valid Values: Unconstrained
+
+    grv_bhEwaldSeriesN [INTEGER] [10]
+        Valid Values: Unconstrained
+
+    grv_bhLinearInterpolOnly [BOOLEAN] [TRUE]
+
+    grv_bhMAC [STRING] ["ApproxPartialErr"]
+        Valid Values: "ApproxPartialErr", "MaxPartialErr", "SumSquare"
+
+    grv_bhMPDegree [INTEGER] [2]
+        Valid Values: 2, 3, 4
+
+    grv_bhNewton [REAL] [-1.0]
+        Valid Values: -INFTY to INFTY
+        Value for Newton's constant. Specify -1.0 to use the value from the
+        PhysicalConstants code unit.
+    grv_bhUseRelAccErr [BOOLEAN] [FALSE]
+

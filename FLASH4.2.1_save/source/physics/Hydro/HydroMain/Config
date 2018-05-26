@@ -1,0 +1,53 @@
+
+#  Config file for the explicit hydrodynamics module.  
+# source/physics/Hydro/HydroMain 
+
+DEFAULT split
+
+EXCLUSIVE split unsplit unsplit_old simpleUnsplit
+
+REQUIRES Driver
+
+D useGravity   Should any Hydro calculations be performed?
+PARAMETER useHydro BOOLEAN TRUE
+
+D updateHydroFluxes whether fluxes computed by Hydro should be used to update the solution
+D & (currently, probably only used in split PPM Hydro)
+PARAMETER updateHydroFluxes BOOLEAN TRUE   
+
+D irenorm        Renormalize the abundances before eos
+
+PARAMETER irenorm       INTEGER 0   
+
+D cfl            Courant factor
+PARAMETER cfl           REAL    0.8     # Courant factor
+
+#D cfl_ini        initial Courant factor: if non-zero the initial timestep will set to cfl_ini    Courant factor
+#PARAMETER cfl_ini           REAL    -1.0
+
+
+D UnitSystem	System of Units
+PARAMETER UnitSystem	STRING	 "none"      # System of Units
+
+
+D use_cma_flattening use the flattening procedure for the abundances as 
+D &                  described in the CMA paper
+
+PARAMETER use_steepening      BOOLEAN TRUE    # toggle the contact steepening
+PARAMETER use_cma_flattening  BOOLEAN FALSE   # use the CMA flattening procedure
+PARAMETER use_cma_steepening  BOOLEAN FALSE   # use the CMA steepening procedure
+PARAMETER use_cma_advection   BOOLEAN FALSE   # use the CMA advection with partial masses being primary variables
+
+
+USESETUPVARS threadBlockList, threadWithinBlock
+IF threadBlockList
+   PARAMETER threadHydroBlockList BOOLEAN TRUE
+ELSE
+   PARAMETER threadHydroBlockList BOOLEAN FALSE
+ENDIF
+
+IF threadWithinBlock
+   PARAMETER threadHydroWithinBlock BOOLEAN TRUE
+ELSE
+   PARAMETER threadHydroWithinBlock BOOLEAN FALSE
+ENDIF

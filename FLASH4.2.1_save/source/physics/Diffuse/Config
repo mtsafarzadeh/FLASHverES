@@ -1,0 +1,8 @@
+#       Config file for Diffuse unit
+DEFAULT DiffuseMain
+
+D	  useDiffuse flags whether the Diffuse unit is being used at all
+PARAMETER useDiffuse BOOLEAN CONSTANT FALSE
+
+# localAPI comes earlier while linking so can be overriden easily
+CHILDORDER localAPI

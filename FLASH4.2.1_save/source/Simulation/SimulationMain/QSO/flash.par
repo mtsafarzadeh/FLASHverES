@@ -1,0 +1,150 @@
+# Runtime parameters for driven MHD turbulence.
+# The dafault Unit system is CGS. 
+# The magnetic field strength in Gauss is sqrt(4*pi)*magfield_z
+#
+# Compile with  nxb = nyb = nzb = 64
+# gamma = 5./3., 7./5.
+
+rho_ambient      	 = 6.4e-23
+temp_ambient  	         = 2.2e7
+#temp_ambient			= 1.0e7
+noise_amplitude          = 2.13
+dustinit                 = 0.41
+# this number is 0.1 (microns) * 0.41^0.3333
+a0                       = 0.1
+eos_singlespeciesa       = 0.6
+# this makes the ics isothermal
+isothermal_init          = 1.0
+G0                       = 45180
+useConductivity         = .false.
+usegravity               = .false.
+selfshield               = .true.
+
+tradmax                  =  1E10
+tradmin                  =  100
+dradmax                  =  6.4E-18
+dradmin                  =  6.4E-26
+comptonlum               =  1.10E+13
+#cond_maxTime             =  3.1E13
+
+# I'm going to make this 500 parsecs
+# 100 parsecs is 3.18e20
+# 500 parsec oxmax            		= 1.59e21
+# 200 parsecs is 6.36e20
+xmax                	= 3.08e21
+xmin            	= 0.
+ymax            	= 3.08e21
+ymin            	= 0.
+zmax            	= 3.08e21
+zmin            	= 0.
+run_comment     = "FLASH 4 run"
+basenm          = "QSO_"
+restart         = .false.
+
+# file numbers - if you restart you have to change the checkpointFileNumber
+checkpointFileNumber	= 0
+plotFileNumber		= 0
+particleFileNumber	= 0
+
+# set the time between dumps
+plotFileIntervalTime        = 0
+checkpointFileIntervalTime  = 0 
+
+# set the number of steps between dumps
+plotFileIntervalStep        = 25
+checkpointFileIntervalStep  = 500
+
+useParticles= .false. #.true.
+
+plot_var_1  = "dens"
+plot_var_2  = "pres"
+plot_var_3  = "temp"
+
+gamma           = 1.666667  #1.4
+cfl             = 0.4
+nend            = 10000
+tmax            = 3.5e15
+dtmax		= 1.0e99
+nriem           = 40
+
+xl_boundary_type      = "periodic"
+xr_boundary_type      = "periodic"
+yl_boundary_type      = "periodic"
+yr_boundary_type      = "periodic"
+zl_boundary_type      = "periodic"
+zr_boundary_type      = "periodic"
+grav_boundary_type    = "periodic"
+
+dtinit = 3.1e7
+dtmin = 1.e-12    # This parameter must be << minimum timestep
+                  #  in order to avoid numerical instability
+
+smallt = 1.0e2
+smalle = 1.0e-10
+smlrho = 1.0e-26
+smallp = 1.0e-40
+
+doCool          = 	1
+
+iProcs = 8      #num procs in i direction
+jProcs = 8      #num procs in j direction
+kProcs = 8
+
+# When using UG, iProcs, jProcs and kProcs must be specified.
+# These are the processors along each of the dimensions
+
+#FIXEDBLOCKSIZE mode ::
+# When using fixed blocksize, iGridSize etc are redundant in
+# runtime parameters. These quantities are calculated as 
+# iGridSize = NXB*iprocs
+# jGridSize = NYB*jprocs
+# kGridSize = NZB*kprocs
+
+#NONFIXEDBLOCKSIZE mode ::
+# iGridSize etc must be specified. They constitute the global
+# number of grid points in the physical domain without taking 
+# the guard cell into account. The local blocksize is calculated
+# as iGridSize/iprocs  etc.
+ 
+##  SS : need to add the runtime parameters for the MHD solver 
+##  SS : USM MHD parameters from the OrszagTang vortex run  
+## -------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE UNSPLIT STAGGERED MESH MHD SOLVER  ##
+#	I. INTERPOLATION SCHEME:
+order		= 3      # Interpolation order (first/second/third/fifth order)
+slopeLimiter    = "vanLeer"   # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+charLimiting	= .true. # Characteristic limiting vs. Primitive limiting
+
+use_avisc	= .true. # use artificial viscosity (originally for PPM)
+cvisc		=  0.05     # coefficient for artificial viscosity
+use_flattening	= .false. # use flattening (dissipative) (originally for PPM)
+use_steepening	= .false. # use contact steepening (originally for PPM)
+use_upwindTVD	= .false. # use upwind biased TVD slope for PPM (need nguard=6)
+use_hybridOrder = .true.
+
+#   II. MAGNETIC(B) AND ELECTRIC(E) FIELDS:
+E_modification  = .true.           # High order algorithm for E-field construction
+energyFix   = .true.           # Update magnetic energy using staggered B-fields
+ForceHydroLimit = .false.          # Pure Hydro Limit (B=0)
+prolMethod      = "injection_prol" # Prolongation method (injecton_prol, balsara_prol)
+
+
+#	II. RIEMANN SOLVERS:
+RiemannSolver	= "Hybrid" #"Roe"       # Roe, HLL, HLLC, LLF, Marquina
+entropy         = .true.     # Entropy fix for the Roe solver
+EOSforRiemann   = .true.     # Call EOS in Riemann flux calculations
+
+#	III. STRONG SHOCK HANDELING SCHEME:
+shockDetect	= .true.     # Shock Detect for numerical stability
+## -------------------------------------------------------------##
+
+## ---------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE SUPER-TIME-STEPPING (STS) ALGORITHM  ##
+##  NOTE: For details on using STS runtime parameters, please     ##
+##        refer to user's guide (Driver chapter).                 ##
+useSTS                  = .false.
+nstepTotalSTS           = 5
+nuSTS                   = 0.2
+## ---------------------------------------------------------------##
+

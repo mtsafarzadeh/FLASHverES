@@ -1,0 +1,143 @@
+#	Parameters for initial model
+
+#		Density, pressure, and velocity on either side of interface
+
+sim_rhoambient          = 1.0e-27
+sim_rhoblob             = 1.0e-24
+sim_tempambient         = 1.0e7
+sim_tempblob            = 1.0e4
+sim_velambient          = 0.
+sim_blobradius          = 3.08e20
+sim_bNormal          	= 1.d-6
+sim_byLeft          	= 0.
+
+eos_singlespeciesa      = 0.6
+
+smlrho          = 1E-30
+smallp          = 1E-30
+smalle          = 1E-30
+small           = 1E-30
+
+#		Angle and position of interface relative to x and y axes
+
+# These settings are better for testing 3-d problem, they are little
+# less symmetric.
+
+# sim_shock_time	     = 3.15569e13  #KEEP THIS WHERE IT IS
+# sim_cool_time	     = 0.1
+
+doCool = 0  #do you want to cool? 1=yes 0=no
+mCool  = 1  #do you want metal cooling? 1=yes 0=no
+ccCase = 1  #Which case? A=0 B=1
+usecool = .false.#.true.
+nocool = 1.  # Set this one to 0 to turn cooling off but still plot it.
+
+# Add some more blocks
+nblockx             = 8
+nblocky             = 8
+nblockz		    = 8
+
+#		Gas ratio of specific heats
+gamma = 1.66667
+
+#		Grid dimensionality and geometry
+
+geometry = cartesian
+
+#		Size of computational volume
+
+xmin		= -5.e20
+xmax		=  5.e20
+ymin		= -5.e20
+ymax		=  5.e20
+zmin		= -5.e20
+zmax		=  5.e20
+
+#		Boundary conditions
+xl_boundary_type = "diode"
+xr_boundary_type = "diode"
+yl_boundary_type = "diode"
+yr_boundary_type = "diode"
+zl_boundary_type = "diode"
+zr_boundary_type = "diode"
+
+#	Simulation (grid, time, I/O) parameters
+
+cfl		= 0.2 #0.8
+basenm          = "KH_"
+restart         = .false.
+
+#	checkpoint file output parameters
+checkpointFileIntervalTime = 3.1557E10
+checkpointFileIntervalStep = 10000
+checkpointFileNumber = 0 
+
+#	plotfile output parameters
+plotfileIntervalTime = 1.57E15
+plotfileIntervalStep = 0
+plotfileNumber = 0
+nend            = 99999999
+dtinit          = 0.01 #3.1E5
+dtmax           = 3.14E13
+tmax            = 2.E16
+
+run_comment     = "Blob problem, x direction"
+log_file        = "KH.log"
+
+plot_var_1 = "dens"
+plot_var_2 = "pres"
+plot_var_3 = "velx"
+plot_var_4 = "vely"
+
+
+#    AMR refinement parameters  
+lrefine_min	     = 1
+lrefine_max      = 2
+refine_var_1     = "dens"
+refine_var_2     = "temp"
+
+## Electron Thermal Conduction Stuff
+useConductivity = .true.
+useDiffuse = .true.
+
+cond_K0                  = 5.6e-7
+cond_DensityExponent     = 0.#-2.0
+cond_TemperatureExponent = 2.5 #6.5
+
+diff_useEleCond = .true.
+diff_useIonCond = .false.
+diff_eleFlCoef = 0.2
+#diff_ionFlCoef = 0.2
+diff_eleFlMode = "fl_larsen"
+#diff_ionFlMode = "fl_larsen"
+
+diff_thetaImplct = 1
+eintSwitch      = 1.e-6
+
+#		DivB control switch
+killdivb	= .true.
+
+#		Flux Conservation for AMR
+flux_correct    = .true.
+e_upwind = .true.
+
+## -------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE UNSPLIT STAGGERED MESH MHD SOLVER  ##
+#       I. INTERPOLATION SCHEME:
+order           = 2      # Interpolation order (first/second/third/fifth
+##  order)
+slopeLimiter    = "minmod"   # Slope limiters (minmod, mc, vanLeer, hybrid,
+##  limited)
+LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+charLimiting    = .true. # Characteristic limiting vs. Primitive limiting
+
+use_avisc       = .true. #.false. # use artificial viscosity (originally for PPM)
+cvisc           = 0.1     # coefficient for artificial viscosity
+use_flattening  = .true. #.false. # use flattening (dissipative) (originally for PPM)
+use_steepening  = .true. #.false. # use contact steepening (originally for PPM)
+use_upwindTVD   = .false. # use upwind biased TVD slope for PPM (need
+nguard=6)
+
+#       II. RIEMANN SOLVERS:
+RiemannSolver   = "HLLC" #"Roe"       # Roe, HLL, HLLC, HLLD, LLF, Marquina
+entropy         = .false.     # Entropy fix for the Roe solver

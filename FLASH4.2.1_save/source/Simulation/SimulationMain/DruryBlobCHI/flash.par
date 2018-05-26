@@ -1,0 +1,158 @@
+#	Runtime parameters for the Brio-Wu MHD shock-tube problem.
+#	Please also look at default.par for more runtime parameters in the object directory
+
+#forcehydrolimit = .true.
+
+#	Specific heats ratio
+gamma		= 1.666667
+gr_hyprefloor   = 1.e-30
+gr_hypreInfoLevel = 0
+gr_hyprePrintSolveInfo = .false.
+dr_printtsteploc = .false.
+
+#       Grid dimensionality and geometry
+geometry	= "cartesian"
+
+#	Size of computational volume
+xmin		= 0.
+xmax		= 9.24e23
+ymin		= 0.
+ymax		= 3.08e23
+zmin		= 0.
+zmax		= 3.08e23
+
+#	Boundary conditions
+xl_boundary_type = "reflecting" #"user"
+xr_boundary_type = "outflow"
+yl_boundary_type = "reflecting"
+yr_boundary_type = "reflecting"
+zl_boundary_type = "reflecting"
+zr_boundary_type = "reflecting"
+
+
+#	Parameters for initial model
+#	Density, pressure, velocity and magnetic field
+#	initial values on either side of the interface
+
+rho_cloud = 1.e-24
+#p_left          = 1.38e-11
+#u_left      = 0. #1.e6
+#by_left		= 0. 
+b_normal	= 5.e-6
+
+#usediffuse =  .true. #.true.
+#useheat = .true.
+#usegravity = .true.
+#useconductivity = .true.
+
+diff_time = 1.e17
+#diff_constant = 1.e28
+diff_useEleCond = .false. 
+#diff_useIonCond = .false.
+#diff_eleFlCoef = 1. #0.2
+#diff_ionFlCoef = 0.2
+#diff_eleFlMode = "fl_none"
+#diff_ionFlMode = "fl_larsen"
+diff_thetaImplct = 1.
+usediffusetherm             =  .true.
+#usediffusevisc              =  .false.
+
+#	Angle and position of interface relative to x and y axes
+#	Note: the StaggeredMesh solver only supports non-rotated setups
+posn		= 1.2e23
+
+small		= 1.e-14
+smallx 		= 1.e-14
+smalle 		= 1.e-14
+smallp                      = 1.0000000000000E-30
+smlrho                      = 1.0000000000000E-40
+smallu                      = 1.0000000000000E-16
+smallt                      = 1.0000000000000E-16
+
+#	Simulation (grid, time, I/O) parameters
+runcomment	= "1D Brio-Wu MHD shock tube problem, parallel to x-axis"
+log_file        = "drury2.log"
+basenm          = "drury_2D_"
+restart         = .false.
+
+dtinit		= 1.e4#5
+dtmax		= 5.e9
+dtmin		= 1.e1#6
+plotfileintervaltime =1.e19
+
+nend            = 999999999
+tmax            = 2.e16
+cfl		= 0.001
+plot_var_1	= "dens"
+plot_var_2	= "pres"
+plot_var_3	= "cray"
+plot_var_4	= "velx"
+chi = 10. #300.
+fieldbeta = 10.
+
+convertToConsvdInMeshInterp = .true.
+checkpointFileIntervalTime = 1.e14
+checkpointFileIntervalStep = 99999999
+checkpointfilenumber = 0
+
+#	AMR parameters
+nblockx	= 3
+nblocky	= 1
+nblockz	= 1
+kxmin = 4
+kxmax = 20
+kymin = 4
+kymax = 20
+
+lrefine_min	= 5 #3
+lrefine_max     = 5 #6
+nrefs		= 99999999
+refine_var_1	= "dens"
+refine_var_2	= "pres"
+eintSwitch      = 1.e-6
+
+
+#	DivB control switch
+killdivb	= .true.
+
+#	Flux Conservation for AMR
+flux_correct    = .true.
+
+## -------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE UNSPLIT STAGGERED MESH MHD SOLVER  ##
+#	I. INTERPOLATION SCHEME:
+order		= 2      # Interpolation order (First/Second order)
+slopeLimiter    = "mc"   # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+charLimiting	= .true. # Characteristic limiting vs. Primitive limiting
+
+
+#	II. RIEMANN SOLVERS:
+RiemannSolver	= "HLLD" #"Roe"       # Roe, HLL, HLLC, HLLD, LF
+shockInstabilityFix = .false. # Carbuncle instability fix for the Roe solver
+entropy         = .false.     # Entropy fix for the Roe solver
+
+## -------------------------------------------------------------##
+
+
+#	The parameters below are only necessary for the Uniform Grid
+#iGridSize	= 8	#defined as nxb * iprocs
+#jGridSize	= 8	#defined as nyb * jprocs
+#kGridSize	= 1	#defined as nzb * kprocs
+#iProcs		= 1	#num procs in i direction
+#jProcs		= 1	#num procs in j direction
+#kProcs		= 1	#num procs in k direction
+
+# When using UG, iProcs, jProcs and kProcs must be specified.
+# These are the processors along each of the dimensions
+# FIXEDBLOCKSIZE mode ::
+#	When using fixed blocksize, iGridSize etc are redundant in
+#	runtime parameters. These quantities are calculated as 
+#	iGridSize = NXB*iprocs
+#	jGridSize = NYB*jprocs
+#	kGridSize = NZB*kprocs
+# NONFIXEDBLOCKSIZE mode ::
+#	iGridSize etc must be specified. They constitute the global
+#	number of grid points in the physical domain without taking 
+#	the guard cell into account. The local blocksize is calculated
+#	as iGridSize/iprocs  etc.

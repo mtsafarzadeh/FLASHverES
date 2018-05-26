@@ -1,0 +1,140 @@
+!!   quantities written.  Also make sure to modify the header to match
+  use Simulation_data, ONLY: tfive,tten,ttwenty,tfourty,npdfstart, &
+                             nfive,nten,ntwenty,nfourty,sim_rhoambient,sim_writematrix
+  real, intent(in) :: simTime
+  integer, intent(in) :: isFirst
+  real :: lpdffive(201),      lpdften(201)
+  real :: gpdffive(201),      gpdften(201)
+  real :: pdftentot,   pdftentotS2,   pdftentotS4,   pdftentotS8
+  real :: lsfive(201),      lsten(201)
+  real :: gsfive(201),      gsten(201)
+  real :: lsMfive(201),      lsMten(201)
+  real :: gsMfive(201),      gsMten(201)
+  real :: ls2five(201),      ls2ten(201)
+  real :: gs2five(201),      gs2ten(201)
+  real :: ls2Mfive(201),      ls2Mten(201)
+  real :: gs2Mfive(201),      gs2Mten(201)
+  real :: lpdffiveS(603),      lpdftenS(603)
+  real :: gpdffiveS(603),      gpdftenS(603)
+  real :: lsfiveS(603),      lstenS(603)
+  real :: gsfiveS(603),      gstenS(603)
+  real :: lsMfiveS(603),      lsMtenS(603)
+  real :: gsMfiveS(603),      gsMtenS(603)
+  real :: ls2fiveS(603),      ls2tenS(603)
+  real :: gs2fiveS(603),      gs2tenS(603)
+  real :: ls2MfiveS(603),      ls2MtenS(603)
+  real :: gs2MfiveS(603),      gs2MtenS(603)
+  real :: lTMfive(80601),      lTMten(80601)
+  real :: gTMfive(80601),      gTMten(80601)
+  real :: lMTMfive(80601),     lMTMten(80601)
+  real :: gMTMfive(80601),     gMTMten(80601)
+  real :: TMfivetot, TMtentot, TMtwentytot, TMfourtytot
+  real :: MTMtentot,   MTMtentotS2,   MTMtentotS4,   MTMtentotS8
+  real :: lMTMfiveS(241803),  lMTMtenS(241803)
+  real :: gMTMfiveS(241803),  gMTMtenS(241803)
+  real :: MTMfivetotS,MTMtentotS,MTMtwentytotS,MTMfourtytotS
+  real :: pdffivetotS,pdftentotS,pdftwentytotS,pdffourtytotS
+  if((dr_nstep .ge. 2*nten).and.(dr_nstep .ge. npdfstart)) then
+    lpdften  = 0.
+    lsten    = 0.
+    ls2ten   = 0.  
+    lsMten   = 0.  
+    ls2Mten  = 0.
+    lTMten   = 0.
+    lMTMten  = 0.
+                 lpdften(indnew) = lpdften(indnew)+1.
+                 lsten(indnew)   = lsten(indnew)+(snew-sold)
+                 ls2ten(indnew)  = ls2ten(indnew)+(snew-sold)*(snew-sold)
+                 lsMten(indnew)  = lsMten(indnew)+(snew-soldm)
+                 ls2Mten(indnew) = ls2Mten(indnew)+(snew-soldm)*(snew-soldm)
+                 lTMten((inddif-1)*201+indnew)   = lTMten((inddif-1)*201+indnew)+1.
+                 lMTMten((inddifm-1)*201+indnew)  = lMTMten((inddifm-1)*201+indnew)+1.
+                  lpdftenS(offset1+indnew)         = lpdftenS(offset1+indnew)+1.
+                  lstenS(offset1+indnew)           = lstenS(offset1+indnew)+(snew-sold)
+                  ls2tenS(offset1+indnew)          = ls2tenS(offset1+indnew)+(snew-sold)*(snew-sold)
+                  lsMtenS(offset1+indnew)          = lsMtenS(offset1+indnew)+(snew-soldm)
+                  ls2MtenS(offset1+indnew)         = ls2MtenS(offset1+indnew)+(snew-soldm)*(snew-soldm)
+                  lMTMtenS(offset2+(inddifm-1)*201+indnew)  = lMTMtenS(offset2+(inddifm-1)*201+indnew)+1.
+    call MPI_Reduce (lpdften,  gpdften, 201, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lpdftenS, gpdftenS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsten,   gsten, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMten,  gsMten, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lstenS, gstenS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMtenS, gsMtenS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2ten,  gs2ten, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2Mten, gs2Mten, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2tenS, gs2tenS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2MtenS, gs2MtenS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lTMten,  gTMten,  80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMten, gMTMten, 80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMtenS, gMTMtenS, 241803, MPI_Double_Precision, MPI_Sum, &  
+      pdftentot    = 0.
+      pdftentotS2  = 0.
+      pdftentotS4  = 0.
+      pdftentotS8  = 0.
+        TMtentot     = 0.
+        MTMtentot    = 0.
+        MTMtentotS2  = 0.
+        MTMtentotS4  = 0.
+        MTMtentotS8  = 0.
+         TMtentot  = TMtentot +gTMten((inddif-1)*201+indnew)
+         MTMtentot = MTMtentot+gMTMten((inddif-1)*201+indnew)
+         MTMtentotS2 = MTMtentotS2+gMTMtenS((inddif-1)*201+indnew)
+         MTMtentotS4 = MTMtentotS4+gMTMtenS(80601+(inddif-1)*201+indnew)
+         MTMtentotS8 = MTMtentotS8+gMTMtenS(161202+(inddif-1)*201+indnew)
+        if(TMtentot    .eq. 0.) TMtentot  = 1.
+        if(MTMtentot   .eq. 0.) MTMtentot = 1.
+        if(MTMtentotS2 .eq. 0.) MTMtentotS2 = 1.
+        if(MTMtentotS4 .eq. 0.) MTMtentotS4 = 1.
+        if(MTMtentotS8 .eq. 0.) MTMtentotS8 = 1.
+         gTMten((inddif-1)*201+indnew)= & 
+           gTMten((inddif-1)*201+indnew)/TMtentot
+         gMTMten((inddif-1)*201+indnew)= & 
+           gMTMten((inddif-1)*201+indnew)/MTMtentot
+         gMTMtenS((inddif-1)*201+indnew)= & 
+           gMTMtenS((inddif-1)*201+indnew)/MTMtentotS2
+         gMTMtenS(80601+(inddif-1)*201+indnew)= & 
+           gMTMtenS(80601+(inddif-1)*201+indnew)/MTMtentotS4
+         gMTMtenS(161202+(inddif-1)*201+indnew)= & 
+           gMTMtenS(161202+(inddif-1)*201+indnew)/MTMtentotS8
+       pdftentot = pdftentot+gpdften(indnew)
+       pdftentotS2 = pdftentotS2+gpdftenS(indnew)
+       pdftentotS4 = pdftentotS4+gpdftenS(201+indnew)
+       pdftentotS8 = pdftentotS8+gpdftenS(402+indnew)
+        write (fnumStr, '(i4.4)') (nten-npdfstart/2)
+        write(funit,20) simTime-tten
+         write(funit,20) gpdften(indnew)/pdftentot
+         write(funit,20) gpdftenS(indnew)/pdftentotS2
+         write(funit,20) gpdftenS(indnew)/pdftentotS4
+         write(funit,20) gpdftenS(indnew)/pdftentotS8
+            write(funit,20) gMTMten((inddif-1)*201+indnew)
+            write(funit,20) gMTMtenS((inddif-1)*201+indnew)
+            write(funit,20) gTMten((inddif-1)*201+indnew)
+      write (fnumStr, '(i4.4)') (nten-npdfstart/2)
+      write(funit,20) simTime-tten
+        write(funit,20) gpdften(indnew)/pdftentot
+        gpdften(indnew) = gpdften(indnew) + 1E-10
+        write(funit,20) gpdftenS(indnew)/pdftentotS2
+        gpdftenS(indnew) = gpdftenS(indnew) + 1E-10
+        write(funit,20) gpdftenS(indnew)/pdftentotS4
+        gpdftenS(indnew) = gpdftenS(indnew) + 1E-10
+        write(funit,20) gpdftenS(indnew)/pdftentotS8
+        gpdftenS(indnew) = gpdftenS(indnew) + 1E-10
+       write(funit,20) gsten(indnew)/pdftentot
+       write(funit,20) gstenS(indnew)/pdftentotS2
+       write(funit,20) gstenS(indnew)/pdftentotS4
+       write(funit,20) gstenS(indnew)/pdftentotS8
+       write(funit,20) gsMten(indnew)/pdftentot
+       write(funit,20) gsMtenS(indnew)/pdftentotS2
+       write(funit,20) gsMtenS(indnew)/pdftentotS4
+       write(funit,20) gsMtenS(indnew)/pdftentotS8
+       write(funit,20) (gs2ten(indnew)-gsten(indnew)**2/gpdften(indnew))/pdftentot
+       write(funit,20) (gs2tenS(indnew)-gstenS(indnew)**2/gpdftenS(indnew))/pdftentotS2
+       write(funit,20) (gs2tenS(indnew)-gstenS(indnew)**2/gpdftenS(indnew))/pdftentotS4
+       write(funit,20) (gs2tenS(indnew)-gstenS(indnew)**2/gpdftenS(indnew))/pdftentotS8
+       write(funit,20) (gs2Mten(indnew)-gsMten(indnew)**2/gpdften(indnew))/pdftentot
+       write(funit,20) (gs2MtenS(indnew)-gsMtenS(indnew)**2/gpdftenS(indnew))/pdftentotS2
+       write(funit,20) (gs2MtenS(indnew)-gsMtenS(indnew)**2/gpdftenS(indnew))/pdftentotS4
+       write(funit,20) (gs2MtenS(indnew)-gsMtenS(indnew)**2/gpdftenS(indnew))/pdftentotS8
+    nten = nten+1
+    tten = simTime

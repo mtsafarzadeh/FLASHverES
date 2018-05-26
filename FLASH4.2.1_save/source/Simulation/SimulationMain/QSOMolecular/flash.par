@@ -1,0 +1,127 @@
+smallp                      = 1.0000000000000E-30
+smlrho                      = 1.0000000000000E-40
+smallu                      = 1.0000000000000E-10
+smallt                      = 1.0000000000000E-10
+
+
+#	checkpoint file output parameters
+checkpointFileIntervalTime = 6.3e12
+checkpointFileIntervalStep = 0
+checkpointFileNumber = 0
+
+#	plotfile output parameters
+plotfileIntervalTime = 0.
+plotfileIntervalStep = 0
+plotfileNumber = 0
+plot_var_1      = "velx"
+
+
+# go for nend steps or tmax seconds, whichever comes first
+nend            = 1
+tmax		= 3.15e15
+
+# for starting a new run
+restart         = .false.
+
+# initial, and minimum timesteps
+dtmin           = 1.0e9
+dtmax		= 1.00e12
+
+# Grid geometry
+geometry = "cartesian"
+
+# Size of computational volume
+xmin		= -5.0e+18
+xmax		=  5.0e+18
+ymin		= -5.0e+18
+ymax		=  5.0e+18
+zmin		= -5.0e+18
+zmax		=  5.0e+18
+
+
+# Boundary conditions
+xl_boundary_type = "outflow" 
+xr_boundary_type = "outflow"
+yl_boundary_type = "outflow"
+yr_boundary_type = "outflow"
+zl_boundary_type = "outflow"
+zr_boundary_type = "outflow"
+grav_boundary_type = "isolated"
+
+# Variables for refinement test
+refine_var_1    = "dens"
+refine_var_2    = "pres"
+refine_var_3    = "velx"
+refine_var_4    = "vely"
+
+# Refinement levels
+lrefine_max     = 1
+lrefine_min     = 1 
+
+sim_nblockx         = 1.0
+sim_nblocky         = 1.0 
+sim_nblockz         = 1.0
+
+# Hydrodynamics parameters
+cfl	        = 0.8
+
+# Simulation-specific parameters
+basenm          = "Chem_"
+run_number      = "001"
+run_comment     = "hydrostatic spherical cluster"
+log_file        = "cluster.log"
+
+sim_contrast         = 0.1
+
+
+#Parameters for the Chemistry
+sim_xH		=	0.75e0 
+sim_xHP		=	0.00e0
+sim_xHM		=	0.00e0
+sim_xH2		=	1.50e-3
+sim_xH2P	= 	0.00e0
+sim_xH3P	=	0.00e0
+sim_xHE		=	0.00e0
+sim_xHEP	=	0.24e0 
+sim_xC		=	0.00e0
+sim_xCP		=	0.00e0
+sim_xCM		=	0.00e0
+sim_xO		=	0.00e0
+sim_xOP		=	0.00e0
+sim_xOM		=	0.00e0
+sim_xC2		=	0.00e0
+sim_xO2		=	0.00e0
+sim_xO2P	=	0.00e0
+sim_xOH		=	0.00e0
+sim_xOHP	=	0.00e0
+sim_xCO		=	0.00e0
+sim_xCOP	=	0.00e0
+sim_xCH		=	0.00e0
+sim_xCHP	=	0.00e0
+sim_xCH2	=	0.00e0
+sim_xCH2P	=	0.00e0
+sim_xHCOP	=	0.00e0
+sim_xHOCP	=	0.00e0
+sim_xH2O	=	0.00e0
+sim_xH2OP	=	0.00e0
+sim_xH3OP	=	0.00e0
+sim_xCH3P	=	0.00e0
+sim_xELEC	=	0.00e0    
+  
+sim_meta	=	1.22E-5 # this is 1.0E-3 Z_sun (Z_sun = 1.22E-2)
+
+# Test Cloudy
+sim_c_temp= 5.0e2
+sim_c_den= 2.18497e-23
+
+# Chem time Constant
+sim_chem_time = 0.1
+sim_shock_time = 6.0e13
+sim_cool_time = 0.1 
+
+doCool = 1
+mCool  = 0
+ccCase = 1
+chem_kida = 1
+useChem = .true.
+

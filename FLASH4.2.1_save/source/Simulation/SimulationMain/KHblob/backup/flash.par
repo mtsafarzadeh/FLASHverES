@@ -1,0 +1,106 @@
+#	Runtime parameters for the Sod shock-tube problem.
+
+#	Parameters for initial model
+
+#		Density, pressure, and velocity on either side of interface
+
+sim_rhoLeft	= 1.e-27
+sim_rhoRight    = 1.e-25
+sim_tLeft		= 5.d7 
+sim_tRight		= 5.d5 
+sim_uLeft		= 1.e8
+sim_uRight		= 0.
+
+#		Angle and position of interface relative to x and y axes
+
+# These settings are better for testing 3-d problem, they are little
+# less symmetric.
+
+sim_shock_time	     = 3.15569e13  #KEEP THIS WHERE IT IS
+sim_cool_time	     = 0.1
+
+doCool = 0  #do you want to cool? 1=yes 0=no
+mCool  = 0  #do you want metal cooling? 1=yes 0=no
+ccCase = 1  #Which case? A=0 B=1
+usecool = .true.
+nocool = 1.
+
+odeStepper = 2
+algebra = 2
+
+TurbMix = .false. #.true.
+TurbKH  = .false. #.true.
+TurbDiag = 1.0
+TurbCrss = 1.0
+#TurbCD = 2.55
+#TurbCMU = 0.30
+TurbMuKH = 0.2
+# Add some more blocks
+nblockx             = 8
+nblocky             = 8
+nblockz		    = 1
+
+# To get a simpler test problem which shows the 1-D Profile
+# use the following values.
+sim_xangle		= 0
+sim_yangle		= 90.
+sim_posn		= 1.5
+
+#
+grv_direct = "x"
+gconst = 0.0E0
+
+#		Gas ratio of specific heats
+gamma = 1.66667
+
+#		Grid dimensionality and geometry
+
+geometry = cartesian
+
+#		Size of computational volume
+
+xmin		= 0.
+xmax		= 3.08e22
+ymin		= 0.
+ymax		= 3.08e22
+zmin		= 0.
+zmax		= 1.
+
+#		Boundary conditions
+xl_boundary_type = "outflow"
+xr_boundary_type = "outflow"
+yl_boundary_type = "outflow"
+yr_boundary_type = "outflow"
+zl_boundary_type = "outflow"
+zr_boundary_type = "outflow"
+
+#	Simulation (grid, time, I/O) parameters
+
+cfl		= 0.8
+basenm          = "Test_"
+restart         = .false.
+
+#	checkpoint file output parameters
+checkpointFileIntervalTime = 5.0E-6 
+#checkpointFileIntervalStep = 20
+checkpointFileNumber = 0
+
+#	plotfile output parameters
+plotfileIntervalTime = 0.
+plotfileIntervalStep = 0
+plotfileNumber = 0
+nend            = 20000
+tmax            = 150E-6 
+
+run_comment     = "Dimonte Test problem x direction"
+log_file        = "test.log"
+eintSwitch     = 1.e-4
+
+
+plot_var_1 = "dens"
+plot_var_2 = "pres"
+
+#    AMR refinement parameters  
+lrefine_max     = 2
+lrefine_min	= 2
+refine_var_2    = "vely"

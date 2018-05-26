@@ -1,0 +1,8 @@
+#	Config file for the TreeCol unit.  Subunits (not included in FLASH 4.2 release) are:
+DEFAULT TreeColMain
+
+D   useTreeCol       Whether TreeCol calculations should be performed.
+# Value is meant to be overridden if a TreeColMain implementation gets included
+PARAMETER useTreeCol    BOOLEAN FALSE 
+
+

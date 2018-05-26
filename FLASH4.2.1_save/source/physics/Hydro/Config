@@ -1,0 +1,7 @@
+
+DEFAULT HydroMain
+
+D   useHydro       Whether Hydro calculations should be performed.
+# Value is meant to be overridden if a HydroMain implementation gets included
+PARAMETER useHydro    BOOLEAN CONSTANT FALSE 
+

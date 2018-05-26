@@ -1,0 +1,17 @@
+#	Makefile for the sourceTerm Diffuse (API level)
+
+Diffuse = Diffuse_init.o Diffuse.o Diffuse_visc.o Diffuse_species.o Diffuse_therm.o \
+          Diffuse_computeDt.o Diffuse_finalize.o Diffuse_interface.o \
+	  Diffuse_advance1D.o Diffuse_solveScalar.o \
+	  Diffuse_fluxLimiter.o Diffuse_setContextInfo.o
+#	Makefile for the Diffuse/DiffuseMain subunit (Implementation level)
+
+Diffuse += Diffuse_data.o
+#	Makefile for Diffuse/DiffuseMain/UG
+
+Diffuse += diff_saData.o diff_getFaceFluxes.o diff_updateEnergy.o
+#	Makefile for the Diffuse/localAPI
+
+Diffuse += diff_saInit.o diff_fbInit.o diff_advanceTherm.o diff_saFinalize.o diff_computeFluxes.o \
+           diff_computeAX.o diff_computeblkAMat.o diff_computeILU.o diff_applyPC.o \
+           diff_interface.o

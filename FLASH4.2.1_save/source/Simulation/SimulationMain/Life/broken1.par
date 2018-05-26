@@ -1,0 +1,223 @@
+run_comment = "LIFE Chamber Simulations"
+log_file    = "life.log"
+basenm      = "life_"
+
+###############
+#             #
+#     I/O     #
+#             #
+###############
+
+### Checkpoint Options  ###
+checkpointFileIntervalTime = 1.0
+checkpointFileIntervalStep = 10
+
+### Plot Options ###
+plotFileNumber = 0
+plot_var_1     = "dens"
+
+### Restart Options ###
+restart              = .false.
+checkpointFileNumber = 0
+
+#############################
+#                           #
+#     RADIATION/OPACITY     #
+#                           #
+#############################
+rt_useMGD       = .false.
+rt_mgdNumGroups = 6
+rt_mgdBounds_1  = 1.0e-01
+rt_mgdBounds_2  = 1.0e+00
+rt_mgdBounds_3  = 1.0e+01
+rt_mgdBounds_4  = 1.0e+02
+rt_mgdBounds_5  = 1.0e+03
+rt_mgdBounds_6  = 1.0e+04
+rt_mgdBounds_7  = 1.0e+05
+rt_mgdFlMode    = "fl_larsen"
+rt_mgdFlCoef    = 1.0
+
+### SET MGD BOUNDARY CONDITIONS ###
+rt_mgdXlBoundaryType = "reflecting"
+rt_mgdXrBoundaryType = "reflecting"
+rt_mgdYlBoundaryType = "reflecting"
+rt_mgdYrBoundaryType = "reflecting"
+rt_mgdZlBoundaryType = "reflecting"
+rt_mgdZrBoundaryType = "reflecting"
+
+useOpacity     = .false.
+
+### SET CHAMBER OPACITY OPTIONS ###
+op_chamAbsorb   = "op_tabpa"
+op_chamEmiss    = "op_tabpe"
+op_chamTrans    = "op_tabro"
+op_chamFileType = "ionmix4"
+op_chamFileName = "xe-imx-026.cn4"
+
+### SET TARGET OPACITY OPTIONS ###
+op_targAbsorb   = "op_tabpa"
+op_targEmiss    = "op_tabpe"
+op_targTrans    = "op_tabro"
+op_targFileType = "ionmix4"
+op_targFileName = "xe-imx-026.cn4"
+
+
+######################################
+#                                    #
+#     ION/ELECTRON EQUILIBRATION     #
+#                                    #
+######################################
+useHeatexchange = .false.
+
+
+###############
+#             #
+#     EOS     #
+#             #
+###############
+eosModeInit      = "dens_temp_gather"
+eosMode          = "dens_ie_gather"
+smallt           = 1.0
+smallx           = 1.0e-99
+eos_useLogTables = .false.
+
+
+###############################
+#                             #
+#     ELECTRON CONDUCTION     #
+#                             #
+###############################
+useDiffuse      = .false.
+useConductivity = .true.
+diff_useEleCond = .false.
+diff_eleFlMode  = "fl_larsen"
+diff_eleFlCoef  = 0.06
+diff_thetaImplct= 1.0
+
+### SET CONDUCTION BOUNDARY CONDITIONS ###
+diff_eleXlBoundaryType = "outflow"
+diff_eleXrBoundaryType = "outflow"
+diff_eleYlBoundaryType = "outflow"
+diff_eleYrBoundaryType = "outflow"
+diff_eleZlBoundaryType = "outflow"
+diff_eleZrBoundaryType = "outflow"
+
+
+############################
+#                          #
+#     HYDRO PARAMETERS     #
+#                          #
+############################
+
+# Use second order hybrid solver with minmod slope limiter. This
+# essentially eliminates any Carbuncle instability.
+ 
+order            = 2        # Interpolation order (first/second/third/fifth order)
+slopeLimiter     = "minmod" # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta = 1.       # Slope parameter for the "limited" slope by Toro
+charLimiting     = .true.   # Characteristic limiting vs. Primitive limiting
+use_avisc        = .true.   # use artificial viscosity (originally for PPM)
+cvisc            = 0.1      # coefficient for artificial viscosity
+use_flattening   = .false.  # use flattening (dissipative) (originally for PPM)
+use_steepening   = .false.  # use contact steepening (originally for PPM)
+use_upwindTVD    = .false.  # use upwind biased TVD slope for PPM (need nguard=6)
+RiemannSolver    = "hybrid" # Roe, HLL, HLLC, LLF, Marquina, hybrid
+entropy          = .false.  # Entropy fix for the Roe solver
+shockDetect      = .false.  # Shock Detect for numerical stability
+
+### SET HYDRO BOUNDARY CONDITIONS ###
+xl_boundary_type = "reflect"
+xr_boundary_type = "outflow"
+yl_boundary_type = "outflow"
+yr_boundary_type = "outflow"
+zl_boundary_type = "reflect"
+zr_boundary_type = "reflect"
+
+
+######################################################
+#                                                    #
+#     MATERIAL PROPERTIES AND INITIAL CONDITIONS     #
+#                                                    #
+######################################################
+
+# Use feathering to smooth chamber/target boundary
+#   sim_ndiv = 1 -> no feathering
+#   sim_ndiv > 1 -> more feathering
+sim_ndiv = 1 
+
+sim_targetGeom    = "sphere"
+sim_targetRadius  = 0.5
+sim_driverType    = "uniform"
+
+# Driver energy [ergs]:
+sim_inputEnergy   = 1.216e+14 # 1e+13 ergs = 1.0 MJ
+
+# Time over which sim_inputEnergy is added to the target [s]:
+sim_pulseLength   = 1.0e-10
+
+# Vertical offset of the target [cm]:
+sim_targetZOffset = 25.0
+
+### SET TARGET PROPERTIES ###
+sim_rhoTarg  	  = 1.91
+sim_teleTarg 	  = 872.665
+sim_tionTarg 	  = 6000.
+sim_tradTarg 	  = 872.665
+ms_targA     	  = 196.97
+ms_targZ     	  = 79.0
+ms_targZMin  	  = 0.01
+eos_targEosType   = "eos_tab"
+eos_targSubType   = "ionmix4"	
+eos_targTableFile = "xe-imx-026.cn4"
+
+### SET CHAMBER PROPERTIES ###
+sim_rhoCham  	  = 6.0e-06
+sim_teleCham 	  = 872.665
+sim_tionCham 	  = 6000.
+sim_tradCham 	  = 872.665
+ms_chamA     	  = 131.29
+ms_chamZ     	  = 54.0
+ms_chamZMin  	  = 0.01
+eos_chamEosType   = "eos_tab"
+eos_chamSubType   = "ionmix4"
+eos_chamTableFile = "xe-imx-026.cn4"
+sim_velxCham      = 0.0
+sim_velyCham      = -2.0e+05
+
+#######################
+#   TIME PARAMETERS   #
+#######################
+tstep_change_factor = 1.05
+cfl            = 0.4
+dt_diff_factor = 1.0e+100 # Disable diffusion dt
+rt_dtFactor    = 0.02
+hx_dtFactor    = 1.0e+100
+tmax           = 2.0e-06
+dtmin          = 1.0e-16
+dtinit         = 1.0e-15
+dtmax          = 1.0e-09
+nend           = 10000000
+
+################
+#              #
+#     MESH     #
+#              #
+################
+geometry = cylindrical
+enableMaskedGCFill = .false.
+
+# Domain size:
+xmin = 0.0
+xmax = 50.0
+ymin = 0.0
+ymax = 50.0
+
+### AMR OPTIONS ###
+nblockx          = 1
+nblocky          = 1
+lrefine_min_init = 4
+lrefine_max      = 7
+lrefine_min      = 1
+refine_var_1     = "dens"
+refine_var_2     = "tele"
+refine_var_3     = "tion"

@@ -1,0 +1,17 @@
+# Config file for module cool.
+REQUIRES Driver
+
+D tradmin
+D tradmax
+D dradmin
+D dradmax
+D massfracH
+
+
+PARAMETER tradmin    REAL      1.E4
+PARAMETER tradmax    REAL      1.E9
+PARAMETER dradmin    REAL      1.E-28
+PARAMETER dradmax    REAL      1.E-22
+PARAMETER massfracH   REAL     0.76
+PARAMETER nocool      REAL      1.
+VARIABLE radi

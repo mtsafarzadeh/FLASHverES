@@ -1,0 +1,29 @@
+# SS : This is the configuration file for Stirring Turbulence 
+# with magnetic fields + scalars. 
+# Physical viscosity, scalar diffusivity and magnetic resistivity 
+# can be optionally turned on. The MHD solver for the magnetic field
+# is turned on when compiling the .setup script.
+# ./setup ...... +usm 
+# StirMain/StirScalar is the directory for using scalars. 
+# When cosmology is on all length have to be multiplied by
+# a to get physical units.
+
+REQUIRES Driver
+REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Gamma
+REQUIRES Grid
+REQUIRES physics/Cosmology/Outflow
+# These turn on conduction
+REQUIRES physics/Diffuse/DiffuseMain/Unsplit
+REQUIRES physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ
+# This  turns on the Dust + Cooling Package in Cosmological coordinates
+REQUIRES physics/sourceTerms/Cool/CoolMain/AtomicDustCosmology
+#        This turns on Gravity PFFT
+REQUIRES physics/Gravity/GravityMain/Poisson/Pfft
+REQUIRES Grid/GridSolvers/Pfft/DirectSolver
+
+PARAMETER noise_amplitude 		REAL    0.05
+PARAMETER isothermal_init               REAL    0.0
+
+#This one links to the Hypre library to carry out conduction
+LIBRARY     Hypre

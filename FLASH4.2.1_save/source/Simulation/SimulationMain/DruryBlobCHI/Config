@@ -1,0 +1,61 @@
+#       Configuration file for the Brio-Wu MHD shock-tube problem
+#       (Brio, M. and Wu, C. C., J. Comput. Phys., 75:400--422, 1988)
+
+EXCLUSIVE *
+
+REQUIRES Driver
+REQUIRES physics/Hydro/HydroMain
+#REQUIRES physics/Eos/EosMain/Gamma
+#REQUIRES physics/Diffuse/DiffuseMain/UnsplitDrury
+#REQUIRES physics/Gravity/GravityMain/GravDrury
+#REQUIRES physics/sourceTerms/Heat/HeatMain/Drury
+#REQUIRES physics/materialProperties/Conductivity/ConductivityMain/Constant-diff
+
+# Add custom variables below
+
+MASS_SCALAR CRAY
+
+D rho_cloud 
+PARAMETER rho_cloud      REAL    1.
+#D p_left
+#PARAMETER p_left        REAL    1.
+#D p_right
+#PARAMETER p_right       REAL    0.1
+D  b_normal
+PARAMETER b_normal      REAL    0.75
+
+PARAMETER fieldbeta        REAL    1.
+PARAMETER chi        REAL    1.
+D posn
+PARAMETER posn          REAL    0.5
+
+PARAMETER xmin          REAL    0.
+PARAMETER xmax          REAL    1.
+PARAMETER ymin          REAL    0.
+PARAMETER ymax          REAL    1.
+PARAMETER zmin          REAL    0.
+PARAMETER zmax          REAL    1.
+
+PARAMETER diff_time          REAL    1.
+
+PARAMETER kxmin		INTEGER 7
+PARAMETER kxmax		INTEGER 12
+
+PARAMETER kymin		INTEGER 7
+PARAMETER kymax		INTEGER 12
+
+PARAMETER kzmin		INTEGER 7
+PARAMETER kzmax		INTEGER 12
+
+PARAMETER igrid         INTEGER 64
+PARAMETER jgrid         INTEGER 128
+PARAMETER kgrid         INTEGER 128
+
+VARIABLE alfx                   # Alfven velocity
+VARIABLE alfy                   # Alfven velocity
+VARIABLE alfz                   # Alfven velocity
+
+VARIABLE crho                   # cray time density
+VARIABLE dcdx                   # d/dx of cray time density
+VARIABLE dcdy                   # d/dx of cray time density
+

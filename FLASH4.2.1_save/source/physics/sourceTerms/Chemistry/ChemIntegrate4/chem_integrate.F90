@@ -1,0 +1,268 @@
+!!****Chemisty_integrate
+!!
+!!
+!!
+!! NAME
+!!  Chemistry_integrate
+!!
+!! SYNOPSIS
+!!	subroutine Chemistry_intergrate( real(IN)	:: start,
+!!									 real(IN)	:: stptry,
+!!									 real(IN)	:: stpmin,
+!!									 real(IN)	:: stopp,
+!!									 real(INOUT):: bc(:),
+!!									 real(IN)	:: eps,
+!!								     real(IN)	:: dxsav,
+!!								     int(IN)	:: kmax,
+!!								     real(OUT)	:: xrk(:)
+!!								     real(OUT)	:: yrk(:,:)
+!!								     int(IN)	:: xphys,
+!!								     int(IN)	:: yphys,
+!!								     int(IN)	:: xlogi,
+!!								     int(IN)	:: ylogi,
+!!								     int(OUT)	:: nok,
+!!								     int(OUT)	:: nbad,
+!!								     int(OUT)	:: kount,
+!!								     real(IN)	:: odescal,
+!!								     int(IN)	:: iprint,
+!!								     PRO(IN)	:: derivs,
+!!								     PRO(IN)	:: jakob,
+!!								     PRO(IN)	:: bjakob,
+!!								     PRO(IN)	:: steper,
+!!									 int(OUT)   :: jcounts)
+!!									 real(IN)   :: temp)
+!!
+!! ARGUMENTS
+!!
+!!	 real(IN)	:: start	Beginning integration point
+!!	 real(IN)	:: stptry   Suggested first step size
+!!	 real(IN)	:: stpmin   Minimum step allowed
+!!	 real(IN)	:: stopp    ending integration point
+!!	 real(INOUT):: bc(:)	initial conditions (size of yphys) --> ys's
+!!	 real(IN)	:: eps		Fractional error during the integration
+!!	 real(IN)	:: dxsav	Incremental value of independent variable
+!!	 int(IN)	:: kmax		maximum number of solution points to store, kkmax < xphys
+!!   real(OUT)	:: xrk(:)	the independent variable solution
+!!	 real(OUT)	:: yrk(:,:) The dependent variable solution
+!!	 int(IN)	:: xphys	physical size of array xrk
+!!	 int(IN)	:: yphys	physical size of array yrk
+!!	 int(IN)	:: xlogi	logical size of xrk
+!!	 int(IN)	:: ylogi	logical size of yrk
+!!	 int(OUT)	:: nok		number of successful steps taken
+!!	 int(OUT)	:: nbad		number of bad steps taken
+!!	 int(OUT)	:: kount	total number of steps stored in arrays xrk, yrk
+!!	 real(IN)	:: odescal	error scaling factor
+!!	 int(IN)	:: iprint	determines if teh solution is printed as it evolves
+!!	 PRO(IN)	:: derivs	Procedure for the derivatives (chemistry_network)
+!!	 PRO(IN)	:: jakob	Procedure for the jacobian (chemistry_networkDJ)
+!!	 PRO(IN)	:: bjakob   Procedure for the sparse jacobian (blank for chem)
+!!	 PRO(IN)	:: steper	Procedure that will take a step
+!!	 int(IN)	:: jcounts	Counter for how many subcycles we do
+!!*****
+
+!subroutine Chemistry_integrate(start,stptry,stpmin,stopp,bc, &
+!                               eps,dxsav,kmax,xrk,yrk,xphys,yphys, &
+!                               xlogi,ylogi,nok,nbad,kount,odescal,iprint, &
+!                               derivs,jakob,bjakob,steper,jcounts,temp)
+
+subroutine Chemistry_integrate(start,stptry,stpmin,stopp,bc, &
+                               eps,dxsav,kmax,xrk,yrk,xphys,yphys, &
+                               xlogi,ylogi,nok,nbad,kount,odescal,iprint, &
+                               derivs,jakob,steper,jcounts,dens,temp)
+
+
+use Driver_interface, ONLY : Driver_abortFlash
+use Driver_interface, ONLY: Driver_getMype
+use Logfile_interface, ONLY : Logfile_stampMessage
+
+implicit none
+#include "constants.h"
+#include "Flash.h"
+
+
+
+
+!interface
+!   subroutine derivs(t,y,dydt)
+!      implicit none
+!      real, intent(IN)  :: t
+!      real, intent(INOUT), dimension(*) :: y
+!      real, intent(OUT), dimension(*) :: dydt
+!   end subroutine derivs
+
+!   subroutine jakob(t,y,dfdy,nzo,nDummy)
+!    implicit none
+!     real, intent(IN) :: t
+!      integer, intent(IN)  :: nzo, nDummy
+!      real, intent(INOUT), dimension(*) :: y
+!      real, intent(OUT) :: dfdy(nzo,nDummy)
+!   end subroutine jakob
+
+!   subroutine bjakob(y,dfdy,nzo,nDummy)
+!      implicit none
+!      integer, intent(IN)   :: nzo, nDummy
+!      real, intent(INOUT), dimension(*) :: y
+!      real, intent(OUT)  :: dfdy(nzo,nDummy)
+!   end subroutine bjakob
+
+!   subroutine steper(y,dydx,nv,x,htry,eps,yscal,hdid,hnext, &
+!                     derivs,jakob,jcounts)
+!      implicit none
+!      external  :: derivs, jakob
+!      integer, intent(IN)  :: nv
+!      real, intent(INOUT)  :: y(nv)
+!      real, intent(IN)   :: dydx(nv),yscal(nv),htry,eps
+!      real, intent(OUT)  :: hdid, hnext
+!      real, intent(INOUT) :: x,jcounts
+!   end subroutine steper
+!end interface
+
+!!Declare what is coming in
+
+external jakob, steper, derivs
+integer, intent(IN)  :: xphys,yphys,xlogi,ylogi
+integer, intent(IN)  :: kmax,iprint
+real, intent(IN) :: odescal, dxsav, eps, dens, temp
+real, intent(IN) :: start, stptry, stpmin, stopp
+real, intent(INOUT), dimension(yphys) :: bc
+
+integer, intent(OUT) :: nok, nbad, kount
+real, intent(OUT), dimension(xphys)  :: xrk
+real, intent(OUT), dimension(yphys,xphys) :: yrk
+real, intent(INOUT) :: jcounts
+
+integer, parameter :: nmax = 66
+integer, parameter :: stpmax = 10000 !!max number of steps
+integer  :: i,j,nstp
+real, parameter :: zero = 0.0e0
+real, parameter :: one = 1.0e0
+real, parameter :: tiny = 1.0e-15
+real, save :: yscal(nmax),y(nmax),dydx(nmax),x,xsav,h,hdid,hnext
+
+
+!!Here we go
+
+
+100 format(1x,i4,1pe10.2)
+101 format(1x,1p12e10.2)
+102 format(1x,5(a,' ',1pe10.2))
+103 format(1x,5(a,' ',i6))
+
+!!Check and see if sizes are ok
+if(ylogi .gt. yphys) then
+   write(*,*) 'ylogi > yphys in routine Chemistry_integrate'
+   call Driver_abortFlash('ylogi > yphys in routine Chemistry_integrate')
+endif
+
+if(yphys .gt. nmax) then
+   write(*,*) 'yphys > nmax in routine Chemistry_integrate'
+   call Driver_abortFlash('yphys > nmax in routine Chemistry_integrate')
+endif
+
+!!Prep some variables
+x = start
+h = sign(stptry,stopp-start)
+nok = 0
+nbad = 0
+kount = 0
+
+!!Store the first step
+do i=1,ylogi
+   y(i) = bc(i)
+enddo
+
+xsav = x - 2.0e0 * dxsav
+
+!!Start looping over steps
+
+do nstp=1,stpmax
+
+   !!ensure positive definite mass fractions
+   do i=1,ylogi
+      y(i) = max(y(i),1.0e-30)
+   enddo
+
+   call derivs(x,y,dydx)
+
+   do i=1,ylogi
+      yscal(i) = max(odescal,abs(y(i)))
+   enddo
+
+!! store itermediate results
+
+   if(kmax .gt. 0) then
+      if( (abs(dxsav) - abs(x-xsav)) .le. tiny) then
+         if( kount .lt. (kmax -1) ) then
+             kount = kount + 1
+             xrk(kount) = x
+             do i=1,ylogi
+                yrk(i,kount) = y(i)
+             enddo
+             if(iprint .eq. 1 ) then
+                write(*,100) kount,xrk(kount)
+                write(*,101) (yrk(j,kount),j=1,ylogi)
+             endif 
+                xsav = x
+          endif
+       endif
+    endif
+
+!!Check for step overshoot
+    if((x+h-stopp)*(x+h-start) .gt. zero) h= stopp-x
+    if(dxsav.ne.zero .and. h .gt.(xsav-x+dxsav)) h = xsav+dxsav-x
+
+!!Time for an integration step
+!		write(*,*) 'IN CHEM_INTEGRATE'
+!		write(*,*) 'h: ', h, ' hdid: ', hdid, ' hnext: ', hnext
+   call steper(y,dydx,ylogi,x,h,eps,yscal,hdid,hnext,derivs,jakob,jcounts,dens,temp)
+!   print *, 'CALLED STEPER'
+!   print *, 'hnext: ', hnext
+   
+   if(hdid .eq. h ) then
+      nok = nok + 1
+   else
+      nbad = nbad + 1
+   endif
+
+!Normal exit point, save the final step
+   if(nstp .eq. stpmax .or. (x-stopp)*(stopp-start) .ge. zero) then
+      do i=1,ylogi
+         bc(i) = y(i)
+      enddo
+   if (kmax.ne.0) then
+      kount = kount + 1
+      xrk(kount) = x
+      do i=1,ylogi
+         yrk(i,kount) = y(i)
+      enddo
+      if (iprint .eq. 1) then
+         write(*,100) kount, xrk(kount)
+         write(*,101) (yrk(j,kount), j=1,ylogi)
+      endif
+    endif
+  return
+endif
+
+!! set next time step
+
+   h = hnext
+   if(abs(hnext) .lt. stpmin) then
+      write(*,*) ' ' 
+      write(*,102) 'hnext=',hnext,' stpmin=',stpmin
+      write(*,*) 'hnext < stpmin in Chemistry_integrate'
+      write(*,*) ' '
+      call Driver_abortFlash("Error in chem_integrate")
+   endif
+enddo
+
+!!Crash if we go over stepmax
+
+   write(*,*) ' ' 
+   write(*,103) 'stpmax=', stpmax
+   write(*,*) 'more than stpmax steps required in Chemistry_integrate'
+   write(*,*) ' '
+   call Driver_abortFlash("Error in chem_integrate: Went over stepmax")
+
+
+
+end subroutine Chemistry_integrate

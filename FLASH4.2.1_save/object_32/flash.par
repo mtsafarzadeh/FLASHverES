@@ -1,0 +1,225 @@
+# Runtime parameters for driven MHD turbulence.
+# The dafault Unit system is CGS. 
+# The magnetic field strength in Gauss is sqrt(4*pi)*magfield_z
+#
+# Compile with  nxb = nyb = nzb = 64
+# gamma = 5./3., 7./5.
+
+rho_ambient 			= 1.0e-26
+c_ambient 			= 1.0e0
+temp_ambient			= 1.0e5
+xmax            		= 3.18e20 
+xmin            		= 0.
+ymax            		= 3.18e20
+ymin            		= 0.
+zmax            		= 3.18e20
+zmin            		= 0.
+run_comment     = "FLASH 4 run"
+basenm          = "ISM_"
+restart         = .false.
+
+# file numbers - if you restart you have to change the checkpointFileNumber
+checkpointFileNumber	= 0
+plotFileNumber		= 0
+particleFileNumber	= 0
+
+# set the time between dumps
+checkpointFileIntervalTime  = 0.0
+plotFileIntervalTime	    = 0.0
+particleFileIntervalTime    = 0.0	
+# set the number of steps between dumps
+checkpointFileIntervalStep  = 0
+plotFileIntervalStep	    = 0
+particleFileIntervalStep    = 0	
+
+useParticles= .false. #.true.
+
+plot_var_1  = "dens"
+plot_var_2  = "pres"
+plot_var_3  = "temp"
+plot_var_4  = "velx"
+plot_var_5  = "vely"
+plot_var_6  = "velz"
+plot_var_7  = "eint"
+
+gamma           = 1.666667  #1.4
+cfl             = 0.4
+nend            = 10000
+tmax            = 9.3e15
+dtmax		= 1.0e99
+nriem           = 40
+
+xl_boundary_type      = "periodic"
+xr_boundary_type      = "periodic"
+yl_boundary_type      = "periodic"
+yr_boundary_type      = "periodic"
+zl_boundary_type      = "periodic"
+zr_boundary_type      = "periodic"
+
+# stirmax and stirmin are in units of 2pi 
+st_stirmax           = 5.9275e-20   # implies k_max = 3 *2*pi/Lbox
+st_stirmin           = 1.9758e-20   # implies k_min = 1 *2*pi/Lbox
+st_energy            = 1.8e-4         # 0.3
+st_decay             = 1.59e13 
+st_computeDt         = .true.
+st_seed              = 200
+st_freq              = 1
+eintSwitch           = 0.1   
+
+dtinit = 3.1e7
+dtmin = 1.e-12    # This parameter must be << minimum timestep
+                  #  in order to avoid numerical instability
+
+smallt = 1.0e2
+smalle = 1.0e-10
+smlrho = 1.0e-40
+smallp = 1.0e-40
+
+sim_xH		=	1.2418e-5 
+sim_xHP		=	7.0557e-1
+sim_xHE  	=	4.8261e-5
+sim_xHEP	=	3.3867e-2
+sim_xHEPP 	=	2.4836e-1
+sim_xC		=	3.7430e-8
+sim_xCP		= 	3.5559e-5
+sim_xC2P	=	1.2581e-3
+sim_xC3P	=	5.7809e-4
+sim_xC4P  	=	2.0711e-4
+sim_xC5P	=	0.0000e0
+sim_xN		=	2.5891e-8
+sim_xNP		= 	3.0010e-5
+sim_xN2P	=	4.8756e-4
+sim_xN3P	=	3.2111e-4
+sim_xN4P  	=	1.8409e-6
+sim_xN5P	=	6.2962e-9
+sim_xO		=	1.3276e-7
+sim_xOP		=	1.9969e-4
+sim_xO2P	=	3.6398e-3
+sim_xO3P	=	1.6816e-3
+sim_xO4P	=	8.2975e-6
+sim_xO5P	=	0.00e0
+sim_xO6P	=	0.00e0
+sim_xO7P 	=	0.00e0
+sim_xNE		=	7.5214e-8
+sim_xNEP	=	1.2389e-4
+sim_xNE2P	=	1.0146e-3
+sim_xNE3P	=	2.7094e-4
+sim_xNE4P	=	1.2178e-6
+sim_xNE5P	=	0.00e0
+sim_xNE6P	=	0.00e0
+sim_xNE7P 	=	0.00e0
+sim_xNE8P	=	0.00e0
+sim_xNE9P 	=	0.00e0
+sim_xNA		=	0.00e0
+sim_xNAP	=	3.3218e-5
+sim_xMG		=	0.00e0
+sim_xMGP	=	5.1944e-8
+sim_xMG2P	=	5.8755e-4
+sim_xSI		=	0.00e0
+sim_xSIP	=	1.9880e-7
+sim_xSI2P	=	2.3034e-5
+sim_xSI3P	=	8.5006e-5
+sim_xSI4P	=	5.7722e-4
+sim_xSI5P	=	0.00e0
+sim_xFE		=	0.00e0
+sim_xFEP	=	4.0455e-8
+sim_xFE2P	=	2.2348e-5
+sim_xFE3P	=	4.5421e-4
+sim_xFE4P	=	5.5805e-4
+sim_xELEC	=	6.4889e-4      
+sim_meta	=	1.00e0 # this is units of Z_sun
+sim_tmax        =       1.0e6
+doCool          = 	1
+chem_cooltime   =       9.467e11
+useChem		=       .true.
+chem_tempmin    =       100.0
+sim_nstep	=	10
+sim_cfrac	=	20.0
+chem_tauh       =       0.0e0
+chem_tauhe	=	0.0e0
+chem_tauhep	=	0.0e0
+chem_j21	= 	0.0e0
+IO_num_width = 50
+IO_num_smooth = 5
+IO_dfof_cutoff = 1.0e-3
+IO_X_cutoff = 1.0e-3
+#These parameters below are only necessary for the Uniform Grid
+
+iProcs = 1      #num procs in i direction
+jProcs = 1      #num procs in j direction
+kProcs = 1 
+
+# When using UG, iProcs, jProcs and kProcs must be specified.
+# These are the processors along each of the dimensions
+
+#FIXEDBLOCKSIZE mode ::
+# When using fixed blocksize, iGridSize etc are redundant in
+# runtime parameters. These quantities are calculated as 
+# iGridSize = NXB*iprocs
+# jGridSize = NYB*jprocs
+# kGridSize = NZB*kprocs
+
+#NONFIXEDBLOCKSIZE mode ::
+# iGridSize etc must be specified. They constitute the global
+# number of grid points in the physical domain without taking 
+# the guard cell into account. The local blocksize is calculated
+# as iGridSize/iprocs  etc.
+ 
+##  SS : need to add the runtime parameters for the MHD solver 
+##  SS : USM MHD parameters from the OrszagTang vortex run  
+## -------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE UNSPLIT STAGGERED MESH MHD SOLVER  ##
+#	I. INTERPOLATION SCHEME:
+order		= 3      # Interpolation order (first/second/third/fifth order)
+slopeLimiter    = "vanLeer"   # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+charLimiting	= .true. # Characteristic limiting vs. Primitive limiting
+
+use_avisc	= .false. # use artificial viscosity (originally for PPM)
+#cvisc		= 0.1     # coefficient for artificial viscosity
+use_flattening	= .false. # use flattening (dissipative) (originally for PPM)
+use_steepening	= .false. # use contact steepening (originally for PPM)
+use_upwindTVD	= .false. # use upwind biased TVD slope for PPM (need nguard=6)
+use_hybridOrder = .true.
+
+#   II. MAGNETIC(B) AND ELECTRIC(E) FIELDS:
+E_modification  = .true.           # High order algorithm for E-field construction
+energyFix   = .true.           # Update magnetic energy using staggered B-fields
+ForceHydroLimit = .false.          # Pure Hydro Limit (B=0)
+prolMethod      = "injection_prol" # Prolongation method (injecton_prol, balsara_prol)
+
+
+#	II. RIEMANN SOLVERS:
+RiemannSolver	= "Hybrid" #"Roe"       # Roe, HLL, HLLC, LLF, Marquina
+entropy         = .true.     # Entropy fix for the Roe solver
+EOSforRiemann   = .true.     # Call EOS in Riemann flux calculations
+
+#	III. STRONG SHOCK HANDELING SCHEME:
+shockDetect	= .true.     # Shock Detect for numerical stability
+## -------------------------------------------------------------##
+
+## ---------------------------------------------------------------##
+##  SWITCHES SPECIFIC TO THE SUPER-TIME-STEPPING (STS) ALGORITHM  ##
+##  NOTE: For details on using STS runtime parameters, please     ##
+##        refer to user's guide (Driver chapter).                 ##
+useSTS                  = .false.
+nstepTotalSTS           = 5
+nuSTS                   = 0.2
+## ---------------------------------------------------------------##
+
+## Electron Thermal Conduction Stuff
+useConductivity = .false.
+useDiffuse = .false.
+diff_updEint = .false.
+diff_useEleCond = .false.
+diff_eleFlCoef = 1.0 
+diff_eleFlMode = "fl_minmax"
+diff_thetaImplct = 1
+diff_eleXlBoundaryType = "periodic"
+diff_eleXrBoundaryType = "periodic"
+diff_eleYlBoundaryType = "periodic"
+diff_eleYrBoundaryType = "periodic"
+diff_eleZlBoundaryType = "periodic"
+diff_eleZrBoundaryType = "periodic"
+
+

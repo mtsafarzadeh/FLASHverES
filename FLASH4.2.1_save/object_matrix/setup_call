@@ -1,0 +1,16 @@
+/work/01734/evan1022/stampede2/FLASH4.2.1_save/bin/setup.py auto -3d -nxb=64 -nyb=64 -nzb=64 +ug +uhd StirTurbMatrix -objdir=object_matrix 
+
+Expanded Command line
+--with-library=mpi --with-unit=IO --unit=Grid --gridinterpolation=monotonic auto --3d --nxb=64 --nyb=64 --nzb=64 --unit=Grid --with-unit=physics/Hydro/HydroMain/unsplit/Hydro_Unsplit StirTurbMatrix --objdir=object_matrix
+
+Defined Setup Variables:
+
+FullScratchUseInUHD --> False <type 'bool'>
+Grid --> UG <type 'str'>
+fixedBlockSize --> True <type 'bool'>
+maxBlocks --> 1 <type 'int'>
+nDim --> 3 <type 'int'>
+nxb --> 64 <type 'int'>
+nyb --> 64 <type 'int'>
+nzb --> 64 <type 'int'>
+

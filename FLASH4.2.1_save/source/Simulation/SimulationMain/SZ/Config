@@ -1,0 +1,31 @@
+# Configuration file for a sod-like problem in spherical coordinates.  The idea
+# is that we want to propagate a planar shock in spherical coordinates and see
+# if it stays planar.  This is effectively a test of the fictitous forces.
+
+
+REQUIRES Driver
+REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Gamma
+REQUIRES PhysicalConstants
+REQUIRES physics/Gravity/GravityMain/NFW
+REQUIRES physics/sourceTerms/Cool/CoolMain/Atomic
+
+PARAMETER Eblast   REAL    0.0
+PARAMETER rblast   REAL    1.0
+PARAMETER Omegab   REAL    0.048
+
+## If we were specifying additional source directories for curvilinear support
+## directly, rather than relying on setup and various Config files to do the right thing,
+## We would use the following:
+
+##REQUIRES Grid/GridMain/paramesh/Paramesh2
+##REQUIRES Grid/GridMain/paramesh/Paramesh2/monotonic
+
+###REQUIRES Grid/GridMain/paramesh/Paramesh3
+###REQUIRES Grid/GridMain/paramesh/interpolation/Paramesh3/prolong
+###REQUIRES Grid/GridMain/paramesh/interpolation/prolong
+
+# The following isn't really a data file, but this will get it copied.
+# setup should then use it to generate amr_runtime_parameters.
+# This will be used in case we set up Paramesh 4.0 in LIBRARY mode or use Paramesh4dev.
+

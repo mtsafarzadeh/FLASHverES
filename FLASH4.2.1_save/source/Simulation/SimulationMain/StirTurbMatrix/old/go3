@@ -1,0 +1,39 @@
+sed -i 's/DFIV/DONE/' IO_writeIntegralQuantities.F90
+sed -i 's/DTEN/DTWO/' IO_writeIntegralQuantities.F90
+sed -i 's/DTWT/DFOR/' IO_writeIntegralQuantities.F90
+sed -i 's/DFTY/DEIT/' IO_writeIntegralQuantities.F90
+
+sed -i 's/TEFV/TWON/' IO_writeIntegralQuantities.F90
+sed -i 's/TETN/TWTW/' IO_writeIntegralQuantities.F90
+sed -i 's/TETW/TWFR/' IO_writeIntegralQuantities.F90
+sed -i 's/TEFY/TWEI/' IO_writeIntegralQuantities.F90
+
+sed -i 's/FEFV/THON/' IO_writeIntegralQuantities.F90
+sed -i 's/FETN/THTW/' IO_writeIntegralQuantities.F90
+sed -i 's/FETW/THFR/' IO_writeIntegralQuantities.F90
+sed -i 's/FEFY/THEI/' IO_writeIntegralQuantities.F90
+
+sed -i 's/EEFV/FRON/' IO_writeIntegralQuantities.F90
+sed -i 's/EETN/FRTW/' IO_writeIntegralQuantities.F90
+sed -i 's/EETW/FRFR/' IO_writeIntegralQuantities.F90
+sed -i 's/EEFY/FREI/' IO_writeIntegralQuantities.F90
+
+sed -i 's/MDFV/MDON/' IO_writeIntegralQuantities.F90
+sed -i 's/MDTN/MDTW/' IO_writeIntegralQuantities.F90
+sed -i 's/MDTW/MDFR/' IO_writeIntegralQuantities.F90
+sed -i 's/MDFY/MDEI/' IO_writeIntegralQuantities.F90
+
+sed -i 's/TDFV/MTWO/' IO_writeIntegralQuantities.F90
+sed -i 's/TDTN/MTWT/' IO_writeIntegralQuantities.F90
+sed -i 's/TDTW/MTWF/' IO_writeIntegralQuantities.F90
+sed -i 's/TDFY/MTWE/' IO_writeIntegralQuantities.F90
+
+sed -i 's/FDFV/MTHO/' IO_writeIntegralQuantities.F90
+sed -i 's/FDTN/MTHT/' IO_writeIntegralQuantities.F90
+sed -i 's/FDTW/MTHF/' IO_writeIntegralQuantities.F90
+sed -i 's/FDFY/MTHE/' IO_writeIntegralQuantities.F90
+
+sed -i 's/EDFV/MFRO/' IO_writeIntegralQuantities.F90
+sed -i 's/EDTN/MFRT/' IO_writeIntegralQuantities.F90
+sed -i 's/EDTW/MFRF/' IO_writeIntegralQuantities.F90
+sed -i 's/EDFY/MFRE/' IO_writeIntegralQuantities.F90 

@@ -1,0 +1,36 @@
+#ifndef POINTER_INTENT_IN
+#  define POINTER_INTENT_IN pointer
+#  ifdef __INTEL_COMPILER
+#    if (__INTEL_COMPILER_BUILD_DATE >= 20110812)
+#      undef POINTER_INTENT_IN
+#      define POINTER_INTENT_IN pointer,intent(in)
+#    endif
+#  endif
+
+#  ifdef __fcc__
+#    if __fcc_version__ > 0x0300
+#      undef POINTER_INTENT_IN
+#      define POINTER_INTENT_IN pointer,intent(in)
+#    endif
+#  endif
+
+#endif
+
+#ifndef POINTER_INTENT_OUT
+#define POINTER_INTENT_OUT pointer
+#  ifdef __INTEL_COMPILER
+#    if (__INTEL_COMPILER_BUILD_DATE >= 20110812)
+#      undef POINTER_INTENT_IN
+#      define POINTER_INTENT_IN pointer,intent(out)
+#    endif
+#  endif
+
+#  ifdef __fcc__
+#    if __fcc_version__ > 0x0300
+#      undef POINTER_INTENT_IN
+#      define POINTER_INTENT_IN pointer,intent(out)
+#    endif
+#  endif
+
+#endif
+

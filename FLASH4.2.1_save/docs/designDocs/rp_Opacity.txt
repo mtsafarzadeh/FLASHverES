@@ -1,0 +1,50 @@
+
+physics/materialProperties/Opacity
+    useOpacity [BOOLEAN] CONSTANT [FALSE]
+        flags whether the Opacity unit is being used at all
+
+physics/materialProperties/Opacity/OpacityMain
+    useOpacity [BOOLEAN] [TRUE]
+        flags whether the Opacity unit is being used at all
+
+physics/materialProperties/Opacity/OpacityMain/Constant
+    op_absorbConst [REAL] [1.0]
+        Valid Values: Unconstrained
+
+    op_emitConst [REAL] [1.0]
+        Valid Values: Unconstrained
+
+    op_transConst [REAL] [1.0]
+        Valid Values: Unconstrained
+
+
+physics/materialProperties/Opacity/OpacityMain/Multispecies
+    opacity_ignoreLowTemp [BOOLEAN] [TRUE]
+
+    opacity_writeOpacityInfo [BOOLEAN] [FALSE]
+
+
+physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Integrate
+    opacity_RombergAccuracy [REAL] [1.E-6]
+        Valid Values: Unconstrained
+
+    opacity_maxQuadratureRoots [INTEGER] [50]
+        Valid Values: Unconstrained
+
+    opacity_printQuadratureData [BOOLEAN] [TRUE]
+
+    opacity_useQuadrature [BOOLEAN] [FALSE]
+
+    opacity_useRomberg [BOOLEAN] [TRUE]
+
+
+physics/materialProperties/Opacity/OpacityMain/Multispecies/method/LowTemp
+    opacity_ignoreKleinNishina [BOOLEAN] [FALSE]
+
+
+physics/materialProperties/Opacity/OpacityMain/Multispecies/method/Tabulated
+    op_tableEnergyTolerance [REAL] [1.0e-04]
+        Valid Values: Unconstrained
+        allowed difference between table/FLASH group structure
+    opacity_useLogTables [BOOLEAN] [TRUE]
+

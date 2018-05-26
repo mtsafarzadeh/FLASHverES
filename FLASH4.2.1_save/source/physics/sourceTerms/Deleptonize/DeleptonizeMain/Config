@@ -1,0 +1,27 @@
+# Config file for the Deleptonize unit
+REQUIRES physics/Eos/EosMain/Nuclear
+REQUIRES physics/sourceTerms/Deleptonize/localAPI
+
+MASS_SCALAR YE    EOSMAPIN: YE
+MASS_SCALAR SUMY  EOSMAPIN: SUMY
+
+#VARIABLE DYE
+#VARIABLE DENTR
+#VARIABLE DEINT
+
+PARAMETER delep_Enu      REAL 10.0
+PARAMETER delep_rhoOne   REAL 0.0
+PARAMETER delep_rhoTwo   REAL 0.0
+PARAMETER delep_yOne     REAL 0.0
+PARAMETER delep_yTwo     REAL 0.0
+PARAMETER delep_yc       REAL 0.0
+PARAMETER bounceTime	 REAL 0.0
+PARAMETER postBounce     BOOLEAN FALSE
+PARAMETER useEntr	 BOOLEAN TRUE
+
+USESETUPVARS threadBlockList
+
+IF threadBlockList
+  PPDEFINE ST_THREAD_BLOCK_LIST
+  REQUIRES ./threadBlockList
+ENDIF

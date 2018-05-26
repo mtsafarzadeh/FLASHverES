@@ -1,0 +1,137 @@
+  use Simulation_data, ONLY: tfive,tten,ttwenty,tfourty,npdfstart, &
+                             nfive,nten,ntwenty,nfourty,sim_rhoambient,sim_writematrix
+  real :: lpdffive(201),      lpdften(201)
+  real :: gpdffive(201),      gpdften(201)
+  real :: pdffivetot,  pdffivetotS2,  pdffivetotS4,  pdffivetotS8
+  real :: lsfive(201),      lsten(201)
+  real :: gsfive(201),      gsten(201)
+  real :: lsMfive(201),      lsMten(201)
+  real :: gsMfive(201),      gsMten(201)
+  real :: ls2five(201),      ls2ten(201)
+  real :: gs2five(201),      gs2ten(201)
+  real :: ls2Mfive(201),      ls2Mten(201)
+  real :: gs2Mfive(201),      gs2Mten(201)
+  real :: lpdffiveS(603),      lpdftenS(603)
+  real :: gpdffiveS(603),      gpdftenS(603)
+  real :: lsfiveS(603),      lstenS(603)
+  real :: gsfiveS(603),      gstenS(603)
+  real :: lsMfiveS(603),      lsMtenS(603)
+  real :: gsMfiveS(603),      gsMtenS(603)
+  real :: ls2fiveS(603),      ls2tenS(603)
+  real :: gs2fiveS(603),      gs2tenS(603)
+  real :: ls2MfiveS(603),      ls2MtenS(603)
+  real :: gs2MfiveS(603),      gs2MtenS(603)
+  real :: lTMfive(80601),      lTMten(80601)
+  real :: gTMfive(80601),      gTMten(80601)
+  real :: lMTMfive(80601),     lMTMten(80601)
+  real :: gMTMfive(80601),     gMTMten(80601)
+  real :: TMfivetot, TMtentot, TMtwentytot, TMfourtytot
+  real :: MTMfivetot,  MTMfivetotS2,  MTMfivetotS4,  MTMfivetotS8
+  real :: lMTMfiveS(241803),  lMTMtenS(241803)
+  real :: gMTMfiveS(241803),  gMTMtenS(241803)
+  real :: MTMfivetotS,MTMtentotS,MTMtwentytotS,MTMfourtytotS
+  real :: pdffivetotS,pdftentotS,pdftwentytotS,pdffourtytotS
+  if((dr_nstep .ge. 1*nfive).and.(dr_nstep .ge. npdfstart)) then
+    lpdffive  = 0.
+    lsfive    = 0.
+    ls2five   = 0. 
+    lsMfive   = 0. 
+    ls2Mfive  = 0.
+    lTMfive   = 0.
+    lMTMfive  = 0.
+                 lpdffive(indnew) = lpdffive(indnew)+1.
+                 lsfive(indnew)   = lsfive(indnew)+(snew-sold)
+                 ls2five(indnew)  = ls2five(indnew)+(snew-sold)*(snew-sold)
+                 lsMfive(indnew)  = lsMfive(indnew)+(snew-soldm)
+                 ls2Mfive(indnew) = ls2Mfive(indnew)+(snew-soldm)*(snew-soldm)
+                 lTMfive((inddif-1)*201+indnew)   = lTMfive((inddif-1)*201+indnew)+1.
+                 lMTMfive((inddifm-1)*201+indnew)  = lMTMfive((inddifm-1)*201+indnew)+1.
+                  lpdffiveS(offset1+indnew)         = lpdffiveS(offset1+indnew)+1.
+                  lsfiveS(offset1+indnew)           = lsfiveS  (offset1+indnew)+(snew-sold)
+                  ls2fiveS(offset1+indnew)          = ls2fiveS (offset1+indnew)+(snew-sold)*(snew-sold)
+                  lsMfiveS(offset1+indnew)          = lsMfiveS (offset1+indnew)+(snew-soldm)
+                  ls2MfiveS(offset1+indnew)         = ls2MfiveS(offset1+indnew)+(snew-soldm)*(snew-soldm)
+                  lMTMfiveS(offset2+(inddifm-1)*201+indnew)  = lMTMfiveS(offset2+(inddifm-1)*201+indnew)+1.
+    call MPI_Reduce (lpdffive,  gpdffive, 201, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lpdffiveS, gpdffiveS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsfive,   gsfive, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMfive,  gsMfive, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsfiveS, gsfiveS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lsMfiveS, gsMfiveS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2five,  gs2five, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2Mfive, gs2Mfive, 201, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2fiveS, gs2fiveS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (ls2MfiveS, gs2MfiveS, 603, MPI_Double_Precision, MPI_Sum, &
+    call MPI_Reduce (lTMfive,  gTMfive,  80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMfive, gMTMfive, 80601, MPI_Double_Precision, MPI_Sum, &  
+    call MPI_Reduce (lMTMfiveS, gMTMfiveS, 241803, MPI_Double_Precision, MPI_Sum, &  
+      pdffivetot    = 0.
+      pdffivetotS2  = 0.
+      pdffivetotS4  = 0.
+      pdffivetotS8  = 0.
+        TMfivetot     = 0.
+        MTMfivetot    = 0.
+        MTMfivetotS2  = 0.
+        MTMfivetotS4  = 0.
+        MTMfivetotS8  = 0.
+         TMfivetot  = TMfivetot +gTMfive((inddif-1)*201+indnew)
+         MTMfivetot = MTMfivetot+gMTMfive((inddif-1)*201+indnew)
+         MTMfivetotS2 = MTMfivetotS2+gMTMfiveS((inddif-1)*201+indnew)
+         MTMfivetotS4 = MTMfivetotS4+gMTMfiveS(80601+(inddif-1)*201+indnew)
+         MTMfivetotS8 = MTMfivetotS8+gMTMfiveS(161202+(inddif-1)*201+indnew)
+        if(TMfivetot    .eq. 0.) TMfivetot  = 1.
+        if(MTMfivetot   .eq. 0.) MTMfivetot = 1.
+        if(MTMfivetotS2 .eq. 0.) MTMfivetotS2 = 1.
+        if(MTMfivetotS4 .eq. 0.) MTMfivetotS4 = 1.
+        if(MTMfivetotS8 .eq. 0.) MTMfivetotS8 = 1.
+         gTMfive((inddif-1)*201+indnew)= & 
+           gTMfive((inddif-1)*201+indnew)/TMfivetot
+         gMTMfive((inddif-1)*201+indnew)= & 
+           gMTMfive((inddif-1)*201+indnew)/MTMfivetot
+         gMTMfiveS((inddif-1)*201+indnew)= & 
+           gMTMfiveS((inddif-1)*201+indnew)/MTMfivetotS2
+         gMTMfiveS(80601+(inddif-1)*201+indnew)= & 
+           gMTMfiveS(80601+(inddif-1)*201+indnew)/MTMfivetotS4
+         gMTMfiveS(161202+(inddif-1)*201+indnew)= & 
+           gMTMfiveS(161202+(inddif-1)*201+indnew)/MTMfivetotS8
+       pdffivetot = pdffivetot+gpdffive(indnew)
+       pdffivetotS2 = pdffivetotS2+gpdffiveS(indnew)
+       pdffivetotS4 = pdffivetotS4+gpdffiveS(201+indnew)
+       pdffivetotS8 = pdffivetotS8+gpdffiveS(402+indnew)
+        write (fnumStr, '(i4.4)') (nfive-npdfstart)
+        write(funit,20) simTime-tfive
+         write(funit,20) gpdffive(indnew)/pdffivetot
+         write(funit,20) gpdffiveS(indnew)/pdffivetotS2
+         write(funit,20) gpdffiveS(indnew)/pdffivetotS4
+         write(funit,20) gpdffiveS(indnew)/pdffivetotS8
+            write(funit,20) gMTMfive((inddif-1)*201+indnew)
+            write(funit,20) gMTMfiveS((inddif-1)*201+indnew)
+            write(funit,20) gTMfive((inddif-1)*201+indnew)
+      write (fnumStr, '(i4.4)') (nfive-npdfstart)
+      write(funit,20) simTime-tfive
+       write(funit,20) gpdffive(indnew)/pdffivetot
+       gpdffive(indnew) = gpdffive(indnew) + 1E-10
+       write(funit,20) gpdffiveS(indnew)/pdffivetotS2
+       gpdffiveS(indnew) = gpdffiveS(indnew) + 1E-10
+       write(funit,20) gpdffiveS(indnew)/pdffivetotS4
+       gpdffiveS(indnew) = gpdffiveS(indnew) + 1E-10
+       write(funit,20) gpdffiveS(indnew)/pdffivetotS8
+       gpdffiveS(indnew) = gpdffiveS(indnew) + 1E-10
+       write(funit,20) gsfive(indnew)/pdffivetot
+       write(funit,20) gsfiveS(indnew)/pdffivetotS2
+       write(funit,20) gsfiveS(indnew)/pdffivetotS4
+       write(funit,20) gsfiveS(indnew)/pdffivetotS8
+       write(funit,20) gsMfive(indnew)/pdffivetot
+       write(funit,20) gsMfiveS(indnew)/pdffivetotS2
+       write(funit,20) gsMfiveS(indnew)/pdffivetotS4
+       write(funit,20) gsMfiveS(indnew)/pdffivetotS8
+       write(funit,20) (gs2five(indnew)-gsfive(indnew)**2/gpdffive(indnew))/pdffivetot
+       write(funit,20) (gs2fiveS(indnew)-gsfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS2
+       write(funit,20) (gs2fiveS(indnew)-gsfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS4
+       write(funit,20) (gs2fiveS(indnew)-gsfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS8
+       write(funit,20) (gs2Mfive(indnew)-gsMfive(indnew)**2/gpdffive(indnew))/pdffivetot
+       write(funit,20) (gs2MfiveS(indnew)-gsMfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS2
+       write(funit,20) (gs2MfiveS(indnew)-gsMfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS4
+       write(funit,20) (gs2MfiveS(indnew)-gsMfiveS(indnew)**2/gpdffiveS(indnew))/pdffivetotS8
+    nfive = nfive+1
+    tfive = simTime

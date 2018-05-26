@@ -1,0 +1,12 @@
+# Create a variable to store the old radiation energy density:
+VARIABLE UROL
+
+# Create a variable to store the old specific electron internal
+# energy:
+VARIABLE EEOL
+
+VARIABLE TEOL
+VARIABLE DEDU
+VARIABLE UTOT
+VARIABLE CVEL
+VARIABLE ALPH

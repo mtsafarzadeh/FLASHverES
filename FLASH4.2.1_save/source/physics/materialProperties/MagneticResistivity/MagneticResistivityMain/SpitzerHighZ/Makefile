@@ -1,0 +1,1 @@
+MagneticResistivity += MagneticResistivity_data.o MagneticResistivity_fullState.o res_ieEquilTime.o

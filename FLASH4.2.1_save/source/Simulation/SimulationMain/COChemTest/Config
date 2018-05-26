@@ -1,0 +1,70 @@
+# configuration file for setting up a spherical cluster in hydrostatic
+# eqilibrium. Evacuate bubbles, and trace metal distribution as 
+# injected by some central galaxy.
+#
+# First make list of necessary modules, 
+# then make list of specific parameters, and give their default values, 
+# in case no other value is given in the parameter file.
+#
+# All specific parameters here are in units of pc, solar masses, K, g/cm^3. 
+# 
+# The simulations will be 3D.
+#
+
+
+REQUIRES Driver
+REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Multigamma
+REQUIRES physics/sourceTerms/Chemistry/ChemistryMain/COChem
+REQUIRES physics/sourceTerms/Chemistry/ChemIntegrate2
+REQUIRES Simulation/SimulationComposition/COChemistry
+REQUIRES Multispecies
+REQUIRES Grid/GridBoundaryConditions/OneRow
+REQUESTS IO
+
+PARAMETER sim_c_temp           REAL    1000.0
+PARAMETER sim_c_den	       REAL    1.0e-21
+PARAMETER sim_chem_time	       REAL    0.1
+PARAMETER sim_meta	       REAL    0.0
+PARAMETER sim_shock_time       REAL    6.0e13
+PARAMETER sim_cool_time        REAL    0.1
+
+MASS_SCALAR METL
+
+PARAMETER sim_nblockx              REAL    1.0
+PARAMETER sim_nblocky		   REAL	   1.0
+PARAMETER sim_nblockz	  	   REAL    1.0
+
+#Define the mass fractions for all the species above!
+PARAMETER sim_xH	REAL	0.760
+PARAMETER sim_xHP	REAL	0.0
+PARAMETER sim_xHM	REAL	0.0
+PARAMETER sim_xH2	REAL	0.0
+PARAMETER sim_xH2P	REAL	0.0
+PARAMETER sim_xH3P	REAL	0.0
+PARAMETER sim_xHe	REAL	0.240
+PARAMETER sim_xHeP	REAL	0.0
+PARAMETER sim_xC	REAL	0.0
+PARAMETER sim_xCP	REAL	0.0
+PARAMETER sim_xCM	REAL	0.0
+PARAMETER sim_xO	REAL	0.0
+PARAMETER sim_xOP	REAL	0.0
+PARAMETER sim_xOM	REAL	0.0
+PARAMETER sim_xC2	REAL	0.0
+PARAMETER sim_xO2	REAL	0.0
+PARAMETER sim_xO2P	REAL	0.0
+PARAMETER sim_xOH	REAL	0.0
+PARAMETER sim_xOHP	REAL	0.0
+PARAMETER sim_xCO	REAL	0.0
+PARAMETER sim_xCOP	REAL	0.0
+PARAMETER sim_xCH	REAL	0.0
+PARAMETER sim_xCHP	REAL	0.0
+PARAMETER sim_xCH2	REAL	0.0
+PARAMETER sim_xCH2P	REAL	0.0
+PARAMETER sim_xHCOP	REAL	0.0
+PARAMETER sim_xHOCP	REAL	0.0
+PARAMETER sim_xH2O	REAL	0.0
+PARAMETER sim_xH2OP	REAL	0.0
+PARAMETER sim_xH3OP	REAL	0.0
+PARAMETER sim_xCH3P	REAL	0.0
+PARAMETER sim_xELEC	REAL	0.0

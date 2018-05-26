@@ -1,0 +1,44 @@
+# Configureation file for blob overtaken by a wind
+
+REQUIRES Driver
+REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Gamma
+REQUIRES physics/Diffuse/DiffuseMain/Unsplit
+REQUIRES physics/materialProperties/Conductivity/ConductivityMain/PowerLaw
+
+MASS_SCALAR BLOB
+
+D sim_uLeft fluid velocity in the left part of the grid 
+PARAMETER sim_uLeft	REAL    0.       
+D sim_uRight fluid velocity in the right part of the grid 
+PARAMETER sim_uRight	REAL    0.       
+
+D sim_rhoblob  
+PARAMETER sim_rhoblob	REAL	1.d-24
+
+D sim_tempblob
+PARAMETER sim_tempblob	REAL	1.d4
+
+D sim_rhoambient
+PARAMETER sim_rhoambient   REAL    1.d-24
+
+D sim_tempambient
+PARAMETER sim_tempambient  REAL    1.d4
+
+D sim_blobradius
+PARAMETER sim_blobradius REAL 3.08d22
+
+D sim_velambient
+PARAMETER sim_velambient REAL 1.0d6
+
+D sim_velframe
+PARAMETER sim_velframe REAL 0.0
+
+PARAMETER sim_square  REAL 0.
+#PARAMETER sim_cool_time REAL	0.1
+
+D sim_bNormal
+PARAMETER sim_bNormal REAL 1.0d-6
+
+D sim_byLeft
+PARAMETER sim_byLeft REAL 1.0d-6

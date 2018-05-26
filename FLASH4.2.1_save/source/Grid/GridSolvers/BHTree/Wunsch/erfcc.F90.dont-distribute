@@ -1,0 +1,42 @@
+!!****if* source/Grid/GridSolvers/BHTree/Wunsch/erfcc
+!!
+!! NAME
+!!
+!!  erfcc
+!!
+!!
+!! SYNOPSIS
+!!
+!!   real var = erfcc(real:: x)
+!!
+!! DESCRIPTION
+!!
+!!   Complementary error function
+!!
+!! ARGUMENTS
+!!
+!!   x : argument of erfc(x)
+!!
+!! NOTES
+!!
+!!  From Numerical Recipes. Do not distribute with FLASH code.
+!!
+!!  This implementation has only about single precision accuracy.
+!!***
+
+function erfcc(x)
+! Press et al. (1986) function to generate erfc using
+! Chebyshev polynomial approximation
+  implicit none
+  real, intent(in) :: x
+  real             :: erfcc,t,z
+  z = dabs(x)
+  t=1./(1+0.5*z)
+  erfcc=t*dexp(-z*z - 1.26551223 + t*(1.00002368 + t*(0.3740916+&
+           &t*(0.09678418 + t*(-0.18628806 + t*(0.27886807 + t*(-1.13520398 +&
+           &t*(1.48851587 + t*(-0.82215223 + t*0.17087277)))))))))
+  if (x<0.) erfcc=2.-erfcc
+
+  return
+end function erfcc
+

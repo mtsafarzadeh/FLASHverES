@@ -1,0 +1,12 @@
+# Config file for the heat module
+
+# available submodules are
+
+# heat/stat+gauss (not included in the regular FLASH code release)
+# Neutrino
+
+REQUIRES Driver
+
+DEFAULT StatPlusGauss
+
+

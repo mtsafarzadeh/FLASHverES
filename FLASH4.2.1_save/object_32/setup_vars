@@ -1,0 +1,216 @@
+Name: DFLX
+Location: physics/Diffuse/DiffuseMain/Unsplit
+Type: Scratch Center Variable
+Description:
+
+
+Name: DFLY
+Location: physics/Diffuse/DiffuseMain/Unsplit
+Type: Scratch Center Variable
+Description:
+
+
+Name: DFLZ
+Location: physics/Diffuse/DiffuseMain/Unsplit
+Type: Scratch Center Variable
+Description:
+
+
+Name: F01Dens
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F02Xmom
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F03Ymom
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F04Zmom
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F05Ener
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F06Eint
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: F07Pres
+Location: physics/Hydro/HydroMain/unsplit/Hydro_Unsplit
+Type: Flux
+Description:
+
+
+Name: VAR1
+Location: physics/Hydro/HydroMain/unsplit
+Type: Scratch Center Variable
+Description:
+
+
+Name: VAR2
+Location: physics/Hydro/HydroMain/unsplit
+Type: Scratch Center Variable
+Description:
+
+
+Name: cond
+Location: physics/Diffuse/DiffuseMain/Unsplit
+Type: Variable
+Description:
+    holds "diffusion coefficient" for advancing diffusion problem
+
+Name: deld
+Location: physics/sourceTerms/Cool/CoolMain/AtomicDust
+Type: Variable
+Description:
+
+
+Name: dens
+Location: physics/Gravity/GravityMain/Poisson
+Type: Variable
+Description:
+
+
+Name: dens
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: dfcf
+Location: physics/Diffuse/DiffuseMain
+Type: Variable
+Description:
+    for holding left-hand multiplier 'factor A' for Diffuse_solveScalar calls
+
+Name: dust
+Location: physics/sourceTerms/Cool/CoolMain/AtomicDust
+Type: Mass Scalar
+Description:
+
+
+Name: eint
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: ener
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: fllm
+Location: physics/Diffuse/DiffuseMain
+Type: Variable
+Description:
+    stores flux limit (input) when Diffuse_fluxLimiter is called
+
+Name: gamc
+Location: physics/Eos/EosMain/Gamma
+Type: Variable
+Description:
+
+
+Name: gamc
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: game
+Location: physics/Eos/EosMain/Gamma
+Type: Variable
+Description:
+
+
+Name: game
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: gpol
+Location: physics/Gravity/GravityMain/Poisson
+Type: Variable
+Description:
+
+
+Name: gpot
+Location: physics/Gravity/GravityMain/Poisson
+Type: Variable
+Description:
+
+
+Name: pres
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: radd
+Location: physics/sourceTerms/Cool/CoolMain/AtomicDust
+Type: Variable
+Description:
+
+
+Name: radi
+Location: physics/sourceTerms/Cool/CoolMain/AtomicDust
+Type: Variable
+Description:
+
+
+Name: radr
+Location: physics/sourceTerms/Cool/CoolMain/AtomicDust
+Type: Variable
+Description:
+
+
+Name: shok
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: temp
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: velx
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: vely
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+
+Name: velz
+Location: physics/Hydro/HydroMain/unsplit
+Type: Variable
+Description:
+
+

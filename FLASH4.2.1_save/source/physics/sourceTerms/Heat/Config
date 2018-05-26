@@ -1,0 +1,11 @@
+# Config file for the heat module
+
+# available submodules are
+
+# heat/stat+gauss
+
+DEFAULT HeatMain
+
+D useHeat   runtime control for turning the heat on or off
+PARAMETER useHeat    BOOLEAN FALSE
+

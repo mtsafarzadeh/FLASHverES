@@ -1,0 +1,27 @@
+#!/bin/sh -f
+
+#		Script to create a subroutine which writes a 'build stamp'
+#		to the log file
+
+rm -f setup_buildstamp.F90
+echo '      ' subroutine setup_buildstamp \(s_stamp_str, b_stamp_str, str_len\) >> setup_buildstamp.F90
+echo '      ' implicit none >> setup_buildstamp.F90
+echo '      ' integer                  :: str_len >> setup_buildstamp.F90
+echo '      ' character\(len=str_len\) :: s_stamp_str, b_stamp_str >> setup_buildstamp.F90
+echo '      ' s_stamp_str = \'Tue Dec 19 13:08:05 2017\'  >> setup_buildstamp.F90
+echo '      ' b_stamp_str = \'`date '+%a %b %e %H:%M:%S %Y'`\'  >> setup_buildstamp.F90
+echo '      ' return >> setup_buildstamp.F90
+echo '      ' end subroutine >> setup_buildstamp.F90
+echo '      ' >> setup_buildstamp.F90
+echo '      ' subroutine setup_systemInfo \(system_str, str_len\) >> setup_buildstamp.F90
+echo '      ' integer                  :: str_len >> setup_buildstamp.F90
+echo '      ' character\(len=str_len\) :: system_str >> setup_buildstamp.F90
+echo '      ' system_str = "'Linux&
+& login2.stampede.tacc.utexas.edu&
+& 2.6.32-431.17.1.el6.x86_64&
+& #1 SMP Wed May 7 23:32:49 UTC 2014&
+& x86_64'"  >> setup_buildstamp.F90
+echo '      ' return >> setup_buildstamp.F90
+echo '      ' end subroutine >> setup_buildstamp.F90
+echo '      ' >> setup_buildstamp.F90
+

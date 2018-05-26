@@ -1,0 +1,32 @@
+# Configuration file for the Barnes-Hut tree Poisson solver contributed by Richard Wunsch
+
+# This solver requires (some version of) Paramesh
+REQUIRES Grid/GridMain/paramesh
+
+# Set up a name to use if ifdef/ifndef within the fortran code.
+#  Note this name cannot be used in Config files, only .F90.
+# disabled since not used - KW 2012-07-03
+##PPDEFINE FLASH_TREE
+
+
+# Parameters:
+
+D gr_bhEwaldAlwaysGenerate If FALSE, Ewald fields are read from
+D &    a file whose name is given by gr_bhEwaldFName if it exists,
+D &    rather than being recomputed, at initialization.
+
+
+PARAMETER gr_bhPhysMACTW           BOOLEAN     FALSE
+PARAMETER gr_bhPhysMACComm         BOOLEAN     FALSE
+PARAMETER gr_bhTreeLimAngle        REAL        0.5	[ 0 ... ]
+PARAMETER gr_bhTreeSafeBox         REAL        1.2	[ ... ]
+PARAMETER gr_bhUseUnifiedTW        BOOLEAN     FALSE
+PARAMETER gr_bhTWMaxQueueSize      INTEGER     10000 [ 1 ... ]
+
+
+# For debugging: minimum and maximum mass allowed in a cell of block-trees
+D gr_bhTreeMincellmass For debugging: minimum mass allowed in a cell of block-trees
+D gr_bhTreeMaxcellmass For debugging: maximum mass allowed in a cell of block-trees
+PARAMETER gr_bhTreeMincellmass REAL        1.0d-99
+PARAMETER gr_bhTreeMaxcellmass REAL        1.0d99
+

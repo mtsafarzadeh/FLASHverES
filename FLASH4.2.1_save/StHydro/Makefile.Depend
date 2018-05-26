@@ -1,0 +1,3373 @@
+
+###Auto generated file###
+###will be clobbered during the next make
+
+
+# Note that MODUPPERCASE is defined by Makefile.h for sites and compilers where this is necessary,
+# and Makefile should include Makefile.h before Makefile.Depend .
+
+64.o: 
+10120.o: 
+/opt/apps/intel15/hdf5/1.8.16/x86_64/include.o: 
+/work/01734/evan1022/hypre-2.9.0b/src/install/include.o: 
+10120.o: 
+Burn_computeAbarZbar.o: 
+Burn_computeDt.o: constants.h
+Burn.o: 
+Burn_finalize.o: 
+Burn_guardCellMaskHook.o: Flash.h
+Burn_init.o: 
+Burn_nseAtDens.o: 
+Burn_nseAtPres.o: 
+concatStringWithInt.o: constants.h
+
+ifdef MODUPPERCASE
+Conductivity.o : CONDUCTIVITY_INTERFACE.mod Flash.h 
+else
+Conductivity.o : conductivity_interface.mod Flash.h
+endif
+
+Conductivity_finalize.o: 
+Conductivity_init.o: 
+Cool_computeDt.o: constants.h Flash.h
+Cool.o: 
+Cool_finalize.o: 
+Cool_init.o: 
+Cool_unitTest.o: 
+Cosmology_cdmPowerSpectrum.o: 
+Cosmology_computeDeltaCrit.o: 
+Cosmology_computeDt.o: 
+Cosmology_computeVariance.o: 
+Cosmology_finalize.o: 
+Cosmology_getOldRedshift.o: 
+Cosmology_getParams.o: 
+Cosmology_getRedshift.o: 
+Cosmology_init.o: 
+Cosmology_massToLength.o: 
+Cosmology_redshiftHydro.o: 
+Cosmology_redshiftToTime.o: 
+Cosmology_sendOutputData.o: 
+Cosmology_solveFriedmannEqn.o: 
+Cosmology_unitTest.o: 
+current_date_time.o: 
+Debugger_init.o: 
+Deleptonize.o: 
+Deleptonize_finalize.o: 
+Deleptonize_getBounce.o: 
+Deleptonize_init.o: 
+Diffuse_advance1D.o: 
+Diffuse_computeDt.o: constants.h Flash.h
+Diffuse.o: 
+Diffuse_finalize.o: 
+Diffuse_fluxLimiter.o: 
+Diffuse_init.o: 
+Diffuse_setContextInfo.o: 
+Diffuse_solveScalar.o: 
+Diffuse_species.o: constants.h Flash.h
+Diffuse_therm.o: constants.h Flash.h
+Diffuse_visc.o: constants.h Flash.h
+
+ifdef MODUPPERCASE
+Driver_abortFlash.o : DRIVER_DATA.mod LOGFILE_INTERFACE.mod constants.h Flash.h 
+else
+Driver_abortFlash.o : driver_data.mod logfile_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_checkMPIErrorCode.o : DRIVER_DATA.mod DRIVER_INTERFACE.mod  
+else
+Driver_checkMPIErrorCode.o : driver_data.mod driver_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_computeDt.o : COSMOLOGY_INTERFACE.mod RADTRANS_INTERFACE.mod COOL_INTERFACE.mod DIFFUSE_INTERFACE.mod HEAT_INTERFACE.mod SOLIDMECHANICS_INTERFACE.mod PARTICLES_INTERFACE.mod DRIVER_DATA.mod INCOMPNS_INTERFACE.mod BURN_INTERFACE.mod GRID_INTERFACE.mod HYDRO_INTERFACE.mod HEATEXCHANGE_INTERFACE.mod STIR_INTERFACE.mod constants.h Flash.h 
+else
+Driver_computeDt.o : cosmology_interface.mod radtrans_interface.mod cool_interface.mod diffuse_interface.mod heat_interface.mod solidmechanics_interface.mod particles_interface.mod driver_data.mod incompns_interface.mod burn_interface.mod grid_interface.mod hydro_interface.mod heatexchange_interface.mod stir_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_driftBlock.o : DRIVER_DATA.mod TREE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Driver_driftBlock.o : driver_data.mod tree.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_driftSetSrcLoc.o : DRIVER_DATA.mod  
+else
+Driver_driftSetSrcLoc.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_driftUnk.o : DRIVER_DATA.mod TREE.mod constants.h Flash.h 
+else
+Driver_driftUnk.o : driver_data.mod tree.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_evolveFlash.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod RADTRANS_INTERFACE.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod DIFFUSE_INTERFACE.mod TIMERS_INTERFACE.mod DRIVER_DATA.mod PROFILER_INTERFACE.mod LOGFILE_INTERFACE.mod PARTICLES_INTERFACE.mod GRAVITY_INTERFACE.mod HYDRO_INTERFACE.mod EOS_INTERFACE.mod SIMULATION_INTERFACE.mod constants.h Flash.h 
+else
+Driver_evolveFlash.o : io_interface.mod cosmology_interface.mod radtrans_interface.mod driver_interface.mod grid_interface.mod diffuse_interface.mod timers_interface.mod driver_data.mod profiler_interface.mod logfile_interface.mod particles_interface.mod gravity_interface.mod hydro_interface.mod eos_interface.mod simulation_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_finalizeFlash.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod INCOMPNS_INTERFACE.mod MULTISPECIES_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod SOLIDMECHANICS_INTERFACE.mod TIMERS_INTERFACE.mod NSE_INTERFACE.mod DRIVER_DATA.mod IMBOUND_INTERFACE.mod SIMULATION_INTERFACE.mod PARTICLES_INTERFACE.mod GRAVITY_INTERFACE.mod HYDRO_INTERFACE.mod EOS_INTERFACE.mod /opt/apps/intel15/mvapich2/2.1/include/mpif.h 
+else
+Driver_finalizeFlash.o : io_interface.mod cosmology_interface.mod incompns_interface.mod multispecies_interface.mod grid_interface.mod driver_interface.mod runtimeparameters_interface.mod solidmechanics_interface.mod timers_interface.mod nse_interface.mod driver_data.mod imbound_interface.mod simulation_interface.mod particles_interface.mod gravity_interface.mod hydro_interface.mod eos_interface.mod /opt/apps/intel15/mvapich2/2.1/include/mpif.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_finalizeSourceTerms.o : BURN_INTERFACE.mod FLAME_INTERFACE.mod RADTRANS_INTERFACE.mod COOL_INTERFACE.mod DIFFUSE_INTERFACE.mod TURB_INTERFACE.mod HEAT_INTERFACE.mod POLYTROPE_INTERFACE.mod ENERGYDEPOSITION_INTERFACE.mod DELEPTONIZE_INTERFACE.mod HEATEXCHANGE_INTERFACE.mod STIR_INTERFACE.mod  
+else
+Driver_finalizeSourceTerms.o : burn_interface.mod flame_interface.mod radtrans_interface.mod cool_interface.mod diffuse_interface.mod turb_interface.mod heat_interface.mod polytrope_interface.mod energydeposition_interface.mod deleptonize_interface.mod heatexchange_interface.mod stir_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getComm.o : DRIVER_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+Driver_getComm.o : driver_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getDt.o : DRIVER_DATA.mod  
+else
+Driver_getDt.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getElapsedWCTime.o : DRIVER_DATA.mod /opt/apps/intel15/mvapich2/2.1/include/mpif.h 
+else
+Driver_getElapsedWCTime.o : driver_data.mod /opt/apps/intel15/mvapich2/2.1/include/mpif.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getMype.o : DRIVER_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+Driver_getMype.o : driver_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getNStep.o : DRIVER_DATA.mod  
+else
+Driver_getNStep.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getNumProcs.o : DRIVER_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+Driver_getNumProcs.o : driver_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getSimTime.o : DRIVER_DATA.mod  
+else
+Driver_getSimTime.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_getTimeStamp.o : DRIVER_DATA.mod  
+else
+Driver_getTimeStamp.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_init.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Driver_init.o : io_interface.mod cosmology_interface.mod runtimeparameters_interface.mod driver_data.mod logfile_interface.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_initFlash.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod INCOMPNS_INTERFACE.mod IMBOUND_INTERFACE.mod GRID_INTERFACE.mod OPACITY_INTERFACE.mod PARTICLES_INTERFACE.mod PHYSICALCONSTANTS_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod SOLIDMECHANICS_INTERFACE.mod TIMERS_INTERFACE.mod DRIVER_DATA.mod PROFILER_INTERFACE.mod SIMULATION_INTERFACE.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod GRAVITY_INTERFACE.mod HYDRO_INTERFACE.mod EOS_INTERFACE.mod MULTISPECIES_INTERFACE.mod constants.h Flash.h 
+else
+Driver_initFlash.o : io_interface.mod cosmology_interface.mod incompns_interface.mod imbound_interface.mod grid_interface.mod opacity_interface.mod particles_interface.mod physicalconstants_interface.mod runtimeparameters_interface.mod solidmechanics_interface.mod timers_interface.mod driver_data.mod profiler_interface.mod simulation_interface.mod logfile_interface.mod driver_interface.mod gravity_interface.mod hydro_interface.mod eos_interface.mod multispecies_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_initMaterialProperties.o : MASSDIFFUSIVITY_INTERFACE.mod MAGNETICRESISTIVITY_INTERFACE.mod NSE_INTERFACE.mod CONDUCTIVITY_INTERFACE.mod VISCOSITY_INTERFACE.mod  
+else
+Driver_initMaterialProperties.o : massdiffusivity_interface.mod magneticresistivity_interface.mod nse_interface.mod conductivity_interface.mod viscosity_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_initParallel.o : DRIVER_DATA.mod  
+else
+Driver_initParallel.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_initSourceTerms.o : BURN_INTERFACE.mod FLAME_INTERFACE.mod RADTRANS_INTERFACE.mod COOL_INTERFACE.mod DIFFUSE_INTERFACE.mod IONIZE_INTERFACE.mod TURB_INTERFACE.mod HEAT_INTERFACE.mod POLYTROPE_INTERFACE.mod ENERGYDEPOSITION_INTERFACE.mod DELEPTONIZE_INTERFACE.mod HEATEXCHANGE_INTERFACE.mod STIR_INTERFACE.mod  
+else
+Driver_initSourceTerms.o : burn_interface.mod flame_interface.mod radtrans_interface.mod cool_interface.mod diffuse_interface.mod ionize_interface.mod turb_interface.mod heat_interface.mod polytrope_interface.mod energydeposition_interface.mod deleptonize_interface.mod heatexchange_interface.mod stir_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_logMemoryUsage.o : UT_SYSMEMDATA.mod DRIVER_DATA.mod LOGFILE_INTERFACE.mod UT_SYSMEMINTERFACE.mod constants.h Flash.h ut_sysMem.h 
+else
+Driver_logMemoryUsage.o : ut_sysmemdata.mod driver_data.mod logfile_interface.mod ut_sysmeminterface.mod constants.h Flash.h ut_sysMem.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_mpiThreadSupport.o : DRIVER_DATA.mod  
+else
+Driver_mpiThreadSupport.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_putTimeStamp.o : DRIVER_DATA.mod  
+else
+Driver_putTimeStamp.o : driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_sendOutputData.o : IO_INTERFACE.mod DRIVER_DATA.mod  
+else
+Driver_sendOutputData.o : io_interface.mod driver_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Driver_setupParallelEnv.o : DRIVER_DATA.mod RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Driver_setupParallelEnv.o : driver_data.mod runtimeparameters_interface.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Driver_sourceTerms.o : BURN_INTERFACE.mod FLAME_INTERFACE.mod COOL_INTERFACE.mod IONIZE_INTERFACE.mod TURB_INTERFACE.mod HEAT_INTERFACE.mod POLYTROPE_INTERFACE.mod DRIVER_DATA.mod ENERGYDEPOSITION_INTERFACE.mod DELEPTONIZE_INTERFACE.mod HEATEXCHANGE_INTERFACE.mod STIR_INTERFACE.mod  
+else
+Driver_sourceTerms.o : burn_interface.mod flame_interface.mod cool_interface.mod ionize_interface.mod turb_interface.mod heat_interface.mod polytrope_interface.mod driver_data.mod energydeposition_interface.mod deleptonize_interface.mod heatexchange_interface.mod stir_interface.mod 
+endif
+
+Driver_superTimeStep.o: constants.h
+
+ifdef MODUPPERCASE
+Driver_verifyInitDt.o : COSMOLOGY_INTERFACE.mod DIFFUSE_INTERFACE.mod DRIVER_DATA.mod GRID_INTERFACE.mod HYDRO_INTERFACE.mod HEATEXCHANGE_INTERFACE.mod constants.h Flash.h 
+else
+Driver_verifyInitDt.o : cosmology_interface.mod diffuse_interface.mod driver_data.mod grid_interface.mod hydro_interface.mod heatexchange_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+dr_shortenLastDt.o : DRIVER_DATA.mod LOGFILE_INTERFACE.mod  
+else
+dr_shortenLastDt.o : driver_data.mod logfile_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+dr_wallClockLimitExceeded.o : DRIVER_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+dr_wallClockLimitExceeded.o : driver_data.mod driver_interface.mod constants.h
+endif
+
+EnergyDeposition.o: 
+EnergyDeposition_finalize.o: 
+EnergyDeposition_init.o: 
+
+ifdef MODUPPERCASE
+Eos.o : EOS_DATA.mod DRIVER_INTERFACE.mod EOS_LOCALINTERFACE.mod Eos.h constants.h Flash.h 
+else
+Eos.o : eos_data.mod driver_interface.mod eos_localinterface.mod Eos.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+eos_fillMapLookup.o : EOS_DATA.mod constants.h Eos_map.h 
+else
+eos_fillMapLookup.o : eos_data.mod constants.h Eos_map.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_finalize.o : EOS_LOCALINTERFACE.mod  
+else
+Eos_finalize.o : eos_localinterface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Eos_getAbarZbar.o : EOS_DATA.mod MULTISPECIES_INTERFACE.mod DRIVER_INTERFACE.mod Multispecies.h Flash.h 
+else
+Eos_getAbarZbar.o : eos_data.mod multispecies_interface.mod driver_interface.mod Multispecies.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_getData.o : DRIVER_INTERFACE.mod EOS_DATA.mod Eos.h constants.h Flash.h Eos_map.h 
+else
+Eos_getData.o : driver_interface.mod eos_data.mod Eos.h constants.h Flash.h Eos_map.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_getParameters.o : EOS_DATA.mod  
+else
+Eos_getParameters.o : eos_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Eos_getTempData.o : DRIVER_INTERFACE.mod EOS_DATA.mod Eos.h constants.h Flash.h Eos_map.h 
+else
+Eos_getTempData.o : driver_interface.mod eos_data.mod Eos.h constants.h Flash.h Eos_map.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_guardCells.o : EOS_DATA.mod EOS_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h 
+else
+Eos_guardCells.o : eos_data.mod eos_interface.mod grid_interface.mod constants.h Flash.h
+endif
+
+eos_helmholtz.o: Eos.h Flash.h
+eos_idealGamma3T.o: Eos.h Flash.h
+
+ifdef MODUPPERCASE
+eos_idealGamma.o : EOS_IDEALGAMMADATA.mod DRIVER_INTERFACE.mod EOS_DATA.mod Eos.h constants.h Flash.h 
+else
+eos_idealGamma.o : eos_idealgammadata.mod driver_interface.mod eos_data.mod Eos.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_init.o : PHYSICALCONSTANTS_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod EOS_LOCALINTERFACE.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod EOS_DATA.mod Eos.h constants.h Flash.h 
+else
+Eos_init.o : physicalconstants_interface.mod runtimeparameters_interface.mod eos_localinterface.mod logfile_interface.mod driver_interface.mod eos_data.mod Eos.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+eos_initGamma.o : EOS_IDEALGAMMADATA.mod EOS_DATA.mod Eos.h 
+else
+eos_initGamma.o : eos_idealgammadata.mod eos_data.mod Eos.h
+endif
+
+eos_initHelmholtz.o: 
+eos_initMgamma.o: 
+eos_initMtemp.o: 
+eos_initNuclear.o: 
+eos_initTabulated.o: 
+Eos_logDiagnostics.o: 
+eos_mgamma.o: Eos.h Flash.h
+eos_mtemp.o: Eos.h Flash.h
+eos_nuclear.o: Eos.h Flash.h
+Eos_nucOneZone.o: 
+
+ifdef MODUPPERCASE
+Eos_putData.o : EOS_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod Eos.h constants.h Flash.h Eos_map.h 
+else
+Eos_putData.o : eos_data.mod logfile_interface.mod driver_interface.mod Eos.h constants.h Flash.h Eos_map.h
+endif
+
+eos_tabFinalize.o: 
+eos_tabIonmix.o: Eos.h
+eos_tabulated.o: Eos.h Flash.h
+
+ifdef MODUPPERCASE
+Eos_unitTest.o : LOGFILE_INTERFACE.mod  
+else
+Eos_unitTest.o : logfile_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+eos_variableMap.o : DRIVER_INTERFACE.mod Eos.h constants.h Flash.h Eos_map.h 
+else
+eos_variableMap.o : driver_interface.mod Eos.h constants.h Flash.h Eos_map.h
+endif
+
+
+ifdef MODUPPERCASE
+Eos_wrapped.o : EOS_DATA.mod EOS_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod LOGFILE_INTERFACE.mod Eos.h constants.h Flash.h 
+else
+Eos_wrapped.o : eos_data.mod eos_interface.mod grid_interface.mod driver_interface.mod logfile_interface.mod Eos.h constants.h Flash.h
+endif
+
+findWords.o: constants.h
+Flame_computeAbarZbar.o: 
+Flame_finalize.o: 
+Flame_getProfile.o: 
+Flame_getWidth.o: 
+Flame_init.o: 
+Flame_laminarSpeed.o: 
+Flame_rhJump.o: Eos.h Flash.h
+Flame_rhJumpReactive.o: Eos.h
+Flame_step.o: 
+
+ifdef MODUPPERCASE
+Flash.o : DRIVER_INTERFACE.mod  
+else
+Flash.o : driver_interface.mod 
+endif
+
+Gravity_accelAtCoords.o: 
+Gravity_accelListOfBlocks.o: 
+Gravity_accelOneBlock.o: constants.h Flash.h
+Gravity_accelOneRow.o: 
+Gravity_bhAccBotNode.o: constants.h Flash.h
+Gravity_bhAccNode.o: constants.h Flash.h
+Gravity_bhBotNodeContrib.o: constants.h Flash.h FortranLangFeatures.fh
+Gravity_bhEwald.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhFillBotNode.o: constants.h
+Gravity_bhFinalizeBlock.o: constants.h
+Gravity_bhGenEwaldField.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhGenEwaldFieldLevel.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhGetNodeStruct.o: 
+Gravity_bhInitFieldVar.o: constants.h Flash.h
+Gravity_bhMAC.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhNodeContrib.o: constants.h Flash.h FortranLangFeatures.fh
+Gravity_bhNormalizeNode.o: constants.h Flash.h
+Gravity_bhPartErr.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhPostprocNode.o: constants.h Flash.h Flash_mpi.h
+Gravity_bhSelfContrib.o: constants.h FortranLangFeatures.fh
+Gravity_bhStartBlock.o: constants.h Flash.h FortranLangFeatures.fh
+Gravity_computeDt.o: 
+Gravity_finalize.o: 
+
+ifdef MODUPPERCASE
+Gravity_init.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod  
+else
+Gravity_init.o : runtimeparameters_interface.mod driver_interface.mod 
+endif
+
+Gravity_potentialListOfBlocks.o: 
+
+ifdef MODUPPERCASE
+Gravity_unitTest.o : LOGFILE_INTERFACE.mod  
+else
+Gravity_unitTest.o : logfile_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+gr_bcApplyToAllBlks.o : GR_BCINTERFACE.mod GRID_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_bcApplyToAllBlks.o : gr_bcinterface.mod grid_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_bcApplyToOneFaceAllGds.o : DRIVER_INTERFACE.mod GRID_INTERFACE.mod GR_BCINTERFACE.mod constants.h Flash.h 
+else
+gr_bcApplyToOneFaceAllGds.o : driver_interface.mod grid_interface.mod gr_bcinterface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_bcApplyToOneFace.o : GR_HGINTERFACE.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod GR_BCINTERFACE.mod constants.h Flash.h 
+else
+gr_bcApplyToOneFace.o : gr_hginterface.mod driver_interface.mod grid_interface.mod gr_bcinterface.mod constants.h Flash.h
+endif
+
+gr_bcFinalize.o: 
+
+ifdef MODUPPERCASE
+gr_bcGetRegion.o : PHYSICALDATA.mod WORKSPACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+gr_bcGetRegion.o : physicaldata.mod workspace.mod driver_interface.mod constants.h Flash.h
+endif
+
+gr_bcHseInit.o: 
+
+ifdef MODUPPERCASE
+gr_bcInit.o : RUNTIMEPARAMETERS_INTERFACE.mod GR_BCDATA.mod Flash.h 
+else
+gr_bcInit.o : runtimeparameters_interface.mod gr_bcdata.mod Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_bcMapBcType.o : HYDRO_INTERFACE.mod GR_BICGINTERFACE.mod GR_HGINTERFACE.mod GR_MGINTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+gr_bcMapBcType.o : hydro_interface.mod gr_bicginterface.mod gr_hginterface.mod gr_mginterface.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_bcPutRegion.o : PHYSICALDATA.mod WORKSPACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+gr_bcPutRegion.o : physicaldata.mod workspace.mod driver_interface.mod constants.h Flash.h
+endif
+
+gr_bhFinalize.o: 
+gr_bhInit.o: 
+gr_bicgFinalize.o: 
+gr_bicgInit.o: 
+gr_bicgMapBcType.o: 
+
+ifdef MODUPPERCASE
+gr_checkDataType.o : DRIVER_INTERFACE.mod GRID_INTERFACE.mod constants.h 
+else
+gr_checkDataType.o : driver_interface.mod grid_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_createDataTypes.o : GRID_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_createDataTypes.o : grid_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_createDomain.o : PHYSICALDATA.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_createDomain.o : physicaldata.mod grid_data.mod constants.h Flash.h
+endif
+
+gr_ensureValidNeighborInfo.o: constants.h
+
+ifdef MODUPPERCASE
+gr_extendedGetCellCoords.o : GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod  
+else
+gr_extendedGetCellCoords.o : grid_interface.mod grid_data.mod driver_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+gr_extendedGetDeltas.o : GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+gr_extendedGetDeltas.o : grid_interface.mod grid_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_findBlock.o : GRID_INTERFACE.mod constants.h Flash.h 
+else
+gr_findBlock.o : grid_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_findMean.o : GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h Flash_mpi.h 
+else
+gr_findMean.o : grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_GCAllocScratch.o : GRID_INTERFACE.mod GR_GCSCRATCHDATA.mod constants.h Flash.h 
+else
+gr_GCAllocScratch.o : grid_interface.mod gr_gcscratchdata.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_GCReleaseScratch.o : GR_GCSCRATCHDATA.mod constants.h Flash.h 
+else
+gr_GCReleaseScratch.o : gr_gcscratchdata.mod constants.h Flash.h
+endif
+
+gr_GCTransferOneBlk.o: constants.h Flash.h
+
+ifdef MODUPPERCASE
+gr_getCellFaceArea.o : GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_getCellFaceArea.o : grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_getCellVol.o : GRID_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_getCellVol.o : grid_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_getDataOffsets.o : GRID_INTERFACE.mod constants.h Flash.h 
+else
+gr_getDataOffsets.o : grid_interface.mod constants.h Flash.h
+endif
+
+gr_getInteriorBlkPtr.o: 
+gr_hg_amr_1blk_bcset_work.o: 
+gr_hgFinalize.o: 
+gr_hgInit.o: 
+gr_hgMapBcType.o: 
+gr_hgPfftFinalize.o: 
+gr_hgPfftInit.o: 
+gr_hypreAddGraph.o: constants.h Flash.h
+gr_hypreApplyBcToFace.o: constants.h Flash.h
+gr_hypreComputeB.o: constants.h Flash.h
+gr_hypreCreateMatrix.o: 
+gr_hypreDestroyGrid.o: 
+gr_hypreDestroySolver.o: 
+gr_hypreExchangeFacB.o: 
+gr_hypreFinalize.o: 
+gr_hypreGetFaceB.o: constants.h Flash.h
+gr_hypreGridStatus.o: 
+gr_hypreInit.o: 
+gr_hypreSetIniGuess.o: constants.h Flash.h
+gr_hypreSetupGrid.o: 
+gr_hypreSetupSolver.o: 
+gr_hypreSolve.o: 
+gr_hypreUpdateSoln.o: 
+
+ifdef MODUPPERCASE
+Grid_addToVar.o : GRID_INTERFACE.mod constants.h Flash.h Particles.h 
+else
+Grid_addToVar.o : grid_interface.mod constants.h Flash.h Particles.h
+endif
+
+Grid_advanceDiffusion.o: 
+Grid_applyBCEdgeAllUnkVars.o: Flash.h
+Grid_applyBCEdge.o: 
+
+ifdef MODUPPERCASE
+Grid_bcApplyToRegion.o : GR_BCINTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_bcApplyToRegion.o : gr_bcinterface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_bcApplyToRegionMixedGds.o : GRID_DATA.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GR_BCINTERFACE.mod constants.h Flash.h 
+else
+Grid_bcApplyToRegionMixedGds.o : grid_data.mod grid_interface.mod driver_interface.mod gr_bcinterface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_bcApplyToRegionSpecialized.o : DRIVER_INTERFACE.mod GRID_DATA.mod constants.h 
+else
+Grid_bcApplyToRegionSpecialized.o : driver_interface.mod grid_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_computeUserVars.o : GRID_INTERFACE.mod constants.h Flash.h 
+else
+Grid_computeUserVars.o : grid_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_computeVarDiff.o : PHYSICALDATA.mod TIMERS_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h 
+else
+Grid_computeVarDiff.o : physicaldata.mod timers_interface.mod grid_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_computeVarNorm.o : TIMERS_INTERFACE.mod PHYSICALDATA.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod GRID_DATA.mod constants.h 
+else
+Grid_computeVarNorm.o : timers_interface.mod physicaldata.mod driver_interface.mod grid_interface.mod grid_data.mod constants.h
+endif
+
+Grid_conserveField.o: 
+Grid_conserveFluxes.o: 
+
+ifdef MODUPPERCASE
+Grid_conserveToPrimitive.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_conserveToPrimitive.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_dump.o : PHYSICALDATA.mod GRID_DATA.mod constants.h Flash.h Flash_mpi.h 
+else
+Grid_dump.o : physicaldata.mod grid_data.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_fillGuardCells.o : GR_BCINTERFACE.mod GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_fillGuardCells.o : gr_bcinterface.mod grid_interface.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_finalize.o : PHYSICALDATA.mod GR_SBINTERFACE.mod GR_PTINTERFACE.mod GR_BCINTERFACE.mod GRID_DATA.mod Flash.h 
+else
+Grid_finalize.o : physicaldata.mod gr_sbinterface.mod gr_ptinterface.mod gr_bcinterface.mod grid_data.mod Flash.h
+endif
+
+Grid_formatNonRep.o: constants.h Flash.h
+
+ifdef MODUPPERCASE
+Grid_GCPutScratch.o : GR_INTERFACE.mod GRID_INTERFACE.mod GR_GCSCRATCHDATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_GCPutScratch.o : gr_interface.mod grid_interface.mod gr_gcscratchdata.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_GCTransferOneBlk.o : GR_INTERFACE.mod GRID_INTERFACE.mod GR_GCSCRATCHDATA.mod constants.h Flash.h 
+else
+Grid_GCTransferOneBlk.o : gr_interface.mod grid_interface.mod gr_gcscratchdata.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkBC.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkBC.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkBoundBox.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkBoundBox.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkCenterCoords.o : GRID_INTERFACE.mod constants.h Flash.h 
+else
+Grid_getBlkCenterCoords.o : grid_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkCornerID.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkCornerID.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkIDFromPos.o : GR_INTERFACE.mod GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_getBlkIDFromPos.o : gr_interface.mod grid_interface.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkIDFromPosForListsOfBlocks.o : GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_getBlkIDFromPosForListsOfBlocks.o : grid_interface.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkIndexLimits.o : DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkIndexLimits.o : driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkNeighBlkIDFromPos.o : DRIVER_INTERFACE.mod constants.h 
+else
+Grid_getBlkNeighBlkIDFromPos.o : driver_interface.mod constants.h
+endif
+
+Grid_getBlkNeighLevels.o: Flash.h
+
+ifdef MODUPPERCASE
+Grid_getBlkPhysicalSize.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getBlkPhysicalSize.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getBlkPtr.o : PARAMESH_INTERFACES.mod WORKSPACE.mod PHYSICALDATA.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_getBlkPtr.o : paramesh_interfaces.mod workspace.mod physicaldata.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+Grid_getBlkRefineLevel.o: 
+Grid_getBlkType.o: constants.h
+Grid_getBoundboxCentroids.o: 
+
+ifdef MODUPPERCASE
+Grid_getCellCoords.o : DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getCellCoords.o : driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getDeltas.o : GRID_DATA.mod constants.h 
+else
+Grid_getDeltas.o : grid_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getDomainBC.o : GRID_DATA.mod constants.h 
+else
+Grid_getDomainBC.o : grid_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getDomainBoundBox.o : GRID_DATA.mod constants.h 
+else
+Grid_getDomainBoundBox.o : grid_data.mod constants.h
+endif
+
+Grid_getFluxData.o: Flash.h
+
+ifdef MODUPPERCASE
+Grid_getGeometry.o : GRID_DATA.mod  
+else
+Grid_getGeometry.o : grid_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getGlobalIndexLimits.o : GRID_DATA.mod constants.h 
+else
+Grid_getGlobalIndexLimits.o : grid_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getListOfBlocks.o : LOGFILE_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getListOfBlocks.o : logfile_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+Grid_getLocalNumBlks.o: 
+
+ifdef MODUPPERCASE
+Grid_getMaxCommonRefinement.o : TREE.mod DRIVER_INTERFACE.mod constants.h Flash.h Flash_mpi.h 
+else
+Grid_getMaxCommonRefinement.o : tree.mod driver_interface.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getMaxRefinement.o : TREE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h Flash_mpi.h 
+else
+Grid_getMaxRefinement.o : tree.mod grid_data.mod driver_interface.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getMinCellSize.o : GRID_DATA.mod  
+else
+Grid_getMinCellSize.o : grid_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getMinCellSizes.o : GRID_DATA.mod constants.h 
+else
+Grid_getMinCellSizes.o : grid_data.mod constants.h
+endif
+
+Grid_getNeighProcList.o: 
+
+ifdef MODUPPERCASE
+Grid_getNumVars.o : DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_getNumVars.o : driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getPlaneData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getPlaneData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getPointData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getPointData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getRowData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getRowData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getSingleCellCoords.o : DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getSingleCellCoords.o : driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_getSingleCellVol.o : GRID_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_getSingleCellVol.o : grid_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+Grid_getVarNonRep.o: constants.h Flash.h
+Grid_guardCellMaskHook.o: 
+
+ifdef MODUPPERCASE
+Grid_initDomain.o : RADTRANS_INTERFACE.mod GRID_DATA.mod GR_SBINTERFACE.mod SIMULATION_INTERFACE.mod GRID_INTERFACE.mod EOS_INTERFACE.mod constants.h Flash.h 
+else
+Grid_initDomain.o : radtrans_interface.mod grid_data.mod gr_sbinterface.mod simulation_interface.mod grid_interface.mod eos_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_init.o : RUNTIMEPARAMETERS_INTERFACE.mod PHYSICALDATA.mod GR_SBINTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_init.o : runtimeparameters_interface.mod physicaldata.mod gr_sbinterface.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_limitAbundance.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_limitAbundance.o : grid_data.mod constants.h Flash.h
+endif
+
+Grid_mapMeshToParticles.o: constants.h Flash.h Particles.h
+Grid_mapParticlesToMesh.o: 
+Grid_markBlkDerefine.o: 
+Grid_markBlkRefine.o: 
+Grid_markRefineDerefine.o: 
+Grid_markRefineSpecialized.o: constants.h
+Grid_moveParticles.o: 
+Grid_notifySolnDataUpdate.o: 
+Grid_outsideBoundBox.o: constants.h Flash.h
+Grid_parseNonRep.o: Flash.h
+Grid_pfft.o: 
+Grid_pfftFinalize.o: 
+Grid_pfftGetIndexLimits.o: constants.h
+Grid_pfftInit.o: constants.h
+Grid_pfftMapFromOutput.o: 
+Grid_pfftMapToInput.o: 
+
+ifdef MODUPPERCASE
+Grid_primitiveToConserve.o : GRID_DATA.mod constants.h Flash.h 
+else
+Grid_primitiveToConserve.o : grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_putBlkData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_putBlkData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+Grid_putFluxData.o: Flash.h
+Grid_putLocalNumBlks.o: 
+
+ifdef MODUPPERCASE
+Grid_putPlaneData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_putPlaneData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_putPointData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_putPointData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_putRowData.o : GR_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+Grid_putRowData.o : gr_interface.mod grid_interface.mod driver_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+Grid_receiveInputData.o: 
+
+ifdef MODUPPERCASE
+Grid_releaseBlkPtr.o : DRIVER_DATA.mod PHYSICALDATA.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_releaseBlkPtr.o : driver_data.mod physicaldata.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_renormAbundance.o : GRID_INTERFACE.mod GRID_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Grid_renormAbundance.o : grid_interface.mod grid_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Grid_renormMassScalars.o : SIMULATION_INTERFACE.mod constants.h Flash.h 
+else
+Grid_renormMassScalars.o : simulation_interface.mod constants.h Flash.h
+endif
+
+Grid_restrictAllLevels.o: 
+Grid_restrictByLevels.o: 
+Grid_sbBroadcastParticles.o: 
+Grid_sbCreateGroups.o: 
+Grid_sbSelectMaster.o: 
+
+ifdef MODUPPERCASE
+Grid_sendOutputData.o : IO_INTERFACE.mod GRID_DATA.mod Flash.h 
+else
+Grid_sendOutputData.o : io_interface.mod grid_data.mod Flash.h
+endif
+
+Grid_setFluxHandling.o: 
+Grid_setSolverDbgContextInfo.o: 
+Grid_solidBodyUnitTest.o: 
+Grid_solvePoisson.o: 
+Grid_sortParticles.o: Flash.h
+Grid_unitTest.o: 
+Grid_updateRefinement.o: 
+Grid_updateSolidBodyForces.o: Flash.h
+
+ifdef MODUPPERCASE
+gr_initGeometry.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod GRID_DATA.mod LOGFILE_INTERFACE.mod constants.h Flash.h 
+else
+gr_initGeometry.o : runtimeparameters_interface.mod driver_interface.mod grid_data.mod logfile_interface.mod constants.h Flash.h
+endif
+
+gr_isoMpoleFinalize.o: 
+gr_isoMpoleInit.o: 
+gr_mgFinalize.o: 
+gr_mgInit.o: 
+gr_mgMapBcType.o: 
+gr_mgPfftFinalize.o: 
+gr_mgPfftInit.o: 
+gr_mpoleAllocateRadialArrays.o: 
+gr_mpoleCen1Dspherical.o: 
+gr_mpoleCen2Dcylindrical.o: 
+gr_mpoleCen2Dspherical.o: 
+gr_mpoleCen3Dcartesian.o: 
+gr_mpoleCen3Dcylindrical.o: 
+gr_mpoleCenterOfExpansion.o: 
+gr_mpoleCollectMoments.o: 
+gr_mpoleDeallocateRadialArrays.o: 
+gr_mpoleDumpMoments.o: 
+gr_mpoleFinalize.o: 
+gr_mpoleHeapsort.o: 
+gr_mpoleInit.o: 
+gr_mpoleMom1Dspherical.o: 
+gr_mpoleMom2Dcylindrical.o: 
+gr_mpoleMom2Dspherical.o: 
+gr_mpoleMom3Dcartesian.o: 
+gr_mpoleMom3Dcylindrical.o: 
+gr_mpoleMomBins1Dspherical.o: 
+gr_mpoleMomBins2Dcylindrical.o: 
+gr_mpoleMomBins2Dspherical.o: 
+gr_mpoleMomBins3Dcartesian.o: 
+gr_mpoleMomBins3Dcylindrical.o: 
+gr_mpoleMoments.o: 
+gr_mpolePot1Dspherical.o: 
+gr_mpolePot2Dcylindrical.o: 
+gr_mpolePot2Dspherical.o: 
+gr_mpolePot3Dcartesian.o: 
+gr_mpolePot3Dcylindrical.o: 
+gr_mpolePotentials.o: 
+gr_mpolePrintRadialInfo.o: 
+gr_mpoleRad1Dspherical.o: 
+gr_mpoleRad2Dcylindrical.o: 
+gr_mpoleRad2Dspherical.o: 
+gr_mpoleRad3Dcartesian.o: 
+gr_mpoleRad3Dcylindrical.o: 
+gr_mpoleRadialSampling.o: 
+gr_mpoleSetInnerZoneGrid.o: 
+gr_mpoleSetOuterZoneGrid.o: 
+gr_mpoleSetRadialBinData.o: 
+gr_pfftFinalize.o: 
+gr_pfftInit.o: 
+gr_pfftPoissonDirect.o: constants.h
+gr_ptAdvance.o: 
+gr_ptFillBlkParticleInfo.o: 
+gr_ptFinalize.o: 
+gr_ptInit.o: 
+gr_ptMapInit.o: 
+gr_ptMarkRefineDerefine.o: 
+gr_ptMove.o: 
+gr_ptMoveOffBlk.o: 
+gr_recreateDomain.o: 
+gr_releaseInteriorBlkPtr.o: 
+gr_sbCreateGroups.o: 
+gr_sbCreateParticles.o: 
+gr_sbFinalize.o: 
+gr_sbGetProcBlock.o: 
+gr_sbInit.o: 
+gr_sbSendBoundBox.o: 
+gr_sbSendForces.o: 
+gr_sbSendParticleCount.o: 
+gr_sbSendParticles.o: 
+gr_sbSendPosn.o: 
+gr_sbStoreParticlesPerProc.o: 
+gr_sbUpdateForces.o: 
+
+ifdef MODUPPERCASE
+gr_setBlockType.o : GRID_DATA.mod  
+else
+gr_setBlockType.o : grid_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+gr_setDataStructInfo.o : RUNTIMEPARAMETERS_INTERFACE.mod GRID_DATA.mod constants.h Flash.h 
+else
+gr_setDataStructInfo.o : runtimeparameters_interface.mod grid_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+gr_shiftData.o : PHYSICALDATA.mod constants.h Flash.h Flash_mpi.h 
+else
+gr_shiftData.o : physicaldata.mod constants.h Flash.h Flash_mpi.h
+endif
+
+gr_solversFinalize.o: 
+gr_solversInit.o: 
+gr_xyzToBlock.o: constants.h
+gr_xyzToBlockLevel.o: Flash.h
+Heat_computeDt.o: constants.h Flash.h
+Heatexchange_computeDt.o: constants.h Flash.h
+Heatexchange.o: 
+Heatexchange_finalize.o: 
+Heatexchange_init.o: 
+Heat.o: 
+Heat_finalize.o: 
+Heat_init.o: 
+
+ifdef MODUPPERCASE
+Hydro_computeDt.o : HYDRO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Hydro_computeDt.o : hydro_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Hydro_computeVars.o : HYDRO_DATA.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Hydro_computeVars.o : hydro_data.mod grid_interface.mod driver_interface.mod constants.h Flash.h
+endif
+
+Hydro_detectShock.o: constants.h
+
+ifdef MODUPPERCASE
+Hydro.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod TIMERS_INTERFACE.mod constants.h Flash.h 
+else
+Hydro.o : hy_uhd_interface.mod hydro_data.mod timers_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Hydro_finalize.o : HYDRO_DATA.mod  
+else
+Hydro_finalize.o : hydro_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Hydro_init.o : IO_INTERFACE.mod HYDRO_DATA.mod DRIVER_INTERFACE.mod PHYSICALCONSTANTS_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+Hydro_init.o : io_interface.mod hydro_data.mod driver_interface.mod physicalconstants_interface.mod runtimeparameters_interface.mod logfile_interface.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+Hydro_mapBcType.o : HYDRO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Hydro_mapBcType.o : hydro_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Hydro_recalibrateEints.o : HY_UHD_MULTITEMPDATA.mod HYDRO_DATA.mod GRID_INTERFACE.mod  constants.h Flash.h 
+else
+Hydro_recalibrateEints.o : hy_uhd_multitempdata.mod hydro_data.mod grid_interface.mod  constants.h Flash.h
+endif
+
+Hydro_sendOutputData.o: 
+
+ifdef MODUPPERCASE
+Hydro_shockStrength.o : HYDRO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+Hydro_shockStrength.o : hydro_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_addGravityUnsplit.o : HYDRO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_addGravityUnsplit.o : hydro_data.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_addThermalFluxes.o : HYDRO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_addThermalFluxes.o : hydro_data.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_addViscousFluxes.o : GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_addViscousFluxes.o : grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_avgState.o : HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod UHD.h Flash.h 
+else
+hy_uhd_avgState.o : hy_uhd_slopelimiters.mod hydro_data.mod UHD.h Flash.h
+endif
+
+hy_uhd_checkRHjumpCond.o: UHD.h Flash.h
+hy_uhd_con2prim.o: UHD.h Flash.h
+
+ifdef MODUPPERCASE
+hy_uhd_dataReconstOneStep.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod GRID_INTERFACE.mod TIMERS_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_dataReconstOneStep.o : hy_uhd_interface.mod hydro_data.mod grid_interface.mod timers_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_DataReconstructNormalDir_MH.o : HY_UHD_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod TIMERS_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_DataReconstructNormalDir_MH.o : hy_uhd_interface.mod hy_uhd_slopelimiters.mod hydro_data.mod timers_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_DataReconstructNormalDir_PPM.o : HY_UHD_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod TIMERS_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_DataReconstructNormalDir_PPM.o : hy_uhd_interface.mod hy_uhd_slopelimiters.mod hydro_data.mod timers_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_DataReconstructNormalDir_WENO5.o : HY_UHD_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod TIMERS_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_DataReconstructNormalDir_WENO5.o : hy_uhd_interface.mod hy_uhd_slopelimiters.mod hydro_data.mod timers_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_eigenParameters.o : DRIVER_DATA.mod HYDRO_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_eigenParameters.o : driver_data.mod hydro_data.mod logfile_interface.mod driver_interface.mod constants.h Flash.h UHD.h
+endif
+
+hy_uhd_eigenValue.o: UHD.h Flash.h
+
+ifdef MODUPPERCASE
+hy_uhd_eigenVector.o : HYDRO_DATA.mod LOGFILE_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_eigenVector.o : hydro_data.mod logfile_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_energyFix.o : HYDRO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_energyFix.o : hydro_data.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_entropyFix.o : HYDRO_DATA.mod UHD.h Flash.h 
+else
+hy_uhd_entropyFix.o : hydro_data.mod UHD.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_getFaceFlux.o : HYDRO_DATA.mod CONDUCTIVITY_INTERFACE.mod DRIVER_INTERFACE.mod MAGNETICRESISTIVITY_INTERFACE.mod TIMERS_INTERFACE.mod HY_UHD_INTERFACE.mod VISCOSITY_INTERFACE.mod GRID_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod EOS_INTERFACE.mod Eos.h constants.h Flash.h UHD.h 
+else
+hy_uhd_getFaceFlux.o : hydro_data.mod conductivity_interface.mod driver_interface.mod magneticresistivity_interface.mod timers_interface.mod hy_uhd_interface.mod viscosity_interface.mod grid_interface.mod hy_uhd_slopelimiters.mod eos_interface.mod Eos.h constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_getRiemannState.o : HY_UHD_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_getRiemannState.o : hy_uhd_interface.mod hy_uhd_slopelimiters.mod hydro_data.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_HLLC.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_HLLC.o : hy_uhd_interface.mod hydro_data.mod driver_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_HLL.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod DRIVER_INTERFACE.mod UHD.h Flash.h 
+else
+hy_uhd_HLL.o : hy_uhd_interface.mod hydro_data.mod driver_interface.mod UHD.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_LLF.o : HY_UHD_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_LLF.o : hy_uhd_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_Marquina.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_Marquina.o : hy_uhd_interface.mod hydro_data.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_MarquinaModified.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_MarquinaModified.o : hy_uhd_interface.mod hydro_data.mod constants.h Flash.h UHD.h
+endif
+
+hy_uhd_MultiTempInit.o: 
+hy_uhd_prim2con.o: UHD.h Flash.h
+
+ifdef MODUPPERCASE
+hy_uhd_prim2flx.o : HYDRO_DATA.mod UHD.h Flash.h 
+else
+hy_uhd_prim2flx.o : hydro_data.mod UHD.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_putGravityUnsplit.o : GRAVITY_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_putGravityUnsplit.o : gravity_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_Roe.o : HY_UHD_INTERFACE.mod HYDRO_DATA.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_Roe.o : hy_uhd_interface.mod hydro_data.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_setMinTimeStep.o : HYDRO_DATA.mod  
+else
+hy_uhd_setMinTimeStep.o : hydro_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_shockDetect.o : DRIVER_DATA.mod HYDRO_DATA.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_shockDetect.o : driver_data.mod hydro_data.mod logfile_interface.mod grid_interface.mod driver_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_TVDslope.o : HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_TVDslope.o : hy_uhd_slopelimiters.mod hydro_data.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_TVDslopeUpwind.o : HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_TVDslopeUpwind.o : hy_uhd_slopelimiters.mod hydro_data.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_unitConvert.o : HYDRO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h UHD.h 
+else
+hy_uhd_unitConvert.o : hydro_data.mod grid_interface.mod constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_unsplit.o : HYDRO_DATA.mod DRIVER_INTERFACE.mod TIMERS_INTERFACE.mod HY_UHD_INTERFACE.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod GRAVITY_INTERFACE.mod EOS_INTERFACE.mod Eos.h constants.h Flash.h UHD.h 
+else
+hy_uhd_unsplit.o : hydro_data.mod driver_interface.mod timers_interface.mod hy_uhd_interface.mod logfile_interface.mod grid_interface.mod gravity_interface.mod eos_interface.mod Eos.h constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_unsplitUpdate.o : HYDRO_DATA.mod HY_UHD_INTERFACE.mod MAGNETICRESISTIVITY_INTERFACE.mod GRID_INTERFACE.mod HYDRO_INTERFACE.mod HY_UHD_SLOPELIMITERS.mod EOS_INTERFACE.mod Eos.h constants.h Flash.h UHD.h 
+else
+hy_uhd_unsplitUpdate.o : hydro_data.mod hy_uhd_interface.mod magneticresistivity_interface.mod grid_interface.mod hydro_interface.mod hy_uhd_slopelimiters.mod eos_interface.mod Eos.h constants.h Flash.h UHD.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_updateSpeciesMassScalar.o : HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod UHD.h Flash.h 
+else
+hy_uhd_updateSpeciesMassScalar.o : hy_uhd_slopelimiters.mod hydro_data.mod UHD.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+hy_uhd_upwindTransverseFlux.o : HY_UHD_SLOPELIMITERS.mod HYDRO_DATA.mod DRIVER_INTERFACE.mod UHD.h Flash.h 
+else
+hy_uhd_upwindTransverseFlux.o : hy_uhd_slopelimiters.mod hydro_data.mod driver_interface.mod UHD.h Flash.h
+endif
+
+ImBound.o: Flash.h
+ImBound_finalize.o: 
+ImBound_init.o: 
+ImBound_setData.o: 
+IncompNS_computeDt.o: 
+IncompNS.o: constants.h Flash.h
+IncompNS_finalize.o: 
+IncompNS_init.o: 
+IncompNS_sendOutputData.o: 
+
+ifdef MODUPPERCASE
+io_bcastScalars.o : IO_DATA.mod  
+else
+io_bcastScalars.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+IO_checkForPlot.o : IO_DATA.mod  
+else
+IO_checkForPlot.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_closeFile.o : IO_DATA.mod constants.h 
+else
+io_closeFile.o : io_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+io_createDatasets.o : IO_C_INTERFACE.mod TREE.mod IO_DATA.mod TIMERS_INTERFACE.mod ISO_C_BINDING.mod io_flash.h constants.h Flash.h 
+else
+io_createDatasets.o : io_c_interface.mod tree.mod io_data.mod timers_interface.mod iso_c_binding.mod io_flash.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_endRayWrite.o : IO_DATA.mod DRIVER_INTERFACE.mod  
+else
+IO_endRayWrite.o : io_data.mod driver_interface.mod 
+endif
+
+IO_finalize.o: constants.h Flash.h
+
+ifdef MODUPPERCASE
+io_finalizeListsRead.o : RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod DRIVER_INTERFACE.mod  
+else
+io_finalizeListsRead.o : runtimeparameters_interface.mod io_data.mod driver_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_finalizeListsWrite.o : IO_DATA.mod  
+else
+io_finalizeListsWrite.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_getAllScalars.o : IO_DATA.mod constants.h 
+else
+io_getAllScalars.o : io_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+io_getNumScalars.o : IO_DATA.mod  
+else
+io_getNumScalars.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_getOutputName.o : IO_DATA.mod constants.h 
+else
+io_getOutputName.o : io_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_getPrevScalar.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+IO_getPrevScalar.o : io_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_getScalar.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+IO_getScalar.o : io_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+io_getVarExtrema.o : IO_DATA.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h Flash_mpi.h 
+else
+io_getVarExtrema.o : io_data.mod driver_interface.mod grid_interface.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_init.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod GRID_INTERFACE.mod IO_PTINTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod SIMULATION_INTERFACE.mod DRIVER_INTERFACE.mod LOGFILE_INTERFACE.mod constants.h Flash.h 
+else
+IO_init.o : io_interface.mod cosmology_interface.mod grid_interface.mod io_ptinterface.mod runtimeparameters_interface.mod io_data.mod simulation_interface.mod driver_interface.mod logfile_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+io_initFile.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+io_initFile.o : io_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_initRPsFromCheckpoint.o : RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+IO_initRPsFromCheckpoint.o : runtimeparameters_interface.mod io_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+io_isPlotVar.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+io_isPlotVar.o : io_data.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+io_memoryReport.o : UT_SYSMEMDATA.mod IO_DATA.mod LOGFILE_INTERFACE.mod UT_SYSMEMINTERFACE.mod constants.h Flash.h ut_sysMem.h 
+else
+io_memoryReport.o : ut_sysmemdata.mod io_data.mod logfile_interface.mod ut_sysmeminterface.mod constants.h Flash.h ut_sysMem.h
+endif
+
+Ionize_equil.o: Ionize.h
+Ionize.o: 
+Ionize_finalize.o: 
+Ionize_init.o: 
+
+ifdef MODUPPERCASE
+IO_output.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod GRID_INTERFACE.mod IO_PTINTERFACE.mod TIMERS_INTERFACE.mod IO_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash_mpi.h 
+else
+IO_output.o : io_interface.mod cosmology_interface.mod grid_interface.mod io_ptinterface.mod timers_interface.mod io_data.mod logfile_interface.mod driver_interface.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_outputFinal.o : IO_INTERFACE.mod IO_DATA.mod constants.h 
+else
+IO_outputFinal.o : io_interface.mod io_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_outputInitial.o : IO_INTERFACE.mod IO_DATA.mod GRID_INTERFACE.mod constants.h Flash_mpi.h 
+else
+IO_outputInitial.o : io_interface.mod io_data.mod grid_interface.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+io_prepareListsRead.o : IO_DATA.mod  
+else
+io_prepareListsRead.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_prepareListsWrite.o : RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod constants.h Flash_mpi.h 
+else
+io_prepareListsWrite.o : runtimeparameters_interface.mod io_data.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+io_prepareSimInfo.o : IO_DATA.mod constants.h Flash_mpi.h 
+else
+io_prepareSimInfo.o : io_data.mod constants.h Flash_mpi.h
+endif
+
+io_ptCorrectNextPartTime.o: 
+io_ptInit.o: 
+io_ptResetNextFile.o: 
+io_ptSendOutputData.o: 
+
+ifdef MODUPPERCASE
+IO_readCheckpoint.o : IO_INTERFACE.mod IO_DATA.mod SIMULATION_INTERFACE.mod TIMERS_INTERFACE.mod constants.h Flash.h 
+else
+IO_readCheckpoint.o : io_interface.mod io_data.mod simulation_interface.mod timers_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+io_readData.o : IO_INTERFACE.mod GRID_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod PHYSICALDATA.mod constants.h Flash.h Flash_mpi.h 
+else
+io_readData.o : io_interface.mod grid_interface.mod runtimeparameters_interface.mod io_data.mod logfile_interface.mod driver_interface.mod physicaldata.mod constants.h Flash.h Flash_mpi.h
+endif
+
+IO_readParticles.o: 
+
+ifdef MODUPPERCASE
+io_readRPsFromCheckpoint.o : RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod constants.h Flash_mpi.h 
+else
+io_readRPsFromCheckpoint.o : runtimeparameters_interface.mod io_data.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_readUserArray.o : UT_RANDOMINTERFACE.mod IO_DATA.mod STIR_DATA.mod constants.h Flash.h Flash_mpi.h 
+else
+IO_readUserArray.o : ut_randominterface.mod io_data.mod stir_data.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+io_rescaleCellBoxes.o : TREE.mod IO_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h 
+else
+io_rescaleCellBoxes.o : tree.mod io_data.mod logfile_interface.mod driver_interface.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+io_restrictBeforeWrite.o : IO_DATA.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod constants.h 
+else
+io_restrictBeforeWrite.o : io_data.mod logfile_interface.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_sendOutputData.o : IO_INTERFACE.mod IO_DATA.mod  
+else
+IO_sendOutputData.o : io_interface.mod io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+io_setPrevScalar.o : IO_DATA.mod  
+else
+io_setPrevScalar.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+IO_setScalar.o : IO_DATA.mod  
+else
+IO_setScalar.o : io_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+IO_startRayWrite.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+IO_startRayWrite.o : io_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_updateScalars.o : IO_INTERFACE.mod COSMOLOGY_INTERFACE.mod GRID_INTERFACE.mod DRIVER_INTERFACE.mod SIMULATION_INTERFACE.mod PARTICLES_INTERFACE.mod HYDRO_INTERFACE.mod  
+else
+IO_updateScalars.o : io_interface.mod cosmology_interface.mod grid_interface.mod driver_interface.mod simulation_interface.mod particles_interface.mod hydro_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+IO_writeCheckpoint.o : IO_INTERFACE.mod TIMERS_INTERFACE.mod IO_DATA.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod SIMULATION_INTERFACE.mod io_flash.h constants.h Flash.h 
+else
+IO_writeCheckpoint.o : io_interface.mod timers_interface.mod io_data.mod logfile_interface.mod grid_interface.mod simulation_interface.mod io_flash.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+io_writeData.o : DRIVER_INTERFACE.mod GRID_DATA.mod IO_TYPEINTERFACE.mod GRID_INTERFACE.mod IO_DATA.mod PHYSICALDATA.mod io_flash.h constants.h Flash.h Flash_mpi.h 
+else
+io_writeData.o : driver_interface.mod grid_data.mod io_typeinterface.mod grid_interface.mod io_data.mod physicaldata.mod io_flash.h constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_writeIntegralQuantities.o : PHYSICALCONSTANTS_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod IO_DATA.mod GRID_INTERFACE.mod constants.h Flash.h /opt/apps/intel15/mvapich2/2.1/include/mpif.h 
+else
+IO_writeIntegralQuantities.o : physicalconstants_interface.mod runtimeparameters_interface.mod io_data.mod grid_interface.mod constants.h Flash.h /opt/apps/intel15/mvapich2/2.1/include/mpif.h
+endif
+
+IO_writeParticles.o: 
+
+ifdef MODUPPERCASE
+IO_writePlotfile.o : IO_INTERFACE.mod TIMERS_INTERFACE.mod IO_DATA.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod io_flash.h constants.h Flash.h 
+else
+IO_writePlotfile.o : io_interface.mod timers_interface.mod io_data.mod logfile_interface.mod grid_interface.mod io_flash.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_writeRays.o : IO_DATA.mod DRIVER_INTERFACE.mod constants.h Flash_mpi.h 
+else
+IO_writeRays.o : io_data.mod driver_interface.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+IO_writeUserArray.o : IO_DATA.mod STIR_DATA.mod constants.h 
+else
+IO_writeUserArray.o : io_data.mod stir_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+io_xfer_tree_data.o : GRID_DATA.mod IO_C_INTERFACE.mod TREE.mod TIMERS_INTERFACE.mod IO_DATA.mod DRIVER_INTERFACE.mod ISO_C_BINDING.mod io_flash.h constants.h Flash.h 
+else
+io_xfer_tree_data.o : grid_data.mod io_c_interface.mod tree.mod timers_interface.mod io_data.mod driver_interface.mod iso_c_binding.mod io_flash.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+log_allocateStrArr.o : LOGFILE_DATA.mod  
+else
+log_allocateStrArr.o : logfile_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_break.o : LOGFILE_INTERFACE.mod LOGFILE_DATA.mod constants.h 
+else
+Logfile_break.o : logfile_interface.mod logfile_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_close.o : LOGFILE_DATA.mod constants.h 
+else
+Logfile_close.o : logfile_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_create.o : MULTISPECIES_INTERFACE.mod PHYSICALCONSTANTS_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod LOGFILE_DATA.mod constants.h Flash.h 
+else
+Logfile_create.o : multispecies_interface.mod physicalconstants_interface.mod runtimeparameters_interface.mod logfile_interface.mod driver_interface.mod logfile_data.mod constants.h Flash.h
+endif
+
+Logfile_finalize.o: 
+Logfile_getDateTimeStr.o: 
+
+ifdef MODUPPERCASE
+Logfile_init.o : RUNTIMEPARAMETERS_INTERFACE.mod LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod LOGFILE_DATA.mod constants.h Flash.h 
+else
+Logfile_init.o : runtimeparameters_interface.mod logfile_interface.mod driver_interface.mod logfile_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_open.o : LOGFILE_INTERFACE.mod LOGFILE_DATA.mod  
+else
+Logfile_open.o : logfile_interface.mod logfile_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_stamp.o : LOGFILE_INTERFACE.mod LOGFILE_DATA.mod constants.h 
+else
+Logfile_stamp.o : logfile_interface.mod logfile_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_stampMessage.o : LOGFILE_INTERFACE.mod LOGFILE_DATA.mod constants.h 
+else
+Logfile_stampMessage.o : logfile_interface.mod logfile_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_stampVarMask.o : SIMULATION_INTERFACE.mod LOGFILE_INTERFACE.mod LOGFILE_DATA.mod constants.h Flash.h 
+else
+Logfile_stampVarMask.o : simulation_interface.mod logfile_interface.mod logfile_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Logfile_writeSummary.o : LOGFILE_INTERFACE.mod LOGFILE_DATA.mod constants.h 
+else
+Logfile_writeSummary.o : logfile_interface.mod logfile_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+log_getUnitsArr.o : LOGFILE_DATA.mod constants.h 
+else
+log_getUnitsArr.o : logfile_data.mod constants.h
+endif
+
+MagneticResistivity.o: Flash.h
+MagneticResistivity_finalize.o: 
+MagneticResistivity_fullState.o: constants.h Flash.h
+MagneticResistivity_init.o: 
+makeLowercase.o: 
+MassDiffusivity.o: Flash.h
+MassDiffusivity_finalize.o: 
+MassDiffusivity_init.o: 
+Multispecies_finalize.o: 
+Multispecies_getAvg.o: Flash.h
+
+ifdef MODUPPERCASE
+Multispecies_getProperty.o : DRIVER_INTERFACE.mod  
+else
+Multispecies_getProperty.o : driver_interface.mod 
+endif
+
+Multispecies_getPropertyVector.o: 
+Multispecies_getSum.o: Flash.h
+Multispecies_getSumFrac.o: Flash.h
+Multispecies_getSumInv.o: Flash.h
+Multispecies_getSumSqr.o: Flash.h
+Multispecies_init.o: 
+Multispecies_list.o: 
+
+ifdef MODUPPERCASE
+Multispecies_setProperty.o : DRIVER_INTERFACE.mod  
+else
+Multispecies_setProperty.o : driver_interface.mod 
+endif
+
+Multispecies_unitTest.o: 
+nameSyntaxError.o: 
+
+ifdef MODUPPERCASE
+nameValueLL_bcast.o : DRIVER_INTERFACE.mod NAMEVALUELL_DATA.mod constants.h Flash_mpi.h 
+else
+nameValueLL_bcast.o : driver_interface.mod namevaluell_data.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+nameValueLL_getAll.o : NAMEVALUELL_DATA.mod constants.h 
+else
+nameValueLL_getAll.o : namevaluell_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+nameValueLL_get.o : LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod NAMEVALUELL_DATA.mod constants.h Flash_mpi.h 
+else
+nameValueLL_get.o : logfile_interface.mod driver_interface.mod namevaluell_data.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+nameValueLL_getNum.o : NAMEVALUELL_DATA.mod  
+else
+nameValueLL_getNum.o : namevaluell_data.mod 
+endif
+
+nameValueLL_logRules.o: constants.h
+
+ifdef MODUPPERCASE
+nameValueLL_rules.o : DRIVER_INTERFACE.mod NAMEVALUELL_DATA.mod  
+else
+nameValueLL_rules.o : driver_interface.mod namevaluell_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+nameValueLL_set.o : LOGFILE_INTERFACE.mod DRIVER_INTERFACE.mod NAMEVALUELL_DATA.mod constants.h 
+else
+nameValueLL_set.o : logfile_interface.mod driver_interface.mod namevaluell_data.mod constants.h
+endif
+
+NSE_finalAtDens.o: 
+NSE_finalAtPres.o: 
+NSE_finalize.o: 
+NSE_init.o: 
+Opacity.o: 
+Opacity_finalize.o: 
+Opacity_init.o: 
+Opacity_unitTest.o: 
+Particles_accumCount.o: 
+Particles_addNew.o: constants.h
+Particles_advance.o: 
+Particles_clean.o: 
+Particles_computeDt.o: 
+Particles_dump.o: constants.h Flash.h
+Particles_finalize.o: 
+Particles_getCountPerBlk.o: Flash.h
+Particles_getGlobalNum.o: 
+Particles_getLocalNum.o: 
+Particles_initData.o: 
+
+ifdef MODUPPERCASE
+Particles_init.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod  
+else
+Particles_init.o : runtimeparameters_interface.mod driver_interface.mod 
+endif
+
+Particles_initForces.o: 
+Particles_initPositions.o: 
+Particles_longRangeForce.o: Flash.h
+Particles_manageLost.o: 
+Particles_mapFromMesh.o: constants.h
+Particles_mapToMeshOneBlk.o: constants.h Flash.h
+Particles_putLocalNum.o: 
+Particles_sendOutputData.o: 
+Particles_shortRangeForce.o: 
+Particles_sinkAccelGasOnSinks.o: 
+Particles_sinkAccelSinksOnGas.o: 
+Particles_sinkAdvanceParticles.o: 
+Particles_sinkComputeDt.o: 
+Particles_sinkCreateAccrete.o: 
+Particles_sinkInit.o: 
+Particles_sinkMarkRefineDerefine.o: 
+Particles_sinkMoveParticles.o: 
+Particles_sinkSendOutputData.o: 
+Particles_sinkSortParticles.o: 
+Particles_sinkSyncWithParticles.o: 
+Particles_specifyMethods.o: 
+Particles_unitTest.o: constants.h Flash.h
+Particles_updateAttributes.o: 
+Particles_updateGridVar.o: 
+Particles_updateRefinement.o: 
+
+ifdef MODUPPERCASE
+pc_utilities.o : PHYSICALCONSTANTS_DATA.mod constants.h 
+else
+pc_utilities.o : physicalconstants_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+PhysicalConstants_get.o : PHYSICALCONSTANTS_INTERFACE.mod PHYSICALCONSTANTS_DATA.mod constants.h 
+else
+PhysicalConstants_get.o : physicalconstants_interface.mod physicalconstants_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+PhysicalConstants_init.o : RUNTIMEPARAMETERS_INTERFACE.mod PHYSICALCONSTANTS_DATA.mod DRIVER_INTERFACE.mod PC_INTERFACE.mod constants.h 
+else
+PhysicalConstants_init.o : runtimeparameters_interface.mod physicalconstants_data.mod driver_interface.mod pc_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+PhysicalConstants_list.o : PHYSICALCONSTANTS_DATA.mod  
+else
+PhysicalConstants_list.o : physicalconstants_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+PhysicalConstants_listUnits.o : PHYSICALCONSTANTS_DATA.mod  
+else
+PhysicalConstants_listUnits.o : physicalconstants_data.mod 
+endif
+
+PhysicalConstants_unitTest.o: 
+Polytrope.o: 
+Polytrope_finalize.o: 
+Polytrope_init.o: 
+PrimordialChemistry_computeDt.o: constants.h
+PrimordialChemistry.o: 
+PrimordialChemistry_finalize.o: 
+PrimordialChemistry_init.o: 
+Profiler_getSummary.o: 
+Profiler_init.o: 
+Profiler_start.o: 
+Profiler_stop.o: 
+RadTrans_computeDt.o: constants.h
+RadTrans.o: 
+RadTrans_finalize.o: 
+
+ifdef MODUPPERCASE
+RadTrans_getDbgContext.o : RADTRANS_INTERFACE.mod  
+else
+RadTrans_getDbgContext.o : radtrans_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RadTrans_init.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod  
+else
+RadTrans_init.o : runtimeparameters_interface.mod driver_interface.mod 
+endif
+
+RadTrans_mgdEFromT.o: constants.h
+RadTrans_mgdGetBound.o: 
+RadTrans_mgdSetBc.o: 
+RadTrans_mgdSetBound.o: 
+RadTrans_mgdSetEnergy.o: constants.h
+RadTrans_planckInt.o: 
+RadTrans_sumEnergy.o: 
+removeNullChar.o: 
+
+ifdef MODUPPERCASE
+rp_getArgument.o : F90_UNIX_ENV.mod constants.h 
+else
+rp_getArgument.o : f90_unix_env.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+rp_getOpt.o : F90_UNIX_ENV.mod constants.h 
+else
+rp_getOpt.o : f90_unix_env.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+rp_initParameters.o : RUNTIMEPARAMETERS_DATA.mod RUNTIMEPARAMETERS_INTERFACE.mod constants.h rp_rules.h 
+else
+rp_initParameters.o : runtimeparameters_data.mod runtimeparameters_interface.mod constants.h rp_rules.h
+endif
+
+
+ifdef MODUPPERCASE
+rp_rules.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+rp_rules.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+rp_storeIgnoredParams.o : RUNTIMEPARAMETERS_DATA.mod constants.h 
+else
+rp_storeIgnoredParams.o : runtimeparameters_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_add.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_add.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_bcast.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_bcast.o : runtimeparameters_data.mod 
+endif
+
+RuntimeParameters_finalize.o: 
+
+ifdef MODUPPERCASE
+RuntimeParameters_getAll.o : RUNTIMEPARAMETERS_DATA.mod constants.h 
+else
+RuntimeParameters_getAll.o : runtimeparameters_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_get.o : RUNTIMEPARAMETERS_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+RuntimeParameters_get.o : runtimeparameters_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_getNum.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_getNum.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_getNumIgn.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_getNumIgn.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_getPrev.o : RUNTIMEPARAMETERS_DATA.mod DRIVER_INTERFACE.mod constants.h 
+else
+RuntimeParameters_getPrev.o : runtimeparameters_data.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_init.o : IO_INTERFACE.mod RUNTIMEPARAMETERS_DATA.mod RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod constants.h Flash.h Flash_mpi.h 
+else
+RuntimeParameters_init.o : io_interface.mod runtimeparameters_data.mod runtimeparameters_interface.mod driver_interface.mod constants.h Flash.h Flash_mpi.h
+endif
+
+RuntimeParameters_mapStrToInt.o: Eos.h constants.h Flash.h
+
+ifdef MODUPPERCASE
+RuntimeParameters_read.o : RUNTIMEPARAMETERS_DATA.mod RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod NAMEVALUELL_DATA.mod constants.h Flash.h 
+else
+RuntimeParameters_read.o : runtimeparameters_data.mod runtimeparameters_interface.mod driver_interface.mod namevaluell_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_set.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_set.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_setPrev.o : RUNTIMEPARAMETERS_DATA.mod  
+else
+RuntimeParameters_setPrev.o : runtimeparameters_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+RuntimeParameters_stampIgnored.o : RUNTIMEPARAMETERS_DATA.mod LOGFILE_INTERFACE.mod constants.h 
+else
+RuntimeParameters_stampIgnored.o : runtimeparameters_data.mod logfile_interface.mod constants.h
+endif
+
+setup_getFlashUnits.o: constants.h
+Simulation_adjustEvolution.o: 
+Simulation_computeAnalytical.o: 
+Simulation_customizeProlong.o: 
+Simulation_defineDomain.o: constants.h
+Simulation_finalize.o: 
+Simulation_getRenormGroup.o: constants.h Flash.h
+Simulation_getVarnameType.o: constants.h Flash.h
+Simulation_guardCellMaskHook.o: 
+
+ifdef MODUPPERCASE
+Simulation_initBlock.o : GRID_INTERFACE.mod SIMULATION_DATA.mod Eos.h constants.h Flash.h 
+else
+Simulation_initBlock.o : grid_interface.mod simulation_data.mod Eos.h constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Simulation_init.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod SIMULATION_DATA.mod Eos.h constants.h Flash.h 
+else
+Simulation_init.o : runtimeparameters_interface.mod driver_interface.mod simulation_data.mod Eos.h constants.h Flash.h
+endif
+
+Simulation_initParticleAttrib.o: 
+Simulation_initRestart.o: 
+Simulation_initSpecies.o: 
+
+ifdef MODUPPERCASE
+Simulation_mapIntToStr.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h 
+else
+Simulation_mapIntToStr.o : runtimeparameters_interface.mod driver_interface.mod grid_interface.mod constants.h Flash.h
+endif
+
+Simulation_mapParticlesVar.o: constants.h Flash.h
+
+ifdef MODUPPERCASE
+Simulation_mapStrToInt.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash.h 
+else
+Simulation_mapStrToInt.o : runtimeparameters_interface.mod driver_interface.mod grid_interface.mod constants.h Flash.h
+endif
+
+Simulation_sendOutputData.o: 
+SolidMechanics_computeDt.o: 
+SolidMechanics.o: Flash.h SolidMechanics.h
+SolidMechanics_finalize.o: 
+SolidMechanics_init.o: 
+
+ifdef MODUPPERCASE
+st_calcAccel.o : GRID_INTERFACE.mod STIR_DATA.mod constants.h Flash.h 
+else
+st_calcAccel.o : grid_interface.mod stir_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+st_calcPhases.o : STIR_DATA.mod Flash.h 
+else
+st_calcPhases.o : stir_data.mod Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+st_grn.o : UT_RANDOMINTERFACE.mod STIR_DATA.mod constants.h 
+else
+st_grn.o : ut_randominterface.mod stir_data.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Stir_computeDt.o : GRID_INTERFACE.mod DRIVER_INTERFACE.mod STIR_DATA.mod constants.h Flash.h 
+else
+Stir_computeDt.o : grid_interface.mod driver_interface.mod stir_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+Stir.o : DRIVER_INTERFACE.mod TIMERS_INTERFACE.mod UT_RANDOMINTERFACE.mod STIR_DATA.mod GRID_INTERFACE.mod EOS_INTERFACE.mod constants.h Flash.h Flash_mpi.h 
+else
+Stir.o : driver_interface.mod timers_interface.mod ut_randominterface.mod stir_data.mod grid_interface.mod eos_interface.mod constants.h Flash.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+Stir_finalize.o : STIR_DATA.mod  
+else
+Stir_finalize.o : stir_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Stir_init.o : IO_INTERFACE.mod DRIVER_INTERFACE.mod RUNTIMEPARAMETERS_INTERFACE.mod UT_RANDOMINTERFACE.mod GRID_INTERFACE.mod STIR_DATA.mod constants.h Flash.h 
+else
+Stir_init.o : io_interface.mod driver_interface.mod runtimeparameters_interface.mod ut_randominterface.mod grid_interface.mod stir_data.mod constants.h Flash.h
+endif
+
+
+ifdef MODUPPERCASE
+st_ounoiseinit.o : UT_RANDOMINTERFACE.mod STIR_DATA.mod  
+else
+st_ounoiseinit.o : ut_randominterface.mod stir_data.mod 
+endif
+
+st_ounoiseupdate.o: 
+Timers_finalize.o: 
+
+ifdef MODUPPERCASE
+Timers_getSummary.o : TIMERS_DATA.mod LOGFILE_INTERFACE.mod GRID_INTERFACE.mod constants.h Flash_mpi.h 
+else
+Timers_getSummary.o : timers_data.mod logfile_interface.mod grid_interface.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+Timers_init.o : TIMERS_DATA.mod RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod constants.h 
+else
+Timers_init.o : timers_data.mod runtimeparameters_interface.mod driver_interface.mod constants.h
+endif
+
+
+ifdef MODUPPERCASE
+Timers_reset.o : TIMERS_DATA.mod  
+else
+Timers_reset.o : timers_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Timers_start.o : TIMERS_DATA.mod DRIVER_INTERFACE.mod TIMERS_INTERFACE.mod  
+else
+Timers_start.o : timers_data.mod driver_interface.mod timers_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+Timers_stop.o : TIMERS_DATA.mod TIMERS_INTERFACE.mod  
+else
+Timers_stop.o : timers_data.mod timers_interface.mod 
+endif
+
+
+ifdef MODUPPERCASE
+tmr_buildSummary.o : TIMERS_DATA.mod DRIVER_INTERFACE.mod constants.h Flash_mpi.h 
+else
+tmr_buildSummary.o : timers_data.mod driver_interface.mod constants.h Flash_mpi.h
+endif
+
+
+ifdef MODUPPERCASE
+tmr_create.o : TIMERS_DATA.mod  
+else
+tmr_create.o : timers_data.mod 
+endif
+
+tmr_etime.o: 
+
+ifdef MODUPPERCASE
+tmr_findTimerIndex.o : TIMERS_DATA.mod  
+else
+tmr_findTimerIndex.o : timers_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+tmr_getMaxCallStackDepth.o : TIMERS_DATA.mod  
+else
+tmr_getMaxCallStackDepth.o : timers_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+tmr_getMaxTimerParents.o : TIMERS_DATA.mod  
+else
+tmr_getMaxTimerParents.o : timers_data.mod 
+endif
+
+
+ifdef MODUPPERCASE
+tmr_init.o : TIMERS_DATA.mod  
+else
+tmr_init.o : timers_data.mod 
+endif
+
+tmr_lookupIndex.o: 
+
+ifdef MODUPPERCASE
+tmr_stackLib.o : TIMERS_DATA.mod  
+else
+tmr_stackLib.o : timers_data.mod 
+endif
+
+TreeCol_bhAccBotNode.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhAccNode.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhBotNodeContrib.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhFillBotNode.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhFinalizeBlock.o: constants.h
+TreeCol_bhGetNodeStruct.o: 
+TreeCol_bhInitFieldVar.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhMAC.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhNodeContrib.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhNormalizeNode.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhPartErr.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhPostprocNode.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhSelfContrib.o: constants.h Flash.h Flash_mpi.h
+TreeCol_bhStartBlock.o: constants.h Flash.h
+TreeCol_finalize.o: 
+
+ifdef MODUPPERCASE
+TreeCol_init.o : RUNTIMEPARAMETERS_INTERFACE.mod DRIVER_INTERFACE.mod  
+else
+TreeCol_init.o : runtimeparameters_interface.mod driver_interface.mod 
+endif
+
+Turb_calc.o: 
+Turb_finalize.o: 
+Turb_init.o: 
+ut_constRealZeroFn1.o: 
+ut_convertToArrayIndicies.o: 
+ut_convertToMemoryOffset.o: 
+ut_cubicRoots.o: 
+ut_fndpos.o: 
+
+ifdef MODUPPERCASE
+ut_getFreeFileUnit.o : DRIVER_INTERFACE.mod  
+else
+ut_getFreeFileUnit.o : driver_interface.mod 
+endif
+
+ut_hunt.o: 
+
+ifdef MODUPPERCASE
+ut_polint.o : UT_INTERPOLATIONINTERFACE.mod DRIVER_INTERFACE.mod  
+else
+ut_polint.o : ut_interpolationinterface.mod driver_interface.mod 
+endif
+
+ut_quadraticInterpol.o: 
+ut_quadraticRoots.o: 
+ut_quarticRoots.o: 
+ut_randomNumber.o: 
+ut_randomSeed.o: 
+
+ifdef MODUPPERCASE
+ut_sysMemStats.o : UT_SYSMEMDATA.mod constants.h ut_sysMem.h 
+else
+ut_sysMemStats.o : ut_sysmemdata.mod constants.h ut_sysMem.h
+endif
+
+
+ifdef MODUPPERCASE
+ut_sysMemSummaryStats.o : UT_SYSMEMDATA.mod UT_SYSMEMINTERFACE.mod constants.h 
+else
+ut_sysMemSummaryStats.o : ut_sysmemdata.mod ut_sysmeminterface.mod constants.h
+endif
+
+Viscosity.o: Flash.h
+Viscosity_finalize.o: 
+Viscosity_init.o: 
+constants.o: 
+Flash.o: 
+ut_sysMem.o: 
+Eos.o: 
+Eos_map.o: 
+Multispecies.o: 
+FortranLangFeatures.o: 
+Flash_mpi.o: 
+Particles.o: 
+UHD.o: constants.h Flash.h
+io_flash.o: Flash.h
+Ionize.o: 
+rp_rules.o: 
+SolidMechanics.o: 
+Timers.o: 
+
+
+### Dependencies of modules
+
+ifdef MODUPPERCASE
+BURN_INTERFACE.mod: Burn_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Burn_interface.mod
+BURN_INTERFACE.mod Burn_interface.mod Burn_interface.o: Burn_interface.F90  constants.h Flash.h
+else
+burn_interface.mod: Burn_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Burn_interface.mod
+burn_interface.mod Burn_interface.mod Burn_interface.o: Burn_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+INCOMPNS_INTERFACE.mod: IncompNS_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IncompNS_interface.mod
+INCOMPNS_INTERFACE.mod IncompNS_interface.mod IncompNS_interface.o: IncompNS_interface.F90  constants.h Flash.h
+else
+incompns_interface.mod: IncompNS_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IncompNS_interface.mod
+incompns_interface.mod IncompNS_interface.mod IncompNS_interface.o: IncompNS_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+TREECOL_INTERFACE.mod: TreeCol_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: TreeCol_interface.mod
+TREECOL_INTERFACE.mod TreeCol_interface.mod TreeCol_interface.o: TreeCol_interface.F90  constants.h FortranLangFeatures.fh
+else
+treecol_interface.mod: TreeCol_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: TreeCol_interface.mod
+treecol_interface.mod TreeCol_interface.mod TreeCol_interface.o: TreeCol_interface.F90  constants.h FortranLangFeatures.fh
+endif
+
+ifdef MODUPPERCASE
+UT_SYSMEMINTERFACE.mod: ut_sysMemInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_sysMemInterface.mod
+UT_SYSMEMINTERFACE.mod ut_sysMemInterface.mod ut_sysMemInterface.o: ut_sysMemInterface.F90 UT_SYSMEMDATA.mod constants.h
+else
+ut_sysmeminterface.mod: ut_sysMemInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_sysMemInterface.mod
+ut_sysmeminterface.mod ut_sysMemInterface.mod ut_sysMemInterface.o: ut_sysMemInterface.F90 ut_sysmemdata.mod constants.h
+endif
+
+ifdef MODUPPERCASE
+PRIMORDIALCHEMISTRY_INTERFACE.mod: PrimordialChemistry_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PrimordialChemistry_interface.mod
+PRIMORDIALCHEMISTRY_INTERFACE.mod PrimordialChemistry_interface.mod PrimordialChemistry_interface.o: PrimordialChemistry_interface.F90  constants.h Flash.h
+else
+primordialchemistry_interface.mod: PrimordialChemistry_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PrimordialChemistry_interface.mod
+primordialchemistry_interface.mod PrimordialChemistry_interface.mod PrimordialChemistry_interface.o: PrimordialChemistry_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+CONDUCTIVITY_INTERFACE.mod: Conductivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Conductivity_interface.mod
+CONDUCTIVITY_INTERFACE.mod Conductivity_interface.mod Conductivity_interface.o: Conductivity_interface.F90  Flash.h
+else
+conductivity_interface.mod: Conductivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Conductivity_interface.mod
+conductivity_interface.mod Conductivity_interface.mod Conductivity_interface.o: Conductivity_interface.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+DIFFUSE_INTERFACE.mod: Diffuse_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Diffuse_interface.mod
+DIFFUSE_INTERFACE.mod Diffuse_interface.mod Diffuse_interface.o: Diffuse_interface.F90  constants.h Flash.h
+else
+diffuse_interface.mod: Diffuse_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Diffuse_interface.mod
+diffuse_interface.mod Diffuse_interface.mod Diffuse_interface.o: Diffuse_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+PHYSICALCONSTANTS_DATA.mod: PhysicalConstants_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PhysicalConstants_data.mod
+PHYSICALCONSTANTS_DATA.mod PhysicalConstants_data.mod PhysicalConstants_data.o: PhysicalConstants_data.F90  constants.h
+else
+physicalconstants_data.mod: PhysicalConstants_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PhysicalConstants_data.mod
+physicalconstants_data.mod PhysicalConstants_data.mod PhysicalConstants_data.o: PhysicalConstants_data.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+GR_PTINTERFACE.mod: gr_ptInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_ptInterface.mod
+GR_PTINTERFACE.mod gr_ptInterface.mod gr_ptInterface.o: gr_ptInterface.F90  constants.h Flash.h
+else
+gr_ptinterface.mod: gr_ptInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_ptInterface.mod
+gr_ptinterface.mod gr_ptInterface.mod gr_ptInterface.o: gr_ptInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GRAVITY_INTERFACE.mod: Gravity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Gravity_interface.mod
+GRAVITY_INTERFACE.mod Gravity_interface.mod Gravity_interface.o: Gravity_interface.F90  constants.h FortranLangFeatures.fh
+else
+gravity_interface.mod: Gravity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Gravity_interface.mod
+gravity_interface.mod Gravity_interface.mod Gravity_interface.o: Gravity_interface.F90  constants.h FortranLangFeatures.fh
+endif
+
+ifdef MODUPPERCASE
+OPACITY_INTERFACE.mod: Opacity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Opacity_interface.mod
+OPACITY_INTERFACE.mod Opacity_interface.mod Opacity_interface.o: Opacity_interface.F90  
+else
+opacity_interface.mod: Opacity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Opacity_interface.mod
+opacity_interface.mod Opacity_interface.mod Opacity_interface.o: Opacity_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+IO_C_INTERFACE.mod: io_c_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: io_c_interface.mod
+IO_C_INTERFACE.mod io_c_interface.mod io_c_interface.o: io_c_interface.F90 ISO_C_BINDING.mod constants.h Flash.h
+else
+io_c_interface.mod  io_c_interface.o: io_c_interface.F90 iso_c_binding.mod constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+DEBUGGER_INTERFACE.mod: Debugger_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Debugger_interface.mod
+DEBUGGER_INTERFACE.mod Debugger_interface.mod Debugger_interface.o: Debugger_interface.F90  
+else
+debugger_interface.mod: Debugger_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Debugger_interface.mod
+debugger_interface.mod Debugger_interface.mod Debugger_interface.o: Debugger_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+SOLIDMECHANICS_INTERFACE.mod: SolidMechanics_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: SolidMechanics_interface.mod
+SOLIDMECHANICS_INTERFACE.mod SolidMechanics_interface.mod SolidMechanics_interface.o: SolidMechanics_interface.F90  constants.h Flash.h SolidMechanics.h
+else
+solidmechanics_interface.mod: SolidMechanics_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: SolidMechanics_interface.mod
+solidmechanics_interface.mod SolidMechanics_interface.mod SolidMechanics_interface.o: SolidMechanics_interface.F90  constants.h Flash.h SolidMechanics.h
+endif
+
+ifdef MODUPPERCASE
+GR_HGINTERFACE.mod: gr_hgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_hgInterface.mod
+GR_HGINTERFACE.mod gr_hgInterface.mod gr_hgInterface.o: gr_hgInterface.F90  
+else
+gr_hginterface.mod: gr_hgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_hgInterface.mod
+gr_hginterface.mod gr_hgInterface.mod gr_hgInterface.o: gr_hgInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+LOGFILE_DATA.mod: Logfile_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Logfile_data.mod
+LOGFILE_DATA.mod Logfile_data.mod Logfile_data.o: Logfile_data.F90  constants.h Flash.h
+else
+logfile_data.mod: Logfile_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Logfile_data.mod
+logfile_data.mod Logfile_data.mod Logfile_data.o: Logfile_data.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+EOS_INTERFACE.mod: Eos_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Eos_interface.mod
+EOS_INTERFACE.mod Eos_interface.mod Eos_interface.o: Eos_interface.F90  Eos.h constants.h Flash.h
+else
+eos_interface.mod: Eos_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Eos_interface.mod
+eos_interface.mod Eos_interface.mod Eos_interface.o: Eos_interface.F90  Eos.h constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+EOS_IDEALGAMMADATA.mod: eos_idealGammaData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_idealGammaData.mod
+EOS_IDEALGAMMADATA.mod eos_idealGammaData.mod eos_idealGammaData.o: eos_idealGammaData.F90  
+else
+eos_idealgammadata.mod: eos_idealGammaData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_idealGammaData.mod
+eos_idealgammadata.mod eos_idealGammaData.mod eos_idealGammaData.o: eos_idealGammaData.F90  
+endif
+
+ifdef MODUPPERCASE
+IO_PTINTERFACE.mod: io_ptInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: io_ptInterface.mod
+IO_PTINTERFACE.mod io_ptInterface.mod io_ptInterface.o: io_ptInterface.F90  constants.h Flash.h
+else
+io_ptinterface.mod: io_ptInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: io_ptInterface.mod
+io_ptinterface.mod io_ptInterface.mod io_ptInterface.o: io_ptInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+DRIVER_DATA.mod: Driver_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Driver_data.mod
+DRIVER_DATA.mod Driver_data.mod Driver_data.o: Driver_data.F90  constants.h Flash.h
+else
+driver_data.mod: Driver_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Driver_data.mod
+driver_data.mod Driver_data.mod Driver_data.o: Driver_data.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GRID_INTERFACE.mod: Grid_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Grid_interface.mod
+GRID_INTERFACE.mod Grid_interface.mod Grid_interface.o: Grid_interface.F90  constants.h Flash.h Particles.h
+else
+grid_interface.mod: Grid_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Grid_interface.mod
+grid_interface.mod Grid_interface.mod Grid_interface.o: Grid_interface.F90  constants.h Flash.h Particles.h
+endif
+
+ifdef MODUPPERCASE
+DELEPTONIZE_INTERFACE.mod: Deleptonize_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Deleptonize_interface.mod
+DELEPTONIZE_INTERFACE.mod Deleptonize_interface.mod Deleptonize_interface.o: Deleptonize_interface.F90  constants.h Flash.h
+else
+deleptonize_interface.mod: Deleptonize_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Deleptonize_interface.mod
+deleptonize_interface.mod Deleptonize_interface.mod Deleptonize_interface.o: Deleptonize_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+PARTICLES_INTERFACE.mod: Particles_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Particles_interface.mod
+PARTICLES_INTERFACE.mod Particles_interface.mod Particles_interface.o: Particles_interface.F90  constants.h Flash.h
+else
+particles_interface.mod: Particles_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Particles_interface.mod
+particles_interface.mod Particles_interface.mod Particles_interface.o: Particles_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+RUNTIMEPARAMETERS_INTERFACE.mod: RuntimeParameters_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RuntimeParameters_interface.mod
+RUNTIMEPARAMETERS_INTERFACE.mod RuntimeParameters_interface.mod RuntimeParameters_interface.o: RuntimeParameters_interface.F90  constants.h Flash.h
+else
+runtimeparameters_interface.mod: RuntimeParameters_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RuntimeParameters_interface.mod
+runtimeparameters_interface.mod RuntimeParameters_interface.mod RuntimeParameters_interface.o: RuntimeParameters_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+EOS_LOCALINTERFACE.mod: eos_localInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_localInterface.mod
+EOS_LOCALINTERFACE.mod eos_localInterface.mod eos_localInterface.o: eos_localInterface.F90  Eos.h Flash.h
+else
+eos_localinterface.mod: eos_localInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_localInterface.mod
+eos_localinterface.mod eos_localInterface.mod eos_localInterface.o: eos_localInterface.F90  Eos.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+VISCOSITY_INTERFACE.mod: Viscosity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Viscosity_interface.mod
+VISCOSITY_INTERFACE.mod Viscosity_interface.mod Viscosity_interface.o: Viscosity_interface.F90  Flash.h
+else
+viscosity_interface.mod: Viscosity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Viscosity_interface.mod
+viscosity_interface.mod Viscosity_interface.mod Viscosity_interface.o: Viscosity_interface.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_INTERFACE.mod: gr_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_interface.mod
+GR_INTERFACE.mod gr_interface.mod gr_interface.o: gr_interface.F90 GR_INTERFACETYPEDECL.mod constants.h Flash.h
+else
+gr_interface.mod  gr_interface.o: gr_interface.F90 gr_interfacetypedecl.mod constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+STIR_DATA.mod: Stir_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Stir_data.mod
+STIR_DATA.mod Stir_data.mod Stir_data.o: Stir_data.F90  
+else
+stir_data.mod: Stir_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Stir_data.mod
+stir_data.mod Stir_data.mod Stir_data.o: Stir_data.F90  
+endif
+
+ifdef MODUPPERCASE
+PC_INTERFACE.mod: pc_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: pc_interface.mod
+PC_INTERFACE.mod pc_interface.mod pc_interface.o: pc_interface.F90  constants.h
+else
+pc_interface.mod  pc_interface.o: pc_interface.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+IO_INTERFACE.mod: IO_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IO_interface.mod
+IO_INTERFACE.mod IO_interface.mod IO_interface.o: IO_interface.F90  
+else
+io_interface.mod: IO_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IO_interface.mod
+io_interface.mod IO_interface.mod IO_interface.o: IO_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+UT_SYSMEMDATA.mod: ut_sysMemData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_sysMemData.mod
+UT_SYSMEMDATA.mod ut_sysMemData.mod ut_sysMemData.o: ut_sysMemData.F90  constants.h
+else
+ut_sysmemdata.mod: ut_sysMemData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_sysMemData.mod
+ut_sysmemdata.mod ut_sysMemData.mod ut_sysMemData.o: ut_sysMemData.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+MULTISPECIES_INTERFACE.mod: Multispecies_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Multispecies_interface.mod
+MULTISPECIES_INTERFACE.mod Multispecies_interface.mod Multispecies_interface.o: Multispecies_interface.F90  constants.h Flash.h
+else
+multispecies_interface.mod: Multispecies_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Multispecies_interface.mod
+multispecies_interface.mod Multispecies_interface.mod Multispecies_interface.o: Multispecies_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+NSE_INTERFACE.mod: NSE_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: NSE_interface.mod
+NSE_INTERFACE.mod NSE_interface.mod NSE_interface.o: NSE_interface.F90  
+else
+nse_interface.mod: NSE_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: NSE_interface.mod
+nse_interface.mod NSE_interface.mod NSE_interface.o: NSE_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+HEAT_INTERFACE.mod: Heat_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Heat_interface.mod
+HEAT_INTERFACE.mod Heat_interface.mod Heat_interface.o: Heat_interface.F90  constants.h Flash.h
+else
+heat_interface.mod: Heat_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Heat_interface.mod
+heat_interface.mod Heat_interface.mod Heat_interface.o: Heat_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_BHINTERFACE.mod: gr_bhInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bhInterface.mod
+GR_BHINTERFACE.mod gr_bhInterface.mod gr_bhInterface.o: gr_bhInterface.F90  
+else
+gr_bhinterface.mod: gr_bhInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bhInterface.mod
+gr_bhinterface.mod gr_bhInterface.mod gr_bhInterface.o: gr_bhInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+F90_UNIX_ENV.mod : 
+else
+f90_unix_env.mod : 
+endif
+
+ifdef MODUPPERCASE
+STIR_INTERFACE.mod: Stir_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Stir_interface.mod
+STIR_INTERFACE.mod Stir_interface.mod Stir_interface.o: Stir_interface.F90  constants.h
+else
+stir_interface.mod: Stir_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Stir_interface.mod
+stir_interface.mod Stir_interface.mod Stir_interface.o: Stir_interface.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+COSMOLOGY_INTERFACE.mod: Cosmology_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Cosmology_interface.mod
+COSMOLOGY_INTERFACE.mod Cosmology_interface.mod Cosmology_interface.o: Cosmology_interface.F90  constants.h Flash.h
+else
+cosmology_interface.mod: Cosmology_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Cosmology_interface.mod
+cosmology_interface.mod Cosmology_interface.mod Cosmology_interface.o: Cosmology_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+HYDRO_DATA.mod: Hydro_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Hydro_data.mod
+HYDRO_DATA.mod Hydro_data.mod Hydro_data.o: Hydro_data.F90  constants.h Flash.h UHD.h
+else
+hydro_data.mod: Hydro_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Hydro_data.mod
+hydro_data.mod Hydro_data.mod Hydro_data.o: Hydro_data.F90  constants.h Flash.h UHD.h
+endif
+
+ifdef MODUPPERCASE
+PHYSICALCONSTANTS_INTERFACE.mod: PhysicalConstants_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PhysicalConstants_interface.mod
+PHYSICALCONSTANTS_INTERFACE.mod PhysicalConstants_interface.mod PhysicalConstants_interface.o: PhysicalConstants_interface.F90  constants.h Flash.h
+else
+physicalconstants_interface.mod: PhysicalConstants_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: PhysicalConstants_interface.mod
+physicalconstants_interface.mod PhysicalConstants_interface.mod PhysicalConstants_interface.o: PhysicalConstants_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+UT_CONVERSIONINTERFACE.mod: ut_conversionInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_conversionInterface.mod
+UT_CONVERSIONINTERFACE.mod ut_conversionInterface.mod ut_conversionInterface.o: ut_conversionInterface.F90  
+else
+ut_conversioninterface.mod: ut_conversionInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_conversionInterface.mod
+ut_conversioninterface.mod ut_conversionInterface.mod ut_conversionInterface.o: ut_conversionInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+EOS_MTINTERFACE.mod: eos_mtInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_mtInterface.mod
+EOS_MTINTERFACE.mod eos_mtInterface.mod eos_mtInterface.o: eos_mtInterface.F90  Eos.h
+else
+eos_mtinterface.mod: eos_mtInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_mtInterface.mod
+eos_mtinterface.mod eos_mtInterface.mod eos_mtInterface.o: eos_mtInterface.F90  Eos.h
+endif
+
+ifdef MODUPPERCASE
+GR_BCINTERFACE.mod: gr_bcInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bcInterface.mod
+GR_BCINTERFACE.mod gr_bcInterface.mod gr_bcInterface.o: gr_bcInterface.F90  constants.h Flash.h
+else
+gr_bcinterface.mod: gr_bcInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bcInterface.mod
+gr_bcinterface.mod gr_bcInterface.mod gr_bcInterface.o: gr_bcInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+RUNTIMEPARAMETERS_DATA.mod: RuntimeParameters_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RuntimeParameters_data.mod
+RUNTIMEPARAMETERS_DATA.mod RuntimeParameters_data.mod RuntimeParameters_data.o: RuntimeParameters_data.F90 NAMEVALUELL_DATA.mod constants.h
+else
+runtimeparameters_data.mod: RuntimeParameters_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RuntimeParameters_data.mod
+runtimeparameters_data.mod RuntimeParameters_data.mod RuntimeParameters_data.o: RuntimeParameters_data.F90 namevaluell_data.mod constants.h
+endif
+
+ifdef MODUPPERCASE
+EOS_TABINTERFACE.mod: eos_tabInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_tabInterface.mod
+EOS_TABINTERFACE.mod eos_tabInterface.mod eos_tabInterface.o: eos_tabInterface.F90 EOS_TABDATA.mod Eos.h
+else
+eos_tabinterface.mod: eos_tabInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: eos_tabInterface.mod
+eos_tabinterface.mod eos_tabInterface.mod eos_tabInterface.o: eos_tabInterface.F90 eos_tabdata.mod Eos.h
+endif
+
+ifdef MODUPPERCASE
+SIMULATION_DATA.mod: Simulation_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Simulation_data.mod
+SIMULATION_DATA.mod Simulation_data.mod Simulation_data.o: Simulation_data.F90  Eos.h
+else
+simulation_data.mod: Simulation_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Simulation_data.mod
+simulation_data.mod Simulation_data.mod Simulation_data.o: Simulation_data.F90  Eos.h
+endif
+
+ifdef MODUPPERCASE
+GRID_DATA.mod: Grid_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Grid_data.mod
+GRID_DATA.mod Grid_data.mod Grid_data.o: Grid_data.F90  constants.h Flash.h
+else
+grid_data.mod: Grid_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Grid_data.mod
+grid_data.mod Grid_data.mod Grid_data.o: Grid_data.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+TIMERS_DATA.mod: Timers_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Timers_data.mod
+TIMERS_DATA.mod Timers_data.mod Timers_data.o: Timers_data.F90  Timers.h
+else
+timers_data.mod: Timers_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Timers_data.mod
+timers_data.mod Timers_data.mod Timers_data.o: Timers_data.F90  Timers.h
+endif
+
+ifdef MODUPPERCASE
+PARAMESH_INTERFACES.mod : 
+else
+paramesh_interfaces.mod : 
+endif
+
+ifdef MODUPPERCASE
+DRIVER_INTERFACE.mod: Driver_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Driver_interface.mod
+DRIVER_INTERFACE.mod Driver_interface.mod Driver_interface.o: Driver_interface.F90  constants.h Flash.h
+else
+driver_interface.mod: Driver_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Driver_interface.mod
+driver_interface.mod Driver_interface.mod Driver_interface.o: Driver_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+PROFILER_INTERFACE.mod: Profiler_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Profiler_interface.mod
+PROFILER_INTERFACE.mod Profiler_interface.mod Profiler_interface.o: Profiler_interface.F90  
+else
+profiler_interface.mod: Profiler_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Profiler_interface.mod
+profiler_interface.mod Profiler_interface.mod Profiler_interface.o: Profiler_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+IONIZE_INTERFACE.mod: Ionize_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Ionize_interface.mod
+IONIZE_INTERFACE.mod Ionize_interface.mod Ionize_interface.o: Ionize_interface.F90  constants.h Flash.h Ionize.h
+else
+ionize_interface.mod: Ionize_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Ionize_interface.mod
+ionize_interface.mod Ionize_interface.mod Ionize_interface.o: Ionize_interface.F90  constants.h Flash.h Ionize.h
+endif
+
+ifdef MODUPPERCASE
+GR_INTERFACETYPEDECL.mod: gr_interfaceTypeDecl.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_interfaceTypeDecl.mod
+GR_INTERFACETYPEDECL.mod gr_interfaceTypeDecl.mod gr_interfaceTypeDecl.o: gr_interfaceTypeDecl.F90  constants.h Flash.h
+else
+gr_interfacetypedecl.mod: gr_interfaceTypeDecl.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_interfaceTypeDecl.mod
+gr_interfacetypedecl.mod gr_interfaceTypeDecl.mod gr_interfaceTypeDecl.o: gr_interfaceTypeDecl.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_SBINTERFACE.mod: gr_sbInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_sbInterface.mod
+GR_SBINTERFACE.mod gr_sbInterface.mod gr_sbInterface.o: gr_sbInterface.F90  constants.h Flash.h
+else
+gr_sbinterface.mod: gr_sbInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_sbInterface.mod
+gr_sbinterface.mod gr_sbInterface.mod gr_sbInterface.o: gr_sbInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_GCSCRATCHDATA.mod: gr_GCScratchData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_GCScratchData.mod
+GR_GCSCRATCHDATA.mod gr_GCScratchData.mod gr_GCScratchData.o: gr_GCScratchData.F90  Flash.h
+else
+gr_gcscratchdata.mod: gr_GCScratchData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_GCScratchData.mod
+gr_gcscratchdata.mod gr_GCScratchData.mod gr_GCScratchData.o: gr_GCScratchData.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+HEATEXCHANGE_INTERFACE.mod: Heatexchange_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Heatexchange_interface.mod
+HEATEXCHANGE_INTERFACE.mod Heatexchange_interface.mod Heatexchange_interface.o: Heatexchange_interface.F90  constants.h
+else
+heatexchange_interface.mod: Heatexchange_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Heatexchange_interface.mod
+heatexchange_interface.mod Heatexchange_interface.mod Heatexchange_interface.o: Heatexchange_interface.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+GR_BCDATA.mod: gr_bcData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bcData.mod
+GR_BCDATA.mod gr_bcData.mod gr_bcData.o: gr_bcData.F90  
+else
+gr_bcdata.mod: gr_bcData.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bcData.mod
+gr_bcdata.mod gr_bcData.mod gr_bcData.o: gr_bcData.F90  
+endif
+
+ifdef MODUPPERCASE
+EOS_TABDATA.mod : 
+else
+eos_tabdata.mod : 
+endif
+
+ifdef MODUPPERCASE
+FLAME_INTERFACE.mod: Flame_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Flame_interface.mod
+FLAME_INTERFACE.mod Flame_interface.mod Flame_interface.o: Flame_interface.F90  Eos.h constants.h Flash.h
+else
+flame_interface.mod: Flame_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Flame_interface.mod
+flame_interface.mod Flame_interface.mod Flame_interface.o: Flame_interface.F90  Eos.h constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+RADTRANS_INTERFACETYPEDECL.mod: RadTrans_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+RADTRANS_INTERFACE.mod: RadTrans_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RadTrans_interface.mod
+RADTRANS_INTERFACETYPEDECL.mod RADTRANS_INTERFACE.mod RadTrans_interface.mod RadTrans_interface.o: RadTrans_interface.F90  constants.h
+else
+radtrans_interfacetypedecl.mod: RadTrans_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+radtrans_interface.mod: RadTrans_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: RadTrans_interface.mod
+radtrans_interfacetypedecl.mod radtrans_interface.mod RadTrans_interface.mod RadTrans_interface.o: RadTrans_interface.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+GR_PFFTINTERFACETYPEDECL.mod: gr_pfftInterfaceTypeDecl.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_pfftInterfaceTypeDecl.mod
+GR_PFFTINTERFACETYPEDECL.mod gr_pfftInterfaceTypeDecl.mod gr_pfftInterfaceTypeDecl.o: gr_pfftInterfaceTypeDecl.F90  
+else
+gr_pfftinterfacetypedecl.mod: gr_pfftInterfaceTypeDecl.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_pfftInterfaceTypeDecl.mod
+gr_pfftinterfacetypedecl.mod gr_pfftInterfaceTypeDecl.mod gr_pfftInterfaceTypeDecl.o: gr_pfftInterfaceTypeDecl.F90  
+endif
+
+ifdef MODUPPERCASE
+TURB_INTERFACE.mod: Turb_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Turb_interface.mod
+TURB_INTERFACE.mod Turb_interface.mod Turb_interface.o: Turb_interface.F90  constants.h Flash.h
+else
+turb_interface.mod: Turb_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Turb_interface.mod
+turb_interface.mod Turb_interface.mod Turb_interface.o: Turb_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+TIMERS_INTERFACE.mod: Timers_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Timers_interface.mod
+TIMERS_INTERFACE.mod Timers_interface.mod Timers_interface.o: Timers_interface.F90  
+else
+timers_interface.mod: Timers_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Timers_interface.mod
+timers_interface.mod Timers_interface.mod Timers_interface.o: Timers_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+HY_UHD_INTERFACE.mod: hy_uhd_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: hy_uhd_interface.mod
+HY_UHD_INTERFACE.mod hy_uhd_interface.mod hy_uhd_interface.o: hy_uhd_interface.F90  constants.h Flash.h UHD.h
+else
+hy_uhd_interface.mod  hy_uhd_interface.o: hy_uhd_interface.F90  constants.h Flash.h UHD.h
+endif
+
+ifdef MODUPPERCASE
+MAGNETICRESISTIVITY_INTERFACE.mod: MagneticResistivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: MagneticResistivity_interface.mod
+MAGNETICRESISTIVITY_INTERFACE.mod MagneticResistivity_interface.mod MagneticResistivity_interface.o: MagneticResistivity_interface.F90  Flash.h
+else
+magneticresistivity_interface.mod: MagneticResistivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: MagneticResistivity_interface.mod
+magneticresistivity_interface.mod MagneticResistivity_interface.mod MagneticResistivity_interface.o: MagneticResistivity_interface.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+NAMEVALUELL_DATA.mod: nameValueLL_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: nameValueLL_data.mod
+NAMEVALUELL_DATA.mod nameValueLL_data.mod nameValueLL_data.o: nameValueLL_data.F90 DRIVER_INTERFACE.mod constants.h
+else
+namevaluell_data.mod: nameValueLL_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: nameValueLL_data.mod
+namevaluell_data.mod nameValueLL_data.mod nameValueLL_data.o: nameValueLL_data.F90 driver_interface.mod constants.h
+endif
+
+ifdef MODUPPERCASE
+HYDRO_INTERFACE.mod: Hydro_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Hydro_interface.mod
+HYDRO_INTERFACE.mod Hydro_interface.mod Hydro_interface.o: Hydro_interface.F90  constants.h Flash.h
+else
+hydro_interface.mod: Hydro_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Hydro_interface.mod
+hydro_interface.mod Hydro_interface.mod Hydro_interface.o: Hydro_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_ISOINTERFACE.mod: gr_isoInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_isoInterface.mod
+GR_ISOINTERFACE.mod gr_isoInterface.mod gr_isoInterface.o: gr_isoInterface.F90  constants.h Flash.h
+else
+gr_isointerface.mod: gr_isoInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_isoInterface.mod
+gr_isointerface.mod gr_isoInterface.mod gr_isoInterface.o: gr_isoInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+HY_UHD_MULTITEMPDATA.mod : 
+else
+hy_uhd_multitempdata.mod : 
+endif
+
+ifdef MODUPPERCASE
+COOL_INTERFACE.mod: Cool_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Cool_interface.mod
+COOL_INTERFACE.mod Cool_interface.mod Cool_interface.o: Cool_interface.F90  constants.h Flash.h
+else
+cool_interface.mod: Cool_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Cool_interface.mod
+cool_interface.mod Cool_interface.mod Cool_interface.o: Cool_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+TREE.mod : 
+else
+tree.mod : 
+endif
+
+ifdef MODUPPERCASE
+POLYTROPE_INTERFACE.mod: Polytrope_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Polytrope_interface.mod
+POLYTROPE_INTERFACE.mod Polytrope_interface.mod Polytrope_interface.o: Polytrope_interface.F90  
+else
+polytrope_interface.mod: Polytrope_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Polytrope_interface.mod
+polytrope_interface.mod Polytrope_interface.mod Polytrope_interface.o: Polytrope_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+IMBOUND_INTERFACE.mod: ImBound_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ImBound_interface.mod
+IMBOUND_INTERFACE.mod ImBound_interface.mod ImBound_interface.o: ImBound_interface.F90  constants.h Flash.h
+else
+imbound_interface.mod: ImBound_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ImBound_interface.mod
+imbound_interface.mod ImBound_interface.mod ImBound_interface.o: ImBound_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+UT_INTERPOLATIONINTERFACE.mod: ut_interpolationInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_interpolationInterface.mod
+UT_INTERPOLATIONINTERFACE.mod ut_interpolationInterface.mod ut_interpolationInterface.o: ut_interpolationInterface.F90  
+else
+ut_interpolationinterface.mod: ut_interpolationInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_interpolationInterface.mod
+ut_interpolationinterface.mod ut_interpolationInterface.mod ut_interpolationInterface.o: ut_interpolationInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+GR_BICGINTERFACE.mod: gr_bicgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bicgInterface.mod
+GR_BICGINTERFACE.mod gr_bicgInterface.mod gr_bicgInterface.o: gr_bicgInterface.F90  
+else
+gr_bicginterface.mod: gr_bicgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_bicgInterface.mod
+gr_bicginterface.mod gr_bicgInterface.mod gr_bicgInterface.o: gr_bicgInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+HY_UHD_SLOPELIMITERS.mod: hy_uhd_slopeLimiters.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: hy_uhd_slopeLimiters.mod
+HY_UHD_SLOPELIMITERS.mod hy_uhd_slopeLimiters.mod hy_uhd_slopeLimiters.o: hy_uhd_slopeLimiters.F90  
+else
+hy_uhd_slopelimiters.mod: hy_uhd_slopeLimiters.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: hy_uhd_slopeLimiters.mod
+hy_uhd_slopelimiters.mod hy_uhd_slopeLimiters.mod hy_uhd_slopeLimiters.o: hy_uhd_slopeLimiters.F90  
+endif
+
+ifdef MODUPPERCASE
+PHYSICALDATA.mod: physicaldata.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: physicaldata.mod
+PHYSICALDATA.mod physicaldata.mod physicaldata.o: physicaldata.F90  Flash.h
+else
+physicaldata.mod  physicaldata.o: physicaldata.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+ISO_C_BINDING.mod : 
+else
+iso_c_binding.mod : 
+endif
+
+ifdef MODUPPERCASE
+SIMULATION_INTERFACE.mod: Simulation_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Simulation_interface.mod
+SIMULATION_INTERFACE.mod Simulation_interface.mod Simulation_interface.o: Simulation_interface.F90  constants.h
+else
+simulation_interface.mod: Simulation_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Simulation_interface.mod
+simulation_interface.mod Simulation_interface.mod Simulation_interface.o: Simulation_interface.F90  constants.h
+endif
+
+ifdef MODUPPERCASE
+ENERGYDEPOSITION_INTERFACE.mod: EnergyDeposition_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: EnergyDeposition_interface.mod
+ENERGYDEPOSITION_INTERFACE.mod EnergyDeposition_interface.mod EnergyDeposition_interface.o: EnergyDeposition_interface.F90  
+else
+energydeposition_interface.mod: EnergyDeposition_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: EnergyDeposition_interface.mod
+energydeposition_interface.mod EnergyDeposition_interface.mod EnergyDeposition_interface.o: EnergyDeposition_interface.F90  
+endif
+
+ifdef MODUPPERCASE
+IO_TYPEINTERFACE.mod: io_typeInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: io_typeInterface.mod
+IO_TYPEINTERFACE.mod io_typeInterface.mod io_typeInterface.o: io_typeInterface.F90 IO_DATA.mod io_flash.h constants.h Flash.h
+else
+io_typeinterface.mod: io_typeInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: io_typeInterface.mod
+io_typeinterface.mod io_typeInterface.mod io_typeInterface.o: io_typeInterface.F90 io_data.mod io_flash.h constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+LOGFILE_INTERFACE.mod: Logfile_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Logfile_interface.mod
+LOGFILE_INTERFACE.mod Logfile_interface.mod Logfile_interface.o: Logfile_interface.F90  constants.h Flash.h
+else
+logfile_interface.mod: Logfile_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Logfile_interface.mod
+logfile_interface.mod Logfile_interface.mod Logfile_interface.o: Logfile_interface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+MASSDIFFUSIVITY_INTERFACE.mod: MassDiffusivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: MassDiffusivity_interface.mod
+MASSDIFFUSIVITY_INTERFACE.mod MassDiffusivity_interface.mod MassDiffusivity_interface.o: MassDiffusivity_interface.F90  Flash.h
+else
+massdiffusivity_interface.mod: MassDiffusivity_interface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: MassDiffusivity_interface.mod
+massdiffusivity_interface.mod MassDiffusivity_interface.mod MassDiffusivity_interface.o: MassDiffusivity_interface.F90  Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_MPOLEINTERFACE.mod: gr_mpoleInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_mpoleInterface.mod
+GR_MPOLEINTERFACE.mod gr_mpoleInterface.mod gr_mpoleInterface.o: gr_mpoleInterface.F90  constants.h Flash.h
+else
+gr_mpoleinterface.mod: gr_mpoleInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_mpoleInterface.mod
+gr_mpoleinterface.mod gr_mpoleInterface.mod gr_mpoleInterface.o: gr_mpoleInterface.F90  constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+EOS_DATA.mod: Eos_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Eos_data.mod
+EOS_DATA.mod Eos_data.mod Eos_data.o: Eos_data.F90  Eos.h Flash.h Eos_map.h
+else
+eos_data.mod: Eos_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: Eos_data.mod
+eos_data.mod Eos_data.mod Eos_data.o: Eos_data.F90  Eos.h Flash.h Eos_map.h
+endif
+
+ifdef MODUPPERCASE
+UT_RANDOMINTERFACE.mod: ut_randomInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_randomInterface.mod
+UT_RANDOMINTERFACE.mod ut_randomInterface.mod ut_randomInterface.o: ut_randomInterface.F90  
+else
+ut_randominterface.mod: ut_randomInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: ut_randomInterface.mod
+ut_randominterface.mod ut_randomInterface.mod ut_randomInterface.o: ut_randomInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+GR_MGINTERFACE.mod: gr_mgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_mgInterface.mod
+GR_MGINTERFACE.mod gr_mgInterface.mod gr_mgInterface.o: gr_mgInterface.F90  
+else
+gr_mginterface.mod: gr_mgInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_mgInterface.mod
+gr_mginterface.mod gr_mgInterface.mod gr_mgInterface.o: gr_mgInterface.F90  
+endif
+
+ifdef MODUPPERCASE
+WORKSPACE.mod : 
+else
+workspace.mod : 
+endif
+
+ifdef MODUPPERCASE
+IO_DATA.mod: IO_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IO_data.mod
+IO_DATA.mod IO_data.mod IO_data.o: IO_data.F90 ISO_C_BINDING.mod NAMEVALUELL_DATA.mod constants.h Flash.h
+else
+io_data.mod: IO_data.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: IO_data.mod
+io_data.mod IO_data.mod IO_data.o: IO_data.F90 iso_c_binding.mod namevaluell_data.mod constants.h Flash.h
+endif
+
+ifdef MODUPPERCASE
+GR_PFFTINTERFACE.mod: gr_pfftInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_pfftInterface.mod
+GR_PFFTINTERFACE.mod gr_pfftInterface.mod gr_pfftInterface.o: gr_pfftInterface.F90 GR_PFFTINTERFACETYPEDECL.mod constants.h
+else
+gr_pfftinterface.mod: gr_pfftInterface.mod ;if [ -s "$<" -a "$<" -nt "$@" ];then ln -f $< $@;else test -f $@&&touch $@||/bin/true;fi
+.INTERMEDIATE: gr_pfftInterface.mod
+gr_pfftinterface.mod gr_pfftInterface.mod gr_pfftInterface.o: gr_pfftInterface.F90 gr_pfftinterfacetypedecl.mod constants.h
+endif
+
+
+### List of flash module object files
+DATA_OBJS = 
+DATA_OBJS += Burn_interface.o IncompNS_interface.o ut_sysMemInterface.o Conductivity_interface.o Diffuse_interface.o 
+DATA_OBJS += PhysicalConstants_data.o gr_ptInterface.o Gravity_interface.o Opacity_interface.o io_c_interface.o 
+DATA_OBJS += SolidMechanics_interface.o gr_hgInterface.o Logfile_data.o Eos_interface.o eos_idealGammaData.o 
+DATA_OBJS += io_ptInterface.o Driver_data.o Grid_interface.o Deleptonize_interface.o Particles_interface.o 
+DATA_OBJS += RuntimeParameters_interface.o eos_localInterface.o Viscosity_interface.o gr_interface.o Stir_data.o 
+DATA_OBJS += pc_interface.o IO_interface.o ut_sysMemData.o Multispecies_interface.o NSE_interface.o 
+DATA_OBJS += Heat_interface.o  Stir_interface.o Cosmology_interface.o Hydro_data.o 
+DATA_OBJS += PhysicalConstants_interface.o gr_bcInterface.o RuntimeParameters_data.o Simulation_data.o Grid_data.o 
+DATA_OBJS += Timers_data.o  Driver_interface.o Profiler_interface.o Ionize_interface.o 
+DATA_OBJS += gr_interfaceTypeDecl.o gr_sbInterface.o gr_GCScratchData.o Heatexchange_interface.o gr_bcData.o 
+DATA_OBJS +=  Flame_interface.o RadTrans_interface.o gr_pfftInterfaceTypeDecl.o Turb_interface.o 
+DATA_OBJS += Timers_interface.o hy_uhd_interface.o MagneticResistivity_interface.o nameValueLL_data.o Hydro_interface.o 
+DATA_OBJS +=  Cool_interface.o  Polytrope_interface.o ImBound_interface.o 
+DATA_OBJS += ut_interpolationInterface.o gr_bicgInterface.o hy_uhd_slopeLimiters.o physicaldata.o  
+DATA_OBJS += Simulation_interface.o EnergyDeposition_interface.o io_typeInterface.o Logfile_interface.o MassDiffusivity_interface.o 
+DATA_OBJS += Eos_data.o ut_randomInterface.o gr_mgInterface.o  IO_data.o 
+
+
+Eos_getData.F90 Eos_getTempData.F90 Eos_putData.F90 Eos_wrapped.F90 gr_bcGetRegion.F90 gr_bcPutRegion.F90 gr_findMean.F90 gr_getInteriorBlkPtr.F90 gr_hypreAddGraph.F90 gr_hypreApplyBcToFace.F90 gr_hypreComputeB.F90 gr_hypreDestroyGrid.F90 gr_hypreDestroySolver.F90 gr_hypreExchangeFacB.F90 gr_hypreGetFaceB.F90 gr_hypreGridStatus.F90 gr_hypreSetIniGuess.F90 gr_hypreSetupGrid.F90 gr_hypreSetupSolver.F90 gr_hypreSolve.F90 gr_hypreUpdateSoln.F90 Grid_computeVarDiff.F90 Grid_computeVarNorm.F90 Grid_data.F90 Grid_GCPutScratch.F90 Grid_getBlkData.F90 Grid_getBlkPtr.F90 Grid_getPlaneData.F90 Grid_getPointData.F90 Grid_getRowData.F90 Grid_limitAbundance.F90 Grid_putBlkData.F90 Grid_putPlaneData.F90 Grid_putPointData.F90 Grid_putRowData.F90 Grid_renormAbundance.F90 Grid_renormMassScalars.F90 gr_mpoleCen1Dspherical.F90 gr_mpoleCen2Dcylindrical.F90 gr_mpoleCen2Dspherical.F90 gr_mpoleCen3Dcartesian.F90 gr_mpoleCen3Dcylindrical.F90 gr_mpoleMom1Dspherical.F90 gr_mpoleMom2Dcylindrical.F90 gr_mpoleMom2Dspherical.F90 gr_mpoleMom3Dcartesian.F90 gr_mpoleMom3Dcylindrical.F90 gr_mpolePot1Dspherical.F90 gr_mpolePot2Dcylindrical.F90 gr_mpolePot2Dspherical.F90 gr_mpolePot3Dcartesian.F90 gr_mpolePot3Dcylindrical.F90 Hydro_computeDt.F90 Hydro_computeVars.F90 Hydro_recalibrateEints.F90 Hydro_shockStrength.F90 hy_uhd_addGravityUnsplit.F90 hy_uhd_addThermalFluxes.F90 hy_uhd_addViscousFluxes.F90 hy_uhd_dataReconstOneStep.F90 hy_uhd_energyFix.F90 hy_uhd_getFaceFlux.F90 hy_uhd_getRiemannState.F90 hy_uhd_interface.F90 hy_uhd_shockDetect.F90 hy_uhd_unitConvert.F90 hy_uhd_unsplit.F90 hy_uhd_unsplitUpdate.F90 hy_uhd_updateSpeciesMassScalar.F90 io_getVarExtrema.F90 io_readData.F90 io_writeData.F90 IO_writeIntegralQuantities.F90 st_calcAccel.F90 Stir.F90 physicaldata.F90 : reorder
+
+
+
+###Automatically appended dependencies of C files on headers###
+/work/01734/evan1022/hypre-2.9.0b/src/install/include.o: 
+10120.o: 
+Driver_abortFlashC.o: constants.h /opt/apps/intel15/mvapich2/2.1/include/mpi.h mangle_names.h
+dr_set_rlimits.o: constants.h mangle_names.h
+dr_sleep.o: mangle_names.h
+io_attribute.o: io_attribute.h
+io_comp_decomp.o: io_comp_decomp.h
+io_compressDecompress.o: io_compressDecompress.h
+io_create_dataset.o: io_create_dataset.h
+io_h5_attribute.o: io_h5_attribute.h
+io_h5create_dataset.o: io_h5create_dataset.h
+io_h5create_raydset.o: constants.h mangle_names.h
+io_h5file_interface.o: mangle_names.h hdf5_flash.h
+io_h5read_generic_int_arr.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5read_generic_real_arr.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5read_header.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5read_lists.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5_read_present_dims.o: constants.h mangle_names.h Flash.h
+io_h5read_unknowns.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5_report_xfer_method.o: io_h5_report_xfer_method.h
+io_h5_type.o: io_h5_type.h
+io_h5_type_matched_xfer.o: io_h5_type_matched_xfer.h
+io_h5write_generic_int_arr.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5write_generic_real_arr.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5write_header.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5write_lists.o: constants.h mangle_names.h hdf5_flash.h Flash.h
+io_h5write_raydata.o: constants.h mangle_names.h hdf5_flash.h
+io_h5write_unknowns.o: io_h5_attribute.h constants.h io_flash.h mangle_names.h Flash.h hdf5_flash.h
+io_h5write_unknowns_sp.o: io_h5_attribute.h constants.h io_flash.h mangle_names.h Flash.h hdf5_flash.h
+io_h5_xfer.o: io_h5_xfer.h
+io_h5_xfer_wrapper.o: io_h5_xfer_wrapper.h
+io_mpi_type.o: io_mpi_type.h
+io_repack_data.o: io_repack_data.h
+io_xfer_cont_slab.o: io_xfer_cont_slab.h
+ut_sys_mem_usage.o: mangle_names.h ut_sysMem.h
+constants.o: 
+mangle_names.o: 
+io_attribute.o: io_h5_attribute.h constants.h io_flash.h mangle_names.h  Flash.h
+io_comp_decomp.o: 
+io_compressDecompress.o: 
+io_create_dataset.o: constants.h io_flash.h mangle_names.h io_h5create_dataset.h Flash.h 
+io_h5_attribute.o: io_flash.h constants.h Flash.h io_h5_type.h
+io_h5create_dataset.o: io_flash.h constants.h Flash.h io_h5_type.h
+hdf5_flash.o: constants.h
+Flash.o: 
+io_h5_report_xfer_method.o: io_flash.h constants.h Flash.h
+io_h5_type.o: io_flash.h constants.h Flash.h
+io_h5_type_matched_xfer.o: constants.h io_flash.h io_h5_type.h io_repack_data.h Flash.h hdf5_flash.h io_h5_xfer.h
+io_flash.o: Flash.h
+io_h5_xfer.o: io_flash.h constants.h Flash.h
+io_h5_xfer_wrapper.o: constants.h io_flash.h io_h5_type.h Flash.h hdf5_flash.h io_h5_xfer.h io_h5_type_matched_xfer.h io_h5_report_xfer_method.h
+io_mpi_type.o: io_flash.h constants.h Flash.h
+io_repack_data.o: 
+io_xfer_cont_slab.o: constants.h io_flash.h io_h5_xfer_wrapper.h mangle_names.h  Flash.h
+ut_sysMem.o: 

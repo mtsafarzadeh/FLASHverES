@@ -1,0 +1,53 @@
+# Configureation file for blob overtaken by a wind
+EXCLUSIVE *
+
+REQUIRES Driver
+#REQUIRES physics/Hydro
+REQUIRES physics/Eos/EosMain/Gamma
+REQUIRES physics/sourceTerms/Cool/CoolMain/Atomic
+REQUIRES Grid/GridBoundaryConditions/OneRow
+#REQUESTS physics/Hydro/HydroMain/split/MHD_8Wave
+REQUESTS physics/Hydro/HydroMain/unsplit/MHD_StaggeredMesh
+#REQUIRES physics/Diffuse/DiffuseMain/Unsplit
+#REQUIRES physics/materialProperties/Conductivity/ConductivityMain/SpitzerHighZ
+#REQUIRES physics/materialProperties/Conductivity/ConductivityMain/PowerLaw
+
+MASS_SCALAR BLOB
+
+D sim_uLeft fluid velocity in the left part of the grid 
+PARAMETER sim_uLeft	REAL    0.       
+D sim_uRight fluid velocity in the right part of the grid 
+PARAMETER sim_uRight	REAL    0.       
+
+D sim_rhoblob  
+PARAMETER sim_rhoblob	REAL	1.d-24
+
+D sim_tempblob
+PARAMETER sim_tempblob	REAL	1.d4
+
+D sim_rhoambient
+PARAMETER sim_rhoambient   REAL    1.d-24
+
+D sim_tempambient
+PARAMETER sim_tempambient  REAL    1.d4
+
+D sim_blobradius
+PARAMETER sim_blobradius REAL 3.08d22
+
+D sim_velambient
+PARAMETER sim_velambient REAL 1.0d6
+
+D sim_velframe
+PARAMETER sim_velframe REAL 0.0
+
+D Set this equal to 1 to get a square blob
+PARAMETER sim_square  REAL 0.
+
+D This is the plasma beta
+PARAMETER sim_beta REAL 1.0E6 
+
+D This is the angle in degrees that the B field makes with the flow direction
+PARAMETER sim_bangle REAL 0.0
+
+#PARAMETER sim_cool_time REAL	0.1
+

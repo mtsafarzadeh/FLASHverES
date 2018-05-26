@@ -1,0 +1,235 @@
+run_comment = "LIFE Chamber Simulations"
+log_file    = "life.log"
+basenm      = "life_"
+
+###############
+#             #
+#     I/O     #
+#             #
+###############
+
+### Checkpoint Options  ###
+checkpointFileIntervalTime = 1.0e-08
+checkpointFileIntervalStep = 100
+
+### Plot Options ###
+plotFileNumber = 0
+plot_var_1     = "dens"
+
+### Restart Options ###
+restart              = .true.
+checkpointFileNumber = 110
+
+
+#############################
+#                           #
+#     RADIATION/OPACITY     #
+#                           #
+#############################
+rt_useMGD       = .true.
+rt_mgdNumGroups = 1
+rt_mgdBounds_1  = 1.0e-01
+rt_mgdBounds_2  = 1.0e+06
+rt_mgdFlMode    = "fl_larsen"
+rt_mgdFlCoef    = 1.0
+# op_tableEnergyTolerance = 1.0e-03
+
+rt_computedt = .true.
+
+### SET MGD BOUNDARY CONDITIONS ###
+rt_mgdXlBoundaryType = "reflecting"
+rt_mgdXrBoundaryType = "vacuum"
+rt_mgdYlBoundaryType = "reflecting"
+rt_mgdYrBoundaryType = "vacuum"
+rt_mgdZlBoundaryType = "reflecting"
+rt_mgdZrBoundaryType = "reflecting"
+
+useOpacity     = .true.
+
+### SET CHAMBER OPACITY OPTIONS ###
+op_chamAbsorb   = "op_tabpa"
+op_chamEmiss    = "op_tabpa"
+op_chamTrans    = "op_tabro"
+op_chamFileType = "ionmix4"
+op_chamFileName = "xe-gray.cn4"
+
+### SET TARGET OPACITY OPTIONS ###
+op_targAbsorb   = "op_tabpa"
+op_targEmiss    = "op_tabpa"
+op_targTrans    = "op_tabro"
+op_targFileType = "ionmix4"
+op_targFileName = "xe-gray.cn4"
+
+
+######################################
+#                                    #
+#     ION/ELECTRON EQUILIBRATION     #
+#                                    #
+######################################
+useHeatexchange = .true.
+hx_dtFactor     = 1.0e+100
+
+
+###############
+#             #
+#     EOS     #
+#             #
+###############
+eosModeInit      = "dens_temp_gather"
+smallt           = 1.0
+smallx           = 1.0e-99
+smlrho           = 1.0e-15
+eos_useLogTables = .false.
+
+
+###############################
+#                             #
+#     ELECTRON CONDUCTION     #
+#                             #
+###############################
+useDiffuse       = .true.
+useConductivity  = .true.
+diff_useEleCond  = .true.
+diff_eleFlMode   = "fl_larsen"
+diff_eleFlCoef   = 0.06
+diff_thetaImplct = 1.0
+dt_diff_factor   = 1.0e+100
+
+### SET CONDUCTION BOUNDARY CONDITIONS ###
+diff_eleXlBoundaryType = "outflow"
+diff_eleXrBoundaryType = "outflow"
+diff_eleYlBoundaryType = "outflow"
+diff_eleYrBoundaryType = "outflow"
+diff_eleZlBoundaryType = "outflow"
+diff_eleZrBoundaryType = "outflow"
+
+
+############################
+#                          #
+#     HYDRO PARAMETERS     #
+#                          #
+############################
+useHydro  = .true.
+cfl       = 0.4
+hy_3TMode = "ragelike"
+
+# UNSPLIT HYDRO OPTIONS: 
+order            = 3        # Interpolation order (first/second/third/fifth order)
+slopeLimiter     = "minmod" # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta = 1.       # Slope parameter for the "limited" slope by Toro
+charLimiting     = .true.   # Characteristic limiting vs. Primitive limiting
+use_avisc        = .true.   # use artificial viscosity (originally for PPM)
+cvisc            = 0.1      # coefficient for artificial viscosity
+use_flattening   = .false.  # use flattening (dissipative) (originally for PPM)
+use_steepening   = .false.  # use contact steepening (originally for PPM)
+use_upwindTVD    = .false.  # use upwind biased TVD slope for PPM (need nguard=6)
+RiemannSolver    = "hllc"   # Roe, HLL, HLLC, LLF, Marquina, hybrid
+entropy          = .false.  # Entropy fix for the Roe solver
+shockDetect      = .false.  # Shock Detect for numerical stability
+use_hybridOrder  = .false.
+
+# HYDRO BOUNDARY CONDITIONS:
+xl_boundary_type = "reflect"
+xr_boundary_type = "outflow"
+yl_boundary_type = "reflect"
+yr_boundary_type = "outflow"
+zl_boundary_type = "reflect"
+zr_boundary_type = "reflect"
+
+
+######################################################
+#                                                    #
+#     MATERIAL PROPERTIES AND INITIAL CONDITIONS     #
+#                                                    #
+######################################################
+
+# Use feathering to smooth chamber/target boundary
+#   sim_ndiv = 1 -> no feathering
+#   sim_ndiv > 1 -> more feathering
+sim_ndiv = 1
+
+sim_targetGeom    = "cylinder"
+sim_targetRadius  = 0.45
+sim_targetHeight  = 0.95
+sim_driverType    = "uniform"
+
+# Driver energy [ergs]:
+sim_inputEnergy   = 12.16e+13 # 1e+13 ergs = 1.0 MJ
+
+# Time over which sim_inputEnergy is added to the target [s]:
+sim_pulseLength   = 1.0e-10
+
+# Vertical offset of the target [cm]:
+sim_targetOffset = 0.0
+
+### SET CHAMBER PROPERTIES ###
+sim_rhoCham  	  = 6.0e-06
+sim_teleCham 	  = 872.665
+sim_tionCham 	  = 6000.
+sim_tradCham 	  = 100.0
+ms_chamA     	  = 131.29
+ms_chamZ     	  = 54.0
+ms_chamZMin  	  = 0.01
+eos_chamEosType   = "eos_tab"
+eos_chamSubType   = "ionmix4"
+eos_chamTableFile = "xe-gray.cn4"
+sim_velxCham      = 0.0
+sim_velyCham      = 0.0
+		  
+### SET TARGET PROPERTIES ###
+sim_rhoTarg  	  = 1.654
+sim_teleTarg 	  = 872.665
+sim_tionTarg 	  = 6000.
+sim_tradTarg 	  = 100.0
+ms_targA     	  = 131.29
+ms_targZ     	  = 54.0
+ms_targZMin  	  = 0.01
+eos_targEosType   = "eos_tab"
+eos_targSubType   = "ionmix4"	
+eos_targTableFile = "xe-gray.cn4"
+
+
+#######################
+#   TIME PARAMETERS   #
+#######################
+tstep_change_factor = 1.03
+tmax                = 1.0e-06
+dtmin          	    = 1.0e-16
+dtinit         	    = 1.0e-15
+dtmax          	    = 1.0
+nend           	    = 10000000
+
+################
+#              #
+#     MESH     #
+#              #
+################
+geometry = "cylindrical"
+
+# Domain size:
+xmin =  0.0
+xmax =  200.0
+ymin =  0.0
+ymax =  200.0
+
+### AMR OPTIONS ###
+nblockx          = 1
+nblocky          = 1
+lrefine_min_init = 7
+lrefine_max      = 15
+lrefine_min      = 1
+refine_var_1     = "dens"
+
+gr_lrefineMaxByTime = .true.
+gr_lrefmaxTime_1 = 2.0e-09
+gr_lrefmaxTimeValue_1 = 14
+gr_lrefmaxTime_2 = 4.0e-09
+gr_lrefmaxTimeValue_2 = 13
+gr_lrefmaxTime_3 = 8.0e-09
+gr_lrefmaxTimeValue_3 = 12
+gr_lrefmaxTime_4 = 0.5e-06
+gr_lrefmaxTimeValue_4 = 11
+gr_lrefmaxTime_5 = 1.0e-06
+gr_lrefmaxTimeValue_5 = 10
+gr_lrefmaxTime_6 = 2.0e-06
+gr_lrefmaxTimeValue_6 = 9

@@ -1,0 +1,16 @@
+/work/01734/evan1022/FLASH4.2.1_save/bin/setup.py -auto -3d -nxb=32 -nyb=32 -nzb=32 +ug +uhd QSO 
+
+Expanded Command line
+--with-library=mpi --with-unit=IO --unit=Grid --gridinterpolation=monotonic --auto --3d --nxb=32 --nyb=32 --nzb=32 --unit=Grid --with-unit=physics/Hydro/HydroMain/unsplit/Hydro_Unsplit QSO
+
+Defined Setup Variables:
+
+FullScratchUseInUHD --> False <type 'bool'>
+Grid --> UG <type 'str'>
+fixedBlockSize --> True <type 'bool'>
+maxBlocks --> 1 <type 'int'>
+nDim --> 3 <type 'int'>
+nxb --> 32 <type 'int'>
+nyb --> 32 <type 'int'>
+nzb --> 32 <type 'int'>
+

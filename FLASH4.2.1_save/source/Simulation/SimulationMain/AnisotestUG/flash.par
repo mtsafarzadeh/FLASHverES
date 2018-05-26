@@ -1,0 +1,156 @@
+#	Parameters for initial model
+
+#		Density, pressure, and velocity on either side of interface
+
+sim_rhoambient          = 1.0e-25
+sim_rhoblob             = 1.0e-24
+sim_tempambient         = 1.0e5
+sim_tempblob            = 1.0e4
+sim_velambient          = 0.
+sim_blobradius          = 3.08e20
+sim_bNormal          	= 0.
+sim_byLeft          	= 1.d-9
+
+eos_singlespeciesa      = 0.6
+killdivb=.true.
+
+smlrho          = 1.E-30
+smallp          = 1.E-30
+smalle          = 1.E-30
+small           = 1.E-30
+
+#		Angle and position of interface relative to x and y axes
+
+# These settings are better for testing 3-d problem, they are little
+# less symmetric.
+
+# Add some more blocks
+nblockx             = 40
+nblocky             = 40
+nblockz		    = 1
+
+iProcs = 9  #number or procs in the i direction
+jProcs = 9
+kProcs = 1
+meshcopycount=1
+
+#		Gas ratio of specific heats
+gamma = 1.66667
+
+#		Grid dimensionality and geometry
+
+geometry = cartesian
+
+#		Size of computational volume
+
+xmin		= -5.e20
+xmax		=  5.e20
+ymin		= -5.e20
+ymax		=  5.e20
+zmin		= 0.
+zmax		=  2.5e19
+
+#		Boundary conditions
+xl_boundary_type = "reflect"
+xr_boundary_type = "reflect" #"diode"
+yl_boundary_type = "reflect" #"diode"
+yr_boundary_type = "reflect" #"diode"
+zl_boundary_type = "reflect" #"diode"
+zr_boundary_type = "reflect" #"diode"
+
+#	Simulation (grid, time, I/O) parameters
+
+cfl		= 0.2 #0.8
+basenm          = "KH_"
+restart         = .false.
+
+#	checkpoint file output parameters
+checkpointFileIntervalTime = 3.1557E13
+checkpointFileIntervalStep = 1000
+checkpointFileNumber = 0 
+
+#	plotfile output parameters
+plotfileIntervalTime = 1.57E15
+plotfileIntervalStep = 0
+plotfileNumber = 0
+nend            = 99999
+dtinit          = 0.01 #3.1E5
+dtmax           = 3.14E13
+tmax            = 2.E16
+
+run_comment     = "Blob problem, x direction"
+log_file        = "KH.log"
+
+plot_var_1 = "dens"
+plot_var_2 = "pres"
+plot_var_3 = "velx"
+plot_var_4 = "vely"
+
+
+#    AMR refinement parameters  
+#lrefine_min	 = 1
+#lrefine_max      = 2
+#nrefs=9999999
+#refine_var_1     = "dens"
+#refine_var_2     = "temp"
+
+## Electron Thermal Conduction Stuff
+useConductivity = .true.
+useDiffuse = .true.
+
+cond_K0                  = 5.6e+4#-7
+cond_DensityExponent     = 0.#-2.0
+cond_TemperatureExponent = 0. #2.5 #6.5
+
+diff_useEleCond = .false. #.true.
+diff_useIonCond = .false.
+diff_eleFlCoef = 0.2
+#diff_ionFlCoef = 0.2
+diff_eleFlMode = "fl_larsen"
+#diff_ionFlMode = "fl_larsen"
+
+diff_thetaImplct = 1.
+eintSwitch      = 1.e-6
+
+#  SS : need to add the runtime parameters for the MHD solver
+###  SS : USM MHD parameters from the OrszagTang vortex run
+### -------------------------------------------------------------##
+###  SWITCHES SPECIFIC TO THE UNSPLIT STAGGERED MESH MHD SOLVER  ##
+## I. INTERPOLATION SCHEME:
+shockDetect=.false.
+order = 3      # Interpolation order (first/second/third/fifth order)
+slopeLimiter    = "hybrid"   # Slope limiters (minmod, mc, vanLeer, hybrid, limited)
+LimitedSlopeBeta= 1.     # Slope parameter for the "limited" slope by Toro
+charLimiting = .true. # Characteristic limiting vs. Primitive limiting
+#
+#use_avisc = .true. # use artificial viscosity (originally for PPM)
+#cvisc = 0.1     # coefficient for artificial viscosity
+#use_flattening = .true. # use flattening (dissipative) (originally for PPM)
+#use_steepening = .true. # use contact steepening (originally for PPM)
+#use_upwindTVD = .false. # use upwind biased TVD slope for PPM (need nguard=6)
+use_hybridOrder = .true.
+#
+##   II. MAGNETIC(B) AND ELECTRIC(E) FIELDS:
+E_modification  = .true.           # High order algorithm for E-field construction
+E_upwind = .false.
+energyFix   = .false.           # Update magnetic energy using staggered B-fields
+ForceHydroLimit = .false.          # Pure Hydro Limit (B=0)
+prolMethod      = "injection_prol" # Prolongation method (injecton_prol, balsara_prol)
+#
+#
+## II. RIEMANN SOLVERS:
+RiemannSolver = "HLLC" #"Roe"       # Roe, HLL, HLLC, LLF, Marquina
+#entropy         = .true.     # Entropy fix for the Roe solver
+#EOSforRiemann   = .true.     # Call EOS in Riemann flux calculations
+
+
+#convertToConsvdInMeshInterp  = .true.    # Interpolate conserved variables?
+#monotone                     = .false.   # Impose monotonicity on interpolants?
+
+#transOrder      = 1
+#interpol_order  = 2
+
+#       III. RIEMANN SOLVERS:
+#use_3dFullCTU   = .true.
+#shockInstabilityFix = .true.  #.false.      # Carbuncle instability fix for the Roe solver
+

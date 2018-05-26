@@ -1,0 +1,15 @@
+This unit is currently only provided as a stub.
+The intention for an information as follows:
+
+For each grid cell, it calculates a column density in any
+direction between the cell and the border of the
+computational domain (or simply up to some distance). It is
+useful for instance for calculating shielding of radiation
+needed for simulating formation of moleculs in the ISM. It
+provides more or less the same results as the original
+TreeCol by Paul Clark
+http://adsabs.harvard.edu/abs/2012MNRAS.420..745C
+but the algorithm is quite different. Nevertheless, it also
+uses some healpix subroutines.
+
+Information provided by Richard Wunsch January 2014.

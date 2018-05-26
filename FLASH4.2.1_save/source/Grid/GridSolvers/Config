@@ -1,0 +1,9 @@
+#Config file for GridSolver sub unit
+DEFAULT Multipole
+REQUIRES Grid/GridMain
+EXCLUSIVE Multigrid Multigrid_experimental Multigrid_forDiffuseAdvanceByHgFFT Multigrid_forDiffuseAdvanceByHgADI BHTree
+EXCLUSIVE Multipole Multipole_new BHTree
+
+#So that we use Multigrid version of 
+#Grid_solvePoisson when we run with PFFT extensions.
+CHILDORDER Pfft Multigrid Multigrid_experimental Multigrid_forDiffuseAdvanceByHgFFT Multigrid_forDiffuseAdvanceByHgADI MultigridMC HYPRE HYPRE_KPD BiPCGStab

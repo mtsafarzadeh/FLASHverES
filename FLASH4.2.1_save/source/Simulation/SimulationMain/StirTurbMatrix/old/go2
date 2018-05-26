@@ -1,0 +1,39 @@
+sed -i 's/DFIV/DONE/' Config
+sed -i 's/DTEN/DTWO/' Config
+sed -i 's/DTWT/DFOR/' Config
+sed -i 's/DFTY/DEIT/' Config
+
+sed -i 's/TEFV/TWON/' Config
+sed -i 's/TETN/TWTW/' Config
+sed -i 's/TETW/TWFR/' Config
+sed -i 's/TEFY/TWEI/' Config
+
+sed -i 's/FEFV/THON/' Config
+sed -i 's/FETN/THTW/' Config
+sed -i 's/FETW/THFR/' Config
+sed -i 's/FEFY/THEI/' Config
+
+sed -i 's/EEFV/FRON/' Config
+sed -i 's/EETN/FRTW/' Config
+sed -i 's/EETW/FRFR/' Config
+sed -i 's/EEFY/FREI/' Config
+
+sed -i 's/MDFV/MDON/' Config
+sed -i 's/MDTN/MDTW/' Config
+sed -i 's/MDTW/MDFR/' Config
+sed -i 's/MDFY/MDEI/' Config
+
+sed -i 's/TDFV/MTWO/' Config
+sed -i 's/TDTN/MTWT/' Config
+sed -i 's/TDTW/MTWF/' Config
+sed -i 's/TDFY/MTWE/' Config
+
+sed -i 's/FDFV/MTHO/' Config
+sed -i 's/FDTN/MTHT/' Config
+sed -i 's/FDTW/MTHF/' Config
+sed -i 's/FDFY/MTHE/' Config
+
+sed -i 's/EDFV/MFRO/' Config
+sed -i 's/EDTN/MFRT/' Config
+sed -i 's/EDTW/MFRF/' Config
+sed -i 's/EDFY/MFRE/' Config 
